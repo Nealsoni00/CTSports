@@ -1,0 +1,29 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'CTSports' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+
+  use_frameworks!
+
+  # Pods for CTSports
+  pod 'HTMLEntities', :git => 'https://github.com/IBM-Swift/swift-html-entities.git'
+  pod 'SWXMLHash'
+  pod 'Google-Mobile-Ads-SDK'
+  pod 'PopupDialog', '~> 0.6'
+  pod 'Google/Analytics'
+  pod 'Alamofire'
+  pod 'SwiftSpinner'
+
+
+  target 'CTSportsTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'CTSportsUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
