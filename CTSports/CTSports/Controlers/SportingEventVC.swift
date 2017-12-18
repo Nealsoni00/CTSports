@@ -40,8 +40,6 @@ class SportingEventVC: UITableViewController {
         if (currentEvent != nil) {
             self.navigationItem.title = "\(self.currentEvent!.sport)".uppercased()
             
-            
-            
             self.headers.append("Sport")
             self.information.append(self.currentEvent!.sport)
             
@@ -76,11 +74,11 @@ class SportingEventVC: UITableViewController {
             self.information.append(self.currentEvent!.season.capitalized)
             
             var opponentName = self.currentEvent!.opponent.components(separatedBy: " ")
-            opponentName.append("Staples")
+            opponentName.append(school)
             if (opponentName[0] != "") {
-                nameLabel.attributedText = "Staples \nvs \n \(self.currentEvent!.opponent)".color(opponentName)
+                nameLabel.attributedText = "\(school) \nvs \n \(self.currentEvent!.opponent)".color(opponentName)
             }else{
-                nameLabel.attributedText = "Staples \nvs \n \(opponentName[0])".color(opponentName)
+                nameLabel.attributedText = "\(school) \nvs \n \(opponentName[0])".color(opponentName)
             }
             
             if (self.currentEvent!.bus == "yes"){
@@ -154,7 +152,7 @@ extension String {
         for word in words {
             let ranges = getRanges(of: word)
             for range in ranges {
-                if word.contains("Staples"){
+                if word.contains(school){
                     attributedString.addAttributes([NSAttributedStringKey.foregroundColor: UIColor(red:0.13, green:0.42, blue:0.81, alpha:1.0)], range: range)
                 }else{
                     attributedString.addAttributes([NSAttributedStringKey.foregroundColor: UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)], range: range)

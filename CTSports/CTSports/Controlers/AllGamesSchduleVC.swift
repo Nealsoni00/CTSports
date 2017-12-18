@@ -11,6 +11,8 @@ import SWXMLHash
 import GoogleMobileAds
 import Alamofire
 
+let sweetBlue = UIColor(red:0.13, green:0.42, blue:0.81, alpha:1.0)
+let sweetGreen = UIColor(red:0.3, green:0.8, blue:0.13, alpha:1.0)
 
 class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate, GADBannerViewDelegate {
     
@@ -21,8 +23,6 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
     var noResultsView: UIView!
     
     
-    let sweetBlue = UIColor(red:0.13, green:0.42, blue:0.81, alpha:1.0)
-    let sweetGreen = UIColor(red:0.3, green:0.8, blue:0.13, alpha:1.0)
     
     var allGames = [SportingEvent]()
     var allGamesV = [SportingEvent]()
@@ -64,13 +64,27 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         
-        self.navigationController?.navigationBar.barTintColor = self.sweetBlue
+        //Info bar button
+        let infoButton = UIButton(type: .infoLight)
+        infoButton.addTarget(self, action: #selector(AllGamesSchduleVC.infoPressed), for: .touchUpInside)
+        let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
+        navigationItem.leftBarButtonItem = infoBarButtonItem
+        
+        
+        self.navigationController?.view.backgroundColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = sweetBlue
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 15)!, NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
         UIApplication.shared.statusBarStyle = .lightContent
-        self.navigationItem.title = "SPORTS SCHEDULE"
         
+        for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
+            if let image = item.image {
+                item.image = image.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+            }
+        }
+        self.navigationItem.title = "\(school.capitalized) Sports Schedule"
         
         //Search Stuff
         searchController.searchResultsUpdater = self as? UISearchResultsUpdating
@@ -159,6 +173,10 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             self.updatedLast = Date(timeIntervalSinceReferenceDate: Date().timeIntervalSinceReferenceDate)
         }
     }
+    @objc func infoPressed() {
+        let infoPage = self.storyboard?.instantiateViewController(withIdentifier: "infoVC") as! UINavigationController
+        self.tabBarController?.present(infoPage, animated: true, completion: nil)
+    }
     
     
     @objc func refresh(sender:AnyObject) {
@@ -214,7 +232,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
     
     func getGames(){
         removeAll()
-        Alamofire.request("https://www.casciac.org/xml/?sc=Staples&starttoday=1").responseJSON { response in
+        Alamofire.request("https://www.casciac.org/xml/?sc=\(school)&starttoday=1").responseJSON { response in
             
             let xml = SWXMLHash.lazy(response.data!)
             
@@ -223,7 +241,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 let gameDate1 = elem["gamedate"].element!.text
                 let homeAway = elem["site"].element!.text
                 var location = elem["facility"].element!.text
-                let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " A.M.", with: "AM", options: .literal, range: nil)
+                let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil)
                 let level = elem["gamelevel"].element!.text
                 
                 let gameType = elem["gametype"].element!.text
@@ -382,8 +400,6 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             case "JV":
                 uniqueNSGameDates = gameNSDatesJV
                 gamesDictionary = gamesDictionaryJV
-                
-                
             case "FR":
                 uniqueNSGameDates = gameNSDatesFR
                 gamesDictionary = gamesDictionaryFR
@@ -440,28 +456,6 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         return gameDate1
     }
     
-    //    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    //    {
-    //        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
-    //        headerView.backgroundColor = UIColor(red:0.36, green:0.45, blue:0.49, alpha:1.0)
-    //
-    //        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
-    //
-    //
-    //
-    //        label.text = gameDate1
-    //        label.textColor = UIColor.white
-    //        label.textAlignment = .center
-    //        headerView.addSubview(label)
-    //
-    //        tableView.bringSubview(toFront: bannerView)
-    //
-    //        return headerView
-    //    }
-    
-    
-    
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SportsCell
         self.tableView.rowHeight = 73.0
@@ -496,11 +490,11 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 
                 if event.home == "Home" {
                     cell.home.text = "H"
-                    cell.home.textColor = self.sweetBlue //Classic iStaples Blue
+                    cell.home.textColor = sweetBlue //Classic iStaples Blue
                     
                 } else {
                     cell.home.text = "A"
-                    cell.home.textColor = self.sweetGreen
+                    cell.home.textColor = sweetGreen
                     
                 }
                 return cell
@@ -550,12 +544,12 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             
             if event.home == "Home" {
                 cell.home.text = "H"
-                cell.home.textColor = self.sweetBlue //Classic iStaples Blue
+                cell.home.textColor = sweetBlue //Classic iStaples Blue
                 //            cell.home.font = UIFont(name: "HelveticaNeue", size: 16)
                 
             } else {
                 cell.home.text = "A"
-                cell.home.textColor = self.sweetGreen
+                cell.home.textColor = sweetGreen
                 
             }
         }

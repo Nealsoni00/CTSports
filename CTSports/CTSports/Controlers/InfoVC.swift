@@ -1,35 +1,33 @@
 //
-//  infoVC.swift
+//  InfoVC.swift
 //  CTSports
 //
-//  Created by Neal Soni on 12/14/17.
+//  Created by Neal Soni on 12/17/17.
 //  Copyright © 2017 Neal Soni. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import MessageUI
 
-class InfoVC: UITableViewController, MFMailComposeViewControllerDelegate {
+class InfoViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+    //    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let darkGrey = UIColor(red:0.27, green:0.33, blue:0.36, alpha:1.0)
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
         self.navigationController?.view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = darkGrey
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Avenir Light", size: 22)!, NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
         UIApplication.shared.statusBarStyle = .lightContent
-        let backButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         
+        
+        let backButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
         
         self.navigationItem.title = "About"
-        
-        
-        
-        
         // Do any additional setup after loading the view.
     }
     
@@ -45,12 +43,20 @@ class InfoVC: UITableViewController, MFMailComposeViewControllerDelegate {
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 0{
+            switch indexPath.row {
+            case 2:
+                let VC1 = self.storyboard?.instantiateViewController(withIdentifier: "SetSchoolViewController") as! UINavigationController
+                self.present(VC1, animated:true, completion: nil)
+            default:
+                break
+            }
+            
+        }
+        
         if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
@@ -61,10 +67,12 @@ class InfoVC: UITableViewController, MFMailComposeViewControllerDelegate {
                 sendMail("sharkeyjack11@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
             case 2:
-                sendMail("scottpec96@gmail.com")
+                if let url = URL(string: "https://darksky.net/poweredby/") {
+                    UIApplication.shared.open(url, options: [:])
+                }
                 tableView.deselectRow(at: indexPath, animated: true)
             case 3:
-                if let url = URL(string: "https://darksky.net/poweredby/") {
+                if let url = URL(string: "https://ciac.com/") {
                     UIApplication.shared.open(url, options: [:])
                 }
                 tableView.deselectRow(at: indexPath, animated: true)
@@ -80,14 +88,12 @@ class InfoVC: UITableViewController, MFMailComposeViewControllerDelegate {
         
     }
     
-    
-    
     func sendMail(_ address: String) {
         let toRecipents = [address]
         let mc = MFMailComposeViewController()
         mc.mailComposeDelegate = self
         mc.setToRecipients(toRecipents)
-        mc.setSubject("Know Snow")
+        mc.setSubject("CT CIAC Sports Schedule")
         
         //TODO: CHECK IF MAIL VC IS PRESENTED ON iPHONE!
         self.present(mc, animated: true, completion: nil)
@@ -112,4 +118,27 @@ class InfoVC: UITableViewController, MFMailComposeViewControllerDelegate {
         header.textLabel?.textColor = UIColor.white
     }
     
+    //Set the text for the two info things
+    
+    let aboutText = "CT Sports is an app that shows the game schedule of all varsity level sports. This app pulls the information for game dates and times from the CIAC website. If there are any issues with the schedule, please contact your high school's sports director and let them know."
+    
+    let securityText = "This app works by logging you in to our servers through a token generated by a Google OAuth login. As Google OAuth is utilized, passwords are NOT NOR COULD BE at any time stored or accessed by this app. Google handles all credentials, thus the security of this app is the security of a Google log in. \n \nBy using this app, you agree that anonymous analytic data may be collected to help improve future use of iStaples."
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "aboutSegue" {
+            let newView = segue.destination as! AboutVC
+            
+            newView.title = "About CTSports"
+            newView.text = aboutText
+        }
+            
+        else if segue.identifier == "securitySegue" {
+            let newView = segue.destination as! AboutVC
+            
+            newView.title = "Security Information"
+            newView.text = securityText
+        }
+    }
+    
 }
+
