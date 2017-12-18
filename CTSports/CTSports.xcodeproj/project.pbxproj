@@ -40,6 +40,7 @@
 		368D7E8F1FE7809C000BE5D4 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D7E8E1FE7809C000BE5D4 /* AboutVC.swift */; };
 		496F4F5E1FE7FC9C00799E40 /* sports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 496F4F5D1FE7FC9C00799E40 /* sports.txt */; };
 		49A321D21FE7F07700074A36 /* schoolcodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49A321D11FE7F07700074A36 /* schoolcodes.txt */; };
+		49CDAADB1FE84890005475FB /* SequenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAADA1FE84890005475FB /* SequenceExtension.swift */; };
 		671D8B5DB841DDD1D0139001 /* Pods_CTSports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4FF90036102BF67BEF0A64 /* Pods_CTSports.framework */; };
 		C55D30FF75744F7CFB0C8F47 /* Pods_CTSportsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523707198B992B39CBCDA703 /* Pods_CTSportsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,7 @@
 		3EA21579716148E53016E177 /* Pods-CTSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTSports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTSports/Pods-CTSports.debug.xcconfig"; sourceTree = "<group>"; };
 		496F4F5D1FE7FC9C00799E40 /* sports.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sports.txt; sourceTree = "<group>"; };
 		49A321D11FE7F07700074A36 /* schoolcodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schoolcodes.txt; sourceTree = "<group>"; };
+		49CDAADA1FE84890005475FB /* SequenceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtension.swift; sourceTree = "<group>"; };
 		523707198B992B39CBCDA703 /* Pods_CTSportsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTSportsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A6C2D756DC7B453E2B5C396 /* Pods-CTSportsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTSportsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CTSportsUITests/Pods-CTSportsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E285C430659210FCFFFB9B5 /* Pods_CTSportsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTSportsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +256,7 @@
 			children = (
 				366A8DD41FE19EB30082A64D /* NSDateExtension.swift */,
 				366A8DDA1FE40F8C0082A64D /* UIImageViewExtension.swift */,
+				49CDAADA1FE84890005475FB /* SequenceExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				368D7E8F1FE7809C000BE5D4 /* AboutVC.swift in Sources */,
 				366A8DD91FE2DE530082A64D /* InfoVC.swift in Sources */,
 				366A8DC91FE17F8C0082A64D /* SportingEventVC.swift in Sources */,
+				49CDAADB1FE84890005475FB /* SequenceExtension.swift in Sources */,
 				366A8DDB1FE40F8C0082A64D /* UIImageViewExtension.swift in Sources */,
 				366A8DD51FE19EB30082A64D /* NSDateExtension.swift in Sources */,
 				366A8DC21FE17DA50082A64D /* SportingEvent.swift in Sources */,

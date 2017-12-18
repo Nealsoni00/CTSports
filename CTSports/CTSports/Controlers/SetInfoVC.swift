@@ -118,7 +118,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         }
         
         
-    
+
         
         
     }
@@ -130,15 +130,27 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         if searchController.isActive && searchController.searchBar.text != "" {
             return 0
         }else{
-            print( Array(schoolsDict.keys).count)
             return Array(schoolsDict.keys).count
             
         }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "SetInfoCell", for: indexPath)
-        cell.textLabel?.text = Array(schoolsDict.keys)[indexPath.row]
-        print(cell.textLabel?.text)
+        let arrayOfTowns = Array(schoolsDict.keys)
+        //alphabetically
+        let sortedTowns = arrayOfTowns.sorted(by: <)
+        let currentTown = sortedTowns[indexPath.row]
+        let splitted = currentTown
+            .characters
+            .splitBefore(separator: { $0.isUpperCase })
+            .map{String($0)}
+        print(splitted)
+        var formatedName = ""
+        for element in splitted{
+            formatedName = formatedName + "\(element) "
+            
+        }
+        cell.textLabel?.text = formatedName
         return cell
     }
     @IBAction func donePressed(_ sender: AnyObject) {
@@ -159,7 +171,6 @@ extension SetSchoolVC: UISearchResultsUpdating {
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
-
 
 
 
