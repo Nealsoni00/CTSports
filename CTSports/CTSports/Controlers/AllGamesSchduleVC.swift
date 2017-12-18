@@ -150,6 +150,11 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             functionsToAddBannerViewToView()
         }
         
+        
+      
+        
+        
+        
     }
     func functionsToAddBannerViewToView(){
         bannerView =  GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)

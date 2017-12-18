@@ -1,0 +1,65 @@
+boys-alpineskiing:Boys Alpine Skiing
+	boys-badminton:Boys Badminton
+	boys-baseball:Baseball
+	boys-basketball:Boys Basketball
+	boys-crew:Boys Crew
+	boys-crosscountry:Boys Cross Country
+	boys-fencing:Boys Fencing
+	boys-football:Football
+	boys-golf:Boys Golf
+	boys-icehockey:Ice Hockey
+	boys-indoortrack:Boys Indoor Track
+	boys-lacrosse:Boys Lacrosse
+	boys-outdoortrack:Boys Outdoor Track
+	boys-rugby:Boys Rugby
+	boys-sailing:Boys Sailing
+	boys-soccer:Boys Soccer
+	boys-swimming:Boys Swimming
+	boys-tennis:Boys Tennis
+	boys-volleyball:Boys Volleyball
+	boys-waterpolo:Boys Water Polo
+	boys-wrestling:Wrestling
+	coed-alpineskiing:Co-ed Alpine Skiing
+	coed-band:Band
+	coed-bowling:Bowling
+	coed-cheerleading:Cheerleading
+	coed-chessteam:Chess Team
+	coed-chorus:Chorus
+	coed-colorguard:Color Guard
+	coed-crew:Co-ed Crew
+	coed-crosscountryskiing:Co-ed Cross Country Skiing
+	coed-debateteam:Debate Team
+	coed-drumline:Drumline
+	coed-fencing:Co-ed Fencing
+	coed-mathteam:Math Team
+	coed-rifle:Co-ed Rifle
+	coed-sailing:Co-ed Sailing
+	girls-alpineskiing:Girls Alpine Skiing
+	girls-badminton:Girls Badminton
+	girls-basketball:Girls Basketball
+	girls-crew:Girls Crew
+	girls-crosscountry:Girls Cross Country
+	girls-danceteam:Dance Team
+	girls-fencing:Girls Fencing
+	girls-fieldhockey:Field Hockey
+	girls-golf:Girls Golf
+	girls-gymnastics:Girls Gymnastics
+	girls-icehockey:Girls Ice Hockey
+	girls-indoortrack:Girls Indoor Track
+	girls-lacrosse:Girls Lacrosse
+	girls-outdoortrack:Girls Outdoor Track
+	girls-pompom:Pom-Pom
+	girls-sailing:Girls Sailing
+	girls-soccer:Girls Soccer
+	girls-softball:Softball
+	girls-swimming:Girls Swimming
+	girls-tennis:Girls Tennis
+	girls-volleyball:Girls Volleyball
+	girls-waterpolo:Girls Water Polo
+	misc-school:Miscellaneous Events
+	powderpuff:Powderpuff Football
+	school-holidays:School Holidays and Closings
+	unified-basketball:Unified Sports Basketball
+	unified-soccer:Unified Sports Soccer
+	unified-track:Unified Sports Track
+	unified-volleyball:Unified Sports Volleyball

@@ -13,7 +13,8 @@ import Alamofire
 let school = "Weston"
 let schoolKey = "Weston"
 
-var schoolsDict: [String: String] = ["Westport": "Staples", "Weston": "Weston", "New Cannan": "NewCannan"]
+var schoolsDict = [String: String]()
+var sportsDict = [String: String]()
 
 class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControllerDelegate {
     
@@ -66,6 +67,58 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         noResultsView.isHidden = true
         noResultsView.addSubview(noResultsLabel)
         self.tableView.insertSubview(noResultsView, belowSubview: self.tableView)
+        
+        
+        var fileURLProject = Bundle.main.path(forResource: "schoolcodes", ofType: "txt")
+        // Read from the file
+        var readStringProject = ""
+        do {
+            readStringProject = try String(contentsOfFile: fileURLProject!, encoding: String.Encoding.utf8)
+            var lines = readStringProject.components(separatedBy: .newlines)
+            //sort through lines and add to dictionary
+            lines = lines.filter(){$0 != ""}
+            
+            for line in lines {
+             
+                let fullNameArr = line.components(separatedBy: ":")
+                
+                fullNameArr[0] // first
+                fullNameArr[1] // second
+                
+                schoolsDict[fullNameArr[0]] = fullNameArr[1]
+                
+            }
+            
+        } catch let error as NSError {
+            print("Failed reading from URL: \(fileURLProject), Error: " + error.localizedDescription)
+        }
+        
+         fileURLProject = Bundle.main.path(forResource: "sports", ofType: "txt")
+        // Read from the file
+         readStringProject = ""
+        do {
+            readStringProject = try String(contentsOfFile: fileURLProject!, encoding: String.Encoding.utf8)
+            var lines = readStringProject.components(separatedBy: .newlines)
+            //sort through lines and add to dictionary
+            lines = lines.filter(){$0 != ""}
+            
+            for line in lines {
+                
+                let fullNameArr = line.components(separatedBy: ":")
+                
+                fullNameArr[0] // first
+                fullNameArr[1] // second
+                
+                sportsDict[fullNameArr[0]] = fullNameArr[1]
+                
+            }
+            
+        } catch let error as NSError {
+            print("Failed reading from URL: \(fileURLProject), Error: " + error.localizedDescription)
+        }
+        
+        
+    
         
         
     }
