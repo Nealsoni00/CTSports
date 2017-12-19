@@ -17,7 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let network = NetworkManager()
+        print("i am here")
+        let request = network.performRequest(school: "Staples")
+        print(request)
         return true
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

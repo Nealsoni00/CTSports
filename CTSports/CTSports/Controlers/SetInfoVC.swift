@@ -145,9 +145,10 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             .splitBefore(separator: { $0.isUpperCase })
             .map{String($0)}
         print(splitted)
+        //fix split shit
         var formatedName = ""
         for element in splitted{
-            formatedName = formatedName + "\(element) "
+            formatedName = formatedName + "\(element)"
             
         }
         cell.textLabel?.text = formatedName
