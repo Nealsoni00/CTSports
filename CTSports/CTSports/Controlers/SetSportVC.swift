@@ -1,4 +1,12 @@
 //
+//  SetSportVC.swift
+//  CTSports
+//
+//  Created by Neal Soni on 12/18/17.
+//  Copyright © 2017 Neal Soni. All rights reserved.
+//
+
+//
 //  SetSchoolVC.swift
 //  CTSports
 //
@@ -9,19 +17,16 @@
 import UIKit
 import SwiftSpinner
 import Alamofire
-
-let school = "Weston"
-let schoolKey = "Weston"
-
-var schoolsDict = [String: String]()
+var sport = ""
 var sportsDict = [String: String]()
+var sportChanged = false
 
-class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControllerDelegate {
+class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControllerDelegate {
     
     let searchController = UISearchController(searchResultsController: nil)
     var noResultsView: UIView!
-    
-    
+    var arrayOfSports = [String]()
+    var filteredSports =  [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +39,13 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
         UIApplication.shared.statusBarStyle = .lightContent
         
-       
+        
         let backButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
         
-        self.navigationItem.title = "Select Your School"
+        self.navigationItem.title = "Select Your Sport"
         // Do any additional setup after loading the view.
-
+        
         //Search Stuff
         searchController.searchResultsUpdater = self as? UISearchResultsUpdating
         searchController.searchBar.delegate = self
@@ -63,13 +68,13 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         noResultsLabel.textAlignment = NSTextAlignment.center
         
         noResultsLabel.text = "No Results"
-
+        
         noResultsView.isHidden = true
         noResultsView.addSubview(noResultsLabel)
         self.tableView.insertSubview(noResultsView, belowSubview: self.tableView)
         
-        
-        var fileURLProject = Bundle.main.path(forResource: "schoolcodes", ofType: "txt")
+
+        let fileURLProject = Bundle.main.path(forResource: "sports", ofType: "txt")
         // Read from the file
         var readStringProject = ""
         do {
@@ -77,49 +82,13 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             var lines = readStringProject.components(separatedBy: .newlines)
             //sort through lines and add to dictionary
             lines = lines.filter(){$0 != ""}
-            
             for line in lines {
-             
                 let fullNameArr = line.components(separatedBy: ":")
-                
-                fullNameArr[0] // first
-                fullNameArr[1] // second
-                
-                schoolsDict[fullNameArr[0]] = fullNameArr[1]
-                
-            }
-            
-        } catch let error as NSError {
-            print("Failed reading from URL: \(fileURLProject), Error: " + error.localizedDescription)
-        }
-        
-         fileURLProject = Bundle.main.path(forResource: "sports", ofType: "txt")
-        // Read from the file
-         readStringProject = ""
-        do {
-            readStringProject = try String(contentsOfFile: fileURLProject!, encoding: String.Encoding.utf8)
-            var lines = readStringProject.components(separatedBy: .newlines)
-            //sort through lines and add to dictionary
-            lines = lines.filter(){$0 != ""}
-            
-            for line in lines {
-                
-                let fullNameArr = line.components(separatedBy: ":")
-                
-                fullNameArr[0] // first
-                fullNameArr[1] // second
-                
                 sportsDict[fullNameArr[0]] = fullNameArr[1]
-                
             }
-            
         } catch let error as NSError {
             print("Failed reading from URL: \(fileURLProject), Error: " + error.localizedDescription)
         }
-        
-        
-
-        
         
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -128,50 +97,84 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if searchController.isActive && searchController.searchBar.text != "" {
-            return 0
+            return filteredSports.count
         }else{
-            return Array(schoolsDict.keys).count
+            return Array(sportsDict.keys).count
             
         }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "SetInfoCell", for: indexPath)
-        let arrayOfTowns = Array(schoolsDict.keys)
-        //alphabetically
-        let sortedTowns = arrayOfTowns.sorted(by: <)
-        let currentTown = sortedTowns[indexPath.row]
-        let splitted = currentTown
+        
+        arrayOfSports = Array(sportsDict.keys).sorted(by: <)
+        var formatedName = ""
+        var currentSport = ""
+
+        if searchController.isActive && searchController.searchBar.text != "" {
+            
+            if (filteredSports.count != 0 && filteredSports[0] != nil){
+                currentSport = sportsDict[filteredSports[indexPath.row]]!
+            }
+        }else{
+            currentSport = sportsDict[arrayOfSports[indexPath.row]]!
+        }
+        let splitted = currentSport
             .characters
             .splitBefore(separator: { $0.isUpperCase })
             .map{String($0)}
-        print(splitted)
-        //fix split shit
-        var formatedName = ""
+        //print(splitted)
         for element in splitted{
-            formatedName = formatedName + "\(element)"
-            
+            formatedName = formatedName + "\(element) "
         }
         cell.textLabel?.text = formatedName
+            
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        schoolChanged = true
+        if searchController.isActive && searchController.searchBar.text != "" {
+            sport = sportsDict[filteredSports[indexPath.row]]!
+            print("Filtered Sport: \(sport)")
+            defaults.set(sport, forKey: "defaultSport")
+            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
+
+        }else{
+            if indexPath.section == 0{
+                sport = sportsDict[arrayOfSports[indexPath.row]]!
+                print("Normal Sport: \(sport)")
+                defaults.set(sport, forKey: "defaultSport")
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+    }
+    
+    
     @IBAction func donePressed(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredSports.removeAll()
+        filteredSports = arrayOfSports.filter { sport in
+            return sport.lowercased().contains(searchText.lowercased())
+        }
         
         print("Done Filtering")
         tableView.reloadData()
     }
-
+    
 }
 
 
 
-extension SetSchoolVC: UISearchResultsUpdating {
+extension SetSportVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
+
 
 
 

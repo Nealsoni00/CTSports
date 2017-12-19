@@ -150,11 +150,15 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             functionsToAddBannerViewToView()
         }
         
-        
-      
-        
-        
-        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationItem.title = "\(school.capitalized) Sports Schedule"
+        if (schoolChanged){
+            removeAll()
+            
+            getGames()
+            schoolChanged = false
+        }
     }
     func functionsToAddBannerViewToView(){
         bannerView =  GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
@@ -466,6 +470,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         self.tableView.rowHeight = 73.0
         var tag = ""
         var event: SportingEvent = SportingEvent(sport: "sportName", stringDate: "gameDate", gameNSDate: Date() as NSDate, weekday: "weekDay", time: "time", school: "location", gameLevel: "level", home: "homeAway", gameType: "gameType", season: "season", opponent: "opponent", directionsURL: "", id_num: "id_num", bus: "bus", busTime: "busTime")
+        
         if searchController.isActive && searchController.searchBar.text != "" {
             
             if (filteredUniqueDates.count != 0 && convertedFilteredGames[filteredUniqueDates[0]]?[0] != nil){
