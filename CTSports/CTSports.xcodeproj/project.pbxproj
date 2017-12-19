@@ -42,6 +42,8 @@
 		496F4F5E1FE7FC9C00799E40 /* sports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 496F4F5D1FE7FC9C00799E40 /* sports.txt */; };
 		49A321D21FE7F07700074A36 /* schoolcodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49A321D11FE7F07700074A36 /* schoolcodes.txt */; };
 		49CDAADB1FE84890005475FB /* SequenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAADA1FE84890005475FB /* SequenceExtension.swift */; };
+		49CDAADD1FE8A58D005475FB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAADC1FE8A58D005475FB /* NetworkManager.swift */; };
+		49CDAADF1FE8B604005475FB /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAADE1FE8B604005475FB /* ArrayExtension.swift */; };
 		671D8B5DB841DDD1D0139001 /* Pods_CTSports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4FF90036102BF67BEF0A64 /* Pods_CTSports.framework */; };
 		C55D30FF75744F7CFB0C8F47 /* Pods_CTSportsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523707198B992B39CBCDA703 /* Pods_CTSportsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -105,6 +107,8 @@
 		496F4F5D1FE7FC9C00799E40 /* sports.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sports.txt; sourceTree = "<group>"; };
 		49A321D11FE7F07700074A36 /* schoolcodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schoolcodes.txt; sourceTree = "<group>"; };
 		49CDAADA1FE84890005475FB /* SequenceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtension.swift; sourceTree = "<group>"; };
+		49CDAADC1FE8A58D005475FB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		49CDAADE1FE8B604005475FB /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		523707198B992B39CBCDA703 /* Pods_CTSportsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTSportsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A6C2D756DC7B453E2B5C396 /* Pods-CTSportsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTSportsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CTSportsUITests/Pods-CTSportsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E285C430659210FCFFFB9B5 /* Pods_CTSportsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTSportsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				366A8DC11FE17DA50082A64D /* SportingEvent.swift */,
+				49CDAADC1FE8A58D005475FB /* NetworkManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				366A8DD41FE19EB30082A64D /* NSDateExtension.swift */,
 				366A8DDA1FE40F8C0082A64D /* UIImageViewExtension.swift */,
 				49CDAADA1FE84890005475FB /* SequenceExtension.swift */,
+				49CDAADE1FE8B604005475FB /* ArrayExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -616,7 +622,9 @@
 				366A8DDB1FE40F8C0082A64D /* UIImageViewExtension.swift in Sources */,
 				36ACF2C21FE8A98C007BE150 /* SetSportVC.swift in Sources */,
 				366A8DD51FE19EB30082A64D /* NSDateExtension.swift in Sources */,
+				49CDAADF1FE8B604005475FB /* ArrayExtension.swift in Sources */,
 				366A8DC21FE17DA50082A64D /* SportingEvent.swift in Sources */,
+				49CDAADD1FE8A58D005475FB /* NetworkManager.swift in Sources */,
 				366A8DC71FE17E050082A64D /* SportsInfoCell.swift in Sources */,
 				366A8D921FE17D110082A64D /* AllGamesSchduleVC.swift in Sources */,
 			);

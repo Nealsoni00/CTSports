@@ -86,12 +86,12 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             
             for line in lines {
                 let fullNameArr = line.components(separatedBy: ":")
-                let firstCharacter: String = fullNameArr[0].startIndex
-                if (self.townsDict[firstCharacter]?.append(fullNameArr[0])) == nil {
-                    self.townsDict[firstCharacter] = [fullNameArr[0]]
-                }
-                self.townsDict[firstCharacter].append(fullNameArr[0])
-                self.schoolsDict[fullNameArr[0]] = fullNameArr[1]
+//                let firstCharacter: String = fullNameArr[0].startIndex
+//                if (self.townsDict[firstCharacter]?.append(fullNameArr[0])) == nil {
+//                    self.townsDict[firstCharacter] = [fullNameArr[0]]
+//                }
+//                self.townsDict[firstCharacter].append(fullNameArr[0])
+                schoolsDict[fullNameArr[0]] = fullNameArr[1]
             }
         } catch let error as NSError {
             print("Failed reading from URL: \(fileURLProject), Error: " + error.localizedDescription)
@@ -135,6 +135,17 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             currentSchool = arrayOfSchools[indexPath.row]
         }
         cell.textLabel?.text = currentSchool
+//        let splitted = currentSchool
+//            .characters
+//            .splitBefore(separator: { $0.isUpperCase })
+//            .map{String($0)}
+//        print(splitted)
+//        //fix split shit
+//        var formatedName = ""
+//        for element in splitted{
+//            formatedName = formatedName + "\(element)"
+//
+//        }
         
         return cell
     }
