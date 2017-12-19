@@ -84,7 +84,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
             }
         }
-        self.navigationItem.title = "\(school.capitalized) Sports Schedule"
+        self.navigationItem.title = "\(schoolKey.capitalized) Sports Schedule"
         
         //Search Stuff
         searchController.searchResultsUpdater = self as? UISearchResultsUpdating
@@ -152,10 +152,10 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = "\(school.capitalized) Sports Schedule"
+        self.navigationItem.title = "\(schoolKey.uppercased()) SPORTS SCHEDULE"
         if (schoolChanged){
             removeAll()
-            
+            tableView.reloadData()
             getGames()
             schoolChanged = false
         }

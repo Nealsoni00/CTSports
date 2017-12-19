@@ -111,28 +111,27 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
         var currentSport = ""
 
         if searchController.isActive && searchController.searchBar.text != "" {
-            
             if (filteredSports.count != 0 && filteredSports[0] != nil){
                 currentSport = sportsDict[filteredSports[indexPath.row]]!
             }
         }else{
             currentSport = sportsDict[arrayOfSports[indexPath.row]]!
         }
-        let splitted = currentSport
-            .characters
-            .splitBefore(separator: { $0.isUpperCase })
-            .map{String($0)}
-        //print(splitted)
-        for element in splitted{
-            formatedName = formatedName + "\(element) "
-        }
-        cell.textLabel?.text = formatedName
+//        let splitted = currentSport
+//            .characters
+//            .splitBefore(separator: { $0.isUpperCase })
+//            .map{String($0)}
+//        //print(splitted)
+//        for element in splitted{
+//            formatedName = formatedName + "\(element) "
+//        }
+        cell.textLabel?.text = currentSport
             
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        schoolChanged = true
+        sportChanged = true
         if searchController.isActive && searchController.searchBar.text != "" {
             sport = sportsDict[filteredSports[indexPath.row]]!
             print("Filtered Sport: \(sport)")

@@ -518,14 +518,15 @@
                                                         <constraint firstAttribute="height" constant="32" id="HLa-Tm-qjz"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Defaut School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axk-JE-wEP">
-                                                    <rect key="frame" x="60" y="8" width="203.5" height="27.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Defaut School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Axk-JE-wEP">
+                                                    <rect key="frame" x="60" y="8" width="281" height="27.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                     <color key="textColor" red="0.29169837984429914" green="0.29028920892717691" blue="0.29310755076142136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Axk-JE-wEP" secondAttribute="trailing" id="7Xa-0s-TKp"/>
                                                 <constraint firstItem="4Ha-pN-lXY" firstAttribute="leading" secondItem="KYg-wg-t1Q" secondAttribute="leading" constant="12" id="O3V-QE-XDt"/>
                                                 <constraint firstItem="Axk-JE-wEP" firstAttribute="leading" secondItem="4Ha-pN-lXY" secondAttribute="trailing" constant="16" id="Rb0-nh-SQp"/>
                                                 <constraint firstItem="4Ha-pN-lXY" firstAttribute="centerY" secondItem="KYg-wg-t1Q" secondAttribute="centerY" id="cse-D2-8fZ"/>
@@ -548,8 +549,8 @@
                                                         <constraint firstAttribute="width" constant="32" id="k4M-hu-acg"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Defaut Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfJ-fk-fLn">
-                                                    <rect key="frame" x="60" y="8" width="193" height="28"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Defaut Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="cfJ-fk-fLn">
+                                                    <rect key="frame" x="60" y="8" width="281" height="28"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                     <color key="textColor" red="0.29169837980000002" green="0.29028920889999998" blue="0.29310755080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -558,6 +559,7 @@
                                             <constraints>
                                                 <constraint firstItem="cfJ-fk-fLn" firstAttribute="leading" secondItem="eTo-r6-CnM" secondAttribute="trailing" constant="16" id="DYk-kD-R44"/>
                                                 <constraint firstItem="cfJ-fk-fLn" firstAttribute="centerY" secondItem="k9N-hb-QKM" secondAttribute="centerY" id="W7W-0N-jhy"/>
+                                                <constraint firstAttribute="trailing" secondItem="cfJ-fk-fLn" secondAttribute="trailing" id="Wl9-GZ-IcE"/>
                                                 <constraint firstItem="eTo-r6-CnM" firstAttribute="leading" secondItem="k9N-hb-QKM" secondAttribute="leading" constant="12" id="ZMq-Dh-Kal"/>
                                                 <constraint firstItem="eTo-r6-CnM" firstAttribute="centerY" secondItem="k9N-hb-QKM" secondAttribute="centerY" id="bU7-s3-DTD"/>
                                             </constraints>
@@ -866,6 +868,8 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="850"/>
                     <connections>
+                        <outlet property="defaultSchoolLabel" destination="Axk-JE-wEP" id="GEZ-qY-2Ts"/>
+                        <outlet property="defaultSportLabel" destination="cfJ-fk-fLn" id="Doq-E7-JT5"/>
                         <outlet property="tableView" destination="myh-Pf-D4y" id="u2J-K3-e1R"/>
                     </connections>
                 </tableViewController>

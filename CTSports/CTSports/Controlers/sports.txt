@@ -1,65 +1,65 @@
-boys-alpineskiing:Boys Alpine Skiing
-	boys-badminton:Boys Badminton
-	boys-baseball:Baseball
-	boys-basketball:Boys Basketball
-	boys-crew:Boys Crew
-	boys-crosscountry:Boys Cross Country
-	boys-fencing:Boys Fencing
-	boys-football:Football
-	boys-golf:Boys Golf
-	boys-icehockey:Ice Hockey
-	boys-indoortrack:Boys Indoor Track
-	boys-lacrosse:Boys Lacrosse
-	boys-outdoortrack:Boys Outdoor Track
-	boys-rugby:Boys Rugby
-	boys-sailing:Boys Sailing
-	boys-soccer:Boys Soccer
-	boys-swimming:Boys Swimming
-	boys-tennis:Boys Tennis
-	boys-volleyball:Boys Volleyball
-	boys-waterpolo:Boys Water Polo
-	boys-wrestling:Wrestling
-	coed-alpineskiing:Co-ed Alpine Skiing
-	coed-band:Band
-	coed-bowling:Bowling
-	coed-cheerleading:Cheerleading
-	coed-chessteam:Chess Team
-	coed-chorus:Chorus
-	coed-colorguard:Color Guard
-	coed-crew:Co-ed Crew
-	coed-crosscountryskiing:Co-ed Cross Country Skiing
-	coed-debateteam:Debate Team
-	coed-drumline:Drumline
-	coed-fencing:Co-ed Fencing
-	coed-mathteam:Math Team
-	coed-rifle:Co-ed Rifle
-	coed-sailing:Co-ed Sailing
-	girls-alpineskiing:Girls Alpine Skiing
-	girls-badminton:Girls Badminton
-	girls-basketball:Girls Basketball
-	girls-crew:Girls Crew
-	girls-crosscountry:Girls Cross Country
-	girls-danceteam:Dance Team
-	girls-fencing:Girls Fencing
-	girls-fieldhockey:Field Hockey
-	girls-golf:Girls Golf
-	girls-gymnastics:Girls Gymnastics
-	girls-icehockey:Girls Ice Hockey
-	girls-indoortrack:Girls Indoor Track
-	girls-lacrosse:Girls Lacrosse
-	girls-outdoortrack:Girls Outdoor Track
-	girls-pompom:Pom-Pom
-	girls-sailing:Girls Sailing
-	girls-soccer:Girls Soccer
-	girls-softball:Softball
-	girls-swimming:Girls Swimming
-	girls-tennis:Girls Tennis
-	girls-volleyball:Girls Volleyball
-	girls-waterpolo:Girls Water Polo
-	misc-school:Miscellaneous Events
-	powderpuff:Powderpuff Football
-	school-holidays:School Holidays and Closings
-	unified-basketball:Unified Sports Basketball
-	unified-soccer:Unified Sports Soccer
-	unified-track:Unified Sports Track
-	unified-volleyball:Unified Sports Volleyball
+Boys - Alpine Skiing:Boys Alpine Skiing
+Boys - Badminton:Boys Badminton
+Boys - Baseball:Baseball
+Boys - Basketball:Boys Basketball
+Boys - Crew:Boys Crew
+Boys - Crosscountry:Boys Cross Country
+Boys - Fencing:Boys Fencing
+Boys - Football:Football
+Boys - Golf:Boys Golf
+Boys - Icehockey:Ice Hockey
+Boys - Indoortrack:Boys Indoor Track
+Boys - Lacrosse:Boys Lacrosse
+Boys - Outdoortrack:Boys Outdoor Track
+Boys - Rugby:Boys Rugby
+Boys - Sailing:Boys Sailing
+Boys - Soccer:Boys Soccer
+Boys - Swimming:Boys Swimming
+Boys - Tennis:Boys Tennis
+Boys - Volleyball:Boys Volleyball
+Boys - Waterpolo:Boys Water Polo
+Boys - Wrestling:Wrestling
+Coed - Alpineskiing:Co-ed Alpine Skiing
+Coed - Band:Band
+Coed - Bowling:Bowling
+Coed - Cheerleading:Cheerleading
+Coed - Chessteam:Chess Team
+Coed - Chorus:Chorus
+Coed - Colorguard:Color Guard
+Coed - Crew:Co-ed Crew
+Coed - Crosscountryskiing:Co-ed Cross Country Skiing
+Coed - Debateteam:Debate Team
+Coed - Drumline:Drumline
+Coed - Fencing:Co-ed Fencing
+Coed - Mathteam:Math Team
+Coed - Rifle:Co-ed Rifle
+Coed - Sailing:Co-ed Sailing
+Girls - Alpineskiing:Girls Alpine Skiing
+Girls - Badminton:Girls Badminton
+Girls - Basketball:Girls Basketball
+Girls - Crew:Girls Crew
+Girls - Crosscountry:Girls Cross Country
+Girls - Danceteam:Dance Team
+Girls - Fencing:Girls Fencing
+Girls - Fieldhockey:Field Hockey
+Girls - Golf:Girls Golf
+Girls - Gymnastics:Girls Gymnastics
+Girls - Icehockey:Girls Ice Hockey
+Girls - Indoortrack:Girls Indoor Track
+Girls - Lacrosse:Girls Lacrosse
+Girls - Outdoortrack:Girls Outdoor Track
+Girls - Pompom:Pom-Pom
+Girls - Sailing:Girls Sailing
+Girls - Soccer:Girls Soccer
+Girls - Softball:Softball
+Girls - Swimming:Girls Swimming
+Girls - Tennis:Girls Tennis
+Girls - Volleyball:Girls Volleyball
+Girls - Waterpolo:Girls Water Polo
+Misc - School:Miscellaneous Events
+Powderpuff:Powderpuff Football
+School - Holidays:School Holidays and Closings
+unified - Basketball:Unified Sports Basketball
+unified - Soccer:Unified Sports Soccer
+unified - Track:Unified Sports Track
+unified - Volleyball:Unified Sports Volleyball

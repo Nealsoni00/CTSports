@@ -24,6 +24,8 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     var arrayOfSchools = [String]()
     var filteredSchools = [String]()
     
+    var townsDict = [String: [String]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self;
@@ -69,7 +71,10 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         noResultsView.addSubview(noResultsLabel)
         self.tableView.insertSubview(noResultsView, belowSubview: self.tableView)
         
+        self.getSchools()
         
+    }
+    func getSchools(){
         var fileURLProject = Bundle.main.path(forResource: "schoolcodes", ofType: "txt")
         // Read from the file
         var readStringProject = ""
@@ -81,30 +86,44 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             
             for line in lines {
                 let fullNameArr = line.components(separatedBy: ":")
-                schoolsDict[fullNameArr[0]] = fullNameArr[1]
+                let firstCharacter: String = fullNameArr[0].startIndex
+                if (self.townsDict[firstCharacter]?.append(fullNameArr[0])) == nil {
+                    self.townsDict[firstCharacter] = [fullNameArr[0]]
+                }
+                self.townsDict[firstCharacter].append(fullNameArr[0])
+                self.schoolsDict[fullNameArr[0]] = fullNameArr[1]
             }
         } catch let error as NSError {
             print("Failed reading from URL: \(fileURLProject), Error: " + error.localizedDescription)
         }
-        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if arrayOfSchools.count == 0{
+            self.getSchools()
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if searchController.isActive && searchController.searchBar.text != "" {
+            if (filteredSchools.count == 0) {
+                noResultsView.isHidden = false
+            }
+            else {
+                noResultsView.isHidden = true
+            }
             return filteredSchools.count
         }else{
             return Array(schoolsDict.keys).count
-            
         }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "SetInfoCell", for: indexPath)
         
         arrayOfSchools = Array(schoolsDict.keys).sorted(by: <)
-        var formatedName = ""
         var currentSchool = ""
         
         if searchController.isActive && searchController.searchBar.text != "" {
@@ -115,23 +134,20 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         }else{
             currentSchool = arrayOfSchools[indexPath.row]
         }
-        let splitted = currentSchool
-            .characters
-            .splitBefore(separator: { $0.isUpperCase })
-            .map{String($0)}
-        //print(splitted)
-        for element in splitted{
-            formatedName = formatedName + "\(element) "
-        }
-        cell.textLabel?.text = formatedName
+        cell.textLabel?.text = currentSchool
         
         return cell
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         schoolChanged = true
         if searchController.isActive && searchController.searchBar.text != "" {
             school = schoolsDict[filteredSchools[indexPath.row]]!
+            schoolKey = filteredSchools[indexPath.row]
             print("Filtered school: \(school)")
             defaults.set(school, forKey: "defaultSchool")
             self.dismiss(animated: true, completion: nil)
@@ -140,24 +156,23 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         }else{
             if indexPath.section == 0{
                 school = schoolsDict[arrayOfSchools[indexPath.row]]!
+                schoolKey = arrayOfSchools[indexPath.row]
                 print("Normal school: \(school)")
                 defaults.set(school, forKey: "defaultSchool")
                 self.dismiss(animated: true, completion: nil)
             }
         }
-        
     }
-    
     
     @IBAction func donePressed(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredSchools.removeAll()
         filteredSchools = arrayOfSchools.filter { school in
             return school.lowercased().contains(searchText.lowercased())
         }
-        
         print("Done Filtering")
         tableView.reloadData()
     }

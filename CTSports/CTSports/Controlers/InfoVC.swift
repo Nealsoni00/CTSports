@@ -11,6 +11,8 @@ import MessageUI
 
 class InfoViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     //    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var defaultSchoolLabel: UILabel!
+    @IBOutlet weak var defaultSportLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +28,13 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         
         let backButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
-        
         self.navigationItem.title = "About"
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        defaultSchoolLabel.text = "Change Default Sport From: \(sport)"
+        defaultSchoolLabel.text = "Change Default School From: \(schoolKey)"
     }
     
     override func didReceiveMemoryWarning() {

@@ -1,11 +1,11 @@
-AbbottTech:HenryAbbottRVT
-Acad.oftheHolyFamily:AcademyoftheHolyFamily
-AmericanSchoolfortheDeaf:AMD
+Abbott Tech:HenryAbbottRVT
+Acad. of the Holy Family:AcademyoftheHolyFamily
+American School For The Deaf:AMD
 Amistad:AmistadAcademy
 Amity:AmityReg
 Ansonia:Ansonia
 Avon:Avon
-BaconAcademy:BaconAcademy
+Bacon Academy:BaconAcademy
 Bassick:Bassick
 Berlin:Berlin
 Bethel:Bethel
@@ -13,77 +13,77 @@ Bloomfield:Bloomfield
 Bolton:Bolton
 Branford:Branford
 BridgeportCentral:BridgeportCentral
-BrienMcMahon:BrienMcMahon
-BristolCentral:BristolCentral
-BristolEastern:BristolEastern
+Brien McMahon:BrienMcMahon
+Bristol Central:BristolCentral
+Bristol Eastern:BristolEastern
 Brookfield:Brookfield
 Bulkeley:Bulkeley
-BullardHavensTech:BullardHavensRVT
+Bullard Havens Tech:BullardHavensRVT
 Bunnell:Bunnell
 Canton:CantonJrSr
-CapitalPrepMagnet:CapitalPrep
-CareerMagnet:CareerMagnet
-CheneyTech:HowellCheneyRVT
+Capital Prep Magnet:CapitalPrep
+Career Magnet:CareerMagnet
+Cheney Tech:HowellCheneyRVT
 Cheshire:Cheshire
-ClassicalMagnet:GreaterHartfordClassical
+Classical Magnet:GreaterHartfordClassical
 Coginchaug:CoginchaugReg
 Conard:Conard
 Coventry:Coventry
 Cromwell:Cromwell
 Crosby:Crosby
 Danbury:Danbury
-DanielHand:DanielHand
+Daniel Hand:DanielHand
 Darien:Darien
 Derby:Derby
 E.O.Smith:EOSmith
-EastCatholic:EastCatholic
-EastGranby:EastGranby
-EastHampton:EastHampton
-EastHartford:EastHartford
-EastHaven:EastHaven
-EastLyme:EastLyme
-EastWindsor:EastWindsorJrSr
+East Catholic:EastCatholic
+East Granby:EastGranby
+East Hampton:EastHampton
+East Hartford:EastHartford
+East Haven:EastHaven
+East Lyme:EastLyme
+East Windsor:EastWindsorJrSr
 Ellington:Ellington
-EllisTech:HarvardEllisRVT
+Ellis Tech:HarvardEllisRVT
 Enfield:Enfield
-FairfieldLudlowe:FairfieldLudlowe
-FairfieldPrep:FairfieldCollegePreparatory
-FairfieldWarde:FairfieldWarde
+Fairfield Ludlowe:FairfieldLudlowe
+Fairfield Prep:FairfieldCollegePreparatory
+Fairfield Warde:FairfieldWarde
 Farmington:Farmington
 Fermi:EnricoFermi
 Fitch:FitchSr
 Foran:JosephForan
 Gilbert:Gilbert
 Glastonbury:Glastonbury
-GoodwinTech:ECGoodwinRVT
-GranbyMemorial:GranbyMemorial
-GrassoTech:GrassoSoutheasternRVT
+Goodwin Tech:ECGoodwinRVT
+Granby Memorial:GranbyMemorial
+Grasso Tech:GrassoSoutheasternRVT
 Greenwich:Greenwich
 Griswold:Griswold
 Guilford:Guilford
 Haddam-Killingworth:HaddamKillingworth
-HaleRay:NathanHaleRay
+Hale Ray:NathanHaleRay
 Hall:WmHall
 Hamden:Hamden
 Harding:WarrenHarding
-HartfordPublic:HartfordPublic
+Hartford Public:HartfordPublic
 Hillhouse:JamesHillhouse
 HolyCross:HolyCross
-HousatonicRegional:HousatonicValleyReg
-HydeLeadership:HydeLeadership
+Housatonic Regional:HousatonicValleyReg
+Hyde Leadership:HydeLeadership
 Immaculate:Immaculate
-JoelBarlow:JoelBarlow
-JonathanLaw:JonathanLaw
-KaynorTech:WFKaynorRVT
+Joel Barlow:JoelBarlow
+Jonathan Law:JonathanLaw
+Kaynor Tech:WFKaynorRVT
 Kennedy:JFKennedy
 Killingly:Killingly
-KolbeCathedral:KolbeCathedral
-LauraltonHall:AcademyofOurLadyofMercy
+Kolbe Cathedral:KolbeCathedral
+Lauralton Hall:AcademyofOurLadyofMercy
 Ledyard:Ledyard
-LewisMills:LewisMills
+Lewis Mills:LewisMills
 Litchfield:Litchfield
-LymanHall:LymanHall
-LymanMemorial:LymanMemorial
+Lyman Hall:LymanHall
+Lyman Memorial:LymanMemorial
 Maloney:Maloney
 Manchester:Manchester
 Masuk:Masuk
@@ -92,32 +92,32 @@ Middletown:Middletown
 Montville:Montville
 Morgan:Morgan
 Naugatuck:Naugatuck
-NewBritain:NewBritain
-NewCanaan:NewCanaan
-NewFairfield:NewFairfield
-NewLondon:NewLondon
-NewMilford:NewMilford
+New Britain:NewBritain
+New Canaan:NewCanaan
+New Fairfield:NewFairfield
+New London:NewLondon
+New Milford:NewMilford
 Newington:Newington
 Newtown:Newtown
 Nonnewaug:Nonnewaug
-NorthBranford:NorthBranford
-NorthHaven:NorthHaven
-NorthwestCatholic:NorthwestCatholic
+North Branford:NorthBranford
+North Haven:NorthHaven
+Northwest Catholic:NorthwestCatholic
 Northwestern:NorthwesternReg
 Norwalk:Norwalk
-NorwichFreeAcademy:NorwichFreeAcademy
-NorwichTech:NorwichRVT
+Norwich Free Academy:NorwichFreeAcademy
+Norwich Tech:NorwichRVT
 NotreDame-Fairfield:NotreDameCatholic
 NotreDame-WestHaven:NotreDame
 O'BrienTech:EmmettOBrienRVT
-OldLyme:LymeOldLyme
-OldSaybrook:OldSaybrook
+Old Lyme:LymeOldLyme
+Old Saybrook:OldSaybrook
 Oxford:Oxford
-ParishHill:ParishHillMiddleSr
+Parish Hill:ParishHillMiddleSr
 Plainfield:Plainfield
 Plainville:Plainville
 Platt:OHPlatt
-PlattTech:PlattRVT
+Platt Tech:PlattRVT
 Pomperaug:Pomperaug
 Portland:Portland
 PrinceTech:AIPrinceRVT
@@ -126,8 +126,8 @@ RHAM:RHAM
 Ridgefield:Ridgefield
 Rockville:Rockville
 RockyHill:RockyHill
-SacredHeart:SacredHeart
-SacredHeartAcademy:SacredHeartAcademy
+Sacred Heart:SacredHeart
+Sacred Heart Academy:SacredHeartAcademy
 Seymour:Seymour
 Sheehan:Sheehan
 Shelton:Shelton
@@ -135,7 +135,7 @@ ShepaugValley:ShepaugValley
 Simsbury:Simsbury
 SMSA:SportsSciencesAcademy
 Somers:Somers
-SouthWindsor:SouthWindsor
+South Windsor:SouthWindsor
 Southington:Southington
 St.Bernard:StBernard
 St.Joseph:StJoseph
@@ -152,15 +152,15 @@ Thomaston:Thomaston
 Tolland:Tolland
 Torrington:Torrington
 Tourtellotte:TourtellotteMemorial
-TrinityCatholic:TrinityCatholic
+Trinity Catholic:TrinityCatholic
 Trumbull:Trumbull
-ValleyRegional:ValleyReg
-VinalTech:VinalRVT
+Valley Regional:ValleyReg
+Vinal Tech:VinalRVT
 Wamogo:WamogoReg
 Waterford:Waterford
 Watertown:Watertown
 Weaver:Weaver
-WestHaven:WestHaven
+West Haven:WestHaven
 Westbrook:Westbrook
 Westhill:Westhill
 Weston:Weston
@@ -172,11 +172,11 @@ Wilby:Wilby
 WilcoxTech:HCWilcoxRVT
 Wilton:Wilton
 Windham:Windham
-WindhamTech:WindhamRVT
+Windham Tech:WindhamRVT
 Windsor:Windsor
 WindsorLocks:WindsorLocks
 Wolcott:Wolcott
-WolcottTech:OliverWolcottRVT
+Wolcott Tech:OliverWolcottRVT
 Woodland:Woodland
-WoodstockAcademy:WoodstockAcademy
+Woodstock Academy:WoodstockAcademy
 Xavier:Xavier
