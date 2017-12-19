@@ -83,6 +83,7 @@ class NetworkManager: NSObject {
 //            print(self.allGames)
             
         }
+        //fix return
         if (done) {
             print("done")
             return allGames
