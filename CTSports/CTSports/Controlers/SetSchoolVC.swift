@@ -10,8 +10,8 @@ import UIKit
 import SwiftSpinner
 import Alamofire
 
-var school = "Weston"
-var schoolKey = "Weston"
+var school: String = defaults.object(forKey: "defaultSchool") as? String ?? "Staples"
+var schoolKey: String = defaults.object(forKey: "defaultSchoolKey") as? String ?? "Staples"
 
 var schoolsDict = [String: String]()
 var schoolChanged = false
@@ -123,20 +123,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             return sectionTitleArray![section] as? String
         }
     }
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if searchController.isActive && searchController.searchBar.text != "" {
-//            if (filteredSchools.count == 0) {
-//                noResultsView.isHidden = false
-//            }
-//            else {
-//                noResultsView.isHidden = true
-//            }
-//            return filteredSchools.count
-//        }else{
-//            return Array(townsDict.keys).count
-//        }
-//    }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if searchController.isActive && searchController.searchBar.text != "" {
@@ -154,10 +141,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             }
             
             let townWithLetterArray: Array = townsDict[sectionTitleArray![section] as! String]!
-            print("HERE \(townWithLetterArray)")
             return townWithLetterArray.count
-            
-           
         }
     }
     
@@ -196,6 +180,8 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             schoolKey = filteredSchools[indexPath.row]
             print("Filtered school: \(school)")
             defaults.set(school, forKey: "defaultSchool")
+            defaults.set(schoolKey, forKey: "defaultSchoolKey")
+
             self.dismiss(animated: true, completion: nil)
             self.dismiss(animated: true, completion: nil)
             
@@ -204,6 +190,8 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             schoolKey = townsDict[sectionTitleArray![indexPath.section]]![indexPath.row]
             print("Normal school: \(school)")
             defaults.set(school, forKey: "defaultSchool")
+            defaults.set(schoolKey, forKey: "defaultSchoolKey")
+
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -222,9 +210,6 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     }
     
 }
-
-
-
 
 extension SetSchoolVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {

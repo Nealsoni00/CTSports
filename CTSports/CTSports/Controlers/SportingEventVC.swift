@@ -152,7 +152,7 @@ extension String {
         for word in words {
             let ranges = getRanges(of: word)
             for range in ranges {
-                if word.contains(school){
+                if word.contains(find: school){
                     attributedString.addAttributes([NSAttributedStringKey.foregroundColor: UIColor(red:0.13, green:0.42, blue:0.81, alpha:1.0)], range: range)
                 }else{
                     attributedString.addAttributes([NSAttributedStringKey.foregroundColor: UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)], range: range)
