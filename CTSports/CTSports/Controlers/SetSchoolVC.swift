@@ -25,6 +25,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     var filteredSchools = [String]()
     
     var townsDict = [String: [String]]()
+    var sectionTitleArray: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,16 +87,18 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             
             for line in lines {
                 let fullNameArr = line.components(separatedBy: ":")
-//                let firstCharacter: String = fullNameArr[0].startIndex
-//                if (self.townsDict[firstCharacter]?.append(fullNameArr[0])) == nil {
-//                    self.townsDict[firstCharacter] = [fullNameArr[0]]
-//                }
-//                self.townsDict[firstCharacter].append(fullNameArr[0])
+                let firstCharacter: String = fullNameArr[0][0]
+                if (self.townsDict[firstCharacter]?.append(fullNameArr[0])) == nil {
+                    self.townsDict[firstCharacter] = [fullNameArr[0]]
+                }
+//                self.townsDict[firstCharacter]?.append(fullNameArr[0])
                 schoolsDict[fullNameArr[0]] = fullNameArr[1]
+        
             }
         } catch let error as NSError {
             print("Failed reading from URL: \(fileURLProject), Error: " + error.localizedDescription)
         }
+        self.sectionTitleArray = Array(townsDict.keys).sorted(by: <)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -105,9 +108,37 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return 1
+        }
+        else {
+            return sectionTitleArray!.count
+        }
     }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return nil
+        }
+        else {
+            return sectionTitleArray![section] as? String
+        }
+    }
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if searchController.isActive && searchController.searchBar.text != "" {
+//            if (filteredSchools.count == 0) {
+//                noResultsView.isHidden = false
+//            }
+//            else {
+//                noResultsView.isHidden = true
+//            }
+//            return filteredSchools.count
+//        }else{
+//            return Array(townsDict.keys).count
+//        }
+//    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
         if searchController.isActive && searchController.searchBar.text != "" {
             if (filteredSchools.count == 0) {
                 noResultsView.isHidden = false
@@ -116,10 +147,21 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
                 noResultsView.isHidden = true
             }
             return filteredSchools.count
-        }else{
-            return Array(schoolsDict.keys).count
+        }
+        else {
+            if noResultsView != nil {
+                noResultsView.isHidden = true
+            }
+            
+            let townWithLetterArray: Array = townsDict[sectionTitleArray![section] as! String]!
+            print("HERE \(townWithLetterArray)")
+            return townWithLetterArray.count
+            
+           
         }
     }
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "SetInfoCell", for: indexPath)
         
@@ -127,32 +169,25 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         var currentSchool = ""
         
         if searchController.isActive && searchController.searchBar.text != "" {
-            
-            if (filteredSchools.count != 0 && filteredSchools[0] != nil){
+            if (filteredSchools.count != 0){
                 currentSchool = filteredSchools[indexPath.row]
             }
         }else{
-            currentSchool = arrayOfSchools[indexPath.row]
+
+
+            currentSchool = townsDict[sectionTitleArray![indexPath.section]]![indexPath.row]
         }
         cell.textLabel?.text = currentSchool
-//        let splitted = currentSchool
-//            .characters
-//            .splitBefore(separator: { $0.isUpperCase })
-//            .map{String($0)}
-//        print(splitted)
-//        //fix split shit
-//        var formatedName = ""
-//        for element in splitted{
-//            formatedName = formatedName + "\(element)"
-//
-//        }
-        
         return cell
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     }
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return (sectionTitleArray!.index(of: title)) ?? 0
+    }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         schoolChanged = true
@@ -165,13 +200,11 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             self.dismiss(animated: true, completion: nil)
             
         }else{
-            if indexPath.section == 0{
-                school = schoolsDict[arrayOfSchools[indexPath.row]]!
-                schoolKey = arrayOfSchools[indexPath.row]
-                print("Normal school: \(school)")
-                defaults.set(school, forKey: "defaultSchool")
-                self.dismiss(animated: true, completion: nil)
-            }
+            school = schoolsDict[townsDict[sectionTitleArray![indexPath.section]]![indexPath.row]]!
+            schoolKey = townsDict[sectionTitleArray![indexPath.section]]![indexPath.row]
+            print("Normal school: \(school)")
+            defaults.set(school, forKey: "defaultSchool")
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

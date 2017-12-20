@@ -39,6 +39,7 @@
 		368D7E8D1FE6EA21000BE5D4 /* CIACsmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 368D7E8C1FE6EA1E000BE5D4 /* CIACsmall.png */; };
 		368D7E8F1FE7809C000BE5D4 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D7E8E1FE7809C000BE5D4 /* AboutVC.swift */; };
 		36ACF2C21FE8A98C007BE150 /* SetSportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ACF2C11FE8A98C007BE150 /* SetSportVC.swift */; };
+		36ACF2C41FE98E59007BE150 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ACF2C31FE98E59007BE150 /* StringExtension.swift */; };
 		496F4F5E1FE7FC9C00799E40 /* sports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 496F4F5D1FE7FC9C00799E40 /* sports.txt */; };
 		49A321D21FE7F07700074A36 /* schoolcodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49A321D11FE7F07700074A36 /* schoolcodes.txt */; };
 		49CDAADB1FE84890005475FB /* SequenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAADA1FE84890005475FB /* SequenceExtension.swift */; };
@@ -103,6 +104,7 @@
 		368D7E8C1FE6EA1E000BE5D4 /* CIACsmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CIACsmall.png; sourceTree = "<group>"; };
 		368D7E8E1FE7809C000BE5D4 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		36ACF2C11FE8A98C007BE150 /* SetSportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSportVC.swift; sourceTree = "<group>"; };
+		36ACF2C31FE98E59007BE150 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		3EA21579716148E53016E177 /* Pods-CTSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTSports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTSports/Pods-CTSports.debug.xcconfig"; sourceTree = "<group>"; };
 		496F4F5D1FE7FC9C00799E40 /* sports.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sports.txt; sourceTree = "<group>"; };
 		49A321D11FE7F07700074A36 /* schoolcodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schoolcodes.txt; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				366A8DDA1FE40F8C0082A64D /* UIImageViewExtension.swift */,
 				49CDAADA1FE84890005475FB /* SequenceExtension.swift */,
 				49CDAADE1FE8B604005475FB /* ArrayExtension.swift */,
+				36ACF2C31FE98E59007BE150 /* StringExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				366A8DD51FE19EB30082A64D /* NSDateExtension.swift in Sources */,
 				49CDAADF1FE8B604005475FB /* ArrayExtension.swift in Sources */,
 				366A8DC21FE17DA50082A64D /* SportingEvent.swift in Sources */,
+				36ACF2C41FE98E59007BE150 /* StringExtension.swift in Sources */,
 				49CDAADD1FE8A58D005475FB /* NetworkManager.swift in Sources */,
 				366A8DC71FE17E050082A64D /* SportsInfoCell.swift in Sources */,
 				366A8D921FE17D110082A64D /* AllGamesSchduleVC.swift in Sources */,

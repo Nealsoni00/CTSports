@@ -72,12 +72,8 @@ class NetworkManager: NSObject {
                 }
              
                 let event = SportingEvent(sport: sportName, stringDate: gameDate, gameNSDate: gameNSDate, weekday: weekDay, time: time, school: location, gameLevel: level, home: homeAway, gameType: gameType, season: season, opponent: opponent, directionsURL: directionsURL, id_num: id_num, bus: bus, busTime: busTime)
-                
-                
-                
+
                 self.allGames.append(event)
-                
-                
             }
              done = true;
 //            print(self.allGames)
@@ -87,8 +83,10 @@ class NetworkManager: NSObject {
         if (done) {
             print("done")
             return allGames
+        } else{
+            
         }
-      return allGames
+        return allGames
     }
     
     func convertDateToDay(date: String) -> (NSDate, String){
