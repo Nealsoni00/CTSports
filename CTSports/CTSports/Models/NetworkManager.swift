@@ -22,11 +22,9 @@ class NetworkManager: NSObject {
     
     weak var delegate: DataReturnedDelegate?
     
-    
     private override init() {
         self.baseURL = "https://www.casciac.org/xml/?"
     }
-    
     
     func performRequest(school: String)  {
         var done = false;
@@ -82,13 +80,12 @@ class NetworkManager: NSObject {
                 }
             }
             done = true;
+
             self.delegate?.dataRecieved(allGames: self.allGames)
             
         }
         //fix return
-        if (done) {
-            print("done")
-        }
+     
     }
     
     func convertDateToDay(date: String) -> (NSDate, String){
