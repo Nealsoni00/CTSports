@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DataReturnedDelegate {
 
     var window: UIWindow?
 
-    let defaults = UserDefaults.standard
     private let dataModel = NetworkManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -25,7 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DataReturnedDelegate {
         dataModel.delegate = self
 
         print("i am here")
-        self.dataModel.performRequest(school: "Staples")
+        school = (defaults.object(forKey: "defaultSchool") as? String) ?? "Staples"
+        schoolKey = (defaults.object(forKey: "defaultSchoolKey") as? String) ?? "Staples"
+        self.dataModel.performRequest(school: school as! String)
+        
         return true
 
     }
