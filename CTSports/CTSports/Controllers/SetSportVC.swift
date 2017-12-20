@@ -17,7 +17,8 @@
 import UIKit
 import SwiftSpinner
 import Alamofire
-var sport = ""
+var sport: String = defaults.object(forKey: "defaultSport") as? String ?? ""
+var sportKey: String = defaults.object(forKey: "defaultSportKey") as? String ?? ""
 var sportsDict = [String: String]()
 var sportChanged = false
 
@@ -133,9 +134,11 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         sportChanged = true
         if searchController.isActive && searchController.searchBar.text != "" {
-            sport = sportsDict[filteredSports[indexPath.row]]!
-            print("Filtered Sport: \(sport)")
+            sportKey = sportsDict[filteredSports[indexPath.row]]!
+            sport = filteredSports[indexPath.row]
+            print("Filtered Sport: \(sportKey)")
             defaults.set(sport, forKey: "defaultSport")
+            defaults.set(sportKey, forKey: "defaultSportKey")
             self.dismiss(animated: true, completion: nil)
             self.dismiss(animated: true, completion: nil)
 

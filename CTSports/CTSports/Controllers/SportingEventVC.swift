@@ -28,8 +28,6 @@ class SportingEventVC: UITableViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-        
         self.navigationController?.navigationBar.barTintColor = self.sweetBlue
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white

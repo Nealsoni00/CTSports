@@ -12,8 +12,6 @@ let defaults = UserDefaults.standard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, DataReturnedDelegate {
-  
-    
 
     var window: UIWindow?
 
@@ -25,15 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DataReturnedDelegate {
         print("i am here")
         school = (defaults.object(forKey: "defaultSchool") as? String) ?? "Staples"
         schoolKey = (defaults.object(forKey: "defaultSchoolKey") as? String) ?? "Staples"
+        sport = defaults.object(forKey: "defaultSport") as? String ?? ""
+        sportKey = defaults.object(forKey: "defaultSportKey") as? String ?? ""
         NetworkManager.sharedInstance.performRequest(school: school)
+        NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
         NetworkManager.sharedInstance.delegate = self
-
         return true
 
     }
     
     func dataRecieved(allGames: [SportingEvent]) {
 //        print(NetworkManager.sharedInstance.allGames)
+    }
+    func specificDataRecived(specificGames: [SportingEvent]) {
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
