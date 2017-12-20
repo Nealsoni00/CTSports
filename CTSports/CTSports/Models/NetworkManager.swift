@@ -16,15 +16,21 @@ protocol DataReturnedDelegate: class {
 
 class NetworkManager: NSObject {
     
-    static var sharedInstance: NetworkManager?
-    let baseURL = "https://www.casciac.org/xml/?"
+    static let sharedInstance = NetworkManager()
+    let baseURL: String
     var allGames = [SportingEvent]()
     
     weak var delegate: DataReturnedDelegate?
     
+    
+    private override init() {
+        self.baseURL = "https://www.casciac.org/xml/?"
+    }
+    
+    
     func performRequest(school: String)  {
         var done = false;
-        let url = "\(baseURL)sc=\(school)"
+        let url = "\(baseURL)sc=\(school)&starttoday=1"
         Alamofire.request(url).responseJSON { response in
             let xml = SWXMLHash.lazy(response.data!)
             
@@ -33,7 +39,7 @@ class NetworkManager: NSObject {
                 let gameDate1 = elem["gamedate"].element!.text
                 let homeAway = elem["site"].element!.text
                 var location = elem["facility"].element!.text
-                let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil)
+                let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil)
                 let level = elem["gamelevel"].element!.text
                 
                 let gameType = elem["gametype"].element!.text
@@ -46,12 +52,6 @@ class NetworkManager: NSObject {
                 
                 
                 var dateArray : [String] = gameDate1.components(separatedBy: "-")
-                var gameDate = ""
-                var weekDay = ""
-                var gameNSDate = NSDate()
-                
-                if (gameDate1 != "TBA") {
-                
                 
                 let index = gameDate1.index(gameDate1.startIndex, offsetBy: 8)
                 var day = gameDate1.substring(from: index)
@@ -69,20 +69,21 @@ class NetworkManager: NSObject {
                 //varsity game
                 let gameDate = self.convertDaytoWeekday(date: gameNSDate) + ", " + monthName + " " + day
                 
-                } else {
-                   
-                }
                 if location == "" {
                     location = "Location Unknown"
                 }
-             
-                let event = SportingEvent(sport: sportName, stringDate: gameDate, gameNSDate: gameNSDate, weekday: weekDay, time: time, school: location, gameLevel: level, home: homeAway, gameType: gameType, season: season, opponent: opponent, directionsURL: directionsURL, id_num: id_num, bus: bus, busTime: busTime)
-
-                self.allGames.append(event)
+                
+                if gameType != "Practice" {
+                    let event = SportingEvent(sport: sportName, stringDate: gameDate, gameNSDate: gameNSDate, weekday: weekDay, time: time, school: location, gameLevel: level, home: homeAway, gameType: gameType, season: season, opponent: opponent, directionsURL: directionsURL, id_num: id_num, bus: bus, busTime: busTime)
+                    
+                    if (gameDate1 != "TBA") {
+                        self.allGames.append(event)
+                    }
+                }
             }
-             done = true;
+            done = true;
             self.delegate?.dataRecieved(allGames: self.allGames)
-
+            
         }
         //fix return
         if (done) {
