@@ -10,14 +10,19 @@ import Foundation
 import Alamofire
 import SWXMLHash
 
+protocol DataReturnedDelegate: class {
+    func dataRecieved(allGames : [SportingEvent])
+}
+
 class NetworkManager: NSObject {
     
     static var sharedInstance: NetworkManager?
     let baseURL = "https://www.casciac.org/xml/?"
     var allGames = [SportingEvent]()
     
+    weak var delegate: DataReturnedDelegate?
     
-    func performRequest(school: String) -> [SportingEvent] {
+    func performRequest(school: String)  {
         var done = false;
         let url = "\(baseURL)sc=\(school)"
         Alamofire.request(url).responseJSON { response in
@@ -76,17 +81,13 @@ class NetworkManager: NSObject {
                 self.allGames.append(event)
             }
              done = true;
-//            print(self.allGames)
-            
+            self.delegate?.dataRecieved(allGames: self.allGames)
+
         }
         //fix return
         if (done) {
             print("done")
-            return allGames
-        } else{
-            
         }
-        return allGames
     }
     
     func convertDateToDay(date: String) -> (NSDate, String){

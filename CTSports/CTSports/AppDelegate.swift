@@ -11,21 +11,27 @@ import UIKit
 let defaults = UserDefaults.standard
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, DataReturnedDelegate {
+  
+    
 
     var window: UIWindow?
 
     let defaults = UserDefaults.standard
+    private let dataModel = NetworkManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let network = NetworkManager()
+        dataModel.delegate = self
+
         print("i am here")
-        let request = network.performRequest(school: "Staples")
-        print(request)
+        self.dataModel.performRequest(school: "Staples")
         return true
 
+    }
+    
+    func dataRecieved(allGames: [SportingEvent]) {
+        print(allGames[0].opponent)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
