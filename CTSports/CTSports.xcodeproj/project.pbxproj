@@ -179,7 +179,7 @@
 				366A8DD31FE19E8E0082A64D /* Utilities */,
 				366A8DC51FE17DE20082A64D /* Views */,
 				366A8DC01FE17D9A0082A64D /* Models */,
-				366A8DBF1FE17D380082A64D /* Controlers */,
+				366A8DBF1FE17D380082A64D /* Controllers */,
 				366A8D981FE17D110082A64D /* Assets.xcassets */,
 				366A8DCA1FE180470082A64D /* Graphics */,
 				366A8D9D1FE17D110082A64D /* Info.plist */,
@@ -205,7 +205,7 @@
 			path = CTSportsUITests;
 			sourceTree = "<group>";
 		};
-		366A8DBF1FE17D380082A64D /* Controlers */ = {
+		366A8DBF1FE17D380082A64D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				49A321D11FE7F07700074A36 /* schoolcodes.txt */,
@@ -218,7 +218,7 @@
 				366A8D931FE17D110082A64D /* SpecificGamesSchduleVC.swift */,
 				366A8DC81FE17F8C0082A64D /* SportingEventVC.swift */,
 			);
-			path = Controlers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		366A8DC01FE17D9A0082A64D /* Models */ = {

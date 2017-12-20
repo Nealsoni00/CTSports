@@ -23,7 +23,6 @@ class NetworkManager: NSObject {
     weak var delegate: DataReturnedDelegate?
     
     func performRequest(school: String)  {
-        var done = false;
         let url = "\(baseURL)sc=\(school)"
         Alamofire.request(url).responseJSON { response in
             let xml = SWXMLHash.lazy(response.data!)
@@ -80,14 +79,11 @@ class NetworkManager: NSObject {
 
                 self.allGames.append(event)
             }
-             done = true;
             self.delegate?.dataRecieved(allGames: self.allGames)
 
         }
         //fix return
-        if (done) {
-            print("done")
-        }
+     
     }
     
     func convertDateToDay(date: String) -> (NSDate, String){
