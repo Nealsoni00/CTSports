@@ -24,7 +24,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     var arrayOfSchools = [String]()
     var filteredSchools = [String]()
     
-    var townsDict = [String: [String]]()
+    var letterDict = [String: [String]]()
     var sectionTitleArray: [String]?
     
     override func viewDidLoad() {
@@ -88,17 +88,17 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             for line in lines {
                 let fullNameArr = line.components(separatedBy: ":")
                 let firstCharacter: String = fullNameArr[0][0]
-                if (self.townsDict[firstCharacter]?.append(fullNameArr[0])) == nil {
-                    self.townsDict[firstCharacter] = [fullNameArr[0]]
+                if (self.letterDict[firstCharacter]?.append(fullNameArr[0])) == nil {
+                    self.letterDict[firstCharacter] = [fullNameArr[0]]
                 }
-//                self.townsDict[firstCharacter]?.append(fullNameArr[0])
+//                self.letterDict[firstCharacter]?.append(fullNameArr[0])
                 schoolsDict[fullNameArr[0]] = fullNameArr[1]
         
             }
         } catch let error as NSError {
             print("Failed reading from URL: \(fileURLProject), Error: " + error.localizedDescription)
         }
-        self.sectionTitleArray = Array(townsDict.keys).sorted(by: <)
+        self.sectionTitleArray = Array(letterDict.keys).sorted(by: <)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -140,7 +140,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
                 noResultsView.isHidden = true
             }
             
-            let townWithLetterArray: Array = townsDict[sectionTitleArray![section] as! String]!
+            let townWithLetterArray: Array = letterDict[sectionTitleArray![section] as! String]!
             return townWithLetterArray.count
         }
     }
@@ -159,7 +159,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         }else{
 
 
-            currentSchool = townsDict[sectionTitleArray![indexPath.section]]![indexPath.row]
+            currentSchool = letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]
         }
         cell.textLabel?.text = currentSchool
         return cell
@@ -186,8 +186,8 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             self.dismiss(animated: true, completion: nil)
             
         }else{
-            school = schoolsDict[townsDict[sectionTitleArray![indexPath.section]]![indexPath.row]]!
-            schoolKey = townsDict[sectionTitleArray![indexPath.section]]![indexPath.row]
+            school = schoolsDict[letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]]!
+            schoolKey = letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]
             print("Normal school: \(school)")
             defaults.set(school, forKey: "defaultSchool")
             defaults.set(schoolKey, forKey: "defaultSchoolKey")

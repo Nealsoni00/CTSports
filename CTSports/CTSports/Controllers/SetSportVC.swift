@@ -6,19 +6,13 @@
 //  Copyright © 2017 Neal Soni. All rights reserved.
 //
 
-//
-//  SetSchoolVC.swift
-//  CTSports
-//
-//  Created by Neal Soni on 12/13/17.
-//  Copyright © 2017 Neal Soni. All rights reserved.
-//
-
 import UIKit
 import SwiftSpinner
 import Alamofire
+
 var sport: String = defaults.object(forKey: "defaultSport") as? String ?? ""
 var sportKey: String = defaults.object(forKey: "defaultSportKey") as? String ?? ""
+
 var sportsDict = [String: String]()
 var sportChanged = false
 
@@ -26,8 +20,12 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
     
     let searchController = UISearchController(searchResultsController: nil)
     var noResultsView: UIView!
+    
     var arrayOfSports = [String]()
     var filteredSports =  [String]()
+    
+    var letterDict = [String: [String]]()
+    var sectionTitleArray: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +72,11 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
         noResultsView.addSubview(noResultsLabel)
         self.tableView.insertSubview(noResultsView, belowSubview: self.tableView)
         
+        self.getSports()
 
+        
+    }
+    func getSports(){
         let fileURLProject = Bundle.main.path(forResource: "sports", ofType: "txt")
         // Read from the file
         var readStringProject = ""
@@ -85,73 +87,109 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
             lines = lines.filter(){$0 != ""}
             for line in lines {
                 let fullNameArr = line.components(separatedBy: ":")
-                sportsDict[fullNameArr[0]] = fullNameArr[1]
+                let firstCharacter: String = fullNameArr[1][0]
+                if (self.letterDict[firstCharacter]?.append(fullNameArr[1])) == nil {
+                    self.letterDict[firstCharacter] = [fullNameArr[1]]
+                }
+                //                self.letterDict[firstCharacter]?.append(fullNameArr[0])
+                sportsDict[fullNameArr[1]] = fullNameArr[0]
             }
         } catch let error as NSError {
             print("Failed reading from URL: \(fileURLProject), Error: " + error.localizedDescription)
         }
-        
+        self.sectionTitleArray = Array(letterDict.keys).sorted(by: <)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if arrayOfSports.count == 0{
+            self.getSports()
+        }
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return 1
+        }
+        else {
+            return sectionTitleArray!.count
+        }
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return nil
+        }
+        else {
+            return sectionTitleArray![section] as? String
+        }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        // #warning Incomplete implementation, return the number of rows
         if searchController.isActive && searchController.searchBar.text != "" {
+            if (filteredSports.count == 0) {
+                noResultsView.isHidden = false
+            }
+            else {
+                noResultsView.isHidden = true
+            }
             return filteredSports.count
-        }else{
-            return Array(sportsDict.keys).count
+        }
+        else {
+            if noResultsView != nil {
+                noResultsView.isHidden = true
+            }
             
+            let sportWithLetterArray: Array = letterDict[sectionTitleArray![section] as! String]!
+            return sportWithLetterArray.count
         }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "SetInfoCell", for: indexPath)
         
         arrayOfSports = Array(sportsDict.keys).sorted(by: <)
-        var formatedName = ""
         var currentSport = ""
-
+        
         if searchController.isActive && searchController.searchBar.text != "" {
-            if (filteredSports.count != 0 && filteredSports[0] != nil){
-                currentSport = sportsDict[filteredSports[indexPath.row]]!
+            if (filteredSports.count != 0){
+                currentSport = filteredSports[indexPath.row]
             }
         }else{
-            currentSport = sportsDict[arrayOfSports[indexPath.row]]!
-        }
-//        let splitted = currentSport
-//            .characters
-//            .splitBefore(separator: { $0.isUpperCase })
-//            .map{String($0)}
-//        //print(splitted)
-//        for element in splitted{
-//            formatedName = formatedName + "\(element) "
-//        }
-        cell.textLabel?.text = currentSport
             
+            
+            currentSport = letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]
+        }
+        cell.textLabel?.text = currentSport
         return cell
     }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    }
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return (sectionTitleArray!.index(of: title)) ?? 0
+    }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         sportChanged = true
         if searchController.isActive && searchController.searchBar.text != "" {
-            sportKey = sportsDict[filteredSports[indexPath.row]]!
-            sport = filteredSports[indexPath.row]
-            print("Filtered Sport: \(sportKey)")
+            sport = sportsDict[filteredSports[indexPath.row]]!
+            sportKey = filteredSports[indexPath.row]
+            print("Filtered school: \(sport)")
             defaults.set(sport, forKey: "defaultSport")
             defaults.set(sportKey, forKey: "defaultSportKey")
+            
             self.dismiss(animated: true, completion: nil)
             self.dismiss(animated: true, completion: nil)
-
+            
         }else{
-            if indexPath.section == 0{
-                sport = sportsDict[arrayOfSports[indexPath.row]]!
-                print("Normal Sport: \(sport)")
-                defaults.set(sport, forKey: "defaultSport")
-                self.dismiss(animated: true, completion: nil)
-            }
+            sport = sportsDict[letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]]!
+            sportKey = letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]
+            print("Normal school: \(sport)")
+            defaults.set(sport, forKey: "defaultSport")
+            defaults.set(sportKey, forKey: "defaultSportKey")
+            
+            self.dismiss(animated: true, completion: nil)
         }
-        
     }
+    
     
     
     @IBAction func donePressed(_ sender: AnyObject) {

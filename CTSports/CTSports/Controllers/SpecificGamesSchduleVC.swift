@@ -585,7 +585,8 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showEvent") {
+        print("SEGUE??????")
+        if (segue.identifier == "showEvent2") {
             let newView = segue.destination as! SportingEventVC
             
             let selectedIndexPath = self.tableView.indexPathForSelectedRow
