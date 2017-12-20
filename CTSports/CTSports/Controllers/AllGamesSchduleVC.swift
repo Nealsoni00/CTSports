@@ -14,15 +14,13 @@ import Alamofire
 let sweetBlue = UIColor(red:0.13, green:0.42, blue:0.81, alpha:1.0)
 let sweetGreen = UIColor(red:0.3, green:0.8, blue:0.13, alpha:1.0)
 
-class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate, GADBannerViewDelegate {
+class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate, GADBannerViewDelegate, DataReturnedDelegate {
     
-    
+
     @IBOutlet var activitySpinner: UIActivityIndicatorView!
     //var refreshControl: UIRefreshControl!
     let searchController = UISearchController(searchResultsController: nil)
     var noResultsView: UIView!
-    
-    
     
     var allGames = [SportingEvent]()
     var allGamesV = [SportingEvent]()
@@ -63,7 +61,9 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         super.viewDidLoad()
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        
+        NetworkManager.sharedInstance.delegate = self
+
+
         //Info bar button
         let infoButton = UIButton(type: .infoLight)
         infoButton.addTarget(self, action: #selector(AllGamesSchduleVC.infoPressed), for: .touchUpInside)
@@ -156,10 +156,17 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         if (schoolChanged){
             removeAll()
             tableView.reloadData()
-            getGames()
+            NetworkManager.sharedInstance.performRequest(school: school)
             schoolChanged = false
         }
     }
+    
+    func dataRecieved(allGames: [SportingEvent]) {
+        self.parseAllGamesIntoDictionaries()
+    }
+    
+    
+    
     func functionsToAddBannerViewToView(){
         bannerView =  GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         
@@ -178,7 +185,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
     }
     override func viewWillAppear(_ animated: Bool) {
         if (self.uniqueNSGameDates.count == 0) {
-            getGames()
+//            NetworkManager.sharedInstance.performRequest(school: school)
             self.updatedLast = Date(timeIntervalSinceReferenceDate: Date().timeIntervalSinceReferenceDate)
         }
     }
@@ -189,8 +196,9 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
     
     
     @objc func refresh(sender:AnyObject) {
-        getGames()
-        
+        self.removeAll()
+        NetworkManager.sharedInstance.performRequest(school: school)
+
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "MMM d, h:mm a"
@@ -209,6 +217,8 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         
         self.activitySpinner.startAnimating()
         self.activitySpinner.isHidden = false
+        
+        NetworkManager.sharedInstance.allGames.removeAll()
         
         allGames.removeAll()
         allGamesV.removeAll()
@@ -238,129 +248,6 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         gamesDictionaryAll.removeAll()
         
     }
-    
-    func getGames(){
-        removeAll()
-        Alamofire.request("https://www.casciac.org/xml/?sc=\(school)&starttoday=1").responseJSON { response in
-            
-            let xml = SWXMLHash.lazy(response.data!)
-            
-            for elem in xml["SCHEDULE_DATA"]["EVENTS"]["EVENT"].all {
-                let sportName = elem["sport"].element!.text
-                let gameDate1 = elem["gamedate"].element!.text
-                let homeAway = elem["site"].element!.text
-                var location = elem["facility"].element!.text
-                let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil)
-                let level = elem["gamelevel"].element!.text
-                
-                let gameType = elem["gametype"].element!.text
-                let season = elem["season"].element!.text
-                let opponent = elem["opponent"].element!.text
-                let directionsURL = elem["directionsurl"].element!.text
-                let id_num = elem["id_num"].element!.text
-                let bus = elem["bus"].element!.text
-                let busTime = elem["bustime"].element!.text
-                
-                
-                var dateArray : [String] = gameDate1.components(separatedBy: "-")
-                
-                let index = gameDate1.index(gameDate1.startIndex, offsetBy: 8)
-                var day = gameDate1.substring(from: index)
-                let dayFirst = day.index(day.startIndex, offsetBy: 1);
-                let temp = day.substring(to: dayFirst)
-                
-                if temp == "0" {
-                    day = day.substring(from: dayFirst)
-                }
-                
-                let monthName = DateFormatter().monthSymbols[Int(dateArray[1])! - 1]
-                
-                
-                let (gameNSDate, weekDay) = self.convertDateToDay(date: gameDate1)
-                //varsity game
-                let gameDate = self.convertDaytoWeekday(date: gameNSDate) + ", " + monthName + " " + day
-                
-                if location == "" {
-                    location = "Location Unknown"
-                }
-                
-                if gameType != "Practice" {
-                    
-                    let event = SportingEvent(sport: sportName, stringDate: gameDate, gameNSDate: gameNSDate, weekday: weekDay, time: time, school: location, gameLevel: level, home: homeAway, gameType: gameType, season: season, opponent: opponent, directionsURL: directionsURL, id_num: id_num, bus: bus, busTime: busTime)
-                    
-                    if level == "V" {
-                        if (self.gamesDictionaryV[gameNSDate]?.append(event)) == nil {
-                            self.gamesDictionaryV[gameNSDate] = [event]
-                        }
-                        //print("new game: \(event.sport)")
-                        //print("added \(String(describing: self.gamesDictionaryV[gameNSDate]))");
-                        self.gameNSDatesV.append(gameNSDate)
-                        self.allGamesV.append(event)
-                    }
-                    if level == "JV" {
-                        if (self.gamesDictionaryJV[gameNSDate]?.append(event)) == nil {
-                            self.gamesDictionaryJV[gameNSDate] = [event]
-                        }
-                        //print("new game: \(event.sport)")
-                        //print("added \(String(describing: self.gamesDictionaryV[gameNSDate]))");
-                        self.gameNSDatesJV.append(gameNSDate)
-                        self.allGamesJV.append(event)
-                    }
-                    if level == "FR" {
-                        if (self.gamesDictionaryFR[gameNSDate]?.append(event)) == nil {
-                            self.gamesDictionaryFR[gameNSDate] = [event]
-                        }
-                        //print("new game: \(event.sport)")
-                        //print("added \(String(describing: self.gamesDictionaryV[gameNSDate]))");
-                        self.gameNSDatesFR.append(gameNSDate)
-                        self.allGamesFR.append(event)
-                        
-                    }
-                    if level == "ALL"{
-                        if (self.gamesDictionaryFR[gameNSDate]?.append(event)) == nil {
-                            self.gamesDictionaryFR[gameNSDate] = [event]
-                        }
-                        self.gameNSDatesFR.append(gameNSDate)
-                        self.allGamesFR.append(event)
-                        
-                        if (self.gamesDictionaryJV[gameNSDate]?.append(event)) == nil {
-                            self.gamesDictionaryJV[gameNSDate] = [event]
-                        }
-                        self.gameNSDatesJV.append(gameNSDate)
-                        self.allGamesJV.append(event)
-                        
-                        if (self.gamesDictionaryV[gameNSDate]?.append(event)) == nil {
-                            self.gamesDictionaryV[gameNSDate] = [event]
-                        }
-                        self.gameNSDatesV.append(gameNSDate)
-                        self.allGamesV.append(event)
-                        
-                    }
-                    if (self.gamesDictionaryAll[gameNSDate]?.append(event)) == nil {
-                        self.gamesDictionaryAll[gameNSDate] = [event]
-                    }
-                    self.gameNSDatesAll.append(gameNSDate)
-                    self.allGames.append(event)
-                }
-                
-                
-            }
-            self.gameNSDatesV   = self.gameNSDatesV.removeDuplicates()
-            self.gameNSDatesJV  = self.gameNSDatesJV.removeDuplicates()
-            self.gameNSDatesFR  = self.gameNSDatesFR.removeDuplicates()
-            self.gameNSDatesAll = self.gameNSDatesAll.removeDuplicates()
-            self.activitySpinner.stopAnimating()
-            self.activitySpinner.isHidden = true
-            self.tableView.reloadData()
-            //self.bannerView.superview?.bringSubview(toFront: self.bannerView)
-            
-            //print("GAME DATES: \(self.gameNSDatesV)");
-            //print("UNIQUE GAME DATES: \(self.uniqueNSGameDatesV)");
-            
-        }
-        
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -667,15 +554,83 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             self.filteredUniqueDates.append(event.gameNSDate)
         }
         self.filteredUniqueDates = self.filteredUniqueDates.removeDuplicates()
-        
-        print("unique Dates: \(filteredUniqueDates)")
-        print("unique Events: \(convertedFilteredGames)")
-        
+
         print("Done Filtering")
         tableView.reloadData()
         //bannerView.superview?.bringSubview(toFront: bannerView)
+    }
+    
+    func parseAllGamesIntoDictionaries() {
+//        removeAll()
+        print("parsing")
+        for event in NetworkManager.sharedInstance.allGames {
+            let level = event.gameLevel
+            let gameNSDate = event.gameNSDate
+            if level == "V" {
+                if (self.gamesDictionaryV[gameNSDate]?.append(event)) == nil {
+                    self.gamesDictionaryV[gameNSDate] = [event]
+                }
+                self.gameNSDatesV.append(gameNSDate)
+                self.allGamesV.append(event)
+            }
+            if level == "JV" {
+                if (self.gamesDictionaryJV[gameNSDate]?.append(event)) == nil {
+                    self.gamesDictionaryJV[gameNSDate] = [event]
+                }
+                self.gameNSDatesJV.append(gameNSDate)
+                self.allGamesJV.append(event)
+            }
+            if level == "FR" {
+                if (self.gamesDictionaryFR[gameNSDate]?.append(event)) == nil {
+                    self.gamesDictionaryFR[gameNSDate] = [event]
+                }
+                self.gameNSDatesFR.append(gameNSDate)
+                self.allGamesFR.append(event)
+                
+            }
+            if level == "ALL"{
+                if (self.gamesDictionaryFR[gameNSDate]?.append(event)) == nil {
+                    self.gamesDictionaryFR[gameNSDate] = [event]
+                }
+                self.gameNSDatesFR.append(gameNSDate)
+                self.allGamesFR.append(event)
+                
+                if (self.gamesDictionaryJV[gameNSDate]?.append(event)) == nil {
+                    self.gamesDictionaryJV[gameNSDate] = [event]
+                }
+                self.gameNSDatesJV.append(gameNSDate)
+                self.allGamesJV.append(event)
+                
+                if (self.gamesDictionaryV[gameNSDate]?.append(event)) == nil {
+                    self.gamesDictionaryV[gameNSDate] = [event]
+                }
+                self.gameNSDatesV.append(gameNSDate)
+                self.allGamesV.append(event)
+                
+            }
+            if (self.gamesDictionaryAll[gameNSDate]?.append(event)) == nil {
+                self.gamesDictionaryAll[gameNSDate] = [event]
+            }
+            self.gameNSDatesAll.append(gameNSDate)
+            self.allGames.append(event)
+            
+           
+        }
+        self.gameNSDatesV   = self.gameNSDatesV.removeDuplicates()
+        self.gameNSDatesJV  = self.gameNSDatesJV.removeDuplicates()
+        self.gameNSDatesFR  = self.gameNSDatesFR.removeDuplicates()
+        self.gameNSDatesAll = self.gameNSDatesAll.removeDuplicates()
+        self.activitySpinner.stopAnimating()
+        self.activitySpinner.isHidden = true
+        self.tableView.reloadData()
+        print(gameNSDatesAll.count)
+        print("Done Parsing")
+
+        //bannerView.superview?.bringSubview(toFront: bannerView)
         
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showEvent") {

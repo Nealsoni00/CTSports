@@ -17,23 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DataReturnedDelegate {
 
     var window: UIWindow?
 
-    private let dataModel = NetworkManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        dataModel.delegate = self
+        print(NetworkManager.sharedInstance)
 
         print("i am here")
         school = (defaults.object(forKey: "defaultSchool") as? String) ?? "Staples"
         schoolKey = (defaults.object(forKey: "defaultSchoolKey") as? String) ?? "Staples"
-        self.dataModel.performRequest(school: school as! String)
-        
+        NetworkManager.sharedInstance.performRequest(school: school)
+        NetworkManager.sharedInstance.delegate = self
+
         return true
 
     }
     
     func dataRecieved(allGames: [SportingEvent]) {
-        print(allGames[0].opponent)
+//        print(NetworkManager.sharedInstance.allGames)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
