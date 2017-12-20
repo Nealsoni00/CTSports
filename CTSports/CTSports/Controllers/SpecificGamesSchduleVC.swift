@@ -160,6 +160,8 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     func dataRecieved(allGames: [SportingEvent]) {
     }
     func specificDataRecived(specificGames: [SportingEvent]) {
+        print("SPECIFIC GAMES: \(specificGames)")
+        self.allGames = specificGames
         self.parseSpecificGamesIntoDictionaries()
     }
     func parseSpecificGamesIntoDictionaries() {

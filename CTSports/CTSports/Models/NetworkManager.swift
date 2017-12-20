@@ -22,13 +22,14 @@ class NetworkManager: NSObject {
     var allGames = [SportingEvent]()
     var specificGames = [SportingEvent]()
     weak var delegate: DataReturnedDelegate?
-    
+    var done = false;
+
     private override init() {
         self.baseURL = "https://www.casciac.org/xml/?"
     }
     
     func performRequest(school: String)  {
-        var done = false;
+        print("GETTING ALL GAMES")
         let url = "\(baseURL)sc=\(school)&starttoday=1"
         Alamofire.request(url).responseJSON { response in
             let xml = SWXMLHash.lazy(response.data!)
@@ -79,12 +80,12 @@ class NetworkManager: NSObject {
                     }
                 }
             }
-            done = true;
+            self.done = true;
             self.delegate?.dataRecieved(allGames: self.allGames)
         }
     }
     func performRequest(school: String, sport: String)  {
-        var done = false;
+        print("GETTING SPECIFIC GAMES")
         let url = "\(baseURL)sc=\(school)&sp=\(sport)"
         Alamofire.request(url).responseJSON { response in
             let xml = SWXMLHash.lazy(response.data!)
@@ -133,7 +134,7 @@ class NetworkManager: NSObject {
                     self.specificGames.append(event)
                 }
             }
-            done = true;
+            self.done = true;
             self.delegate?.specificDataRecived(specificGames: self.specificGames)
         }
     }

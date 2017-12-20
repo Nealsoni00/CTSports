@@ -149,6 +149,8 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             print("adding bannerview to view: Remove ads is \(removeAds)")
             functionsToAddBannerViewToView()
         }
+        self.parseAllGamesIntoDictionaries()
+
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -161,11 +163,15 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         }
     }
     func dataRecieved(allGames: [SportingEvent]) {
+        print("ALL GAMES: \(allGames)")
+
         self.allGames = allGames
         self.parseAllGamesIntoDictionaries()
+        
     }
     func specificDataRecived(specificGames: [SportingEvent]) {
-        
+        print("SPECIFIC GAMES: \(specificGames)")
+
     }
     func parseAllGamesIntoDictionaries() {
         print("parsing")
