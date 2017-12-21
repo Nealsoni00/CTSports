@@ -175,7 +175,7 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
             print("Filtered school: \(sport)")
             defaults.set(sport, forKey: "defaultSport")
             defaults.set(sportKey, forKey: "defaultSportKey")
-            
+            NotificationCenter.default.post(name: NSNotification.Name.init("changedSport"), object: nil)
             self.dismiss(animated: true, completion: nil)
             self.dismiss(animated: true, completion: nil)
             
@@ -185,7 +185,7 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
             print("Normal school: \(sport)")
             defaults.set(sport, forKey: "defaultSport")
             defaults.set(sportKey, forKey: "defaultSportKey")
-            
+            NotificationCenter.default.post(name: NSNotification.Name.init("changedSport"), object: nil)
             self.dismiss(animated: true, completion: nil)
         }
     }

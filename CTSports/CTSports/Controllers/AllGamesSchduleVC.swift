@@ -14,7 +14,7 @@ import Alamofire
 let sweetBlue = UIColor(red:0.13, green:0.42, blue:0.81, alpha:1.0)
 let sweetGreen = UIColor(red:0.3, green:0.8, blue:0.13, alpha:1.0)
 
-class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate, GADBannerViewDelegate, DataReturnedDelegate {
+class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate, GADBannerViewDelegate { //DataReturnedDelegate
     
 
     @IBOutlet var activitySpinner: UIActivityIndicatorView!
@@ -61,7 +61,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         super.viewDidLoad()
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        NetworkManager.sharedInstance.delegate = self
+//        NetworkManager.sharedInstance.delegate = self
 
 
         //Info bar button
@@ -136,6 +136,12 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         refreshControl?.backgroundColor = UIColor.white
         refreshControl?.tintColor = UIColor.darkGray
         
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.parseAllGamesIntoDictionaries), name: NSNotification.Name.init("loadedAllGames"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshDataWhenInfoChanged), name: NSNotification.Name.init("changedSchool"), object: nil)
+
+        self.parseAllGamesIntoDictionaries()
+
         self.tableView.reloadData()
         
 //        let tracker = GAI.sharedInstance().defaultTracker
@@ -149,7 +155,6 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             print("adding bannerview to view: Remove ads is \(removeAds)")
             functionsToAddBannerViewToView()
         }
-        self.parseAllGamesIntoDictionaries()
 
         
     }
@@ -162,18 +167,26 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             schoolChanged = false
         }
     }
-    func dataRecieved(allGames: [SportingEvent]) {
-        print("ALL GAMES: \(allGames)")
-
-        self.allGames = allGames
-        self.parseAllGamesIntoDictionaries()
-        
+    @objc func refreshDataWhenInfoChanged(){
+        removeAll()
+        tableView.reloadData()
+        NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
+        schoolChanged = false
+        sportChanged = false
     }
-    func specificDataRecived(specificGames: [SportingEvent]) {
-        print("SPECIFIC GAMES: \(specificGames)")
-
-    }
-    func parseAllGamesIntoDictionaries() {
+//    func dataRecieved(allGames: [SportingEvent]) {
+//        print("ALL GAMES: \(allGames)")
+//
+//        self.allGames = allGames
+//        self.parseAllGamesIntoDictionaries()
+//
+//    }
+//    func specificDataRecived(specificGames: [SportingEvent]) {
+//        print("SPECIFIC GAMES: \(specificGames)")
+//        print("WHY TF AM I HERE!")
+//
+//    }
+    @objc func parseAllGamesIntoDictionaries() {
         print("parsing")
         for event in NetworkManager.sharedInstance.allGames {
             let level = event.gameLevel

@@ -11,7 +11,7 @@ import UIKit
 let defaults = UserDefaults.standard
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, DataReturnedDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
 
     var window: UIWindow?
 
@@ -27,17 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DataReturnedDelegate {
         sportKey = defaults.object(forKey: "defaultSportKey") as? String ?? ""
         NetworkManager.sharedInstance.performRequest(school: school)
         NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
-        NetworkManager.sharedInstance.delegate = self
+//        NetworkManager.sharedInstance.delegate = self
         return true
 
     }
     
-    func dataRecieved(allGames: [SportingEvent]) {
-//        print(NetworkManager.sharedInstance.allGames)
-    }
-    func specificDataRecived(specificGames: [SportingEvent]) {
-        
-    }
+//    func dataRecieved(allGames: [SportingEvent]) {
+////        print(NetworkManager.sharedInstance.allGames)
+//    }
+//    func specificDataRecived(specificGames: [SportingEvent]) {
+//
+//    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

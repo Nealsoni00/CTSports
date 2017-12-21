@@ -11,7 +11,7 @@ import SWXMLHash
 import GoogleMobileAds
 import Alamofire
 
-class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate, GADBannerViewDelegate, DataReturnedDelegate {
+class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate, GADBannerViewDelegate  { //DataReturnedDelegate
 
     @IBOutlet var activitySpinner: UIActivityIndicatorView!
     //var refreshControl: UIRefreshControl!
@@ -57,7 +57,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         super.viewDidLoad()
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        NetworkManager.sharedInstance.delegate = self
+//        NetworkManager.sharedInstance.delegate = self
         
         
         //Info bar button
@@ -132,6 +132,13 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         refreshControl?.backgroundColor = UIColor.white
         refreshControl?.tintColor = UIColor.darkGray
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.parseSpecificGamesIntoDictionaries), name: NSNotification.Name.init("loadedSpecificGames"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshDataWhenInfoChanged), name: NSNotification.Name.init("changegdSport"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshDataWhenInfoChanged), name: NSNotification.Name.init("changedSchool"), object: nil)
+
+
+        self.parseSpecificGamesIntoDictionaries()
+
         self.tableView.reloadData()
         
         //        let tracker = GAI.sharedInstance().defaultTracker
@@ -148,25 +155,41 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = "\(schoolKey.uppercased()) SPORTS SCHEDULE"
+        self.navigationItem.title = "\(sportKey.uppercased()) SCHEDULE"
         if (schoolChanged){
             removeAll()
             tableView.reloadData()
-            NetworkManager.sharedInstance.performRequest(school: school)
+            NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
             schoolChanged = false
         }
+        if (sportChanged){
+            removeAll()
+            print("HEREEEEEEEEEEEE")
+            tableView.reloadData()
+            NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
+            self.parseSpecificGamesIntoDictionaries()
+            sportChanged = false
+        }
     }
-    
-    func dataRecieved(allGames: [SportingEvent]) {
+    @objc func refreshDataWhenInfoChanged(){
+        removeAll()
+        tableView.reloadData()
+        NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
+        schoolChanged = false
+        sportChanged = false
     }
-    func specificDataRecived(specificGames: [SportingEvent]) {
-        print("SPECIFIC GAMES: \(specificGames)")
-        self.allGames = specificGames
-        self.parseSpecificGamesIntoDictionaries()
-    }
-    func parseSpecificGamesIntoDictionaries() {
+//    func dataRecieved(allGames: [SportingEvent]) {
+//    }
+//    func specificDataRecived(specificGames: [SportingEvent]) {
+//        print("SPECIFIC GAMES: \(specificGames)")
+//        print("FUCKING PARSE THIS SHIT")
+////        self.allGames = specificGames
+//        self.parseSpecificGamesIntoDictionaries()
+//    }
+    @objc func parseSpecificGamesIntoDictionaries() {
         print("parsing")
         for event in NetworkManager.sharedInstance.specificGames {
+            print("school: \(event.school)")
             print("sportKey: \(sport), Sport: \(event.sport), Bool: \(event.sport == sportKey)")
             let level = event.gameLevel
             let gameNSDate = event.gameNSDate
@@ -245,7 +268,6 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     @objc func refresh(sender:AnyObject) {
         self.removeAll()
         NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
-        
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "MMM d, h:mm a"
@@ -256,7 +278,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         
         refreshControl?.attributedTitle = attributedTitle
         
-        
+
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }

@@ -181,7 +181,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             print("Filtered school: \(school)")
             defaults.set(school, forKey: "defaultSchool")
             defaults.set(schoolKey, forKey: "defaultSchoolKey")
-
+            NotificationCenter.default.post(name: NSNotification.Name.init("changedSchool"), object: nil)
             self.dismiss(animated: true, completion: nil)
             self.dismiss(animated: true, completion: nil)
             
@@ -191,7 +191,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             print("Normal school: \(school)")
             defaults.set(school, forKey: "defaultSchool")
             defaults.set(schoolKey, forKey: "defaultSchoolKey")
-
+            NotificationCenter.default.post(name: NSNotification.Name.init("changedSchool"), object: nil)
             self.dismiss(animated: true, completion: nil)
         }
     }

@@ -10,10 +10,10 @@ import Foundation
 import Alamofire
 import SWXMLHash
 
-protocol DataReturnedDelegate: class {
-    func dataRecieved(allGames : [SportingEvent])
-    func specificDataRecived(specificGames : [SportingEvent])
-}
+//protocol DataReturnedDelegate: class {
+//    func dataRecieved(allGames : [SportingEvent])
+//    func specificDataRecived(specificGames : [SportingEvent])
+//}
 
 class NetworkManager: NSObject {
     
@@ -21,7 +21,7 @@ class NetworkManager: NSObject {
     let baseURL: String
     var allGames = [SportingEvent]()
     var specificGames = [SportingEvent]()
-    weak var delegate: DataReturnedDelegate?
+//    weak var delegate: DataReturnedDelegate?
     var done = false;
 
     private override init() {
@@ -81,12 +81,13 @@ class NetworkManager: NSObject {
                 }
             }
             self.done = true;
-            self.delegate?.dataRecieved(allGames: self.allGames)
+            NotificationCenter.default.post(name: NSNotification.Name.init("loadedAllGames"), object: nil)
+//            self.delegate?.dataRecieved(allGames: self.allGames)
         }
     }
     func performRequest(school: String, sport: String)  {
         print("GETTING SPECIFIC GAMES")
-        let url = "\(baseURL)sc=\(school)&sp=\(sport)"
+        let url = "\(baseURL)sc=\(school)&sp=\(sport)&starttoday=1"
         Alamofire.request(url).responseJSON { response in
             let xml = SWXMLHash.lazy(response.data!)
             
@@ -135,7 +136,8 @@ class NetworkManager: NSObject {
                 }
             }
             self.done = true;
-            self.delegate?.specificDataRecived(specificGames: self.specificGames)
+            NotificationCenter.default.post(name: NSNotification.Name.init("loadedSpecificGames"), object: nil)
+//            self.delegate?.specificDataRecived(specificGames: self.specificGames)
         }
     }
     
