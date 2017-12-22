@@ -169,8 +169,8 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
     }
     @objc func refreshDataWhenInfoChanged(){
         removeAll()
-        tableView.reloadData()
         NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
+        tableView.reloadData()
         schoolChanged = false
         sportChanged = false
     }
@@ -246,6 +246,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         self.activitySpinner.isHidden = true
         self.tableView.reloadData()
         print(gameNSDatesAll.count)
+        self.activitySpinner.stopAnimating()
     }
     
     
@@ -284,8 +285,6 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         
         self.activitySpinner.startAnimating()
         self.activitySpinner.isHidden = false
-        
-        NetworkManager.sharedInstance.allGames.removeAll()
         
         allGames.removeAll()
         allGamesV.removeAll()

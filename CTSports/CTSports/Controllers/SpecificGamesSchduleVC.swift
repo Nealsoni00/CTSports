@@ -67,6 +67,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         navigationItem.leftBarButtonItem = infoBarButtonItem
         
         
+        //Nav controller bar
         self.navigationController?.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.barTintColor = sweetBlue
         self.navigationController?.navigationBar.isTranslucent = false
@@ -80,6 +81,8 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
                 item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
             }
         }
+        self.tabBarItem.title = "\(sport)"
+
         self.navigationItem.title = "\(schoolKey.capitalized) Sports Schedule"
         
         //Search Stuff
@@ -158,25 +161,25 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         self.navigationItem.title = "\(sportKey.uppercased()) SCHEDULE"
         if (schoolChanged){
             removeAll()
-            tableView.reloadData()
             NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
             schoolChanged = false
         }
         if (sportChanged){
             removeAll()
             print("HEREEEEEEEEEEEE")
-            tableView.reloadData()
             NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
             self.parseSpecificGamesIntoDictionaries()
             sportChanged = false
         }
+        tableView.reloadData()
+
     }
     @objc func refreshDataWhenInfoChanged(){
         removeAll()
-        tableView.reloadData()
         NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
-        schoolChanged = false
+        tableView.reloadData()
         sportChanged = false
+        schoolChanged = false
     }
 //    func dataRecieved(allGames: [SportingEvent]) {
 //    }
@@ -286,8 +289,6 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         
         self.activitySpinner.startAnimating()
         self.activitySpinner.isHidden = false
-        
-        NetworkManager.sharedInstance.specificGames.removeAll()
         
         allGames.removeAll()
         allGamesV.removeAll()

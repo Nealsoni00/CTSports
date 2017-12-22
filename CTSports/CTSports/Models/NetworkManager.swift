@@ -30,6 +30,7 @@ class NetworkManager: NSObject {
     
     func performRequest(school: String)  {
         print("GETTING ALL GAMES")
+        allGames.removeAll()
         let url = "\(baseURL)sc=\(school)&starttoday=1"
         Alamofire.request(url).responseJSON { response in
             let xml = SWXMLHash.lazy(response.data!)
@@ -87,6 +88,7 @@ class NetworkManager: NSObject {
     }
     func performRequest(school: String, sport: String)  {
         print("GETTING SPECIFIC GAMES")
+        specificGames.removeAll()
         let url = "\(baseURL)sc=\(school)&sp=\(sport)&starttoday=1"
         Alamofire.request(url).responseJSON { response in
             let xml = SWXMLHash.lazy(response.data!)
