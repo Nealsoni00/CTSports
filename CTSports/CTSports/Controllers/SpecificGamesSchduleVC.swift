@@ -461,8 +461,11 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
                 cell.home.font = UIFont(name: "HelveticaNeue", size: 35)
                 cell.time.font = UIFont(name: "HelveticaNeue", size: 17)
                 //print(gameDates[indexPath.row])
-                
-                if event.home == "Home" {
+                if event.gameType == "Practice"{
+                    print("Practice")
+                    cell.home.text = "P"
+                    cell.home.textColor = sweetBlue //Classic iStaples Blue
+                }else if event.home == "Home" {
                     cell.home.text = "H"
                     cell.home.textColor = sweetBlue //Classic iStaples Blue
                     
@@ -516,7 +519,10 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             cell.time.font = UIFont(name: "HelveticaNeue", size: 17)
             //print(gameDates[indexPath.row])
             
-            if event.home == "Home" {
+            if event.gameType == "Practice"{
+                cell.home.text = "P"
+                cell.home.textColor = sweetBlue //Classic iStaples Blue
+            }else if event.home == "Home" {
                 cell.home.text = "H"
                 cell.home.textColor = sweetBlue //Classic iStaples Blue
                 //            cell.home.font = UIFont(name: "HelveticaNeue", size: 16)
@@ -616,7 +622,8 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("SEGUE??????")
-        if (segue.identifier == "showEvent2") {
+        if (segue.identifier == "showEvent") {
+            print("Segue called")
             let newView = segue.destination as! SportingEventVC
             
             let selectedIndexPath = self.tableView.indexPathForSelectedRow
