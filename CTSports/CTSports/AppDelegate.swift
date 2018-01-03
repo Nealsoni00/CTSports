@@ -9,6 +9,7 @@
 import UIKit
 
 let defaults = UserDefaults.standard
+var defaultSports = defaults.array(forKey: "allSports") as? Array ?? [""]
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
@@ -20,7 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
         // Override point for customization after application launch.
         print(NetworkManager.sharedInstance)
 
-        print("i am here")
+        var sportsFromDefaults = defaults.array(forKey: "allSports")
+
+        
+        print(defaultSports)
+        
+        
         school = (defaults.object(forKey: "defaultSchool") as? String) ?? "Staples"
         schoolKey = (defaults.object(forKey: "defaultSchoolKey") as? String) ?? "Staples"
         sport = defaults.object(forKey: "defaultSport") as? String ?? ""
@@ -28,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
         NetworkManager.sharedInstance.performRequest(school: school)
         NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
 //        NetworkManager.sharedInstance.delegate = self
+        
+        
         return true
 
     }

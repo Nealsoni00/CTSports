@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -828,7 +828,7 @@
                                         <rect key="frame" x="0.0" y="869.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W8K-A5-Zgo" id="sRp-X0-QGQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by CIAC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CiB-hL-KXK">
@@ -1134,7 +1134,11 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="P3E-tC-tib">
-                        <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" image="Settings-50.png" id="NBV-Wn-KOg">
+                            <connections>
+                                <segue destination="0bW-l3-idS" kind="show" id="UAb-4A-Xbe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activitySpinner" destination="hYN-Ja-2ab" id="u0p-gE-qKm"/>
@@ -1164,9 +1168,83 @@
             </objects>
             <point key="canvasLocation" x="782" y="-322"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="d5q-vt-nUV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0bW-l3-idS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PxH-Sd-Psf">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Isz-yD-Bkb" kind="relationship" relationship="rootViewController" id="qKe-AL-V5G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zyi-3X-iJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2267.1999999999998" y="-709.7451274362819"/>
+        </scene>
+        <!--Default SportsVC-->
+        <scene sceneID="iYc-0X-anq">
+            <objects>
+                <tableViewController id="Isz-yD-Bkb" customClass="DefaultSportsVC" customModule="CTSports" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2fM-I4-Idv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="defaultSportCell" id="Kpm-7O-0QV" customClass="DefaultSportCell" customModule="CTSports" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kpm-7O-0QV" id="JKt-yT-tyM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Baseball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcW-D3-pmk">
+                                            <rect key="frame" x="16" y="5" width="148" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="sport" destination="jcW-D3-pmk" id="4qQ-pQ-2Ie"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Isz-yD-Bkb" id="hjt-6d-WhG"/>
+                            <outlet property="delegate" destination="Isz-yD-Bkb" id="qoq-To-no9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="SCd-LV-fgH">
+                        <barButtonItem key="leftBarButtonItem" title="Done" style="done" id="16G-Ve-Rzc">
+                            <connections>
+                                <action selector="dismiss:" destination="Isz-yD-Bkb" id="05w-eN-Zxm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="w11-Jc-eKs">
+                            <connections>
+                                <action selector="add:" destination="Isz-yD-Bkb" id="YS6-95-4M1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="table" destination="2fM-I4-Idv" id="Ks3-Gf-VNy"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdz-oG-46n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3024.8000000000002" y="-710.19490254872574"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CIAC.png" width="3300" height="2550"/>
+        <image name="Settings-50.png" width="25" height="25"/>
         <image name="compare.png" width="64" height="64"/>
         <image name="email.png" width="42" height="42"/>
         <image name="football.png" width="25" height="25"/>
@@ -1175,6 +1253,6 @@
         <image name="setting.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9Mi-m1-UwP"/>
+        <segue reference="Rjz-p4-bkT"/>
     </inferredMetricsTieBreakers>
 </document>

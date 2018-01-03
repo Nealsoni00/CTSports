@@ -66,6 +66,13 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
         navigationItem.leftBarButtonItem = infoBarButtonItem
         
+//        //Info bar button
+//        let settingsButton = UIButton(type: .infoLight)
+//        infoButton.addTarget(self, action: #selector(AllGamesSchduleVC.infoPressed), for: .touchUpInside)
+//        let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
+//        navigationItem.rightBarButtonItem = infoBarButtonItem
+        
+        
         
         //Nav controller bar
         self.navigationController?.view.backgroundColor = UIColor.white

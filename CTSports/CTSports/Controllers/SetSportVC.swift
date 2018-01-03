@@ -9,6 +9,7 @@
 import UIKit
 import SwiftSpinner
 import Alamofire
+import PopupDialog
 
 var sport: String = defaults.object(forKey: "defaultSport") as? String ?? ""
 var sportKey: String = defaults.object(forKey: "defaultSportKey") as? String ?? ""
@@ -26,6 +27,7 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
     
     var letterDict = [String: [String]]()
     var sectionTitleArray: [String]?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -173,20 +175,82 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
             sport = sportsDict[filteredSports[indexPath.row]]!
             sportKey = filteredSports[indexPath.row]
             print("Filtered school: \(sport)")
-            defaults.set(sport, forKey: "defaultSport")
-            defaults.set(sportKey, forKey: "defaultSportKey")
-            NotificationCenter.default.post(name: NSNotification.Name.init("changedSport"), object: nil)
-            self.dismiss(animated: true, completion: nil)
-            self.dismiss(animated: true, completion: nil)
+            //check for duplicates
+            var exists = false;
+            for sport in defaultSports {
+                if (sport == sportKey) {
+                    print("exists")
+                        exists = true;
+                }
+            }
+
+            if (!exists) {
+                defaults.set(sport, forKey: "defaultSport")
+                defaults.set(sportKey, forKey: "defaultSportKey")
+    
+                defaultSports.append(sportKey);
+                defaults.set(defaultSports, forKey: "allSports")
+                NotificationCenter.default.post(name: NSNotification.Name.init("changedSport"), object: nil)
+                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                print("dup")
+                let popup = PopupDialog(title: "Error", message: "Sport is already a selected default. Please choose another sport or close the window.")
+
+                popup.transitionStyle = .fadeIn
+                let buttonOne = DefaultButton(title: "Dismiss") {
+                }
+                
+                popup.addButton(buttonOne)
+                // to add a single button
+                popup.addButton(buttonOne)
+                // Present dialog
+                self.present(popup, animated: true, completion: nil)
+                tableView.deselectRow(at: indexPath, animated: true)
+
+                exists = false;
+            }
+            
+       
+            
             
         }else{
             sport = sportsDict[letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]]!
             sportKey = letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]
             print("Normal school: \(sport)")
-            defaults.set(sport, forKey: "defaultSport")
-            defaults.set(sportKey, forKey: "defaultSportKey")
-            NotificationCenter.default.post(name: NSNotification.Name.init("changedSport"), object: nil)
-            self.dismiss(animated: true, completion: nil)
+            var exists = false;
+            for sport in defaultSports {
+                if (sport == sportKey) {
+                    print("exists")
+                    exists = true;
+                }
+            }
+ 
+            if (!exists) {
+                defaults.set(sport, forKey: "defaultSport")
+                defaults.set(sportKey, forKey: "defaultSportKey")
+                defaultSports.append(sportKey);
+                defaults.set(defaultSports, forKey: "allSports")
+                NotificationCenter.default.post(name: NSNotification.Name.init("changedSport"), object: nil)
+                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                print("dup")
+
+                let popup = PopupDialog(title: "Error", message: "Sport is already a selected default. Please choose another sport or close the window.")
+                popup.transitionStyle = .fadeIn
+                let buttonOne = DefaultButton(title: "Dismiss") {
+                }
+                
+                popup.addButton(buttonOne)
+                // to add a single button
+                popup.addButton(buttonOne)
+                // Present dialog
+                self.present(popup, animated: true, completion: nil)
+                tableView.deselectRow(at: indexPath, animated: true)
+
+                exists = false;
+            }
         }
     }
     
