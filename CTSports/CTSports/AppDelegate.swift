@@ -22,17 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
         print(NetworkManager.sharedInstance)
 
         var sportsFromDefaults = defaults.array(forKey: "allSports")
-
         
-        print(defaultSports)
+        
+        print("Default Sports: \(defaultSports)")
         
         
         school = (defaults.object(forKey: "defaultSchool") as? String) ?? "Staples"
         schoolKey = (defaults.object(forKey: "defaultSchoolKey") as? String) ?? "Staples"
         sport = defaults.object(forKey: "defaultSport") as? String ?? ""
         sportKey = defaults.object(forKey: "defaultSportKey") as? String ?? ""
-        NetworkManager.sharedInstance.performRequest(school: school)
-        NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
+        NetworkManager.sharedInstance.performRequestSchool()
+        NetworkManager.sharedInstance.getSports()
+        NetworkManager.sharedInstance.performRequestSports()
 //        NetworkManager.sharedInstance.delegate = self
         
         

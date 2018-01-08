@@ -143,7 +143,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         refreshControl?.tintColor = UIColor.darkGray
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.parseSpecificGamesIntoDictionaries), name: NSNotification.Name.init("loadedSpecificGames"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshDataWhenInfoChanged), name: NSNotification.Name.init("changegdSport"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshDataWhenInfoChanged), name: NSNotification.Name.init("changedSport"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshDataWhenInfoChanged), name: NSNotification.Name.init("changedSchool"), object: nil)
 
 
@@ -168,13 +168,13 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         self.navigationItem.title = "\(sportKey.uppercased()) SCHEDULE"
         if (schoolChanged){
             removeAll()
-            NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
+            NetworkManager.sharedInstance.performRequestSports()
             schoolChanged = false
         }
         if (sportChanged){
             removeAll()
             print("HEREEEEEEEEEEEE")
-            NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
+            NetworkManager.sharedInstance.performRequestSports()
             self.parseSpecificGamesIntoDictionaries()
             sportChanged = false
         }
@@ -183,7 +183,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     }
     @objc func refreshDataWhenInfoChanged(){
         removeAll()
-        NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
+        NetworkManager.sharedInstance.performRequestSports()
         tableView.reloadData()
         sportChanged = false
         schoolChanged = false
@@ -277,7 +277,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     
     @objc func refresh(sender:AnyObject) {
         self.removeAll()
-        NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
+        NetworkManager.sharedInstance.performRequestSports()
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "MMM d, h:mm a"
@@ -622,7 +622,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("SEGUE??????")
-        if (segue.identifier == "showEvent") {
+        if (segue.identifier == "showEvent2") {
             print("Segue called")
             let newView = segue.destination as! SportingEventVC
             

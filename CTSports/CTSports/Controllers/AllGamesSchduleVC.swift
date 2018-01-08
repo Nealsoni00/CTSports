@@ -163,13 +163,13 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         if (schoolChanged){
             removeAll()
             tableView.reloadData()
-            NetworkManager.sharedInstance.performRequest(school: school)
+            NetworkManager.sharedInstance.performRequestSchool()
             schoolChanged = false
         }
     }
     @objc func refreshDataWhenInfoChanged(){
         removeAll()
-        NetworkManager.sharedInstance.performRequest(school: school, sport: sport)
+        NetworkManager.sharedInstance.performRequestSchool()
         tableView.reloadData()
         schoolChanged = false
         sportChanged = false
@@ -265,7 +265,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
     
     @objc func refresh(sender:AnyObject) {
         self.removeAll()
-        NetworkManager.sharedInstance.performRequest(school: school)
+        NetworkManager.sharedInstance.performRequestSchool()
 
         let dateFormatter = DateFormatter()
         
