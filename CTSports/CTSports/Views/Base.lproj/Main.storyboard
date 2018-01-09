@@ -1170,7 +1170,7 @@
                     <navigationItem key="navigationItem" id="P3E-tC-tib">
                         <barButtonItem key="rightBarButtonItem" image="Settings-50.png" id="NBV-Wn-KOg">
                             <connections>
-                                <segue destination="0bW-l3-idS" kind="show" id="UAb-4A-Xbe"/>
+                                <segue destination="0bW-l3-idS" kind="show" identifier="SetDefaultSports" id="UAb-4A-Xbe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

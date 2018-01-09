@@ -120,7 +120,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         noResultsView.addSubview(noResultsLabel)
         self.tableView.insertSubview(noResultsView, belowSubview: self.tableView)
         
-        
+        self.activitySpinner.hidesWhenStopped = true
         self.activitySpinner.startAnimating()
         
         let currentDate = NSDate()
@@ -143,12 +143,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         refreshControl?.tintColor = UIColor.darkGray
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.parseSpecificGamesIntoDictionaries), name: NSNotification.Name.init("loadedSpecificGames"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshDataWhenInfoChanged), name: NSNotification.Name.init("changedSport"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshDataWhenInfoChanged), name: NSNotification.Name.init("changedSchool"), object: nil)
-
-
-        self.parseSpecificGamesIntoDictionaries()
-
+        tableView.clearsContextBeforeDrawing = true
         self.tableView.reloadData()
         
         //        let tracker = GAI.sharedInstance().defaultTracker
@@ -166,28 +161,16 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     }
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.title = "\(sportKey.uppercased()) SCHEDULE"
-        if (schoolChanged){
-            removeAll()
-            NetworkManager.sharedInstance.performRequestSports()
-            schoolChanged = false
+        if (NetworkManager.sharedInstance.doneSpecific){
+            parseSpecificGamesIntoDictionaries();
         }
-        if (sportChanged){
-            removeAll()
-            print("HEREEEEEEEEEEEE")
-            NetworkManager.sharedInstance.performRequestSports()
-            self.parseSpecificGamesIntoDictionaries()
-            sportChanged = false
-        }
+//        if !(NetworkManager.sharedInstance.specificGames === self.allGames){
+//            self.refresh(sender: AnyObject.self as AnyObject)
+//        }
         tableView.reloadData()
 
     }
-    @objc func refreshDataWhenInfoChanged(){
-        removeAll()
-        NetworkManager.sharedInstance.performRequestSports()
-        tableView.reloadData()
-        sportChanged = false
-        schoolChanged = false
-    }
+
 //    func dataRecieved(allGames: [SportingEvent]) {
 //    }
 //    func specificDataRecived(specificGames: [SportingEvent]) {
@@ -197,7 +180,9 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
 //        self.parseSpecificGamesIntoDictionaries()
 //    }
     @objc func parseSpecificGamesIntoDictionaries() {
-        print("parsing")
+        self.removeAll()
+        print("parsing SPECIFIC GAMES")
+        print(NetworkManager.sharedInstance.specificGames)
         for event in NetworkManager.sharedInstance.specificGames {
             print("school: \(event.school)")
             print("sportKey: \(sport), Sport: \(event.sport), Bool: \(event.sport == sportKey)")
@@ -251,10 +236,11 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             self.gameNSDatesAll.append(gameNSDate)
             self.allGames.append(event)
         }
-        self.gameNSDatesV   = self.gameNSDatesV.removeDuplicates()
-        self.gameNSDatesJV  = self.gameNSDatesJV.removeDuplicates()
-        self.gameNSDatesFR  = self.gameNSDatesFR.removeDuplicates()
-        self.gameNSDatesAll = self.gameNSDatesAll.removeDuplicates()
+        self.gameNSDatesV   = self.gameNSDatesV.removeDuplicates().sorted(by: { $0.compare($1 as Date) == .orderedAscending })
+        self.gameNSDatesJV  = self.gameNSDatesJV.removeDuplicates().sorted(by: { $0.compare($1 as Date) == .orderedAscending })
+        self.gameNSDatesFR  = self.gameNSDatesFR.removeDuplicates().sorted(by: { $0.compare($1 as Date) == .orderedAscending })
+//        self.allGames = NetworkManager.sharedInstance.specificGames
+        self.gameNSDatesAll = self.gameNSDatesAll.removeDuplicates().sorted(by: { $0.compare($1 as Date) == .orderedAscending })
         self.activitySpinner.stopAnimating()
         self.activitySpinner.isHidden = true
         self.tableView.reloadData()
@@ -268,6 +254,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             //            NetworkManager.sharedInstance.performRequest(school: school)
             self.updatedLast = Date(timeIntervalSinceReferenceDate: Date().timeIntervalSinceReferenceDate)
         }
+        tableView.reloadData()
     }
     @objc func infoPressed() {
         let infoPage = self.storyboard?.instantiateViewController(withIdentifier: "infoVC") as! UINavigationController
@@ -331,26 +318,73 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         // Dispose of any resources that can be recreated.
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if searchController.isActive && searchController.searchBar.text != "" {
-            uniqueNSGameDates = filteredUniqueDates
-            print("number of sections: \(filteredUniqueDates)")
-        }else{
-            switch gameLevel {
-            case "V":
-                uniqueNSGameDates = gameNSDatesV
-            case "FR":
-                uniqueNSGameDates = gameNSDatesFR
-            case "JV":
-                uniqueNSGameDates = gameNSDatesJV
-            case "All":
-                uniqueNSGameDates = gameNSDatesAll
-                
-            default:
-                uniqueNSGameDates = gameNSDatesV
+        if (defaultSports.count > 0){
+            self.tableView.backgroundView = .none
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+
+            if searchController.isActive && searchController.searchBar.text != "" {
+                uniqueNSGameDates = filteredUniqueDates
+                print("number of sections: \(filteredUniqueDates)")
+            }else{
+                switch gameLevel {
+                case "V":
+                    uniqueNSGameDates = gameNSDatesV
+                case "FR":
+                    uniqueNSGameDates = gameNSDatesFR
+                case "JV":
+                    uniqueNSGameDates = gameNSDatesJV
+                case "All":
+                    uniqueNSGameDates = gameNSDatesAll
+                    
+                default:
+                    uniqueNSGameDates = gameNSDatesV
+                }
             }
+            //print("There are \(uniqueNSGameDates.count) Section")
+            return uniqueNSGameDates.count
+        }else{
+            // Display a message when the table is empty
+            let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+            
+            let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 100, height: 100))
+            sportsIcon.image = UIImage(named: "CIAC.png")
+            sportsIcon.center.x = newView.center.x
+            
+            let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
+            messageLabel.text = "You have no default sports. To add a new default sport, please tap below and press \"add\""
+            messageLabel.textColor = UIColor.black
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = .center
+            messageLabel.center.x = newView.center.x
+            messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+            
+            let newClassButton: UIButton = UIButton(frame: CGRect(x: 0, y: newView.center.y + 50, width: 200, height: 50))
+            newClassButton.backgroundColor = UIColor.purple
+            newClassButton.center.x = newView.center.x
+            newClassButton.setTitle("Add Sport", for: UIControlState())
+            newClassButton.titleLabel?.textAlignment = .center
+            newClassButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 25)
+            newClassButton.addTarget(self, action: #selector(SpecificGamesSchduleVC.addSport), for: .touchUpInside)
+            
+            
+            newView.addSubview(sportsIcon)
+            newView.addSubview(messageLabel)
+            newView.addSubview(newClassButton)
+            
+            self.tableView.backgroundView = newView
+            self.tableView.separatorStyle = .none
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            self.activitySpinner.stopAnimating()
+            
         }
-        //print("There are \(uniqueNSGameDates.count) Section")
-        return uniqueNSGameDates.count
+        return 0
+    
+    }
+    @objc func addSport(){
+        let addSportPage = self.storyboard?.instantiateViewController(withIdentifier: "SetSportViewController")
+//        self.present(addSportPage!, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "SetDefaultSports", sender: nil)
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

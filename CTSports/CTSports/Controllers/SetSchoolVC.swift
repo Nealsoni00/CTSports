@@ -186,10 +186,12 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
                 navigationController?.pushViewController(vc,
                                                          animated: true)
             } else {
+                NetworkManager.sharedInstance.performRequestSchool()
                 self.dismiss(animated: true, completion: nil)
             }
        
             
+    
             
         }else{
             school = schoolsDict[letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]]!
@@ -204,6 +206,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
                 navigationController?.pushViewController(vc,
                                                          animated: true)
             } else {
+                NetworkManager.sharedInstance.performRequestSchool()
                 self.dismiss(animated: true, completion: nil)
             }
           

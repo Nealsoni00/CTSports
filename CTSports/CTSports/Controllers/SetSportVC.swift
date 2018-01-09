@@ -190,12 +190,12 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
             }
 
             if (!exists) {
-                defaults.set(sport, forKey: "defaultSport")
-                defaults.set(sportKey, forKey: "defaultSportKey")
+ 
     
                 defaultSports.append(sportKey);
                 defaults.set(defaultSports, forKey: "allSports")
-                NotificationCenter.default.post(name: NSNotification.Name.init("changedSport"), object: nil)
+                NetworkManager.sharedInstance.performRequestSports()
+//                NotificationCenter.default.post(name: NSNotification.Name.init("changedSport"), object: nil)
                 self.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true, completion: nil)
             } else {
