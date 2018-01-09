@@ -138,7 +138,7 @@ class DefaultSportsVC: UITableViewController {
         if (!self.swipeMode) {
             if (editing) {
                 self.table.allowsSelectionDuringEditing = true
-                if (defaultSports != nil){
+                if (defaultSports.count != 0){
                     if (defaultSports.count > 0) {
                         self.table.insertRows(at: [IndexPath(row: defaultSports.count, section: 0)], with: .automatic)
                     }

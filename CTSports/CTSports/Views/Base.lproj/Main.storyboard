@@ -1174,7 +1174,7 @@
                                     <outlet property="school" destination="LD8-j1-g8J" id="MQL-AY-jSk"/>
                                     <outlet property="sport" destination="WhV-tv-Jyk" id="4fQ-mM-WK8"/>
                                     <outlet property="time" destination="zYW-5C-KTV" id="ypP-ea-tuO"/>
-                                    <segue destination="SjN-0n-faM" kind="show" identifier="showEvent2" trigger="accessoryAction" id="Rjz-p4-bkT"/>
+                                    <segue destination="SjN-0n-faM" kind="show" identifier="showEvent2" id="CJq-5F-UPE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1335,6 +1335,6 @@
         <image name="setting.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Rjz-p4-bkT"/>
+        <segue reference="CJq-5F-UPE"/>
     </inferredMetricsTieBreakers>
 </document>
