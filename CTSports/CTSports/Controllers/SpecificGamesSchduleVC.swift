@@ -143,12 +143,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         refreshControl?.tintColor = UIColor.darkGray
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.parseSpecificGamesIntoDictionaries), name: NSNotification.Name.init("loadedSpecificGames"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshDataWhenInfoChanged), name: NSNotification.Name.init("changedSport"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshDataWhenInfoChanged), name: NSNotification.Name.init("changedSchool"), object: nil)
-
-
-        self.parseSpecificGamesIntoDictionaries()
-
+        
         self.tableView.reloadData()
         
         //        let tracker = GAI.sharedInstance().defaultTracker
@@ -166,28 +161,13 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     }
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.title = "\(sportKey.uppercased()) SCHEDULE"
-        if (schoolChanged){
-            removeAll()
-            NetworkManager.sharedInstance.performRequestSports()
-            schoolChanged = false
-        }
-        if (sportChanged){
-            removeAll()
-            print("HEREEEEEEEEEEEE")
-            NetworkManager.sharedInstance.performRequestSports()
-            self.parseSpecificGamesIntoDictionaries()
-            sportChanged = false
+        if (NetworkManager.sharedInstance.doneSpecific){
+            parseSpecificGamesIntoDictionaries();
         }
         tableView.reloadData()
 
     }
-    @objc func refreshDataWhenInfoChanged(){
-        removeAll()
-        NetworkManager.sharedInstance.performRequestSports()
-        tableView.reloadData()
-        sportChanged = false
-        schoolChanged = false
-    }
+
 //    func dataRecieved(allGames: [SportingEvent]) {
 //    }
 //    func specificDataRecived(specificGames: [SportingEvent]) {
@@ -197,7 +177,9 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
 //        self.parseSpecificGamesIntoDictionaries()
 //    }
     @objc func parseSpecificGamesIntoDictionaries() {
-        print("parsing")
+        self.removeAll()
+        print("parsing SPECIFIC GAMES")
+        print(NetworkManager.sharedInstance.specificGames)
         for event in NetworkManager.sharedInstance.specificGames {
             print("school: \(event.school)")
             print("sportKey: \(sport), Sport: \(event.sport), Bool: \(event.sport == sportKey)")
@@ -251,10 +233,10 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             self.gameNSDatesAll.append(gameNSDate)
             self.allGames.append(event)
         }
-        self.gameNSDatesV   = self.gameNSDatesV.removeDuplicates()
-        self.gameNSDatesJV  = self.gameNSDatesJV.removeDuplicates()
-        self.gameNSDatesFR  = self.gameNSDatesFR.removeDuplicates()
-        self.gameNSDatesAll = self.gameNSDatesAll.removeDuplicates()
+        self.gameNSDatesV   = self.gameNSDatesV.removeDuplicates().sorted(by: { $0.compare($1 as Date) == .orderedAscending })
+        self.gameNSDatesJV  = self.gameNSDatesJV.removeDuplicates().sorted(by: { $0.compare($1 as Date) == .orderedAscending })
+        self.gameNSDatesFR  = self.gameNSDatesFR.removeDuplicates().sorted(by: { $0.compare($1 as Date) == .orderedAscending })
+        self.gameNSDatesAll = self.gameNSDatesAll.removeDuplicates().sorted(by: { $0.compare($1 as Date) == .orderedAscending })
         self.activitySpinner.stopAnimating()
         self.activitySpinner.isHidden = true
         self.tableView.reloadData()

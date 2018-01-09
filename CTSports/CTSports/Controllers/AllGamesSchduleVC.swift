@@ -138,9 +138,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.parseAllGamesIntoDictionaries), name: NSNotification.Name.init("loadedAllGames"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshDataWhenInfoChanged), name: NSNotification.Name.init("changedSchool"), object: nil)
 
-        self.parseAllGamesIntoDictionaries()
 
         self.tableView.reloadData()
         
@@ -168,21 +166,13 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = "\(schoolKey.uppercased()) SPORTS SCHEDULE"
-        if (schoolChanged){
-            removeAll()
-            tableView.reloadData()
-            NetworkManager.sharedInstance.performRequestSchool()
-            schoolChanged = false
+        if (NetworkManager.sharedInstance.done){
+            
+            parseAllGamesIntoDictionaries()
         }
+        self.navigationItem.title = "\(schoolKey.uppercased()) SPORTS SCHEDULE"
     }
-    @objc func refreshDataWhenInfoChanged(){
-        removeAll()
-        NetworkManager.sharedInstance.performRequestSchool()
-        tableView.reloadData()
-        schoolChanged = false
-        sportChanged = false
-    }
+    
 //    func dataRecieved(allGames: [SportingEvent]) {
 //        print("ALL GAMES: \(allGames)")
 //
@@ -196,6 +186,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
 //
 //    }
     @objc func parseAllGamesIntoDictionaries() {
+        self.removeAll()
         print("parsing")
         for event in NetworkManager.sharedInstance.allGames {
             let level = event.gameLevel

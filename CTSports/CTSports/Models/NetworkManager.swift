@@ -23,6 +23,7 @@ class NetworkManager: NSObject {
     var specificGames = [SportingEvent]()
 //    weak var delegate: DataReturnedDelegate?
     var done = false;
+    var doneSpecific = false;
 
     private override init() {
         self.baseURL = "https://www.casciac.org/xml/?"
@@ -82,6 +83,8 @@ class NetworkManager: NSObject {
                 }
             }
             self.done = true;
+            self.allGames = self.allGames.sorted(by: { $0.gameNSDate.compare($1.gameNSDate as Date) == .orderedAscending})
+
             NotificationCenter.default.post(name: NSNotification.Name.init("loadedAllGames"), object: nil)
 //            self.delegate?.dataRecieved(allGames: self.allGames)
         }
@@ -101,7 +104,7 @@ class NetworkManager: NSObject {
                         let gameDate1 = elem["gamedate"].element!.text
                         let homeAway = elem["site"].element!.text
                         var location = elem["facility"].element!.text
-                        let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil)
+                        let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil).replacingOccurrences(of: "pm", with: "PM", options: .literal, range: nil)
                         let level = elem["gamelevel"].element!.text
                         
                         let gameType = elem["gametype"].element!.text
@@ -124,8 +127,7 @@ class NetworkManager: NSObject {
                         }
                         
                         let monthName = DateFormatter().monthSymbols[Int(dateArray[1])! - 1]
-                        
-                        
+                    
                         let (gameNSDate, weekDay) = self.convertDateToDay(date: gameDate1)
                         //varsity game
                         let gameDate = self.convertDaytoWeekday(date: gameNSDate) + ", " + monthName + " " + day
@@ -140,11 +142,15 @@ class NetworkManager: NSObject {
                             self.specificGames.append(event)
                         }
                     }
+                    self.doneSpecific = true;
+                    self.specificGames = self.specificGames.sorted(by: { $0.gameNSDate.compare($1.gameNSDate as Date) == .orderedAscending})
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name.init("loadedSpecificGames"), object: nil)
+                    //            self.delegate?.specificDataRecived(specificGames: self.specificGames)
+
                 }
             }
-            self.done = true;
-            NotificationCenter.default.post(name: NSNotification.Name.init("loadedSpecificGames"), object: nil)
-//            self.delegate?.specificDataRecived(specificGames: self.specificGames)
+            
         }
     }
     func getSports(){
