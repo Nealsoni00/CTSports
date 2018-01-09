@@ -208,6 +208,8 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             } else {
                 NetworkManager.sharedInstance.performRequestSchool()
                 self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+
             }
           
         }

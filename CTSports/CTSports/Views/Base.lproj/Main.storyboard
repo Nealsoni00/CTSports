@@ -528,6 +528,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="0bW-l3-idS" kind="presentation" id="5Em-Uk-EWj"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" id="65X-MZ-hVX">
                                         <rect key="frame" x="0.0" y="421.5" width="375" height="44"/>
@@ -1236,14 +1239,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Baseball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcW-D3-pmk">
-                                            <rect key="frame" x="16" y="5" width="148" height="33"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baseball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcW-D3-pmk">
+                                            <rect key="frame" x="16" y="11.5" width="343" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jcW-D3-pmk" firstAttribute="leading" secondItem="JKt-yT-tyM" secondAttribute="leading" constant="16" id="022-UZ-KFv"/>
+                                        <constraint firstItem="jcW-D3-pmk" firstAttribute="centerY" secondItem="JKt-yT-tyM" secondAttribute="centerY" id="DNZ-jQ-Rn8"/>
+                                        <constraint firstAttribute="trailing" secondItem="jcW-D3-pmk" secondAttribute="trailing" constant="16" id="dEi-Hg-SUG"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="sport" destination="jcW-D3-pmk" id="4qQ-pQ-2Ie"/>
@@ -1305,6 +1312,7 @@
         <image name="setting.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="5Em-Uk-EWj"/>
         <segue reference="9Mi-m1-UwP"/>
     </inferredMetricsTieBreakers>
 </document>

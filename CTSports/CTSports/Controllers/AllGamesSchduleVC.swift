@@ -320,26 +320,67 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         // Dispose of any resources that can be recreated.
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if searchController.isActive && searchController.searchBar.text != "" {
-            uniqueNSGameDates = filteredUniqueDates
-            print("number of sections: \(filteredUniqueDates)")
-        }else{
-            switch gameLevel {
-            case "V":
-                uniqueNSGameDates = gameNSDatesV
-            case "FR":
-                uniqueNSGameDates = gameNSDatesFR
-            case "JV":
-                uniqueNSGameDates = gameNSDatesJV
-            case "All":
-                uniqueNSGameDates = gameNSDatesAll
-                
-            default:
-                uniqueNSGameDates = gameNSDatesV
+        
+        if (school != ""){
+            self.tableView.backgroundView = .none
+
+            if searchController.isActive && searchController.searchBar.text != "" {
+                uniqueNSGameDates = filteredUniqueDates
+                print("number of sections: \(filteredUniqueDates)")
+            }else{
+                switch gameLevel {
+                case "V":
+                    uniqueNSGameDates = gameNSDatesV
+                case "FR":
+                    uniqueNSGameDates = gameNSDatesFR
+                case "JV":
+                    uniqueNSGameDates = gameNSDatesJV
+                case "All":
+                    uniqueNSGameDates = gameNSDatesAll
+                    
+                default:
+                    uniqueNSGameDates = gameNSDatesV
+                }
             }
+            return uniqueNSGameDates.count
+        }else{
+            let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+            
+            let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 100, height: 100))
+            sportsIcon.image = UIImage(named: "CIAC.png")
+            sportsIcon.center.x = newView.center.x
+            
+            let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
+            messageLabel.text = "You have no default School. To add a default school, please tap below and press \"add\""
+            messageLabel.textColor = UIColor.black
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = .center
+            messageLabel.center.x = newView.center.x
+            messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+            
+            let newClassButton: UIButton = UIButton(frame: CGRect(x: 0, y: newView.center.y + 50, width: 200, height: 50))
+            newClassButton.backgroundColor = UIColor.purple
+            newClassButton.center.x = newView.center.x
+            newClassButton.setTitle("Add School", for: UIControlState())
+            newClassButton.titleLabel?.textAlignment = .center
+            newClassButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 25)
+            newClassButton.addTarget(self, action: #selector(AllGamesSchduleVC.addSchool), for: .touchUpInside)
+            
+            
+            newView.addSubview(sportsIcon)
+            newView.addSubview(messageLabel)
+            newView.addSubview(newClassButton)
+            
+            self.tableView.backgroundView = newView
+            self.tableView.separatorStyle = .none
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
+        return 0
         //print("There are \(uniqueNSGameDates.count) Section")
-        return uniqueNSGameDates.count
+    }
+    @objc func addSchool(){
+        let VC1 = self.storyboard?.instantiateViewController(withIdentifier: "SetSchoolViewController") as! UINavigationController
+        self.present(VC1, animated:true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

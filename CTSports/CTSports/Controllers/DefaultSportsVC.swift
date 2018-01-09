@@ -64,9 +64,28 @@ class DefaultSportsVC: UITableViewController {
             newClassButton.addTarget(self, action: #selector(DefaultSportsVC.addSport), for: .touchUpInside)
             
             
+//            let skipLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 10, width: newView.frame.width - 20, height: 50))
+//            skipLabel.text = "To Skip, \npress done above"
+//            skipLabel.textColor = UIColor.black
+//            skipLabel.numberOfLines = 0
+//            skipLabel.textAlignment = .center
+//            skipLabel.center.x = 60
+//            skipLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+            
+            let skipButton: UIButton = UIButton(frame: CGRect(x: 0, y: newView.center.y + 120, width: 200, height: 50))
+            skipButton.backgroundColor = UIColor.blue
+            skipButton.center.x = newView.center.x
+            skipButton.setTitle("Skip", for: UIControlState())
+            skipButton.titleLabel?.textAlignment = .center
+            skipButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 25)
+            skipButton.addTarget(self, action: #selector(DefaultSportsVC.skipView), for: .touchUpInside)
+            
+            
             newView.addSubview(sportsIcon)
             newView.addSubview(messageLabel)
             newView.addSubview(newClassButton)
+            newView.addSubview(skipButton)
+
             
             self.tableView.backgroundView = newView
             self.tableView.separatorStyle = .none
@@ -97,7 +116,9 @@ class DefaultSportsVC: UITableViewController {
         return cell
     }
  
-
+    @objc func skipView(){
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func dismiss(_ sender: Any) {
         NetworkManager.sharedInstance.performRequestSports()
         self.dismiss(animated: true, completion: nil)

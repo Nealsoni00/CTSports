@@ -57,9 +57,9 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             case 2:
                 let VC1 = self.storyboard?.instantiateViewController(withIdentifier: "SetSchoolViewController") as! UINavigationController
                 self.present(VC1, animated:true, completion: nil)
-            case 3:
-                let VC1 = self.storyboard?.instantiateViewController(withIdentifier: "SetSportViewController") as! UINavigationController
-                self.present(VC1, animated:true, completion: nil)
+//            case 3:
+//                let VC1 = self.storyboard?.instantiateViewController(withIdentifier: "SetSportViewController") as! UINavigationController
+//                self.present(VC1, animated:true, completion: nil)
             default:
                 break
             }
