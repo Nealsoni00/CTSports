@@ -158,6 +158,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             currentSchool = letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]
         }
         cell.textLabel?.text = currentSchool
+
         return cell
     }
     
@@ -170,6 +171,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let previousVC = backViewController()
         schoolChanged = true
         if searchController.isActive && searchController.searchBar.text != "" {
             school = schoolsDict[filteredSchools[indexPath.row]]!
@@ -178,8 +180,16 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             defaults.set(school, forKey: "defaultSchool")
             defaults.set(schoolKey, forKey: "defaultSchoolKey")
             NotificationCenter.default.post(name: NSNotification.Name.init("changedSchool"), object: nil)
-            self.dismiss(animated: true, completion: nil)
-            self.dismiss(animated: true, completion: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DefaultSportsVC") as! DefaultSportsVC
+            if (previousVC?.title == "Initial") {
+                navigationController?.pushViewController(vc,
+                                                         animated: true)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+       
+            
             
         }else{
             school = schoolsDict[letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]]!
@@ -188,7 +198,15 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             defaults.set(school, forKey: "defaultSchool")
             defaults.set(schoolKey, forKey: "defaultSchoolKey")
             NotificationCenter.default.post(name: NSNotification.Name.init("changedSchool"), object: nil)
-            self.dismiss(animated: true, completion: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DefaultSportsVC") as! DefaultSportsVC
+            if (previousVC?.title == "Initial") {
+                navigationController?.pushViewController(vc,
+                                                         animated: true)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+          
         }
     }
     

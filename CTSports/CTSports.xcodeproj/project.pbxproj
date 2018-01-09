@@ -46,6 +46,8 @@
 		499CA8501FF8A939006FC328 /* DefaultSportingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA84F1FF8A939006FC328 /* DefaultSportingEvent.swift */; };
 		499CA8521FF8A9BF006FC328 /* DefaultSportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA8511FF8A9BF006FC328 /* DefaultSportsVC.swift */; };
 		49A321D21FE7F07700074A36 /* schoolcodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49A321D11FE7F07700074A36 /* schoolcodes.txt */; };
+		49B502CE2004636F00EAF53E /* InitialInstallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B502CD2004636F00EAF53E /* InitialInstallViewController.swift */; };
+		49B502D220047F1100EAF53E /* PreviousVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B502D120047F1100EAF53E /* PreviousVCExtension.swift */; };
 		49CDAADB1FE84890005475FB /* SequenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAADA1FE84890005475FB /* SequenceExtension.swift */; };
 		49CDAADD1FE8A58D005475FB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAADC1FE8A58D005475FB /* NetworkManager.swift */; };
 		49CDAADF1FE8B604005475FB /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAADE1FE8B604005475FB /* ArrayExtension.swift */; };
@@ -116,6 +118,8 @@
 		499CA84F1FF8A939006FC328 /* DefaultSportingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSportingEvent.swift; sourceTree = "<group>"; };
 		499CA8511FF8A9BF006FC328 /* DefaultSportsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSportsVC.swift; sourceTree = "<group>"; };
 		49A321D11FE7F07700074A36 /* schoolcodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schoolcodes.txt; sourceTree = "<group>"; };
+		49B502CD2004636F00EAF53E /* InitialInstallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialInstallViewController.swift; sourceTree = "<group>"; };
+		49B502D120047F1100EAF53E /* PreviousVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousVCExtension.swift; sourceTree = "<group>"; };
 		49CDAADA1FE84890005475FB /* SequenceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtension.swift; sourceTree = "<group>"; };
 		49CDAADC1FE8A58D005475FB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		49CDAADE1FE8B604005475FB /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				366A8D931FE17D110082A64D /* SpecificGamesSchduleVC.swift */,
 				366A8DC81FE17F8C0082A64D /* SportingEventVC.swift */,
 				499CA8511FF8A9BF006FC328 /* DefaultSportsVC.swift */,
+				49B502CD2004636F00EAF53E /* InitialInstallViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				49CDAADA1FE84890005475FB /* SequenceExtension.swift */,
 				49CDAADE1FE8B604005475FB /* ArrayExtension.swift */,
 				36ACF2C31FE98E59007BE150 /* StringExtension.swift */,
+				49B502D120047F1100EAF53E /* PreviousVCExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -640,11 +646,13 @@
 				49CDAADB1FE84890005475FB /* SequenceExtension.swift in Sources */,
 				366A8DDB1FE40F8C0082A64D /* UIImageViewExtension.swift in Sources */,
 				36ACF2C21FE8A98C007BE150 /* SetSportVC.swift in Sources */,
+				49B502D220047F1100EAF53E /* PreviousVCExtension.swift in Sources */,
 				366A8DD51FE19EB30082A64D /* NSDateExtension.swift in Sources */,
 				49CDAADF1FE8B604005475FB /* ArrayExtension.swift in Sources */,
 				366A8DC21FE17DA50082A64D /* SportingEvent.swift in Sources */,
 				36ACF2C41FE98E59007BE150 /* StringExtension.swift in Sources */,
 				49CDAADD1FE8A58D005475FB /* NetworkManager.swift in Sources */,
+				49B502CE2004636F00EAF53E /* InitialInstallViewController.swift in Sources */,
 				366A8DC71FE17E050082A64D /* SportsInfoCell.swift in Sources */,
 				366A8D921FE17D110082A64D /* AllGamesSchduleVC.swift in Sources */,
 			);

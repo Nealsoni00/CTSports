@@ -40,6 +40,7 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
         UIApplication.shared.statusBarStyle = .lightContent
         
+   
         
         let backButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
@@ -75,6 +76,9 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
         self.tableView.insertSubview(noResultsView, belowSubview: self.tableView)
         
         self.getSports()
+        
+        
+        
 
         
     }
@@ -105,6 +109,7 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
         if arrayOfSports.count == 0{
             self.getSports()
         }
+     
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         if searchController.isActive && searchController.searchBar.text != "" {
@@ -278,9 +283,5 @@ extension SetSportVC: UISearchResultsUpdating {
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
-
-
-
-
 
 

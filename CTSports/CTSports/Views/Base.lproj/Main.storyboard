@@ -1026,10 +1026,10 @@
             </objects>
             <point key="canvasLocation" x="1473" y="2736"/>
         </scene>
-        <!--View Controller-->
+        <!--Initial-->
         <scene sceneID="TJ9-Nr-QmY">
             <objects>
-                <viewController id="kYB-Dj-Zxb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Initial" title="Initial" id="kYB-Dj-Zxb" customClass="InitialInstallViewController" customModule="CTSports" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ycR-u2-CJ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1042,35 +1042,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffe-qO-6uc">
+                                <rect key="frame" x="117" y="478" width="140" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Let's do this"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="kYB-Dj-Zxb" eventType="touchUpInside" id="gij-11-HOu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="utH-o0-ekc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cgY-r8-FYt">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="Isu-eT-9HW"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="cgY-r8-FYt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2h-fT-J4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1506.4000000000001" y="3436.7316341829087"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Fm5-CK-9q0">
-            <objects>
-                <viewController id="msu-js-jud" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vzZ-Si-Mla">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Q8z-Ck-va8"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="RuW-ly-4yb">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="2S5-EQ-l4q"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="thi-rr-BZf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4732" y="3446.6266866566721"/>
         </scene>
         <!--Specific Games SchduleVC-->
         <scene sceneID="HbY-kx-Wj0">
@@ -1235,7 +1223,7 @@
         <!--Default SportsVC-->
         <scene sceneID="iYc-0X-anq">
             <objects>
-                <tableViewController id="Isz-yD-Bkb" customClass="DefaultSportsVC" customModule="CTSports" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DefaultSportsVC" id="Isz-yD-Bkb" customClass="DefaultSportsVC" customModule="CTSports" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2fM-I4-Idv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1305,24 +1293,6 @@
             </objects>
             <point key="canvasLocation" x="782" y="3437"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dMP-75-xO2">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U84-sG-xiP" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ga3-GM-d1C">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="msu-js-jud" kind="relationship" relationship="rootViewController" id="eLR-D5-sr5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FLe-En-CRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4018" y="3446"/>
-        </scene>
     </scenes>
     <resources>
         <image name="CIAC.png" width="3300" height="2550"/>
@@ -1335,6 +1305,6 @@
         <image name="setting.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CJq-5F-UPE"/>
+        <segue reference="9Mi-m1-UwP"/>
     </inferredMetricsTieBreakers>
 </document>
