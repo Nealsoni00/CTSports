@@ -9,7 +9,12 @@
 import UIKit
 
 let defaults = UserDefaults.standard
-var defaultSports = defaults.array(forKey: "allSports") as? Array ?? [""]
+var defaultSports = defaults.array(forKey: "allSports") as? Array ?? [String]()
+var school: String = defaults.object(forKey: "defaultSchool") as? String ?? ""
+var schoolKey: String = defaults.object(forKey: "defaultSchoolKey") as? String ?? ""
+
+var schoolsDict = [String: String]()
+var schoolChanged = false
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
@@ -27,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
         print(defaultSports)
         
         
-        school = (defaults.object(forKey: "defaultSchool") as? String) ?? "Staples"
-        schoolKey = (defaults.object(forKey: "defaultSchoolKey") as? String) ?? "Staples"
+        school = (defaults.object(forKey: "defaultSchool") as? String) ?? ""
+        schoolKey = (defaults.object(forKey: "defaultSchoolKey") as? String) ?? ""
         sport = defaults.object(forKey: "defaultSport") as? String ?? ""
         sportKey = defaults.object(forKey: "defaultSportKey") as? String ?? ""
         NetworkManager.sharedInstance.performRequest(school: school)

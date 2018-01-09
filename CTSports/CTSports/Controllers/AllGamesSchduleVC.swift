@@ -155,6 +155,15 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             print("adding bannerview to view: Remove ads is \(removeAds)")
             functionsToAddBannerViewToView()
         }
+        
+        //detect if init install
+        print(defaultSports)
+        print(school)
+        if(defaultSports.isEmpty && school == "") {
+            let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "InitialInstallViewController") as! UINavigationController
+            self.present(vc1, animated:true, completion: nil)
+
+        }
 
         
     }

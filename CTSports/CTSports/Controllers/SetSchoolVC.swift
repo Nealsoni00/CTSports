@@ -10,11 +10,7 @@ import UIKit
 import SwiftSpinner
 import Alamofire
 
-var school: String = defaults.object(forKey: "defaultSchool") as? String ?? "Staples"
-var schoolKey: String = defaults.object(forKey: "defaultSchoolKey") as? String ?? "Staples"
 
-var schoolsDict = [String: String]()
-var schoolChanged = false
 
 class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControllerDelegate {
     
