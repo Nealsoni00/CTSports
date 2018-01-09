@@ -39,9 +39,49 @@ class DefaultSportsVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        if (defaultSports.count < 1){
+            // Display a message when the table is empty
+            let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+            
+            let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 100, height: 100))
+            sportsIcon.image = UIImage(named: "CIAC.png")
+            sportsIcon.center.x = newView.center.x
+            
+            let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
+            messageLabel.text = "You have no default sports. To add a new default sport, please tap below and press \"add\""
+            messageLabel.textColor = UIColor.black
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = .center
+            messageLabel.center.x = newView.center.x
+            messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+            
+            let newClassButton: UIButton = UIButton(frame: CGRect(x: 0, y: newView.center.y + 50, width: 200, height: 50))
+            newClassButton.backgroundColor = UIColor.purple
+            newClassButton.center.x = newView.center.x
+            newClassButton.setTitle("Add Sport", for: UIControlState())
+            newClassButton.titleLabel?.textAlignment = .center
+            newClassButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 25)
+            newClassButton.addTarget(self, action: #selector(DefaultSportsVC.addSport), for: .touchUpInside)
+            
+            
+            newView.addSubview(sportsIcon)
+            newView.addSubview(messageLabel)
+            newView.addSubview(newClassButton)
+            
+            self.tableView.backgroundView = newView
+            self.tableView.separatorStyle = .none
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            
+        }else{
+            self.tableView.backgroundView = .none
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
         return 1
     }
-
+    @objc func addSport(){
+        let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "SetSportViewController") as! UINavigationController
+        self.present(vc1, animated:true, completion: nil)
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return defaultSports.count
@@ -59,6 +99,7 @@ class DefaultSportsVC: UITableViewController {
  
 
     @IBAction func dismiss(_ sender: Any) {
+        NetworkManager.sharedInstance.performRequestSports()
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func add(_ sender: Any) {
