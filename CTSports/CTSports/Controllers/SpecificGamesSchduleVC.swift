@@ -88,9 +88,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
                 item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
             }
         }
-        self.tabBarItem.title = "\(sport)"
 
-        self.navigationItem.title = "\(schoolKey.capitalized) Sports Schedule"
         
         //Search Stuff
         searchController.searchResultsUpdater = self as? UISearchResultsUpdating
@@ -160,7 +158,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = "\(sportKey.uppercased()) SCHEDULE"
+        self.navigationItem.title = "YOUR SPORTS"
         if (NetworkManager.sharedInstance.doneSpecific){
             parseSpecificGamesIntoDictionaries();
         }
