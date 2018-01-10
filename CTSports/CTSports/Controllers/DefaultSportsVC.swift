@@ -25,7 +25,7 @@ class DefaultSportsVC: UITableViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
         UIApplication.shared.statusBarStyle = .lightContent
 
-        self.navigationItem.title = "Default Sports"
+        self.navigationItem.title = "Your Sports"
 
 //        print(self.defaultSports.count)
     }
@@ -108,11 +108,12 @@ class DefaultSportsVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "defaultSportCell", for: indexPath) as! DefaultSportCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SetInfoCell", for: indexPath) as! SetInfoCell
 
         let current = defaultSports[indexPath.row]
-        cell.sport.text = current;
-
+        cell.infoText.text = current;
+        let image: UIImage = UIImage(named: "\(current.replacingOccurrences(of: " ", with: "")).png") ?? UIImage()
+        cell.sportImage!.image = image
         return cell
     }
  

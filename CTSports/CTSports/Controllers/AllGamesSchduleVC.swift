@@ -11,7 +11,8 @@ import SWXMLHash
 import GoogleMobileAds
 import Alamofire
 
-let sweetBlue = UIColor(red:0.13, green:0.42, blue:0.81, alpha:1.0)
+//let sweetBlue = UIColor(red:0.13, green:0.42, blue:0.81, alpha:1.0)
+let sweetBlue = UIColor(red:0.00, green:0.34, blue:0.60, alpha:1.0)
 let sweetGreen = UIColor(red:0.3, green:0.8, blue:0.13, alpha:1.0)
 
 class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate, GADBannerViewDelegate { //DataReturnedDelegate
@@ -70,7 +71,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
         navigationItem.leftBarButtonItem = infoBarButtonItem
         
-        
+        levelSelector.tintColor = sweetBlue
         self.navigationController?.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.barTintColor = sweetBlue
         self.navigationController?.navigationBar.isTranslucent = false

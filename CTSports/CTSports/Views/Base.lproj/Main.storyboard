@@ -1003,13 +1003,40 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetInfoCell" id="U8P-Ua-WWh">
-                                <rect key="frame" x="0.0" y="82" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetInfoCell" rowHeight="73" id="U8P-Ua-WWh" customClass="SetInfoCell" customModule="CTSports" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="82" width="375" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U8P-Ua-WWh" id="63v-s6-jfg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVj-CL-3q9">
+                                            <rect key="frame" x="10" y="5" width="63" height="63"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="63" id="43E-eg-Peb"/>
+                                                <constraint firstAttribute="height" constant="63" id="bXW-Du-zk2"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jy-vX-BSa">
+                                            <rect key="frame" x="81" y="26.5" width="268" height="20"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4jy-vX-BSa" secondAttribute="trailing" constant="10" id="82T-t4-OHb"/>
+                                        <constraint firstItem="gVj-CL-3q9" firstAttribute="top" secondItem="63v-s6-jfg" secondAttribute="top" constant="5" id="Cma-EI-d69"/>
+                                        <constraint firstItem="gVj-CL-3q9" firstAttribute="leading" secondItem="63v-s6-jfg" secondAttribute="leading" constant="10" id="Xg0-hf-V3D"/>
+                                        <constraint firstItem="4jy-vX-BSa" firstAttribute="centerY" secondItem="63v-s6-jfg" secondAttribute="centerY" id="d00-Pp-gf5"/>
+                                        <constraint firstItem="4jy-vX-BSa" firstAttribute="leading" secondItem="gVj-CL-3q9" secondAttribute="trailing" constant="8" id="lhD-7o-W4l"/>
+                                        <constraint firstAttribute="bottom" secondItem="gVj-CL-3q9" secondAttribute="bottom" constant="5" id="ycg-Bg-h2H"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="infoText" destination="4jy-vX-BSa" id="S0j-SH-6zt"/>
+                                    <outlet property="sportImage" destination="gVj-CL-3q9" id="7xz-cG-rGe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1027,7 +1054,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6j1-Uv-8Xx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="2736"/>
+            <point key="canvasLocation" x="1472.8" y="2735.9820089955024"/>
         </scene>
         <!--Initial-->
         <scene sceneID="TJ9-Nr-QmY">
@@ -1232,28 +1259,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="defaultSportCell" id="Kpm-7O-0QV" customClass="DefaultSportCell" customModule="CTSports" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetInfoCell" rowHeight="73" id="t9w-bR-gWR" customClass="SetInfoCell" customModule="CTSports" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kpm-7O-0QV" id="JKt-yT-tyM">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t9w-bR-gWR" id="hHy-is-ooN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baseball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcW-D3-pmk">
-                                            <rect key="frame" x="16" y="11.5" width="343" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YXv-4T-xpH">
+                                            <rect key="frame" x="10" y="5" width="63" height="63"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="63" id="6DK-8j-7d0"/>
+                                                <constraint firstAttribute="width" constant="63" id="VSD-zZ-jJN"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRT-wb-xDD">
+                                            <rect key="frame" x="81" y="26.5" width="268" height="20"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="jcW-D3-pmk" firstAttribute="leading" secondItem="JKt-yT-tyM" secondAttribute="leading" constant="16" id="022-UZ-KFv"/>
-                                        <constraint firstItem="jcW-D3-pmk" firstAttribute="centerY" secondItem="JKt-yT-tyM" secondAttribute="centerY" id="DNZ-jQ-Rn8"/>
-                                        <constraint firstAttribute="trailing" secondItem="jcW-D3-pmk" secondAttribute="trailing" constant="16" id="dEi-Hg-SUG"/>
+                                        <constraint firstItem="MRT-wb-xDD" firstAttribute="centerY" secondItem="hHy-is-ooN" secondAttribute="centerY" id="IXq-La-EZ7"/>
+                                        <constraint firstItem="MRT-wb-xDD" firstAttribute="leading" secondItem="YXv-4T-xpH" secondAttribute="trailing" constant="8" id="K5P-5g-LvR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="MRT-wb-xDD" secondAttribute="trailing" constant="10" id="KcY-iz-pMA"/>
+                                        <constraint firstItem="YXv-4T-xpH" firstAttribute="leading" secondItem="hHy-is-ooN" secondAttribute="leading" constant="10" id="SVV-Xb-a0G"/>
+                                        <constraint firstAttribute="bottom" secondItem="YXv-4T-xpH" secondAttribute="bottom" constant="5" id="hjs-Ub-6ql"/>
+                                        <constraint firstItem="YXv-4T-xpH" firstAttribute="top" secondItem="hHy-is-ooN" secondAttribute="top" constant="5" id="nVI-GX-fcD"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="sport" destination="jcW-D3-pmk" id="4qQ-pQ-2Ie"/>
+                                    <outlet property="infoText" destination="MRT-wb-xDD" id="sJP-OZ-xAe"/>
+                                    <outlet property="sportImage" destination="YXv-4T-xpH" id="JP0-fX-tzZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1312,7 +1350,7 @@
         <image name="setting.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Em-Uk-EWj"/>
-        <segue reference="9Mi-m1-UwP"/>
+        <segue reference="UAb-4A-Xbe"/>
+        <segue reference="CJq-5F-UPE"/>
     </inferredMetricsTieBreakers>
 </document>

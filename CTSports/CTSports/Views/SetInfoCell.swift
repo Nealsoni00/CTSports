@@ -12,6 +12,8 @@ class SetInfoCell: UITableViewCell {
 
     @IBOutlet weak var infoText: UILabel!
     
+    @IBOutlet weak var sportImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

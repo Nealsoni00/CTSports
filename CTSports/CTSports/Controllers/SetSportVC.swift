@@ -147,8 +147,9 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
             return sportWithLetterArray.count
         }
     }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "SetInfoCell", for: indexPath)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "SetInfoCell", for: indexPath) as! SetInfoCell
         
         arrayOfSports = Array(sportsDict.keys).sorted(by: <)
         var currentSport = ""
@@ -162,7 +163,12 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
             
             currentSport = letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]
         }
-        cell.textLabel?.text = currentSport
+        cell.infoText.text = currentSport
+
+        let image: UIImage = UIImage(named: "\(currentSport.replacingOccurrences(of: " ", with: "")).png") ?? UIImage()
+        cell.sportImage!.image = image
+
+        
         return cell
     }
     
