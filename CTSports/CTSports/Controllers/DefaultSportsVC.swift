@@ -113,7 +113,7 @@ class DefaultSportsVC: UITableViewController {
         let current = defaultSports[indexPath.row]
         cell.infoText.text = current;
         let image: UIImage = UIImage(named: "\(current.replacingOccurrences(of: " ", with: "")).png") ?? UIImage()
-        cell.sportImage!.image = image
+        cell.sportImage!.image = image.imageWithColor(sweetBlue)
         return cell
     }
  

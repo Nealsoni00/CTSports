@@ -41,7 +41,7 @@ class NetworkManager: NSObject {
                 let gameDate1 = elem["gamedate"].element!.text
                 let homeAway = elem["site"].element!.text
                 var location = elem["facility"].element!.text
-                let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil)
+                let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil).replacingOccurrences(of: "pm", with: "PM", options: .literal, range: nil)
                 let level = elem["gamelevel"].element!.text
                 
                 let gameType = elem["gametype"].element!.text
@@ -65,8 +65,29 @@ class NetworkManager: NSObject {
                 
                 let monthName = DateFormatter().monthSymbols[Int(dateArray[1])! - 1]
                 
-                
                 let (gameNSDate, weekDay) = self.convertDateToDay(date: gameDate1)
+                
+                var exactDate = gameNSDate
+
+                //Add time to GameNSDate object
+                let calendar = Calendar.current
+                var dateComponents = calendar.dateComponents([.year, .month, .day], from: gameNSDate as Date)
+                let outFormatter = DateFormatter()
+                outFormatter.locale = Locale(identifier: "en_US_POSIX")
+                outFormatter.dateFormat = "hh:mma"
+                let timeDate = outFormatter.date(from: time) ?? outFormatter.date(from: "12:00AM")
+                let timeComponents = calendar.dateComponents([.hour, .minute, .second], from: timeDate!)
+
+                dateComponents.hour = timeComponents.hour
+                dateComponents.minute = timeComponents.minute
+                dateComponents.second = timeComponents.second
+
+                exactDate = calendar.date(from: dateComponents)! as NSDate
+            
+//                    Date(year: dateComponents.year, month: dateComponents.month, day: dateComponents.day, hour: timeComponents.hour, minute: timeComponents.minute, second: timeComponents.second)
+                
+                
+                
                 //varsity game
                 let gameDate = self.convertDaytoWeekday(date: gameNSDate) + ", " + monthName + " " + day
                 
@@ -75,7 +96,7 @@ class NetworkManager: NSObject {
                 }
                 
                 if gameType != "Practice" {
-                    let event = SportingEvent(sport: sportName, stringDate: gameDate, gameNSDate: gameNSDate, weekday: weekDay, time: time, school: location, gameLevel: level, home: homeAway, gameType: gameType, season: season, opponent: opponent, directionsURL: directionsURL, id_num: id_num, bus: bus, busTime: busTime)
+                    let event = SportingEvent(sport: sportName, stringDate: gameDate, gameNSDate: gameNSDate, weekday: weekDay, time: time, school: location, gameLevel: level, home: homeAway, gameType: gameType, season: season, opponent: opponent, directionsURL: directionsURL, id_num: id_num, bus: bus, busTime: busTime, exactDate: exactDate)
                     
                     if (gameDate1 != "TBA") {
                         self.allGames.append(event)
@@ -129,6 +150,24 @@ class NetworkManager: NSObject {
                         let monthName = DateFormatter().monthSymbols[Int(dateArray[1])! - 1]
                     
                         let (gameNSDate, weekDay) = self.convertDateToDay(date: gameDate1)
+                        var exactDate = gameNSDate
+                        
+                        //Add time to GameNSDate object
+                        let calendar = Calendar.current
+                        var dateComponents = calendar.dateComponents([.year, .month, .day], from: gameNSDate as Date)
+                        let outFormatter = DateFormatter()
+                        outFormatter.locale = Locale(identifier: "en_US_POSIX")
+                        outFormatter.dateFormat = "hh:mma"
+                        let timeDate = outFormatter.date(from: time) ?? outFormatter.date(from: "12:00AM")
+                        let timeComponents = calendar.dateComponents([.hour, .minute, .second], from: timeDate!)
+                        
+                        dateComponents.hour = timeComponents.hour
+                        dateComponents.minute = timeComponents.minute
+                        dateComponents.second = timeComponents.second
+                        
+                        exactDate = calendar.date(from: dateComponents)! as NSDate
+                        
+                        
                         //varsity game
                         let gameDate = self.convertDaytoWeekday(date: gameNSDate) + ", " + monthName + " " + day
                         
@@ -136,14 +175,14 @@ class NetworkManager: NSObject {
                             location = "Location Unknown"
                         }
                         
-                        let event = SportingEvent(sport: sportName, stringDate: gameDate, gameNSDate: gameNSDate, weekday: weekDay, time: time, school: location, gameLevel: level, home: homeAway, gameType: gameType, season: season, opponent: opponent, directionsURL: directionsURL, id_num: id_num, bus: bus, busTime: busTime)
-                        
+                        let event = SportingEvent(sport: sportName, stringDate: gameDate, gameNSDate: gameNSDate, weekday: weekDay, time: time, school: location, gameLevel: level, home: homeAway, gameType: gameType, season: season, opponent: opponent, directionsURL: directionsURL, id_num: id_num, bus: bus, busTime: busTime, exactDate: exactDate)
+
                         if (gameDate1 != "TBA") {
                             self.specificGames.append(event)
                         }
                     }
                     self.doneSpecific = true;
-                    self.specificGames = self.specificGames.sorted(by: { $0.gameNSDate.compare($1.gameNSDate as Date) == .orderedAscending})
+                    self.specificGames = self.specificGames.sorted(by: { $0.exactDate.compare($1.exactDate as Date) == .orderedAscending})
                     
                     NotificationCenter.default.post(name: NSNotification.Name.init("loadedSpecificGames"), object: nil)
                     //            self.delegate?.specificDataRecived(specificGames: self.specificGames)
