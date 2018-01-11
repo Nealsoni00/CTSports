@@ -1064,16 +1064,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZG-ui-kQM">
-                                <rect key="frame" x="87" y="181" width="200" height="304"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CIAC.png" translatesAutoresizingMaskIntoConstraints="NO" id="mAw-nb-ukd">
+                                <rect key="frame" x="63" y="199" width="249" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Welcome to CT Sports. Blah blah blah. Neal is awesome. Please select your default school and sports(not required to choose sports).</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffe-qO-6uc">
-                                <rect key="frame" x="117" y="478" width="140" height="57"/>
+                                <rect key="frame" x="117" y="415" width="140" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Let's do this"/>
                                 <connections>
@@ -1085,6 +1081,9 @@
                         <viewLayoutGuide key="safeArea" id="utH-o0-ekc"/>
                     </view>
                     <navigationItem key="navigationItem" id="cgY-r8-FYt"/>
+                    <connections>
+                        <outlet property="imageView" destination="mAw-nb-ukd" id="XTf-ZL-Qpu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2h-fT-J4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

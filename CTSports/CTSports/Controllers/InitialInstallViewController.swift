@@ -10,6 +10,7 @@ import UIKit
 
 class InitialInstallViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,10 +25,39 @@ class InitialInstallViewController: UIViewController {
     @IBAction func buttonClicked(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SetSchoolVC") as! SetSchoolVC
-        navigationController?.pushViewController(vc,
-                                                 animated: true)
+        vc.view.frame.origin.y = 667;
+
+        //        navigationController?.pushViewController(vc,
+//                                                 animated: true)
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.imageView.frame.origin.y = -90;
+        }, completion: {
+            (value: Bool) in
+            UIView.animate(withDuration: 0.5, animations: {
+          
+
+                //            self.present(vc, animated: true, completion: nil)
+                self.addChildViewController(vc)
+                self.view.addSubview(vc.view)
+                vc.didMove(toParentViewController: self)
+                vc.view.frame.origin.y -= 667;
+           
+            
+        }, completion: nil)
+             })
         
     }
+        
+    
+    
+    
+    func done() {
+
+        
+    }
+    
+    
     
     
 
