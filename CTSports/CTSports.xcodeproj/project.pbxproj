@@ -100,6 +100,13 @@
 		367B38B520053DB500560F2C /* Pom-Pom.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B387320053DB500560F2C /* Pom-Pom.png */; };
 		367B38B620053DB500560F2C /* Drumline.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B387420053DB500560F2C /* Drumline.png */; };
 		367B38B720053DB500560F2C /* GirlsGolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B387520053DB500560F2C /* GirlsGolf.png */; };
+		367B38B920065E7200560F2C /* BoysCrew.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B38B820065E7000560F2C /* BoysCrew.png */; };
+		367B38C12007177700560F2C /* SF Collegiate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BD2007175A00560F2C /* SF Collegiate.ttf */; };
+		367B38C22007177A00560F2C /* SF Collegiate Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BB2007175300560F2C /* SF Collegiate Solid.ttf */; };
+		367B38C32007177E00560F2C /* SF Collegiate Solid Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38C02007176300560F2C /* SF Collegiate Solid Italic.ttf */; };
+		367B38C42007178000560F2C /* SF Collegiate Solid Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BC2007175600560F2C /* SF Collegiate Solid Bold.ttf */; };
+		367B38C52007178200560F2C /* SF Collegiate Solid Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BF2007176000560F2C /* SF Collegiate Solid Bold Italic.ttf */; };
+		367B38C62007178500560F2C /* SF Collegiate Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BE2007175D00560F2C /* SF Collegiate Italic.ttf */; };
 		368D7E871FE6E8DA000BE5D4 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 368D7E861FE6E8DA000BE5D4 /* setting@2x.png */; };
 		368D7E8B1FE6EA19000BE5D4 /* CIAC.png in Resources */ = {isa = PBXBuildFile; fileRef = 368D7E8A1FE6EA18000BE5D4 /* CIAC.png */; };
 		368D7E8D1FE6EA21000BE5D4 /* CIACsmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 368D7E8C1FE6EA1E000BE5D4 /* CIACsmall.png */; };
@@ -237,6 +244,13 @@
 		367B387320053DB500560F2C /* Pom-Pom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pom-Pom.png"; sourceTree = "<group>"; };
 		367B387420053DB500560F2C /* Drumline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drumline.png; sourceTree = "<group>"; };
 		367B387520053DB500560F2C /* GirlsGolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsGolf.png; sourceTree = "<group>"; };
+		367B38B820065E7000560F2C /* BoysCrew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysCrew.png; sourceTree = "<group>"; };
+		367B38BB2007175300560F2C /* SF Collegiate Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Solid.ttf"; sourceTree = "<group>"; };
+		367B38BC2007175600560F2C /* SF Collegiate Solid Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Solid Bold.ttf"; sourceTree = "<group>"; };
+		367B38BD2007175A00560F2C /* SF Collegiate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate.ttf"; sourceTree = "<group>"; };
+		367B38BE2007175D00560F2C /* SF Collegiate Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Italic.ttf"; sourceTree = "<group>"; };
+		367B38BF2007176000560F2C /* SF Collegiate Solid Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Solid Bold Italic.ttf"; sourceTree = "<group>"; };
+		367B38C02007176300560F2C /* SF Collegiate Solid Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Solid Italic.ttf"; sourceTree = "<group>"; };
 		368D7E861FE6E8DA000BE5D4 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
 		368D7E8A1FE6EA18000BE5D4 /* CIAC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CIAC.png; sourceTree = "<group>"; };
 		368D7E8C1FE6EA1E000BE5D4 /* CIACsmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CIACsmall.png; sourceTree = "<group>"; };
@@ -320,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				366A8D8F1FE17D110082A64D /* AppDelegate.swift */,
+				367B38BA2007174200560F2C /* Resources */,
 				366A8DD31FE19E8E0082A64D /* Utilities */,
 				366A8DC51FE17DE20082A64D /* Views */,
 				366A8DC01FE17D9A0082A64D /* Models */,
@@ -475,6 +490,7 @@
 				367B386120053DB500560F2C /* PowderpuffFootball.png */,
 				367B386220053DB500560F2C /* Baseball.png */,
 				367B386320053DB500560F2C /* UnifiedSportsVolleyball.png */,
+				367B38B820065E7000560F2C /* BoysCrew.png */,
 				367B386420053DB500560F2C /* Football.png */,
 				367B386520053DB500560F2C /* MiscellaneousEvents.png */,
 				367B386620053DB500560F2C /* BoysAlpineSkiing.png */,
@@ -495,6 +511,19 @@
 				367B387520053DB500560F2C /* GirlsGolf.png */,
 			);
 			path = "CT SPORTS sport logos";
+			sourceTree = "<group>";
+		};
+		367B38BA2007174200560F2C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				367B38BE2007175D00560F2C /* SF Collegiate Italic.ttf */,
+				367B38BF2007176000560F2C /* SF Collegiate Solid Bold Italic.ttf */,
+				367B38BC2007175600560F2C /* SF Collegiate Solid Bold.ttf */,
+				367B38C02007176300560F2C /* SF Collegiate Solid Italic.ttf */,
+				367B38BB2007175300560F2C /* SF Collegiate Solid.ttf */,
+				367B38BD2007175A00560F2C /* SF Collegiate.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		4496378FA81FCE1567B785E1 /* Frameworks */ = {
@@ -638,6 +667,7 @@
 			files = (
 				367B389720053DB500560F2C /* MathTeam.png in Resources */,
 				367B38AD20053DB500560F2C /* BoysSoccer.png in Resources */,
+				367B38C62007178500560F2C /* SF Collegiate Italic.ttf in Resources */,
 				367B38AA20053DB500560F2C /* BoysCrossCountry.png in Resources */,
 				367B388720053DB500560F2C /* Crew.png in Resources */,
 				367B389420053DB500560F2C /* BoysSailing.png in Resources */,
@@ -650,30 +680,36 @@
 				367B38B220053DB500560F2C /* GirlsVolleyball.png in Resources */,
 				367B387620053DB500560F2C /* UnifiedSportsBasketball.png in Resources */,
 				367B38B720053DB500560F2C /* GirlsGolf.png in Resources */,
+				367B38C22007177A00560F2C /* SF Collegiate Solid.ttf in Resources */,
 				367B38B120053DB500560F2C /* Softball.png in Resources */,
 				49A321D21FE7F07700074A36 /* schoolcodes.txt in Resources */,
 				367B389020053DB500560F2C /* BoysIceHockey.png in Resources */,
 				367B388020053DB500560F2C /* GirlsAlpineSkiing.png in Resources */,
+				367B38B920065E7200560F2C /* BoysCrew.png in Resources */,
 				367B389A20053DB500560F2C /* UnifiedSportsSoccer.png in Resources */,
 				367B388820053DB500560F2C /* GirlsWaterPolo.png in Resources */,
 				367B388D20053DB500560F2C /* GirlsCrossCountry.png in Resources */,
 				367B38AE20053DB500560F2C /* GirlsIndoorTrack.png in Resources */,
+				367B38C42007178000560F2C /* SF Collegiate Solid Bold.ttf in Resources */,
 				367B38A420053DB500560F2C /* Baseball.png in Resources */,
 				367B389F20053DB500560F2C /* Wrestling.png in Resources */,
 				367B38A520053DB500560F2C /* UnifiedSportsVolleyball.png in Resources */,
 				367B38AC20053DB500560F2C /* GirlsFencing.png in Resources */,
 				3653CDA01FE5FE2F00F396CD /* info.png in Resources */,
 				367B388620053DB500560F2C /* Co-edFencing.png in Resources */,
+				367B38C12007177700560F2C /* SF Collegiate.ttf in Resources */,
 				367B38B520053DB500560F2C /* Pom-Pom.png in Resources */,
 				367B389820053DB500560F2C /* Co-edRifle.png in Resources */,
 				367B38B620053DB500560F2C /* Drumline.png in Resources */,
 				367B389D20053DB500560F2C /* BoysVolleyball.png in Resources */,
 				367B389520053DB500560F2C /* DanceTeam.png in Resources */,
 				367B388B20053DB500560F2C /* ColorGuard.png in Resources */,
+				367B38C32007177E00560F2C /* SF Collegiate Solid Italic.ttf in Resources */,
 				367B38B420053DB500560F2C /* BoysGolf.png in Resources */,
 				367B388F20053DB500560F2C /* BoysOutdoorTrack.png in Resources */,
 				367B38AB20053DB500560F2C /* GirlsOutdoorTrack.png in Resources */,
 				367B387720053DB500560F2C /* GirlsIceHockey.png in Resources */,
+				367B38C52007178200560F2C /* SF Collegiate Solid Bold Italic.ttf in Resources */,
 				367B389C20053DB500560F2C /* BoysFencing.png in Resources */,
 				367B387D20053DB500560F2C /* Band.png in Resources */,
 				367B387F20053DB500560F2C /* DebateTeam.png in Resources */,

@@ -17,9 +17,14 @@ import Foundation
 import UIKit
 
 class SportingEventVC: UITableViewController {
-    let sweetBlue = UIColor(red:0.13, green:0.42, blue:0.81, alpha:1.0)
     @IBOutlet var loadingSpinner: UIActivityIndicatorView!
     @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var opponentLabel: UILabel!
+    @IBOutlet var homeLetterView: UIView!
+    @IBOutlet var homeLetter: UILabel!
+    @IBOutlet var opponentLetter: UILabel!
+    @IBOutlet var opponentLetterView: UIView!
+    
     var currentEvent: SportingEvent?
     
     var headers = [String]()
@@ -28,7 +33,7 @@ class SportingEventVC: UITableViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = self.sweetBlue
+        self.navigationController?.navigationBar.barTintColor = sweetBlue
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 15)!, NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -73,12 +78,24 @@ class SportingEventVC: UITableViewController {
             
             var opponentName = self.currentEvent!.opponent.components(separatedBy: " ")
             opponentName.append(school)
-            if (opponentName[0] != "") {
-                nameLabel.attributedText = "\(school) \nvs \n \(self.currentEvent!.opponent)".color(opponentName)
-            }else{
-                nameLabel.attributedText = "\(school) \nvs \n \(opponentName[0])".color(opponentName)
-            }
+//            if (opponentName[0] != "") {
+//                nameLabel.attributedText = "\(school) \nvs \n \(self.currentEvent!.opponent)".color(opponentName)
+//            }else{
+//                nameLabel.attributedText = "\(school) \nvs \n \(opponentName[0])".color(opponentName)
+//            }
+            nameLabel.text = school
+            nameLabel.textColor = sweetBlue
+            opponentLabel.textColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+            opponentLabel.text = self.currentEvent!.opponent
             
+            homeLetter.text = school[0]
+            homeLetterView.backgroundColor = sweetBlue
+            homeLetterView.layer.cornerRadius = homeLetterView.layer.frame.size.width / 2
+            
+            opponentLetter.text = self.currentEvent!.opponent[0]
+            opponentLetterView.backgroundColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+            opponentLetterView.layer.cornerRadius = opponentLetterView.layer.frame.size.width / 2
+
             if (self.currentEvent!.bus == "yes"){
                 self.headers.append("Bus Time")
                 self.information.append(self.currentEvent!.busTime)
