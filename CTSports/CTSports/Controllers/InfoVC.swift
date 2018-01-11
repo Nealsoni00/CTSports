@@ -57,9 +57,11 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             case 2:
                 let VC1 = self.storyboard?.instantiateViewController(withIdentifier: "SetSchoolViewController") as! UINavigationController
                 self.present(VC1, animated:true, completion: nil)
-//            case 3:
-//                let VC1 = self.storyboard?.instantiateViewController(withIdentifier: "SetSportViewController") as! UINavigationController
-//                self.present(VC1, animated:true, completion: nil)
+            case 4:
+                if let url = URL(string: "http://www.casciac.org/scripts/editprac.cgi") {
+                    UIApplication.shared.open(url, options: [:])
+                }
+                tableView.deselectRow(at: indexPath, animated: true)
             default:
                 break
             }
@@ -67,27 +69,26 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         
         if indexPath.section == 1 {
             switch indexPath.row {
-            case 0:
+            case 0: //Neal
                 sendMail("nealsoni00@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
-                
-            case 1:
+            case 1: //Jack
                 sendMail("sharkeyjack11@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
-            case 2:
-                if let url = URL(string: "https://darksky.net/poweredby/") {
-                    UIApplication.shared.open(url, options: [:])
-                }
+            case 2: //Alex
+                sendMail("sharkeyjack11@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
-            case 3:
-                if let url = URL(string: "https://ciac.com/") {
-                    UIApplication.shared.open(url, options: [:])
-                }
+            case 3: //Emily
+                sendMail("sharkeyjack11@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
-            case 4:
-                if let url = URL(string: "http://www.ctweather.com") {
-                    UIApplication.shared.open(url, options: [:])
-                }
+            case 4: //Ian
+                sendMail("sharkeyjack11@gmail.com")
+                tableView.deselectRow(at: indexPath, animated: true)
+            case 4: //Bidgood
+                sendMail("sharkeyjack11@gmail.com")
+                tableView.deselectRow(at: indexPath, animated: true)
+            case 4: //CIAC
+                sendMail("sharkeyjack11@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
             default:
                 break

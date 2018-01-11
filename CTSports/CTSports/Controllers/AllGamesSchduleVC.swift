@@ -650,13 +650,15 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             let newView = segue.destination as! SportingEventVC
             
             let selectedIndexPath = self.tableView.indexPathForSelectedRow
+            var indexEvent: SportingEvent
             if searchController.isActive && searchController.searchBar.text != "" {
-                var indexEvent = allGames[0]
                 
                 if (filteredUniqueDates.count != 0 && convertedFilteredGames[filteredUniqueDates[0]]?[0] != nil){
                     uniqueNSGameDates = filteredUniqueDates
                     indexEvent = (convertedFilteredGames[filteredUniqueDates[selectedIndexPath![0]]]?[selectedIndexPath![1]])!
                     newView.currentEvent = indexEvent
+                }else{
+                    indexEvent = allGames[0]
                 }
                 
                 
