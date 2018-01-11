@@ -107,6 +107,9 @@
 		367B38C42007178000560F2C /* SF Collegiate Solid Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BC2007175600560F2C /* SF Collegiate Solid Bold.ttf */; };
 		367B38C52007178200560F2C /* SF Collegiate Solid Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BF2007176000560F2C /* SF Collegiate Solid Bold Italic.ttf */; };
 		367B38C62007178500560F2C /* SF Collegiate Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BE2007175D00560F2C /* SF Collegiate Italic.ttf */; };
+		367B38C82007218C00560F2C /* GirlsSquash.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B38C72007218900560F2C /* GirlsSquash.png */; };
+		367B38CA2007219C00560F2C /* BoysSquash.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B38C92007219B00560F2C /* BoysSquash.png */; };
+		367B38CC200721A800560F2C /* Co-edSquash.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B38CB200721A700560F2C /* Co-edSquash.png */; };
 		368D7E871FE6E8DA000BE5D4 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 368D7E861FE6E8DA000BE5D4 /* setting@2x.png */; };
 		368D7E8B1FE6EA19000BE5D4 /* CIAC.png in Resources */ = {isa = PBXBuildFile; fileRef = 368D7E8A1FE6EA18000BE5D4 /* CIAC.png */; };
 		368D7E8D1FE6EA21000BE5D4 /* CIACsmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 368D7E8C1FE6EA1E000BE5D4 /* CIACsmall.png */; };
@@ -251,6 +254,9 @@
 		367B38BE2007175D00560F2C /* SF Collegiate Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Italic.ttf"; sourceTree = "<group>"; };
 		367B38BF2007176000560F2C /* SF Collegiate Solid Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Solid Bold Italic.ttf"; sourceTree = "<group>"; };
 		367B38C02007176300560F2C /* SF Collegiate Solid Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Solid Italic.ttf"; sourceTree = "<group>"; };
+		367B38C72007218900560F2C /* GirlsSquash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsSquash.png; sourceTree = "<group>"; };
+		367B38C92007219B00560F2C /* BoysSquash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysSquash.png; sourceTree = "<group>"; };
+		367B38CB200721A700560F2C /* Co-edSquash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edSquash.png"; sourceTree = "<group>"; };
 		368D7E861FE6E8DA000BE5D4 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
 		368D7E8A1FE6EA18000BE5D4 /* CIAC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CIAC.png; sourceTree = "<group>"; };
 		368D7E8C1FE6EA1E000BE5D4 /* CIACsmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CIACsmall.png; sourceTree = "<group>"; };
@@ -457,6 +463,9 @@
 				367B384020053DB500560F2C /* GirlsSailing.png */,
 				367B384120053DB500560F2C /* GirlsTennis.png */,
 				367B384220053DB500560F2C /* GirlsGymnastics.png */,
+				367B38CB200721A700560F2C /* Co-edSquash.png */,
+				367B38C92007219B00560F2C /* BoysSquash.png */,
+				367B38C72007218900560F2C /* GirlsSquash.png */,
 				367B384320053DB500560F2C /* BoysBasketball.png */,
 				367B384420053DB500560F2C /* Co-edFencing.png */,
 				367B384520053DB500560F2C /* Crew.png */,
@@ -690,6 +699,7 @@
 				367B388820053DB500560F2C /* GirlsWaterPolo.png in Resources */,
 				367B388D20053DB500560F2C /* GirlsCrossCountry.png in Resources */,
 				367B38AE20053DB500560F2C /* GirlsIndoorTrack.png in Resources */,
+				367B38CA2007219C00560F2C /* BoysSquash.png in Resources */,
 				367B38C42007178000560F2C /* SF Collegiate Solid Bold.ttf in Resources */,
 				367B38A420053DB500560F2C /* Baseball.png in Resources */,
 				367B389F20053DB500560F2C /* Wrestling.png in Resources */,
@@ -711,6 +721,7 @@
 				367B387720053DB500560F2C /* GirlsIceHockey.png in Resources */,
 				367B38C52007178200560F2C /* SF Collegiate Solid Bold Italic.ttf in Resources */,
 				367B389C20053DB500560F2C /* BoysFencing.png in Resources */,
+				367B38C82007218C00560F2C /* GirlsSquash.png in Resources */,
 				367B387D20053DB500560F2C /* Band.png in Resources */,
 				367B387F20053DB500560F2C /* DebateTeam.png in Resources */,
 				367B389620053DB500560F2C /* Co-edCrew.png in Resources */,
@@ -745,6 +756,7 @@
 				366A8DD11FE180570082A64D /* football@2x.png in Resources */,
 				367B38B320053DB500560F2C /* BoysIndoorTrack.png in Resources */,
 				367B389E20053DB500560F2C /* BoysSwimming.png in Resources */,
+				367B38CC200721A800560F2C /* Co-edSquash.png in Resources */,
 				367B388520053DB500560F2C /* BoysBasketball.png in Resources */,
 				3653CDA41FE5FE9700F396CD /* compare.png in Resources */,
 				367B387E20053DB500560F2C /* GirlsCrew.png in Resources */,

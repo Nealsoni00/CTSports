@@ -14,12 +14,15 @@ boys-outdoortrack:Boys Outdoor Track
 boys-rugby:Boys Rugby
 boys-sailing:Boys Sailing
 boys-soccer:Boys Soccer
+girls-squash:Girls Squash
+boys-squash:Boys Squash
 boys-swimming:Boys Swimming
 boys-tennis:Boys Tennis
 boys-volleyball:Boys Volleyball
 boys-waterpolo:Boys Water Polo
 boys-wrestling:Wrestling
 coed-alpineskiing:Co-ed Alpine Skiing
+coed-squash:Co-ed Squash
 coed-band:Band
 coed-bowling:Bowling
 coed-cheerleading:Cheerleading
