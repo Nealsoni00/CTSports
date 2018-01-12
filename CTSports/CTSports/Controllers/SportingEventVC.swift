@@ -25,7 +25,7 @@ class SportingEventVC: UITableViewController {
     @IBOutlet var opponentLetter: UILabel!
     @IBOutlet var opponentLetterView: UIView!
     
-    @IBOutlet weak var timeLabel: UILabel!
+//    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var homeAwaySelector: UISegmentedControl!
     
     
@@ -56,7 +56,7 @@ class SportingEventVC: UITableViewController {
             
             self.headers.append("Time")
             self.information.append(self.currentEvent!.time)
-            self.timeLabel.text = self.currentEvent!.time
+//            self.timeLabel.text = self.currentEvent!.time
             
             self.headers.append("Location")
             self.information.append(self.currentEvent!.school)

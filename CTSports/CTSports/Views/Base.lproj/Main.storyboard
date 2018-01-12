@@ -20,7 +20,6 @@
         <array key="AvenirNextCondensed.ttc">
             <string>AvenirNextCondensed-Bold</string>
             <string>AvenirNextCondensed-BoldItalic</string>
-            <string>AvenirNextCondensed-Regular</string>
         </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
@@ -265,7 +264,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hLS-xi-VsS">
-                                    <rect key="frame" x="163" y="107" width="49" height="30"/>
+                                    <rect key="frame" x="163" y="65" width="49" height="29"/>
                                     <segments>
                                         <segment title="H"/>
                                         <segment title="A"/>
@@ -274,21 +273,13 @@
                                         <action selector="levelSelectorChanged:" destination="SjN-0n-faM" eventType="valueChanged" id="Lcs-dY-wot"/>
                                     </connections>
                                 </segmentedControl>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:30AM" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xzk-D9-Ybn">
-                                    <rect key="frame" x="150" y="66" width="75" height="33"/>
-                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="ifE-Nf-3Rh" firstAttribute="centerX" secondItem="Id3-mt-gwo" secondAttribute="centerX" id="0Jh-Yd-p8S"/>
                                 <constraint firstItem="YHW-X8-nns" firstAttribute="centerY" secondItem="ifE-Nf-3Rh" secondAttribute="centerY" id="5s5-0p-U5S"/>
-                                <constraint firstItem="Xzk-D9-Ybn" firstAttribute="centerX" secondItem="ifE-Nf-3Rh" secondAttribute="centerX" id="6Kh-Pa-mW4"/>
-                                <constraint firstItem="hLS-xi-VsS" firstAttribute="centerY" secondItem="RMI-NH-fPS" secondAttribute="centerY" id="7rf-xn-CDG"/>
+                                <constraint firstItem="hLS-xi-VsS" firstAttribute="centerY" secondItem="RMI-NH-fPS" secondAttribute="centerY" constant="-42.5" id="7rf-xn-CDG"/>
                                 <constraint firstAttribute="trailing" secondItem="YRQ-8h-0Ls" secondAttribute="trailing" constant="26" id="9ib-l6-doL"/>
-                                <constraint firstItem="Xzk-D9-Ybn" firstAttribute="top" secondItem="Rrn-XZ-lov" secondAttribute="top" constant="58" id="EDB-Kg-O3Y"/>
                                 <constraint firstItem="RMI-NH-fPS" firstAttribute="top" secondItem="Id3-mt-gwo" secondAttribute="top" constant="91" id="Kbb-id-BhL"/>
                                 <constraint firstAttribute="bottom" secondItem="RMI-NH-fPS" secondAttribute="bottom" id="Lyr-l4-NjQ"/>
                                 <constraint firstItem="YRQ-8h-0Ls" firstAttribute="leading" secondItem="RMI-NH-fPS" secondAttribute="trailing" constant="53.5" id="OF5-IH-phZ"/>
@@ -300,9 +291,7 @@
                                 <constraint firstItem="YHW-X8-nns" firstAttribute="centerX" secondItem="YRQ-8h-0Ls" secondAttribute="centerX" constant="1" id="i1a-Az-Bgc"/>
                                 <constraint firstItem="Rrn-XZ-lov" firstAttribute="centerX" secondItem="RMI-NH-fPS" secondAttribute="centerX" constant="1" id="kNO-M5-9QX"/>
                                 <constraint firstAttribute="centerX" secondItem="RMI-NH-fPS" secondAttribute="trailing" constant="27.5" id="l6Q-MD-VEh"/>
-                                <constraint firstItem="Xzk-D9-Ybn" firstAttribute="leading" secondItem="Rrn-XZ-lov" secondAttribute="trailing" constant="13" id="oUQ-Cv-FzJ"/>
                                 <constraint firstAttribute="bottom" secondItem="YRQ-8h-0Ls" secondAttribute="bottom" id="spT-nz-gGr"/>
-                                <constraint firstItem="hLS-xi-VsS" firstAttribute="top" secondItem="Xzk-D9-Ybn" secondAttribute="bottom" constant="8" id="v1t-ef-H3n"/>
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="af4-aq-Frv">
@@ -398,7 +387,6 @@
                         <outlet property="opponentLabel" destination="YRQ-8h-0Ls" id="Djy-oi-9fZ"/>
                         <outlet property="opponentLetter" destination="nW5-CV-mbM" id="qhF-Y6-J33"/>
                         <outlet property="opponentLetterView" destination="YHW-X8-nns" id="wtb-LX-ZKf"/>
-                        <outlet property="timeLabel" destination="Xzk-D9-Ybn" id="Ryd-iE-kHW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GqF-KI-Gsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
