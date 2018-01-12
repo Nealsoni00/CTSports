@@ -41,7 +41,7 @@ class NetworkManager: NSObject {
                 let gameDate1 = elem["gamedate"].element!.text
                 let homeAway = elem["site"].element!.text
                 var location = elem["facility"].element!.text
-                let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil).replacingOccurrences(of: "pm", with: "PM", options: .literal, range: nil)
+                let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil).replacingOccurrences(of: "pm", with: "PM", options: .literal, range: nil).replacingOccurrences(of: "p.m.", with: "PM", options: .literal, range: nil)
                 let level = elem["gamelevel"].element!.text
                 
                 let gameType = elem["gametype"].element!.text
@@ -75,9 +75,15 @@ class NetworkManager: NSObject {
                 let outFormatter = DateFormatter()
                 outFormatter.locale = Locale(identifier: "en_US_POSIX")
                 outFormatter.dateFormat = "hh:mma"
-                let timeDate = outFormatter.date(from: time) ?? outFormatter.date(from: "12:00AM")
-                let timeComponents = calendar.dateComponents([.hour, .minute, .second], from: timeDate!)
-
+                var timeDate: Date
+                if (time.characters.count > 8){
+                    let startTime = time.split(separator: "-")[0]
+                    timeDate = outFormatter.date(from: String(startTime)) ?? outFormatter.date(from: "12:00AM")!
+                }else{
+                    timeDate = outFormatter.date(from: time) ?? outFormatter.date(from: "12:00AM")!
+                }
+                
+                let timeComponents = calendar.dateComponents([.hour, .minute, .second], from: timeDate)
                 dateComponents.hour = timeComponents.hour
                 dateComponents.minute = timeComponents.minute
                 dateComponents.second = timeComponents.second
@@ -125,7 +131,7 @@ class NetworkManager: NSObject {
                         let gameDate1 = elem["gamedate"].element!.text
                         let homeAway = elem["site"].element!.text
                         var location = elem["facility"].element!.text
-                        let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil).replacingOccurrences(of: "pm", with: "PM", options: .literal, range: nil)
+                        let time = elem["gametime"].element!.text.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil).replacingOccurrences(of: "pm", with: "PM", options: .literal, range: nil).replacingOccurrences(of: "p.m.", with: "PM", options: .literal, range: nil)
                         let level = elem["gamelevel"].element!.text
                         
                         let gameType = elem["gametype"].element!.text
@@ -158,8 +164,16 @@ class NetworkManager: NSObject {
                         let outFormatter = DateFormatter()
                         outFormatter.locale = Locale(identifier: "en_US_POSIX")
                         outFormatter.dateFormat = "hh:mma"
-                        let timeDate = outFormatter.date(from: time) ?? outFormatter.date(from: "12:00AM")
-                        let timeComponents = calendar.dateComponents([.hour, .minute, .second], from: timeDate!)
+                        
+                        var timeDate: Date
+                        if (time.characters.count > 8){
+                            let startTime = time.split(separator: "-")[0]
+                            timeDate = outFormatter.date(from: String(startTime)) ?? outFormatter.date(from: "12:00AM")!
+                        }else{
+                            timeDate = outFormatter.date(from: time) ?? outFormatter.date(from: "12:00AM")!
+                        }
+                        
+                        let timeComponents = calendar.dateComponents([.hour, .minute, .second], from: timeDate)
                         
                         dateComponents.hour = timeComponents.hour
                         dateComponents.minute = timeComponents.minute

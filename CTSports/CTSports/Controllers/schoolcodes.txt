@@ -12,7 +12,7 @@ Bethel:Bethel
 Bloomfield:Bloomfield
 Bolton:Bolton
 Branford:Branford
-BridgeportCentral:BridgeportCentral
+Bridgeport Central:BridgeportCentral
 Brien McMahon:BrienMcMahon
 Bristol Central:BristolCentral
 Bristol Eastern:BristolEastern

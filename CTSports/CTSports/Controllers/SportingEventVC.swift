@@ -25,6 +25,10 @@ class SportingEventVC: UITableViewController {
     @IBOutlet var opponentLetter: UILabel!
     @IBOutlet var opponentLetterView: UIView!
     
+//    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var homeAwaySelector: UISegmentedControl!
+    
+    
     var currentEvent: SportingEvent?
     
     var headers = [String]()
@@ -40,6 +44,7 @@ class SportingEventVC: UITableViewController {
         UIApplication.shared.statusBarStyle = .lightContent
         self.navigationItem.title = "SPORTING EVENT"
         
+
         if (currentEvent != nil) {
             self.navigationItem.title = "\(self.currentEvent!.sport)".uppercased()
             
@@ -51,6 +56,7 @@ class SportingEventVC: UITableViewController {
             
             self.headers.append("Time")
             self.information.append(self.currentEvent!.time)
+//            self.timeLabel.text = self.currentEvent!.time
             
             self.headers.append("Location")
             self.information.append(self.currentEvent!.school)
@@ -68,7 +74,30 @@ class SportingEventVC: UITableViewController {
             
             
             self.headers.append("Game Level")
-            self.information.append(self.currentEvent!.gameLevel)
+            switch self.currentEvent!.gameLevel{
+            case "V":
+                self.information.append("Varsity")
+            case "JV":
+                self.information.append("Junior Varsity")
+            case "FR":
+                self.information.append("Freshman")
+            default:
+                break;
+            }
+//            homeAwaySelector.isEnabled = false
+            homeAwaySelector.tintColor = sweetBlue
+            switch self.currentEvent!.home {
+            case "Home":
+                homeAwaySelector.selectedSegmentIndex = 0
+//                homeAwaySelector.setEnabled(false, forSegmentAt: 0)
+            case "Away":
+                homeAwaySelector.tintColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+                homeAwaySelector.selectedSegmentIndex = 1
+//                homeAwaySelector.setEnabled(false, forSegmentAt: 1)
+            default:
+                break
+            }
+//            self.homeAwayLabel.text = self.currentEvent!.home
             
             self.headers.append("Game Type")
             self.information.append(self.currentEvent!.gameType)
@@ -83,18 +112,72 @@ class SportingEventVC: UITableViewController {
 //            }else{
 //                nameLabel.attributedText = "\(school) \nvs \n \(opponentName[0])".color(opponentName)
 //            }
-            nameLabel.text = school
-            nameLabel.textColor = sweetBlue
-            opponentLabel.textColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
-            opponentLabel.text = self.currentEvent!.opponent
             
-            homeLetter.text = school[0]
+            nameLabel.textColor = sweetBlue
+            if schoolKey.split(separator: " ").count > 2 {
+                let schoolArray = schoolKey.split(separator: " ")
+                if ("\(String(schoolArray[0]))  \(String(schoolArray[1]))".characters.count < 35){
+                    nameLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1])) \(String(schoolArray[2]))..."
+                }else{
+                    nameLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1]))"
+                }
+            }else{
+                nameLabel.text = schoolKey
+            }
+            var initials = ""
+            for word in schoolKey.split(separator: " "){
+                if (initials.characters.count < 2){
+                    initials = initials + String(word)[0]
+                }
+            }
+            if (initials.characters.count == 2){
+                homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 60)
+            }
+            else{
+                homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
+            }
+            homeLetter.text = initials
             homeLetterView.backgroundColor = sweetBlue
             homeLetterView.layer.cornerRadius = homeLetterView.layer.frame.size.width / 2
             
-            opponentLetter.text = self.currentEvent!.opponent[0]
+            
+            
+            opponentLabel.textColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+
+            if self.currentEvent!.opponent.split(separator: " ").count > 2 {
+                let schoolArray = self.currentEvent!.opponent.split(separator: " ")
+                if ("\(String(schoolArray[0]))  \(String(schoolArray[1]))".characters.count < 35){
+                    opponentLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1])) \(String(schoolArray[2]))..."
+                }else{
+                    opponentLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1]))"
+                }
+            }else{
+                opponentLabel.text = self.currentEvent!.opponent
+            }
+            initials = ""
+            for word in  self.currentEvent!.opponent.split(separator: " "){
+                if (initials.characters.count < 2){
+                    initials = initials + String(word)[0]
+                }
+            }
+            if (initials.characters.count == 2){
+                opponentLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 60)
+            }
+            else{
+                opponentLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
+            }
+            opponentLetter.text = initials
+            
+//            opponentLabel.text = String(self.currentEvent!.opponent.split(separator: " ")[0])
+//            var initialsOpponent = ""
+//            for word in self.currentEvent!.opponent.split(separator: " "){
+//                initialsOpponent = initialsOpponent + String(word)[0]
+//            }
+//            opponentLetter.text = initialsOpponent
             opponentLetterView.backgroundColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             opponentLetterView.layer.cornerRadius = opponentLetterView.layer.frame.size.width / 2
+            
+        
 
             if (self.currentEvent!.bus == "yes"){
                 self.headers.append("Bus Time")
@@ -111,6 +194,16 @@ class SportingEventVC: UITableViewController {
     
     // MARK: - Table view data source
     
+    @IBAction func levelSelectorChanged(_ sender: Any) {
+        switch self.currentEvent!.home {
+        case "Home":
+            homeAwaySelector.selectedSegmentIndex = 0
+        case "Away":
+            homeAwaySelector.selectedSegmentIndex = 1
+        default:
+            break
+        }
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
