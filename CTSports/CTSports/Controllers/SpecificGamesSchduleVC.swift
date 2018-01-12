@@ -73,7 +73,8 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
 //        navigationItem.rightBarButtonItem = infoBarButtonItem
         
         
-        
+        levelSelector.tintColor = sweetBlue
+
         //Nav controller bar
         self.navigationController?.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.barTintColor = sweetBlue

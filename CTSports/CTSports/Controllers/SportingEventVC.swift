@@ -25,6 +25,10 @@ class SportingEventVC: UITableViewController {
     @IBOutlet var opponentLetter: UILabel!
     @IBOutlet var opponentLetterView: UIView!
     
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var homeAwaySelector: UISegmentedControl!
+    
+    
     var currentEvent: SportingEvent?
     
     var headers = [String]()
@@ -40,6 +44,7 @@ class SportingEventVC: UITableViewController {
         UIApplication.shared.statusBarStyle = .lightContent
         self.navigationItem.title = "SPORTING EVENT"
         
+
         if (currentEvent != nil) {
             self.navigationItem.title = "\(self.currentEvent!.sport)".uppercased()
             
@@ -51,6 +56,7 @@ class SportingEventVC: UITableViewController {
             
             self.headers.append("Time")
             self.information.append(self.currentEvent!.time)
+            self.timeLabel.text = self.currentEvent!.time
             
             self.headers.append("Location")
             self.information.append(self.currentEvent!.school)
@@ -68,7 +74,30 @@ class SportingEventVC: UITableViewController {
             
             
             self.headers.append("Game Level")
-            self.information.append(self.currentEvent!.gameLevel)
+            switch self.currentEvent!.gameLevel{
+            case "V":
+                self.information.append("Varsity")
+            case "JV":
+                self.information.append("Junior Varsity")
+            case "FR":
+                self.information.append("Freshman")
+            default:
+                break;
+            }
+//            homeAwaySelector.isEnabled = false
+            homeAwaySelector.tintColor = sweetBlue
+            switch self.currentEvent!.home {
+            case "Home":
+                homeAwaySelector.selectedSegmentIndex = 0
+//                homeAwaySelector.setEnabled(false, forSegmentAt: 0)
+            case "Away":
+                homeAwaySelector.tintColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+                homeAwaySelector.selectedSegmentIndex = 1
+//                homeAwaySelector.setEnabled(false, forSegmentAt: 1)
+            default:
+                break
+            }
+//            self.homeAwayLabel.text = self.currentEvent!.home
             
             self.headers.append("Game Type")
             self.information.append(self.currentEvent!.gameType)
@@ -83,18 +112,20 @@ class SportingEventVC: UITableViewController {
 //            }else{
 //                nameLabel.attributedText = "\(school) \nvs \n \(opponentName[0])".color(opponentName)
 //            }
-            nameLabel.text = school
-            nameLabel.textColor = sweetBlue
-            opponentLabel.textColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
-            opponentLabel.text = self.currentEvent!.opponent
             
+            nameLabel.textColor = sweetBlue
+            nameLabel.text = school
             homeLetter.text = school[0]
             homeLetterView.backgroundColor = sweetBlue
             homeLetterView.layer.cornerRadius = homeLetterView.layer.frame.size.width / 2
             
+            opponentLabel.textColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+            opponentLabel.text = self.currentEvent!.opponent
             opponentLetter.text = self.currentEvent!.opponent[0]
             opponentLetterView.backgroundColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             opponentLetterView.layer.cornerRadius = opponentLetterView.layer.frame.size.width / 2
+            
+        
 
             if (self.currentEvent!.bus == "yes"){
                 self.headers.append("Bus Time")
@@ -111,6 +142,16 @@ class SportingEventVC: UITableViewController {
     
     // MARK: - Table view data source
     
+    @IBAction func levelSelectorChanged(_ sender: Any) {
+        switch self.currentEvent!.home {
+        case "Home":
+            homeAwaySelector.selectedSegmentIndex = 0
+        case "Away":
+            homeAwaySelector.selectedSegmentIndex = 1
+        default:
+            break
+        }
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
