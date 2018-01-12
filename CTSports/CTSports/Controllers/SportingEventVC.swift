@@ -114,14 +114,66 @@ class SportingEventVC: UITableViewController {
 //            }
             
             nameLabel.textColor = sweetBlue
-            nameLabel.text = school
-            homeLetter.text = school[0]
+            if schoolKey.split(separator: " ").count > 2 {
+                let schoolArray = schoolKey.split(separator: " ")
+                if ("\(String(schoolArray[0]))  \(String(schoolArray[1]))".characters.count < 35){
+                    nameLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1])) \(String(schoolArray[2]))..."
+                }else{
+                    nameLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1]))"
+                }
+            }else{
+                nameLabel.text = schoolKey
+            }
+            var initials = ""
+            for word in schoolKey.split(separator: " "){
+                if (initials.characters.count < 2){
+                    initials = initials + String(word)[0]
+                }
+            }
+            if (initials.characters.count == 2){
+                homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 60)
+            }
+            else{
+                homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
+            }
+            homeLetter.text = initials
             homeLetterView.backgroundColor = sweetBlue
             homeLetterView.layer.cornerRadius = homeLetterView.layer.frame.size.width / 2
             
+            
+            
             opponentLabel.textColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
-            opponentLabel.text = self.currentEvent!.opponent
-            opponentLetter.text = self.currentEvent!.opponent[0]
+
+            if self.currentEvent!.opponent.split(separator: " ").count > 2 {
+                let schoolArray = self.currentEvent!.opponent.split(separator: " ")
+                if ("\(String(schoolArray[0]))  \(String(schoolArray[1]))".characters.count < 35){
+                    opponentLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1])) \(String(schoolArray[2]))..."
+                }else{
+                    opponentLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1]))"
+                }
+            }else{
+                opponentLabel.text = self.currentEvent!.opponent
+            }
+            initials = ""
+            for word in  self.currentEvent!.opponent.split(separator: " "){
+                if (initials.characters.count < 2){
+                    initials = initials + String(word)[0]
+                }
+            }
+            if (initials.characters.count == 2){
+                opponentLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 60)
+            }
+            else{
+                opponentLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
+            }
+            opponentLetter.text = initials
+            
+//            opponentLabel.text = String(self.currentEvent!.opponent.split(separator: " ")[0])
+//            var initialsOpponent = ""
+//            for word in self.currentEvent!.opponent.split(separator: " "){
+//                initialsOpponent = initialsOpponent + String(word)[0]
+//            }
+//            opponentLetter.text = initialsOpponent
             opponentLetterView.backgroundColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             opponentLetterView.layer.cornerRadius = opponentLetterView.layer.frame.size.width / 2
             

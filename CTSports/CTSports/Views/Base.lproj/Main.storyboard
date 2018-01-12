@@ -204,13 +204,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRQ-8h-0Ls">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRQ-8h-0Ls">
                                     <rect key="frame" x="213" y="91" width="136" height="61"/>
                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-BoldItalic" family="Avenir Next Condensed" pointSize="24"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staples" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-NH-fPS">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staples" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-NH-fPS">
                                     <rect key="frame" x="27" y="91" width="133" height="61"/>
                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-BoldItalic" family="Avenir Next Condensed" pointSize="24"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -220,7 +220,7 @@
                                     <rect key="frame" x="52" y="8" width="85" height="85"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trs-7p-4vC">
-                                            <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="85" height="90"/>
                                             <fontDescription key="fontDescription" name="SFCollegiateSolid-Bold" family="SF Collegiate Solid" pointSize="69"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
@@ -233,14 +233,14 @@
                                         <constraint firstAttribute="height" constant="85" id="UJS-OT-kH8"/>
                                         <constraint firstAttribute="width" constant="85" id="ctd-6N-oGo"/>
                                         <constraint firstItem="trs-7p-4vC" firstAttribute="top" secondItem="Rrn-XZ-lov" secondAttribute="top" id="p2w-U1-JGx"/>
-                                        <constraint firstAttribute="bottom" secondItem="trs-7p-4vC" secondAttribute="bottom" id="rG8-eR-v1A"/>
+                                        <constraint firstAttribute="bottom" secondItem="trs-7p-4vC" secondAttribute="bottom" constant="-5" id="rG8-eR-v1A"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHW-X8-nns">
                                     <rect key="frame" x="240" y="8" width="85" height="85"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nW5-CV-mbM">
-                                            <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="85" height="90"/>
                                             <color key="backgroundColor" red="0.43604901432991028" green="0.14137381315231323" blue="0.12543788552284241" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                             <fontDescription key="fontDescription" name="SFCollegiateSolid-Bold" family="SF Collegiate Solid" pointSize="69"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -252,7 +252,7 @@
                                         <constraint firstItem="nW5-CV-mbM" firstAttribute="top" secondItem="YHW-X8-nns" secondAttribute="top" id="EkM-cc-6Ey"/>
                                         <constraint firstAttribute="height" constant="85" id="OJk-uv-Gco"/>
                                         <constraint firstAttribute="trailing" secondItem="nW5-CV-mbM" secondAttribute="trailing" id="ghI-ii-L6z"/>
-                                        <constraint firstAttribute="bottom" secondItem="nW5-CV-mbM" secondAttribute="bottom" id="hqn-oo-6ys"/>
+                                        <constraint firstAttribute="bottom" secondItem="nW5-CV-mbM" secondAttribute="bottom" constant="-5" id="hqn-oo-6ys"/>
                                         <constraint firstAttribute="width" constant="85" id="lxo-FS-pyD"/>
                                         <constraint firstItem="nW5-CV-mbM" firstAttribute="leading" secondItem="YHW-X8-nns" secondAttribute="leading" id="qHZ-eg-ji2"/>
                                     </constraints>

@@ -53,6 +53,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     
     var removeAds = false
     
+    var defaultLevel: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self;
@@ -71,7 +72,20 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
 //        infoButton.addTarget(self, action: #selector(AllGamesSchduleVC.infoPressed), for: .touchUpInside)
 //        let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
 //        navigationItem.rightBarButtonItem = infoBarButtonItem
-        
+        self.defaultLevel = defaults.object(forKey: "levelSelector") as? Int ?? 0
+        levelSelector.selectedSegmentIndex = self.defaultLevel
+        switch self.defaultLevel {
+        case 0:
+            gameLevel = "V"
+        case 1:
+            gameLevel = "JV"
+        case 2:
+            gameLevel = "FR"
+        case 3:
+            gameLevel = "All"
+        default:
+            gameLevel = "V"
+        }
         
         levelSelector.tintColor = sweetBlue
 
@@ -159,7 +173,11 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = "YOUR SPORTS"
+        if (defaultSports.count == 1){
+             self.navigationItem.title = "\(defaultSports[0]) Schedule"
+        }else{
+            self.navigationItem.title = "YOUR SPORTS"
+        }
         if (NetworkManager.sharedInstance.doneSpecific){
             parseSpecificGamesIntoDictionaries();
         }
@@ -574,18 +592,21 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     @IBOutlet weak var levelSelector: UISegmentedControl!
     
     @IBAction func levelSelector(_ sender: Any) {
-        
         if(levelSelector.selectedSegmentIndex == 0){
             self.gameLevel = "V"
+            defaults.set(0, forKey: "levelSelector")
         }
         if(levelSelector.selectedSegmentIndex == 1){
             self.gameLevel = "JV"
+            defaults.set(1, forKey: "levelSelector")
         }
         if(levelSelector.selectedSegmentIndex == 2){
             self.gameLevel = "FR"
+            defaults.set(2, forKey: "levelSelector")
         }
         if(levelSelector.selectedSegmentIndex == 3){
             self.gameLevel = "All"
+            defaults.set(3, forKey: "levelSelector")
         }
         if searchController.isActive && searchController.searchBar.text != "" {
             filterContentForSearchText(searchController.searchBar.text!)
