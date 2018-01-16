@@ -171,7 +171,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             
             parseAllGamesIntoDictionaries()
         }
-        self.navigationItem.title = "\(schoolKey.uppercased()) SPORTS SCHEDULE"
+        self.navigationItem.title = "\(schoolKey) Sports Schedule"
     }
     
 //    func dataRecieved(allGames: [SportingEvent]) {
@@ -491,9 +491,11 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 
                 cell.home.font = UIFont(name: "HelveticaNeue", size: 35)
                 cell.time.font = UIFont(name: "HelveticaNeue", size: 17)
-                //print(gameDates[indexPath.row])
-                
-                if event.home == "Home" {
+                if event.gameType == "Practice"{
+                    print("Practice")
+                    cell.home.text = "P"
+                    cell.home.textColor = sweetBlue //Classic iStaples Blue
+                }else if event.home == "Home" {
                     cell.home.text = "H"
                     cell.home.textColor = sweetBlue //Classic iStaples Blue
                     
@@ -535,6 +537,19 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 default:
                     uniqueNSGameDates = gameNSDatesV
                 }
+            }
+            
+            if event.gameType == "Practice"{
+                cell.home.text = "P"
+                cell.home.textColor = sweetBlue //Classic iStaples Blue
+            }else if event.home == "Home" {
+                cell.home.text = "H"
+                cell.home.textColor = sweetBlue //Classic iStaples Blue
+                cell.home.font = UIFont(name: "HelveticaNeue", size: 16)
+                
+            } else {
+                cell.home.text = "A"
+                cell.home.textColor = sweetGreen
                 
             }
             
@@ -545,18 +560,11 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             
             cell.home.font = UIFont(name: "HelveticaNeue", size: 35)
             cell.time.font = UIFont(name: "HelveticaNeue", size: 17)
-            //print(gameDates[indexPath.row])
+        }
+        
+        if (event.sport != ""){
             
-            if event.home == "Home" {
-                cell.home.text = "H"
-                cell.home.textColor = sweetBlue //Classic iStaples Blue
-                //            cell.home.font = UIFont(name: "HelveticaNeue", size: 16)
-                
-            } else {
-                cell.home.text = "A"
-                cell.home.textColor = sweetGreen
-                
-            }
+            
         }
         
         return cell
