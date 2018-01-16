@@ -183,12 +183,15 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "DefaultSportsVC") as! DefaultSportsVC
             NetworkManager.sharedInstance.performRequestSchool()
+            NetworkManager.sharedInstance.performRequestSports()
 
             if (previousVC?.title == "Initial") {
                 navigationController?.pushViewController(vc,
                                                          animated: true)
             } else {
                 NetworkManager.sharedInstance.performRequestSchool()
+                NetworkManager.sharedInstance.performRequestSports()
+
                 self.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true, completion: nil)
             }
@@ -202,6 +205,8 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "DefaultSportsVC") as! DefaultSportsVC
             NetworkManager.sharedInstance.performRequestSchool()
+            NetworkManager.sharedInstance.performRequestSports()
+
             if (previousVC?.title == "Initial") {
                 navigationController?.pushViewController(vc,
                                                         animated: true)
@@ -216,6 +221,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     
     @IBAction func donePressed(_ sender: AnyObject) {
         NetworkManager.sharedInstance.performRequestSchool()
+        NetworkManager.sharedInstance.performRequestSports()
         self.dismiss(animated: true, completion: nil)
     }
     
