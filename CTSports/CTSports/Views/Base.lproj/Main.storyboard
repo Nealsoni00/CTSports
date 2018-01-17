@@ -110,34 +110,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="177.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jer-XI-WyH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="31" id="Hev-HD-zkO"/>
+                                                        <constraint firstAttribute="height" constant="39" id="Hev-HD-zkO"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11T-Yc-SiM">
-                                                    <rect key="frame" x="241.5" y="116.5" width="133" height="33"/>
+                                                    <rect key="frame" x="241" y="125" width="126" height="33"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="133" id="4Vt-f6-cnd"/>
+                                                        <constraint firstAttribute="width" constant="126" id="4Vt-f6-cnd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-BoldItalic" family="Avenir Next Condensed" pointSize="24"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staples" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BRJ-So-dyP">
-                                                    <rect key="frame" x="0.0" y="116.5" width="133" height="33"/>
+                                                    <rect key="frame" x="8" y="125" width="125" height="33"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="133" id="JRd-rl-X3u"/>
+                                                        <constraint firstAttribute="width" constant="125" id="JRd-rl-X3u"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-BoldItalic" family="Avenir Next Condensed" pointSize="24"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-r5-0S6">
-                                                    <rect key="frame" x="24" y="31" width="85" height="85.5"/>
+                                                    <rect key="frame" x="24" y="39" width="85" height="85.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eo0-HC-SMt">
                                                             <rect key="frame" x="0.0" y="-3" width="85" height="90.5"/>
@@ -154,7 +154,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuV-jF-Ig4">
-                                                    <rect key="frame" x="266" y="31" width="85" height="85.5"/>
+                                                    <rect key="frame" x="266" y="39" width="85" height="85.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6l-Cj-dkn">
                                                             <rect key="frame" x="0.0" y="0.0" width="85" height="90.5"/>
@@ -171,54 +171,55 @@
                                                         <constraint firstAttribute="width" constant="85" id="qko-RT-lZj"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRz-lx-To0">
+                                                    <rect key="frame" x="177" y="70" width="21" height="33"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="24"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhN-Ur-1Fs">
-                                                    <rect key="frame" x="114" y="31" width="147" height="23"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
+                                                    <rect key="frame" x="114" y="39" width="147" height="26.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
                                                     <color key="textColor" red="0.18156249820000001" green="0.42604514960000001" blue="0.53734987970000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Address" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oey-bb-7Hw">
-                                                    <rect key="frame" x="0.0" y="149.5" width="375" height="24"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Address" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oey-bb-7Hw">
+                                                    <rect key="frame" x="0.0" y="158" width="375" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" red="0.29421618579999997" green="0.29421004649999999" blue="0.29421424870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fAx-Qa-4rW">
-                                                    <rect key="frame" x="163" y="88" width="49" height="29"/>
+                                                    <rect key="frame" x="163" y="112" width="49" height="29"/>
                                                     <segments>
                                                         <segment title="H"/>
                                                         <segment title="A"/>
                                                     </segments>
                                                     <connections>
                                                         <action selector="levelSelectorChanged:" destination="SjN-0n-faM" eventType="valueChanged" id="4as-yP-0zg"/>
+                                                        <action selector="levelSelectorChanged:" destination="SvU-0A-OeS" eventType="valueChanged" id="maN-nf-Sfh"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRz-lx-To0">
-                                                    <rect key="frame" x="177" y="57.5" width="21" height="33"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="24"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="oey-bb-7Hw" firstAttribute="top" secondItem="11T-Yc-SiM" secondAttribute="bottom" id="0Sb-sJ-pER"/>
-                                                <constraint firstItem="BRJ-So-dyP" firstAttribute="centerX" secondItem="QyR-r5-0S6" secondAttribute="centerX" id="52N-V3-fGb"/>
+                                                <constraint firstItem="BRJ-So-dyP" firstAttribute="centerX" secondItem="QyR-r5-0S6" secondAttribute="centerX" constant="4" id="52N-V3-fGb"/>
                                                 <constraint firstItem="jer-XI-WyH" firstAttribute="top" secondItem="mSM-f1-scZ" secondAttribute="top" id="5nu-9Z-X34"/>
                                                 <constraint firstAttribute="trailing" secondItem="oey-bb-7Hw" secondAttribute="trailing" id="6W8-tP-r0k"/>
                                                 <constraint firstItem="fAx-Qa-4rW" firstAttribute="centerX" secondItem="jer-XI-WyH" secondAttribute="centerX" id="8yc-HN-em8"/>
                                                 <constraint firstItem="bhN-Ur-1Fs" firstAttribute="top" secondItem="QyR-r5-0S6" secondAttribute="top" id="KNB-7Q-Zt7"/>
-                                                <constraint firstItem="BRJ-So-dyP" firstAttribute="leading" secondItem="mSM-f1-scZ" secondAttribute="leading" id="P8R-Sp-rX2"/>
+                                                <constraint firstItem="BRJ-So-dyP" firstAttribute="leading" secondItem="mSM-f1-scZ" secondAttribute="leading" constant="8" id="P8R-Sp-rX2"/>
                                                 <constraint firstAttribute="trailing" secondItem="jer-XI-WyH" secondAttribute="trailing" id="QPs-3x-dkg"/>
                                                 <constraint firstItem="ZRz-lx-To0" firstAttribute="centerX" secondItem="jer-XI-WyH" secondAttribute="centerX" id="TcF-Ww-bmF"/>
                                                 <constraint firstItem="11T-Yc-SiM" firstAttribute="top" secondItem="xuV-jF-Ig4" secondAttribute="bottom" id="U1V-2X-Fkb"/>
                                                 <constraint firstItem="oey-bb-7Hw" firstAttribute="leading" secondItem="mSM-f1-scZ" secondAttribute="leading" id="VO4-v8-1Gd"/>
                                                 <constraint firstItem="jer-XI-WyH" firstAttribute="leading" secondItem="mSM-f1-scZ" secondAttribute="leading" id="Zf2-ak-9Nx"/>
-                                                <constraint firstItem="11T-Yc-SiM" firstAttribute="centerX" secondItem="xuV-jF-Ig4" secondAttribute="centerX" id="cnl-sz-qSA"/>
+                                                <constraint firstItem="11T-Yc-SiM" firstAttribute="centerX" secondItem="xuV-jF-Ig4" secondAttribute="centerX" constant="-4.5" id="cnl-sz-qSA"/>
                                                 <constraint firstItem="xuV-jF-Ig4" firstAttribute="leading" secondItem="bhN-Ur-1Fs" secondAttribute="trailing" constant="5" id="df1-kA-y4f"/>
-                                                <constraint firstAttribute="trailing" secondItem="11T-Yc-SiM" secondAttribute="trailing" id="e00-nR-azD"/>
-                                                <constraint firstItem="ZRz-lx-To0" firstAttribute="centerY" secondItem="QyR-r5-0S6" secondAttribute="centerY" id="e4c-Il-bUG"/>
-                                                <constraint firstItem="fAx-Qa-4rW" firstAttribute="bottom" secondItem="QyR-r5-0S6" secondAttribute="bottom" id="fWC-y9-zQo"/>
+                                                <constraint firstAttribute="trailing" secondItem="11T-Yc-SiM" secondAttribute="trailing" constant="8" id="e00-nR-azD"/>
+                                                <constraint firstItem="ZRz-lx-To0" firstAttribute="centerY" secondItem="QyR-r5-0S6" secondAttribute="centerY" constant="4.75" id="e4c-Il-bUG"/>
+                                                <constraint firstItem="fAx-Qa-4rW" firstAttribute="bottom" secondItem="QyR-r5-0S6" secondAttribute="bottom" constant="15.5" id="fWC-y9-zQo"/>
                                                 <constraint firstItem="bhN-Ur-1Fs" firstAttribute="leading" secondItem="QyR-r5-0S6" secondAttribute="trailing" constant="5" id="h4F-SS-aJp"/>
                                                 <constraint firstItem="QyR-r5-0S6" firstAttribute="top" secondItem="jer-XI-WyH" secondAttribute="bottom" id="mda-fG-K5V"/>
                                                 <constraint firstItem="bhN-Ur-1Fs" firstAttribute="centerX" secondItem="jer-XI-WyH" secondAttribute="centerX" id="sBX-K8-Zua"/>
@@ -1341,16 +1342,16 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYW-5C-KTV">
-                                            <rect key="frame" x="281" y="19.5" width="78" height="23"/>
+                                            <rect key="frame" x="258" y="20" width="101" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="101" id="f5g-M4-pYy"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
                                             <color key="textColor" red="0.18156249820000001" green="0.42604514960000001" blue="0.53734987970000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WhV-tv-Jyk">
-                                            <rect key="frame" x="56" y="20" width="217" height="20"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="217" id="SHl-Z6-O42"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sport Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WhV-tv-Jyk">
+                                            <rect key="frame" x="56" y="20" width="194" height="20"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

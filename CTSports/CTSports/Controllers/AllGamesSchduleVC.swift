@@ -12,8 +12,7 @@ import GoogleMobileAds
 import Alamofire
 
 //let sweetBlue = UIColor(red:0.13, green:0.42, blue:0.81, alpha:1.0)
-let sweetBlue = UIColor(red:0.00, green:0.34, blue:0.60, alpha:1.0)
-let sweetGreen = UIColor(red:0.3, green:0.8, blue:0.13, alpha:1.0)
+
 
 class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchControllerDelegate, GADBannerViewDelegate { //DataReturnedDelegate
     
@@ -171,6 +170,14 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             
             parseAllGamesIntoDictionaries()
         }
+        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
+            if let image = item.image {
+                item.image = image.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+            }
+        }
+        levelSelector.tintColor = sweetBlue
         self.navigationItem.title = "\(schoolKey) Sports Schedule"
     }
     
@@ -260,6 +267,18 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
     }
     @objc func infoPressed() {
         let infoPage = self.storyboard?.instantiateViewController(withIdentifier: "infoVC") as! UINavigationController
+        if #available(iOS 10.3, *) {
+            UIApplication.shared.setAlternateIconName(nil) { error in
+                if let error = error {
+                    print()
+                    print("ERROR \(error.localizedDescription)")
+                } else {
+                    print("Success!")
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
         self.tabBarController?.present(infoPage, animated: true, completion: nil)
     }
     
@@ -421,10 +440,23 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         return (self.gamesDictionary[uniqueNSGameDates[section]]?.count ?? Int())
         
     }
-    
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+        headerView.backgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.00)
         
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+        label.text = titleForSectionHeader(section: section)!
+        label.font =  UIFont(name: "HelveticaNeue-Bold", size: 20)
+        label.textColor = UIColor.black
+        label.textAlignment = .center
+        headerView.addSubview(label)
+        
+        
+        return headerView
+    }
+    
+    func titleForSectionHeader(section: Int) -> String? {
         var gameDate1 = ""
         
         if (uniqueNSGameDates.count != 0 && gamesDictionary[uniqueNSGameDates[0]]?[0] != nil){
@@ -501,7 +533,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                     
                 } else {
                     cell.home.text = "A"
-                    cell.home.textColor = sweetGreen
+                    cell.home.textColor = schoolColors[event.opponent] ?? sweetGreen
                     
                 }
                 return cell
@@ -540,16 +572,16 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             }
             
             if event.gameType == "Practice"{
+                print("Practice")
                 cell.home.text = "P"
                 cell.home.textColor = sweetBlue //Classic iStaples Blue
             }else if event.home == "Home" {
                 cell.home.text = "H"
                 cell.home.textColor = sweetBlue //Classic iStaples Blue
-                cell.home.font = UIFont(name: "HelveticaNeue", size: 16)
                 
             } else {
                 cell.home.text = "A"
-                cell.home.textColor = sweetGreen
+                cell.home.textColor = schoolColors[event.opponent] ?? sweetGreen
                 
             }
             

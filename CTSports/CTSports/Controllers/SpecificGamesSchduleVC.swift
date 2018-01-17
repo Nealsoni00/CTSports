@@ -178,6 +178,15 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         }else{
             self.navigationItem.title = "YOUR SPORTS"
         }
+        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
+            if let image = item.image {
+                item.image = image.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+            }
+        }
+        levelSelector.tintColor = sweetBlue
+
         if (NetworkManager.sharedInstance.doneSpecific){
             parseSpecificGamesIntoDictionaries();
         }
@@ -278,9 +287,10 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         let infoPage = self.storyboard?.instantiateViewController(withIdentifier: "infoVC") as! UINavigationController
         
         if #available(iOS 10.3, *) {
-            UIApplication.shared.setAlternateIconName("Alternate-Icon-60") { error in
+            UIApplication.shared.setAlternateIconName("AppIcon-2") { error in
                 if let error = error {
-                    print(error.localizedDescription)
+                    print()
+                    print("ERROR \(error.localizedDescription)")
                 } else {
                     print("Success!")
                 }
@@ -457,8 +467,23 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     }
     
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+        headerView.backgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.00)
         
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+        label.text = titleForSectionHeader(section: section)!
+        label.font =  UIFont(name: "HelveticaNeue-Bold", size: 20)
+        label.textColor = UIColor.black
+        label.textAlignment = .center
+        headerView.addSubview(label)
+        
+        
+        return headerView
+    }
+    
+    func titleForSectionHeader(section: Int) -> String? {
         var gameDate1 = ""
         
         if (uniqueNSGameDates.count != 0 && gamesDictionary[uniqueNSGameDates[0]]?[0] != nil){
@@ -524,7 +549,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
                 cell.school.font = UIFont(name: "HelveticaNeue-Medium", size: 18)
                 
 //                cell.home.font = UIFont(name: "HelveticaNeue", size: 35)
-                cell.time.font = UIFont(name: "HelveticaNeue", size: 17)
+                cell.time.font = UIFont(name: "HelveticaNeue", size: 20)
                 //print(gameDates[indexPath.row])
 //                if event.gameType == "Practice"{
 //                    print("Practice")
@@ -581,7 +606,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             cell.school.font = UIFont(name: "HelveticaNeue-Medium", size: 18)
             
 //            cell.home.font = UIFont(name: "HelveticaNeue", size: 35)
-            cell.time.font = UIFont(name: "HelveticaNeue", size: 17)
+            cell.time.font = UIFont(name: "HelveticaNeue", size: 20)
             
 
         }
@@ -589,7 +614,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         if (event.sport != ""){
             var opponentName = event.opponent.components(separatedBy: " ")
             opponentName.append(school)
-            
+            cell.currentEvent = event
             cell.homeLabel.textColor = sweetBlue
             if schoolKey.split(separator: " ").count > 2 {
                 let schoolArray = schoolKey.split(separator: " ")
@@ -614,12 +639,11 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
                 cell.homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
             }
             cell.homeLetter.text = initials
-            cell.homeLetterView.backgroundColor = sweetBlue
+            cell.homeLetterView.backgroundColor = schoolColors[schoolKey] ?? sweetBlue
             cell.homeLetterView.layer.cornerRadius = cell.homeLetterView.layer.frame.size.width / 2
             
             
             
-            cell.OpponentLabel.textColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             
             if event.opponent.split(separator: " ").count > 2 {
                 let schoolArray = event.opponent.split(separator: " ")
@@ -631,6 +655,8 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             }else{
                 cell.OpponentLabel.text = event.opponent
             }
+            cell.OpponentLabel.textColor = schoolColors[cell.OpponentLabel.text!] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+
             initials = ""
             for word in  event.opponent.split(separator: " "){
                 if (initials.characters.count < 2){
@@ -651,15 +677,16 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             //                initialsOpponent = initialsOpponent + String(word)[0]
             //            }
             //            opponentLetter.text = initialsOpponent
-            cell.opponentLetterView.backgroundColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+            cell.opponentLetterView.backgroundColor = schoolColors[cell.OpponentLabel.text!]  ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             cell.opponentLetterView.layer.cornerRadius = cell.opponentLetterView.layer.frame.size.width / 2
-            cell.homeAwaySwitch.tintColor = sweetBlue
+            cell.homeAwaySwitch.tintColor = schoolColors[schoolKey] ?? sweetBlue
             switch event.home {
             case "Home":
                 cell.homeAwaySwitch.selectedSegmentIndex = 0
+                cell.homeAwaySwitch.tintColor = schoolColors[schoolKey] ?? sweetBlue
             //                homeAwaySelector.setEnabled(false, forSegmentAt: 0)
             case "Away":
-                cell.homeAwaySwitch.tintColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+                cell.homeAwaySwitch.tintColor = schoolColors[cell.OpponentLabel.text!] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
                 cell.homeAwaySwitch.selectedSegmentIndex = 1
             //                homeAwaySelector.setEnabled(false, forSegmentAt: 1)
             default:

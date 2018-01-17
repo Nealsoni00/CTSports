@@ -16,6 +16,9 @@ var schoolKey: String = defaults.object(forKey: "defaultSchoolKey") as? String ?
 var schoolsDict = [String: String]()
 var schoolChanged = false
 
+var sweetBlue = UIColor(red:0.00, green:0.34, blue:0.60, alpha:1.0)
+let sweetGreen = UIColor(red:0.3, green:0.8, blue:0.13, alpha:1.0)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
 
@@ -36,6 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
         schoolKey = (defaults.object(forKey: "defaultSchoolKey") as? String) ?? ""
         sport = defaults.object(forKey: "defaultSport") as? String ?? ""
         sportKey = defaults.object(forKey: "defaultSportKey") as? String ?? ""
+        
+        sweetBlue = schoolColors[schoolKey] ?? UIColor(red:0.00, green:0.34, blue:0.60, alpha:1.0)
+        
         NetworkManager.sharedInstance.performRequestSchool()
         NetworkManager.sharedInstance.getSports()
         NetworkManager.sharedInstance.performRequestSports()

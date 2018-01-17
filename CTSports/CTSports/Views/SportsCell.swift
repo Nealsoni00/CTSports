@@ -10,6 +10,7 @@
 import UIKit 
 
 class SportsCell: UITableViewCell {
+    var currentEvent: SportingEvent?
     @IBOutlet weak var sport: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var school: UILabel!
@@ -31,6 +32,16 @@ class SportsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    @IBAction func levelSelectorChanged(_ sender: Any) {
+        switch self.currentEvent!.home {
+        case "Home":
+            homeAwaySwitch.selectedSegmentIndex = 0
+        case "Away":
+            homeAwaySwitch.selectedSegmentIndex = 1
+        default:
+            break
+        }
     }
     
 }
