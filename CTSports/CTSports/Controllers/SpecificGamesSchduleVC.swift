@@ -54,6 +54,9 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     var removeAds = false
     
     var defaultLevel: Int = 0
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self;
@@ -89,6 +92,16 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         
         levelSelector.tintColor = sweetBlue
 
+        
+//        var customTabBarItem:UITabBarItem = UITabBarItem(title: nil,
+//                                                         image: UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.imageWithColor(sweetBlue).withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+//                                                         selectedImage: UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.imageWithColor(UIColor.gray))
+        if (defaultSports.count != 0){
+            self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 50,height: 50)).imageWithColor(UIColor.gray)
+            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 50,height: 50)).imageWithColor(sweetBlue)
+        }
+        
+        
         //Nav controller bar
         self.navigationController?.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.barTintColor = sweetBlue
@@ -99,7 +112,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         
         for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
             if let image = item.image {
-                item.image = image.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.image = image.imageWithColor(UIColor.gray).withRenderingMode(.alwaysOriginal)
                 item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
             }
         }
