@@ -5,7 +5,7 @@
 //  Created by Neal Soni on 12/13/17.
 //  Copyright © 2017 Neal Soni. All rights reserved.
 //
-
+import Foundation
 import UIKit
 import SWXMLHash
 import GoogleMobileAds
@@ -82,7 +82,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
 
         for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
             if let image = item.image {
-                item.image = image.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.image = image.imageWithColor(UIColor.gray).withRenderingMode(.alwaysOriginal)
                 item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
             }
         }
@@ -167,13 +167,25 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
 
             parseAllGamesIntoDictionaries()
         }
+        self.title = String(schoolKey.split(separator: " ")[0])
+        if (schoolKey != nil){
+            let initial = schoolKey[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
+            self.tabBarController?.tabBar.items![1].image = UIImage(named: "\(initial).png")?.imageWithColor(UIColor.gray)
+            self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(sweetBlue)
+        }
         self.navigationController?.navigationBar.barTintColor = sweetBlue
+        if (defaultSports.count != 0){
+            self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 30,height: 30)).imageWithColor(UIColor.gray)
+            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 30,height: 30)).imageWithColor(sweetBlue)
+        }
         for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
             if let image = item.image {
-                item.image = image.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.image = image.imageWithColor(UIColor.gray).withRenderingMode(.alwaysOriginal)
                 item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
             }
         }
+        
+       
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: sweetBlue], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.gray], for: .normal)
         levelSelector.tintColor = sweetBlue

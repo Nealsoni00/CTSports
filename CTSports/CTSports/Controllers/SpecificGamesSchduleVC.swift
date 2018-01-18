@@ -97,10 +97,10 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
 //                                                         image: UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.imageWithColor(sweetBlue).withRenderingMode(UIImageRenderingMode.alwaysOriginal),
 //                                                         selectedImage: UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.imageWithColor(UIColor.gray))
         if (defaultSports.count != 0){
-            self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 50,height: 50)).imageWithColor(UIColor.gray)
-            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 50,height: 50)).imageWithColor(sweetBlue)
+            self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 25,height: 25)).imageWithColor(UIColor.gray)
+            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 25,height: 25)).imageWithColor(sweetBlue)
         }
-        
+
         
         //Nav controller bar
         self.navigationController?.view.backgroundColor = UIColor.white
@@ -188,16 +188,29 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     override func viewDidAppear(_ animated: Bool) {
         if (defaultSports.count == 1){
              self.navigationItem.title = "\(defaultSports[0]) Schedule"
+            self.title = "\(defaultSports[0])"
+
         }else{
             self.navigationItem.title = "YOUR SPORTS"
+            self.title = "Your Sports"
+        }
+        if (schoolKey != nil){
+            let initial = schoolKey[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
+            self.tabBarController?.tabBar.items![1].image = UIImage(named: "\(initial).png")?.imageWithColor(UIColor.gray)
+            self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(sweetBlue)
+        }
+        if (defaultSports.count != 0){
+            self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 30,height: 30)).imageWithColor(UIColor.gray)
+            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 30,height: 30)).imageWithColor(sweetBlue)
         }
         self.navigationController?.navigationBar.barTintColor = sweetBlue
         for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
             if let image = item.image {
-                item.image = image.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.image = image.imageWithColor(UIColor.gray).withRenderingMode(.alwaysOriginal)
                 item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
             }
         }
+        
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: sweetBlue], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.gray], for: .normal)
         levelSelector.tintColor = sweetBlue
@@ -211,6 +224,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             self.present(vc1, animated:true, completion: nil)
             
         }
+
 
     }
 

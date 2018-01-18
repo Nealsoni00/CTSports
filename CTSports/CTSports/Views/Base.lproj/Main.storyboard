@@ -968,13 +968,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front End Development" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pnN-Mj-FXp">
-                                                    <rect key="frame" x="61" y="14" width="157" height="29"/>
+                                                    <rect key="frame" x="61" y="14" width="158" height="29"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
                                                     <color key="textColor" red="0.29169837984429914" green="0.29028920892717691" blue="0.29310755076142136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ian Kramer Staples '20" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5K4-mG-fnc">
-                                                    <rect key="frame" x="226" y="0.0" width="115" height="56"/>
+                                                    <rect key="frame" x="227" y="0.0" width="115" height="56"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="115" id="VeW-pN-8cW"/>
                                                     </constraints>
@@ -1620,7 +1620,7 @@
         <image name="setting.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Em-Uk-EWj"/>
+        <segue reference="pMM-Hf-x1J"/>
         <segue reference="CJq-5F-UPE"/>
     </inferredMetricsTieBreakers>
 </document>
