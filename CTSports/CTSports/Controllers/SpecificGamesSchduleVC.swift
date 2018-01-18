@@ -185,26 +185,17 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
                 item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
             }
         }
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: sweetBlue], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.gray], for: .normal)
         levelSelector.tintColor = sweetBlue
 
         if (NetworkManager.sharedInstance.doneSpecific){
             parseSpecificGamesIntoDictionaries();
         }
-//        if !(NetworkManager.sharedInstance.specificGames === self.allGames){
-//            self.refresh(sender: AnyObject.self as AnyObject)
-//        }
         tableView.reloadData()
 
     }
 
-//    func dataRecieved(allGames: [SportingEvent]) {
-//    }
-//    func specificDataRecived(specificGames: [SportingEvent]) {
-//        print("SPECIFIC GAMES: \(specificGames)")
-//        print("FUCKING PARSE THIS SHIT")
-////        self.allGames = specificGames
-//        self.parseSpecificGamesIntoDictionaries()
-//    }
     @objc func parseSpecificGamesIntoDictionaries() {
         self.removeAll()
         print("parsing SPECIFIC GAMES")

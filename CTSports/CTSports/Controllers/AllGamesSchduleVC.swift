@@ -177,6 +177,8 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
             }
         }
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: sweetBlue], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.gray], for: .normal)
         levelSelector.tintColor = sweetBlue
         self.navigationItem.title = "\(schoolKey) Sports Schedule"
     }

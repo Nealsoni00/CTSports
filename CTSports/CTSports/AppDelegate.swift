@@ -34,13 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
         
         print("Default Sports: \(defaultSports)")
         
-        
+        UINavigationBar.appearance().barStyle = .blackOpaque
+
         school = (defaults.object(forKey: "defaultSchool") as? String) ?? ""
         schoolKey = (defaults.object(forKey: "defaultSchoolKey") as? String) ?? ""
         sport = defaults.object(forKey: "defaultSport") as? String ?? ""
         sportKey = defaults.object(forKey: "defaultSportKey") as? String ?? ""
         
         sweetBlue = schoolColors[schoolKey] ?? UIColor(red:0.00, green:0.34, blue:0.60, alpha:1.0)
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: sweetBlue], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.gray], for: .normal)
         
         NetworkManager.sharedInstance.performRequestSchool()
         NetworkManager.sharedInstance.getSports()
