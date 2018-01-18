@@ -178,24 +178,24 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         }else{
             self.navigationItem.title = "YOUR SPORTS"
         }
+        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
+            if let image = item.image {
+                item.image = image.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+            }
+        }
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: sweetBlue], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.gray], for: .normal)
+        levelSelector.tintColor = sweetBlue
+
         if (NetworkManager.sharedInstance.doneSpecific){
             parseSpecificGamesIntoDictionaries();
         }
-//        if !(NetworkManager.sharedInstance.specificGames === self.allGames){
-//            self.refresh(sender: AnyObject.self as AnyObject)
-//        }
         tableView.reloadData()
 
     }
 
-//    func dataRecieved(allGames: [SportingEvent]) {
-//    }
-//    func specificDataRecived(specificGames: [SportingEvent]) {
-//        print("SPECIFIC GAMES: \(specificGames)")
-//        print("FUCKING PARSE THIS SHIT")
-////        self.allGames = specificGames
-//        self.parseSpecificGamesIntoDictionaries()
-//    }
     @objc func parseSpecificGamesIntoDictionaries() {
         self.removeAll()
         print("parsing SPECIFIC GAMES")
@@ -274,7 +274,22 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         tableView.reloadData()
     }
     @objc func infoPressed() {
+        
         let infoPage = self.storyboard?.instantiateViewController(withIdentifier: "infoVC") as! UINavigationController
+        
+        if #available(iOS 10.3, *) {
+            UIApplication.shared.setAlternateIconName("AppIcon-2") { error in
+                if let error = error {
+                    print()
+                    print("ERROR \(error.localizedDescription)")
+                } else {
+                    print("Success!")
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
         self.tabBarController?.present(infoPage, animated: true, completion: nil)
     }
     
@@ -443,8 +458,23 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     }
     
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+        headerView.backgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.00)
         
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+        label.text = titleForSectionHeader(section: section)!
+        label.font =  UIFont(name: "HelveticaNeue-Bold", size: 20)
+        label.textColor = UIColor.black
+        label.textAlignment = .center
+        headerView.addSubview(label)
+        
+        
+        return headerView
+    }
+    
+    func titleForSectionHeader(section: Int) -> String? {
         var gameDate1 = ""
         
         if (uniqueNSGameDates.count != 0 && gamesDictionary[uniqueNSGameDates[0]]?[0] != nil){
@@ -482,7 +512,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SportsCell
-        self.tableView.rowHeight = 73.0
+        self.tableView.rowHeight = 170.0
         var tag = ""
         var event: SportingEvent = SportingEvent(sport: "sportName", stringDate: "gameDate", gameNSDate: Date() as NSDate, weekday: "weekDay", time: "time", school: "location", gameLevel: "level", home: "homeAway", gameType: "gameType", season: "season", opponent: "opponent", directionsURL: "", id_num: "id_num", bus: "bus", busTime: "busTime", exactDate: Date() as NSDate)
         
@@ -507,24 +537,24 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
                 cell.sport.text = tag + (event.sport)
                 cell.time.text = "\(String(describing: event.time))"
                 cell.school.text = event.school
-                cell.school.font = UIFont(name: "HelveticaNeue-Medium", size: 12)
+                cell.school.font = UIFont(name: "HelveticaNeue-Medium", size: 18)
                 
-                cell.home.font = UIFont(name: "HelveticaNeue", size: 35)
-                cell.time.font = UIFont(name: "HelveticaNeue", size: 17)
+//                cell.home.font = UIFont(name: "HelveticaNeue", size: 35)
+                cell.time.font = UIFont(name: "HelveticaNeue", size: 20)
                 //print(gameDates[indexPath.row])
-                if event.gameType == "Practice"{
-                    print("Practice")
-                    cell.home.text = "P"
-                    cell.home.textColor = sweetBlue //Classic iStaples Blue
-                }else if event.home == "Home" {
-                    cell.home.text = "H"
-                    cell.home.textColor = sweetBlue //Classic iStaples Blue
-                    
-                } else {
-                    cell.home.text = "A"
-                    cell.home.textColor = sweetGreen
-                    
-                }
+//                if event.gameType == "Practice"{
+//                    print("Practice")
+//                    cell.home.text = "P"
+//                    cell.home.textColor = sweetBlue //Classic iStaples Blue
+//                }else if event.home == "Home" {
+//                    cell.home.text = "H"
+//                    cell.home.textColor = sweetBlue //Classic iStaples Blue
+//
+//                } else {
+//                    cell.home.text = "A"
+//                    cell.home.textColor = sweetGreen
+//
+//                }
                 return cell
             }
             
@@ -564,26 +594,98 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             cell.sport.text = tag + (event.sport)
             cell.time.text = "\(String(describing: event.time))"
             cell.school.text = event.school
-            cell.school.font = UIFont(name: "HelveticaNeue-Medium", size: 12)
+            cell.school.font = UIFont(name: "HelveticaNeue-Medium", size: 18)
             
-            cell.home.font = UIFont(name: "HelveticaNeue", size: 35)
-            cell.time.font = UIFont(name: "HelveticaNeue", size: 17)
-            //print(gameDates[indexPath.row])
+//            cell.home.font = UIFont(name: "HelveticaNeue", size: 35)
+            cell.time.font = UIFont(name: "HelveticaNeue", size: 20)
             
-            if event.gameType == "Practice"{
-                cell.home.text = "P"
-                cell.home.textColor = sweetBlue //Classic iStaples Blue
-            }else if event.home == "Home" {
-                cell.home.text = "H"
-                cell.home.textColor = sweetBlue //Classic iStaples Blue
-                //            cell.home.font = UIFont(name: "HelveticaNeue", size: 16)
-                
-            } else {
-                cell.home.text = "A"
-                cell.home.textColor = sweetGreen
-                
-            }
+
         }
+        
+        if (event.sport != ""){
+            var opponentName = event.opponent.components(separatedBy: " ")
+            opponentName.append(school)
+            cell.currentEvent = event
+            cell.homeLabel.textColor = sweetBlue
+            if schoolKey.split(separator: " ").count > 2 {
+                let schoolArray = schoolKey.split(separator: " ")
+                if ("\(String(schoolArray[0]))  \(String(schoolArray[1]))".characters.count < 35){
+                    cell.homeLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1])) \(String(schoolArray[2]))..."
+                }else{
+                    cell.homeLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1]))"
+                }
+            }else{
+                cell.homeLabel.text = schoolKey
+            }
+            var initials = ""
+            for word in schoolKey.split(separator: " "){
+                if (initials.characters.count < 2){
+                    initials = initials + String(word)[0]
+                }
+            }
+            if (initials.characters.count == 2){
+                cell.homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 60)
+            }
+            else{
+                cell.homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
+            }
+            cell.homeLetter.text = initials
+            cell.homeLetterView.backgroundColor = schoolColors[schoolKey] ?? sweetBlue
+            cell.homeLetterView.layer.cornerRadius = cell.homeLetterView.layer.frame.size.width / 2
+            
+            
+            
+            
+            if event.opponent.split(separator: " ").count > 2 {
+                let schoolArray = event.opponent.split(separator: " ")
+                if ("\(String(schoolArray[0]))  \(String(schoolArray[1]))".characters.count < 35){
+                    cell.OpponentLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1])) \(String(schoolArray[2]))..."
+                }else{
+                    cell.OpponentLabel.text = "\(String(schoolArray[0]))  \(String(schoolArray[1]))"
+                }
+            }else{
+                cell.OpponentLabel.text = event.opponent
+            }
+            cell.OpponentLabel.textColor = schoolColors[cell.OpponentLabel.text!] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+
+            initials = ""
+            for word in  event.opponent.split(separator: " "){
+                if (initials.characters.count < 2){
+                    initials = initials + String(word)[0]
+                }
+            }
+            if (initials.characters.count == 2){
+                cell.awayLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 60)
+            }
+            else{
+                cell.awayLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
+            }
+            cell.awayLetter.text = initials
+            
+            //            opponentLabel.text = String(self.currentEvent!.opponent.split(separator: " ")[0])
+            //            var initialsOpponent = ""
+            //            for word in self.currentEvent!.opponent.split(separator: " "){
+            //                initialsOpponent = initialsOpponent + String(word)[0]
+            //            }
+            //            opponentLetter.text = initialsOpponent
+            cell.opponentLetterView.backgroundColor = schoolColors[cell.OpponentLabel.text!]  ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+            cell.opponentLetterView.layer.cornerRadius = cell.opponentLetterView.layer.frame.size.width / 2
+            cell.homeAwaySwitch.tintColor = schoolColors[schoolKey] ?? sweetBlue
+            switch event.home {
+            case "Home":
+                cell.homeAwaySwitch.selectedSegmentIndex = 0
+                cell.homeAwaySwitch.tintColor = schoolColors[schoolKey] ?? sweetBlue
+            //                homeAwaySelector.setEnabled(false, forSegmentAt: 0)
+            case "Away":
+                cell.homeAwaySwitch.tintColor = schoolColors[cell.OpponentLabel.text!] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+                cell.homeAwaySwitch.selectedSegmentIndex = 1
+            //                homeAwaySelector.setEnabled(false, forSegmentAt: 1)
+            default:
+                break
+            }
+            
+        }
+
         
         return cell
         

@@ -101,6 +101,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         if arrayOfSchools.count == 0{
             self.getSchools()
         }
+        self.navigationController?.navigationBar.barTintColor = sweetBlue
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -183,12 +184,15 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "DefaultSportsVC") as! DefaultSportsVC
             NetworkManager.sharedInstance.performRequestSchool()
+            NetworkManager.sharedInstance.performRequestSports()
 
             if (previousVC?.title == "Initial") {
                 navigationController?.pushViewController(vc,
                                                          animated: true)
             } else {
                 NetworkManager.sharedInstance.performRequestSchool()
+                NetworkManager.sharedInstance.performRequestSports()
+
                 self.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true, completion: nil)
             }
@@ -202,6 +206,8 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "DefaultSportsVC") as! DefaultSportsVC
             NetworkManager.sharedInstance.performRequestSchool()
+            NetworkManager.sharedInstance.performRequestSports()
+
             if (previousVC?.title == "Initial") {
                 navigationController?.pushViewController(vc,
                                                         animated: true)
@@ -212,10 +218,13 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             }
           
         }
+        sweetBlue = schoolColors[schoolKey] ?? UIColor(red:0.00, green:0.34, blue:0.60, alpha:1.0)
+
     }
     
     @IBAction func donePressed(_ sender: AnyObject) {
         NetworkManager.sharedInstance.performRequestSchool()
+        NetworkManager.sharedInstance.performRequestSports()
         self.dismiss(animated: true, completion: nil)
     }
     

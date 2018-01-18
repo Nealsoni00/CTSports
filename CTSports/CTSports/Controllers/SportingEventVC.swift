@@ -91,7 +91,7 @@ class SportingEventVC: UITableViewController {
                 homeAwaySelector.selectedSegmentIndex = 0
 //                homeAwaySelector.setEnabled(false, forSegmentAt: 0)
             case "Away":
-                homeAwaySelector.tintColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+                homeAwaySelector.tintColor = schoolColors[self.currentEvent!.opponent] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
                 homeAwaySelector.selectedSegmentIndex = 1
 //                homeAwaySelector.setEnabled(false, forSegmentAt: 1)
             default:
@@ -142,7 +142,7 @@ class SportingEventVC: UITableViewController {
             
             
             
-            opponentLabel.textColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+            opponentLabel.textColor = schoolColors[self.currentEvent!.opponent] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
 
             if self.currentEvent!.opponent.split(separator: " ").count > 2 {
                 let schoolArray = self.currentEvent!.opponent.split(separator: " ")
@@ -174,7 +174,7 @@ class SportingEventVC: UITableViewController {
 //                initialsOpponent = initialsOpponent + String(word)[0]
 //            }
 //            opponentLetter.text = initialsOpponent
-            opponentLetterView.backgroundColor = UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+            opponentLetterView.backgroundColor = schoolColors[self.currentEvent!.opponent] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             opponentLetterView.layer.cornerRadius = opponentLetterView.layer.frame.size.width / 2
             
         
@@ -226,10 +226,14 @@ class SportingEventVC: UITableViewController {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "sportsInfoCell", for: indexPath) as! SportsInfoCell
         if (currentEvent != nil) {
             cell.name.text = headers[indexPath.row]
-            if (information[indexPath.row] == ""){
-                cell.info.text = "N/A"
+            if (indexPath.row < information.count){
+                if (information[indexPath.row] == ""){
+                    cell.info.text = "N/A"
+                }else{
+                    cell.info.text = information[indexPath.row]
+                }
             }else{
-                cell.info.text = information[indexPath.row]
+                cell.info.text = "N/A"
             }
         }
         return cell
