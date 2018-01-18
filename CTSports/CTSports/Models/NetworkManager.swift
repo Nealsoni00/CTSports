@@ -127,10 +127,13 @@ class NetworkManager: NSObject {
     func performRequestSports(){
         print("GETTING SPECIFIC GAMES")
         specificGames.removeAll()
+        print(performingSpecificRequest)
         if !self.performingSpecificRequest {
-            performingSpecificRequest = true
             for sport in defaultSports{
+                
                 if sport != "" {
+                    performingSpecificRequest = true
+
                     print("getting games for \(String(describing: sportsDict[sport]))")
                     let url = "\(baseURL)sc=\(school)&sp=\(sportsDict[sport]!)&starttoday=1"
                     Alamofire.request(url).responseJSON { response in
@@ -206,8 +209,10 @@ class NetworkManager: NSObject {
                             if (gameDate1 != "TBA") {
                                 self.specificGames.append(event)
                             }
+                            print("ova here")
                         }
                         self.doneSpecific = true;
+                        print("i am done")
                         self.specificGames = Array(Set(self.specificGames))
                         self.specificGames = self.specificGames.sorted(by: { $0.exactDate.compare($1.exactDate as Date) == .orderedAscending})
                         self.performingSpecificRequest = false

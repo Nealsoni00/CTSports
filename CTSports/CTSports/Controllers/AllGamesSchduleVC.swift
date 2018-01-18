@@ -10,6 +10,8 @@ import UIKit
 import SWXMLHash
 import GoogleMobileAds
 import Alamofire
+import CoreLocation
+
 
 //let sweetBlue = UIColor(red:0.13, green:0.42, blue:0.81, alpha:1.0)
 
@@ -176,8 +178,28 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.gray], for: .normal)
         levelSelector.tintColor = sweetBlue
         self.navigationItem.title = "\(schoolKey) Sports Schedule"
+        
+        print("LOC")
+        getCoordinate(address: "Staples high school") { coordinate, error in
+            if error != nil {
+                //display error
+                return
+            } else {
+                //at this point `coordinate ` contains a valid coordinate.
+                //Put your code to do something with it here
+                print("resulting coordinate = (\(coordinate?.latitude),\(coordinate?.longitude))")
+            }
+        }
+
+        
     }
 
+    func getCoordinate(address: String, completion: @escaping(_ coordinate: CLLocationCoordinate2D?, _ error: Error?) -> () ) {
+        CLGeocoder().geocodeAddressString(address) { placemarks, error in
+            completion(placemarks?.first?.location?.coordinate, error)
+        }
+    }
+    
 //    func dataRecieved(allGames: [SportingEvent]) {
 //        print("ALL GAMES: \(allGames)")
 //
