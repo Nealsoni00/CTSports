@@ -109,6 +109,7 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
         if arrayOfSports.count == 0{
             self.getSports()
         }
+        self.navigationController?.navigationBar.barTintColor = sweetBlue
      
     }
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -226,10 +226,14 @@ class SportingEventVC: UITableViewController {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "sportsInfoCell", for: indexPath) as! SportsInfoCell
         if (currentEvent != nil) {
             cell.name.text = headers[indexPath.row]
-            if (information[indexPath.row] == ""){
-                cell.info.text = "N/A"
+            if (indexPath.row < information.count){
+                if (information[indexPath.row] == ""){
+                    cell.info.text = "N/A"
+                }else{
+                    cell.info.text = information[indexPath.row]
+                }
             }else{
-                cell.info.text = information[indexPath.row]
+                cell.info.text = "N/A"
             }
         }
         return cell

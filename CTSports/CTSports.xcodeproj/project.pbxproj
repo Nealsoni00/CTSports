@@ -116,6 +116,7 @@
 		368D7E8F1FE7809C000BE5D4 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D7E8E1FE7809C000BE5D4 /* AboutVC.swift */; };
 		36ACF2C21FE8A98C007BE150 /* SetSportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ACF2C11FE8A98C007BE150 /* SetSportVC.swift */; };
 		36ACF2C41FE98E59007BE150 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ACF2C31FE98E59007BE150 /* StringExtension.swift */; };
+		36F8C3042010498E00B136EA /* colorsDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F8C3032010498E00B136EA /* colorsDict.swift */; };
 		496F4F5E1FE7FC9C00799E40 /* sports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 496F4F5D1FE7FC9C00799E40 /* sports.txt */; };
 		499CA84C1FF8A46F006FC328 /* Settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 499CA84B1FF8A46F006FC328 /* Settings-50.png */; };
 		499CA84E1FF8A812006FC328 /* DefaultSportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA84D1FF8A812006FC328 /* DefaultSportCell.swift */; };
@@ -263,6 +264,7 @@
 		368D7E8E1FE7809C000BE5D4 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		36ACF2C11FE8A98C007BE150 /* SetSportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSportVC.swift; sourceTree = "<group>"; };
 		36ACF2C31FE98E59007BE150 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		36F8C3032010498E00B136EA /* colorsDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorsDict.swift; sourceTree = "<group>"; };
 		3EA21579716148E53016E177 /* Pods-CTSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTSports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTSports/Pods-CTSports.debug.xcconfig"; sourceTree = "<group>"; };
 		496F4F5D1FE7FC9C00799E40 /* sports.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sports.txt; sourceTree = "<group>"; };
 		499CA84B1FF8A46F006FC328 /* Settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings-50.png"; path = "../../../../KnowSnow/KnowSnow/Graphics/Settings-50.png"; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				366A8DD41FE19EB30082A64D /* NSDateExtension.swift */,
+				36F8C3032010498E00B136EA /* colorsDict.swift */,
 				366A8DDA1FE40F8C0082A64D /* UIImageViewExtension.swift */,
 				49CDAADA1FE84890005475FB /* SequenceExtension.swift */,
 				49CDAADE1FE8B604005475FB /* ArrayExtension.swift */,
@@ -953,6 +956,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3653CDA81FE6E35000F396CD /* SetInfoCell.swift in Sources */,
+				36F8C3042010498E00B136EA /* colorsDict.swift in Sources */,
 				499CA8521FF8A9BF006FC328 /* DefaultSportsVC.swift in Sources */,
 				366A8DC41FE17DCF0082A64D /* SportsCell.swift in Sources */,
 				499CA8501FF8A939006FC328 /* DefaultSportingEvent.swift in Sources */,
