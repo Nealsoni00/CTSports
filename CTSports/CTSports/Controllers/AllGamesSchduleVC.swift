@@ -301,18 +301,18 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
     }
     @objc func infoPressed() {
         let infoPage = self.storyboard?.instantiateViewController(withIdentifier: "infoVC") as! UINavigationController
-        if #available(iOS 10.3, *) {
-            UIApplication.shared.setAlternateIconName(nil) { error in
-                if let error = error {
-                    print()
-                    print("ERROR \(error.localizedDescription)")
-                } else {
-                    print("Success!")
-                }
-            }
-        } else {
-            // Fallback on earlier versions
-        }
+//        if #available(iOS 10.3, *) {
+//            UIApplication.shared.setAlternateIconName(nil) { error in
+//                if let error = error {
+//                    print()
+//                    print("ERROR \(error.localizedDescription)")
+//                } else {
+//                    print("Success!")
+//                }
+//            }
+//        } else {
+//            // Fallback on earlier versions
+//        }
         self.tabBarController?.present(infoPage, animated: true, completion: nil)
     }
 
@@ -629,7 +629,50 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         }
 
         if (event.sport != ""){
-
+            cell.homeView.backgroundColor = schoolColors[schoolKey] ?? sweetBlue
+            cell.homeView.layer.cornerRadius = cell.homeView.layer.frame.size.width / 2
+            cell.homeLetters.text = schoolKey.getInitals()
+            if (schoolKey.getInitals().count >= 2){
+                cell.homeLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 35)
+            }
+            else{
+                cell.homeLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 42)
+            }
+            
+//            cell.awayView.backgroundColor = schoolColors[event.opponent] ?? sweetBlue
+//            cell.awayView.layer.cornerRadius = cell.awayView.layer.frame.size.width / 2
+////            cell.awayLetter.text = event.opponent?.getInitals() = ""
+//            if (event.opponent.getInitals().count >= 2){
+//                cell.awayLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 35)
+//            }
+//            else{
+//                cell.awayLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 42)
+//            }
+            
+            var initials = ""
+            for word in  event.opponent.split(separator: " "){
+                if (initials.characters.count < 2){
+                    initials = initials + String(word)[0]
+                }
+            }
+            print(initials)
+            if (initials.count >= 2){
+                cell.awayLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 35)
+            }
+            else{
+                cell.awayLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 42)
+            }
+            cell.awayLetters.text = initials
+            
+            //            opponentLabel.text = String(self.currentEvent!.opponent.split(separator: " ")[0])
+            //            var initialsOpponent = ""
+            //            for word in self.currentEvent!.opponent.split(separator: " "){
+            //                initialsOpponent = initialsOpponent + String(word)[0]
+            //            }
+            //            opponentLetter.text = initialsOpponent
+            cell.awayView.backgroundColor = schoolColors[event.opponent] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+            cell.awayView.layer.cornerRadius = cell.awayView.layer.frame.size.width / 2
+            
 
         }
 

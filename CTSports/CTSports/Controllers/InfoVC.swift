@@ -34,7 +34,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     
     override func viewDidAppear(_ animated: Bool) {
 //        defaultSportLabel.text = "Change Default Sport From: \(sportKey)"
-        defaultSchoolLabel.text = "Change Default School From: \(schoolKey)"
+        defaultSchoolLabel.text = "School: \(schoolKey)"
         self.navigationController?.navigationBar.barTintColor = sweetBlue
 
     }

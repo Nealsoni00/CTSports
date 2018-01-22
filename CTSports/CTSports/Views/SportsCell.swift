@@ -23,6 +23,13 @@ class SportsCell: UITableViewCell {
     @IBOutlet weak var awayLetter: UILabel!
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var homeLetter: UILabel!
+    
+    @IBOutlet weak var homeView: UIView!
+    @IBOutlet weak var homeLetters: UILabel!
+    @IBOutlet weak var awayView: UIView!
+    @IBOutlet weak var awayLetters: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

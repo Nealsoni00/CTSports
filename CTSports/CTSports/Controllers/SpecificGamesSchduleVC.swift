@@ -308,19 +308,19 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     @objc func infoPressed() {
         
         let infoPage = self.storyboard?.instantiateViewController(withIdentifier: "infoVC") as! UINavigationController
-        
-        if #available(iOS 10.3, *) {
-            UIApplication.shared.setAlternateIconName("AppIcon-2") { error in
-                if let error = error {
-                    print()
-                    print("ERROR \(error.localizedDescription)")
-                } else {
-                    print("Success!")
-                }
-            }
-        } else {
-            // Fallback on earlier versions
-        }
+//        
+//        if #available(iOS 10.3, *) {
+//            UIApplication.shared.setAlternateIconName("AppIcon-2") { error in
+//                if let error = error {
+//                    print()
+//                    print("ERROR \(error.localizedDescription)")
+//                } else {
+//                    print("Success!")
+//                }
+//            }
+//        } else {
+//            // Fallback on earlier versions
+//        }
         
         self.tabBarController?.present(infoPage, animated: true, completion: nil)
     }
