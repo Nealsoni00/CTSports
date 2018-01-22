@@ -194,8 +194,8 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             self.navigationItem.title = "YOUR SPORTS"
             self.title = "Your Sports"
         }
-        if (schoolKey != nil){
-            let initial = schoolKey[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
+        if (schoolKey != ""){
+            let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
             self.tabBarController?.tabBar.items![1].image = UIImage(named: "\(initial).png")?.imageWithColor(UIColor.gray)
             self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(sweetBlue)
         }

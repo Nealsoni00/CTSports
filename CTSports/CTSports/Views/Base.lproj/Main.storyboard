@@ -505,13 +505,56 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetInfoCell" id="2St-gt-bF6">
-                                <rect key="frame" x="0.0" y="82" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SetInfoCell" rowHeight="63" id="2St-gt-bF6" customClass="SetInfoCell" customModule="CTSports" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="82" width="375" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2St-gt-bF6" id="OT0-fO-1pn">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ8-O6-YT7">
+                                            <rect key="frame" x="81" y="8" width="294" height="46.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z73-PD-Nwt">
+                                            <rect key="frame" x="16" y="6" width="50" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etF-Zo-RKV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <fontDescription key="fontDescription" name="SFCollegiateSolid-Bold" family="SF Collegiate Solid" pointSize="55"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0088135711850000006" green="0.1461266577" blue="0.43141788240000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="etF-Zo-RKV" firstAttribute="leading" secondItem="Z73-PD-Nwt" secondAttribute="leading" id="BWN-Em-ibP"/>
+                                                <constraint firstItem="etF-Zo-RKV" firstAttribute="top" secondItem="Z73-PD-Nwt" secondAttribute="top" id="MZt-VR-RQs"/>
+                                                <constraint firstAttribute="bottom" secondItem="etF-Zo-RKV" secondAttribute="bottom" id="NQI-Oj-fzv"/>
+                                                <constraint firstAttribute="width" constant="50" id="Zgh-7I-i30"/>
+                                                <constraint firstAttribute="trailing" secondItem="etF-Zo-RKV" secondAttribute="trailing" id="oCc-O6-gXm"/>
+                                                <constraint firstAttribute="height" constant="50" id="wWJ-vW-FVF"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="DZ8-O6-YT7" firstAttribute="top" secondItem="OT0-fO-1pn" secondAttribute="top" constant="8" id="BfX-qV-pI3"/>
+                                        <constraint firstItem="DZ8-O6-YT7" firstAttribute="centerY" secondItem="OT0-fO-1pn" secondAttribute="centerY" id="HgN-Fs-hAw"/>
+                                        <constraint firstAttribute="bottom" secondItem="DZ8-O6-YT7" secondAttribute="bottom" constant="8" id="Jmf-DE-BjO"/>
+                                        <constraint firstAttribute="trailing" secondItem="DZ8-O6-YT7" secondAttribute="trailing" id="UYf-Y6-emv"/>
+                                        <constraint firstItem="Z73-PD-Nwt" firstAttribute="leading" secondItem="OT0-fO-1pn" secondAttribute="leading" constant="16" id="XUg-Vx-dVf"/>
+                                        <constraint firstItem="Z73-PD-Nwt" firstAttribute="top" secondItem="OT0-fO-1pn" secondAttribute="top" constant="6" id="fYi-gn-Svh"/>
+                                        <constraint firstAttribute="bottom" secondItem="Z73-PD-Nwt" secondAttribute="bottom" constant="6.5" id="g5e-mu-EQg"/>
+                                        <constraint firstItem="DZ8-O6-YT7" firstAttribute="leading" secondItem="Z73-PD-Nwt" secondAttribute="trailing" constant="15" id="ryB-gU-Ajj"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="SchoolInitial" destination="etF-Zo-RKV" id="hfd-l5-R57"/>
+                                    <outlet property="infoText" destination="DZ8-O6-YT7" id="fLY-we-9Gd"/>
+                                    <outlet property="schoolView" destination="Z73-PD-Nwt" id="YqA-vg-Bai"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -529,7 +572,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xq0-b1-Ipw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="2053"/>
+            <point key="canvasLocation" x="1472.8" y="2052.3238380809598"/>
         </scene>
         <!--Info-->
         <scene sceneID="OCg-m8-2mk">
@@ -1621,6 +1664,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pMM-Hf-x1J"/>
-        <segue reference="CJq-5F-UPE"/>
+        <segue reference="9Mi-m1-UwP"/>
     </inferredMetricsTieBreakers>
 </document>

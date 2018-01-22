@@ -168,8 +168,11 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             parseAllGamesIntoDictionaries()
         }
         self.title = String(schoolKey.split(separator: " ")[0])
-        if (schoolKey != nil){
-            let initial = schoolKey[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
+        if (schoolKey != ""){
+            let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
+
+            if schoolKey.contains(find: "East"){
+            }
             self.tabBarController?.tabBar.items![1].image = UIImage(named: "\(initial).png")?.imageWithColor(UIColor.gray)
             self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(sweetBlue)
         }
