@@ -144,7 +144,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "SetInfoCell", for: indexPath)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "SetInfoCell", for: indexPath) as! SetInfoCell
         
         arrayOfSchools = Array(schoolsDict.keys).sorted(by: <)
         var currentSchool = ""
@@ -154,12 +154,18 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
                 currentSchool = filteredSchools[indexPath.row]
             }
         }else{
-
-
             currentSchool = letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]
         }
-        cell.textLabel?.text = currentSchool
-
+        cell.infoText?.text = currentSchool
+        cell.schoolView.backgroundColor = schoolColors[currentSchool] ?? sweetBlue
+        cell.schoolView.layer.cornerRadius = cell.schoolView.layer.frame.size.width / 2
+        cell.SchoolInitial.text = currentSchool.getInitals()
+        if (currentSchool.getInitals().count >= 2){
+            cell.SchoolInitial.font = UIFont (name: "SFCollegiateSolid-Bold", size: 35)
+        }
+        else{
+            cell.SchoolInitial.font = UIFont (name: "SFCollegiateSolid-Bold", size: 42)
+        }
         return cell
     }
     

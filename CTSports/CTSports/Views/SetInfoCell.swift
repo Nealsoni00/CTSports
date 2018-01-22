@@ -11,8 +11,11 @@ import UIKit
 class SetInfoCell: UITableViewCell {
 
     @IBOutlet weak var infoText: UILabel!
-    
     @IBOutlet weak var sportImage: UIImageView!
+    
+    
+    @IBOutlet weak var SchoolInitial: UILabel!
+    @IBOutlet weak var schoolView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

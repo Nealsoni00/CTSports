@@ -30,4 +30,15 @@ extension String {
     func containsIgnoringCase(find: String) -> Bool{
         return self.range(of: find, options: .caseInsensitive) != nil
     }
+    func getInitals() -> String{
+        let school = self.replacingOccurrences(of: "of", with: "").replacingOccurrences(of: "the", with: "")
+        var initials = ""
+        for word in school.split(separator: " "){
+            if (initials.characters.count < 2){
+                initials = initials + String(word)[0]
+            }
+        }
+        return initials
+        
+    }
 }
