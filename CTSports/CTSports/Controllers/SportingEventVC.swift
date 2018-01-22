@@ -15,6 +15,8 @@
 
 import Foundation
 import UIKit
+import PopupDialog
+import EventKit
 
 class SportingEventVC: UITableViewController {
     @IBOutlet var loadingSpinner: UIActivityIndicatorView!
@@ -236,7 +238,37 @@ class SportingEventVC: UITableViewController {
                 cell.info.text = "N/A"
             }
         }
+        
         return cell
+    }
+    @IBAction func addToCalender(_ sender: Any) {
+        let title = "Add Event to Calender"
+        let message = "Do you want to add this sporting event to your calender?"
+        
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: message)
+        
+        // Create buttons
+        let buttonOne = CancelButton(title: "Cancel") {
+            print("You canceled the car dialog.")
+        }
+        
+        // This button will not the dismiss the dialog
+        let buttonTwo = DefaultButton(title: "Add", dismissOnTap: false) {
+            addEventToCalendar(title: "Girlfriend birthday", description: "Remember or die!", startDate: Date(), endDate: Date())
+            
+        }
+        
+    
+        
+        // Add buttons to dialog
+        // Alternatively, you can use popup.addButton(buttonOne)
+        // to add a single button
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        self.present(popup, animated: true, completion: nil)
+        
     }
     
 }
@@ -273,6 +305,30 @@ extension String {
         }
         return attributedString
     }
+}
+
+func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+    let eventStore = EKEventStore()
+    
+    eventStore.requestAccess(to: .event, completion: { (granted, error) in
+        if (granted) && (error == nil) {
+            let event = EKEvent(eventStore: eventStore)
+            event.title = title
+            event.startDate = startDate
+            event.endDate = endDate
+            event.notes = description
+            event.calendar = eventStore.defaultCalendarForNewEvents
+            do {
+                try eventStore.save(event, span: .thisEvent)
+            } catch let e as NSError {
+                completion?(false, e)
+                return
+            }
+            completion?(true, nil)
+        } else {
+            completion?(false, error as NSError?)
+        }
+    })
 }
 
 
