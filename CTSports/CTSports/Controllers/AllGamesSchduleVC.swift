@@ -169,10 +169,8 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         }
         self.title = String(schoolKey.split(separator: " ")[0])
         if (schoolKey != ""){
-            let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
+            let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "St. ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
 
-            if schoolKey.contains(find: "East"){
-            }
             self.tabBarController?.tabBar.items![1].image = UIImage(named: "\(initial).png")?.imageWithColor(UIColor.gray)
             self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(sweetBlue)
         }
@@ -284,6 +282,8 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         self.gameNSDatesJV  = self.gameNSDatesJV.removeDuplicates()
         self.gameNSDatesFR  = self.gameNSDatesFR.removeDuplicates()
         self.gameNSDatesAll = self.gameNSDatesAll.removeDuplicates()
+
+        
         self.activitySpinner.stopAnimating()
         self.activitySpinner.isHidden = true
         self.tableView.reloadData()
@@ -639,37 +639,14 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 cell.homeLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 42)
             }
             
-//            cell.awayView.backgroundColor = schoolColors[event.opponent] ?? sweetBlue
-//            cell.awayView.layer.cornerRadius = cell.awayView.layer.frame.size.width / 2
-////            cell.awayLetter.text = event.opponent?.getInitals() = ""
-//            if (event.opponent.getInitals().count >= 2){
-//                cell.awayLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 35)
-//            }
-//            else{
-//                cell.awayLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 42)
-//            }
-            
-            var initials = ""
-            for word in  event.opponent.split(separator: " "){
-                if (initials.characters.count < 2){
-                    initials = initials + String(word)[0]
-                }
-            }
-            print(initials)
-            if (initials.count >= 2){
+
+            cell.awayLetters.text = event.opponent.getInitals()
+            if (event.opponent.getInitals().count >= 2){
                 cell.awayLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 35)
             }
             else{
                 cell.awayLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 42)
             }
-            cell.awayLetters.text = initials
-            
-            //            opponentLabel.text = String(self.currentEvent!.opponent.split(separator: " ")[0])
-            //            var initialsOpponent = ""
-            //            for word in self.currentEvent!.opponent.split(separator: " "){
-            //                initialsOpponent = initialsOpponent + String(word)[0]
-            //            }
-            //            opponentLetter.text = initialsOpponent
             cell.awayView.backgroundColor = schoolColors[event.opponent] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             cell.awayView.layer.cornerRadius = cell.awayView.layer.frame.size.width / 2
             

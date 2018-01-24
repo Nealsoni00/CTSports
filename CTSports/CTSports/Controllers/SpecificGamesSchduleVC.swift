@@ -195,7 +195,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             self.title = "Your Sports"
         }
         if (schoolKey != ""){
-            let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
+            let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "St. ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
             self.tabBarController?.tabBar.items![1].image = UIImage(named: "\(initial).png")?.imageWithColor(UIColor.gray)
             self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(sweetBlue)
         }
@@ -635,6 +635,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         }
         
         if (event.sport != ""){
+            
             var opponentName = event.opponent.components(separatedBy: " ")
             opponentName.append(school)
             cell.currentEvent = event
@@ -649,23 +650,19 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             }else{
                 cell.homeLabel.text = schoolKey
             }
-            var initials = ""
-            for word in schoolKey.split(separator: " "){
-                if (initials.characters.count < 2){
-                    initials = initials + String(word)[0]
-                }
-            }
-            if (initials.characters.count == 2){
+            
+            
+            if (schoolKey.getInitals().characters.count == 2){
                 cell.homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 60)
             }
             else{
                 cell.homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
             }
-            cell.homeLetter.text = initials
+            cell.homeLetter.text = schoolKey.getInitals()
             cell.homeLetterView.backgroundColor = schoolColors[schoolKey] ?? sweetBlue
             cell.homeLetterView.layer.cornerRadius = cell.homeLetterView.layer.frame.size.width / 2
             
-            
+        
             
             
             if event.opponent.split(separator: " ").count > 2 {
@@ -680,28 +677,18 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             }
             cell.OpponentLabel.textColor = schoolColors[cell.OpponentLabel.text!] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
 
-            initials = ""
-            for word in  event.opponent.split(separator: " "){
-                if (initials.characters.count < 2){
-                    initials = initials + String(word)[0]
-                }
-            }
-            if (initials.characters.count == 2){
+           
+            if (event.opponent.getInitals().characters.count == 2){
                 cell.awayLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 60)
             }
             else{
                 cell.awayLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
             }
-            cell.awayLetter.text = initials
-            
-            //            opponentLabel.text = String(self.currentEvent!.opponent.split(separator: " ")[0])
-            //            var initialsOpponent = ""
-            //            for word in self.currentEvent!.opponent.split(separator: " "){
-            //                initialsOpponent = initialsOpponent + String(word)[0]
-            //            }
-            //            opponentLetter.text = initialsOpponent
+            cell.awayLetter.text = event.opponent.getInitals()
             cell.opponentLetterView.backgroundColor = schoolColors[cell.OpponentLabel.text!]  ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             cell.opponentLetterView.layer.cornerRadius = cell.opponentLetterView.layer.frame.size.width / 2
+            
+            
             cell.homeAwaySwitch.tintColor = schoolColors[schoolKey] ?? sweetBlue
             switch event.home {
             case "Home":

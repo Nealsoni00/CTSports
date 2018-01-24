@@ -137,9 +137,10 @@ SMSA:SportsSciencesAcademy
 Somers:Somers
 South Windsor:SouthWindsor
 Southington:Southington
-St.Bernard:StBernard
-St.Joseph:StJoseph
-St.PaulCatholic:StPaulCatholic
+St. Bernard:StBernard
+St. Lukes:StLukes
+St. Joseph:StJoseph
+St. PaulCatholic:StPaulCatholic
 Stafford:Stafford
 Stamford:Stamford
 StamfordAcademy:StamfordAcademy
