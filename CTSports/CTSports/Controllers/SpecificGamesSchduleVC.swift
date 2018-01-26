@@ -493,7 +493,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
-        headerView.backgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.00)
+        headerView.backgroundColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.00)
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
         label.text = titleForSectionHeader(section: section)!
@@ -587,7 +587,6 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
 //                    cell.home.textColor = sweetGreen
 //
 //                }
-                return cell
             }
             
         } else{

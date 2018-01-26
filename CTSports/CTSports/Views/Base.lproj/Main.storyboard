@@ -202,7 +202,7 @@
                                                     </connections>
                                                 </segmentedControl>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.97933279418583319" green="0.97807776492647269" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="oey-bb-7Hw" firstAttribute="top" secondItem="11T-Yc-SiM" secondAttribute="bottom" id="0Sb-sJ-pER"/>
                                                 <constraint firstItem="BRJ-So-dyP" firstAttribute="centerX" secondItem="QyR-r5-0S6" secondAttribute="centerX" constant="4" id="52N-V3-fGb"/>
@@ -1357,7 +1357,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CIAC.png" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-PN-IlE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-PN-IlE">
                                 <rect key="frame" x="87.5" y="143.5" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1741,6 +1741,7 @@
     </scenes>
     <resources>
         <image name="CIAC.png" width="3300" height="2550"/>
+        <image name="Logo.png" width="1024" height="1024"/>
         <image name="Settings-50.png" width="25" height="25"/>
         <image name="compare.png" width="64" height="64"/>
         <image name="email.png" width="42" height="42"/>
@@ -1751,6 +1752,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pMM-Hf-x1J"/>
-        <segue reference="CJq-5F-UPE"/>
+        <segue reference="9Mi-m1-UwP"/>
     </inferredMetricsTieBreakers>
 </document>
