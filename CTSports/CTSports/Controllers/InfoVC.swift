@@ -56,9 +56,9 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         
         if indexPath.section == 0{
             switch indexPath.row {
-            case 2:
-                let VC1 = self.storyboard?.instantiateViewController(withIdentifier: "SetSchoolViewController") as! UINavigationController
-                self.present(VC1, animated:true, completion: nil)
+//            case 2:
+//                let VC1 = self.storyboard?.instantiateViewController(withIdentifier: "SetSchoolViewController") as! UINavigationController
+//                self.present(VC1, animated:true, completion: nil)
             case 4:
                 if let url = URL(string: "http://www.casciac.org/scripts/editprac.cgi") {
                     UIApplication.shared.open(url, options: [:])
@@ -141,6 +141,11 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             
             newView.title = "About CTSports"
             newView.text = aboutText
+        }
+        else if segue.identifier == "addGames" {
+            let newView = segue.destination as! InputScheduleVC
+            
+            newView.title = "Missing Games?"
         }
             
         else if segue.identifier == "securitySegue" {

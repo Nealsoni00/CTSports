@@ -13,6 +13,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
+            <string>Avenir-Black</string>
             <string>Avenir-Book</string>
             <string>Avenir-Light</string>
             <string>Avenir-Medium</string>
@@ -508,7 +509,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GqF-KI-Gsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2268" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="2615" y="0.0"/>
         </scene>
         <!--Info-->
         <scene sceneID="hNk-J9-cVm">
@@ -591,7 +592,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xq0-b1-Ipw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472.8" y="2052.3238380809598"/>
+            <point key="canvasLocation" x="2961" y="2542"/>
         </scene>
         <!--Info-->
         <scene sceneID="OCg-m8-2mk">
@@ -605,7 +606,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CIAC.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-tE-sR4">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CTSportsLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-tE-sR4">
                                     <rect key="frame" x="122.5" y="18" width="130" height="130"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="130" id="jnb-2U-TRC"/>
@@ -740,6 +741,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.99998801946640015" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="Tlg-Za-0s5" kind="presentation" id="7fO-2u-qDc"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="ujB-AS-jBq">
                                         <rect key="frame" x="0.0" y="377.5" width="375" height="44"/>
@@ -775,21 +779,21 @@
                                             <segue destination="0bW-l3-idS" kind="presentation" id="5Em-Uk-EWj"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="KRI-fQ-SeP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="RFg-Vz-MK3">
                                         <rect key="frame" x="0.0" y="421.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KRI-fQ-SeP" id="nzn-xl-LUw">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RFg-Vz-MK3" id="ugC-aD-xvh">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting.png" translatesAutoresizingMaskIntoConstraints="NO" id="cDA-wp-Gks">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upload.png" translatesAutoresizingMaskIntoConstraints="NO" id="FSl-4c-DCc">
                                                     <rect key="frame" x="12" y="6.5" width="32" height="32"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="32" id="FAF-kr-K8S"/>
-                                                        <constraint firstAttribute="height" constant="32" id="hWH-86-PNB"/>
+                                                        <constraint firstAttribute="height" constant="32" id="FdX-Jf-Hiq"/>
+                                                        <constraint firstAttribute="width" constant="32" id="g6a-9j-fg7"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your team's schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="rjO-m8-IlU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Games on CIAC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="2H5-qK-B22">
                                                     <rect key="frame" x="60" y="8" width="281" height="28"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                     <color key="textColor" red="0.29169837980000002" green="0.29028920889999998" blue="0.29310755080000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -797,11 +801,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="rjO-m8-IlU" secondAttribute="trailing" id="AtL-lD-hEf"/>
-                                                <constraint firstItem="rjO-m8-IlU" firstAttribute="centerY" secondItem="nzn-xl-LUw" secondAttribute="centerY" id="Dbr-xq-FXf"/>
-                                                <constraint firstItem="rjO-m8-IlU" firstAttribute="leading" secondItem="cDA-wp-Gks" secondAttribute="trailing" constant="16" id="QnQ-x3-rbG"/>
-                                                <constraint firstItem="cDA-wp-Gks" firstAttribute="leading" secondItem="nzn-xl-LUw" secondAttribute="leading" constant="12" id="Vqs-p1-Tuw"/>
-                                                <constraint firstItem="cDA-wp-Gks" firstAttribute="centerY" secondItem="nzn-xl-LUw" secondAttribute="centerY" id="bZ6-FR-U1C"/>
+                                                <constraint firstItem="FSl-4c-DCc" firstAttribute="leading" secondItem="ugC-aD-xvh" secondAttribute="leading" constant="12" id="DE4-OV-Mst"/>
+                                                <constraint firstItem="2H5-qK-B22" firstAttribute="leading" secondItem="FSl-4c-DCc" secondAttribute="trailing" constant="16" id="KuQ-Wk-m6L"/>
+                                                <constraint firstAttribute="trailing" secondItem="2H5-qK-B22" secondAttribute="trailing" id="XDx-oR-wSb"/>
+                                                <constraint firstItem="2H5-qK-B22" firstAttribute="centerY" secondItem="ugC-aD-xvh" secondAttribute="centerY" id="piC-Sf-nzi"/>
+                                                <constraint firstItem="FSl-4c-DCc" firstAttribute="centerY" secondItem="ugC-aD-xvh" secondAttribute="centerY" id="pvE-TH-gHF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -820,7 +824,7 @@
                                                         <constraint firstAttribute="width" constant="32" id="TwV-36-2pM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Games Schedule" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cjn-cr-TI7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missing Games?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cjn-cr-TI7">
                                                     <rect key="frame" x="61" y="7" width="280" height="29"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
                                                     <color key="textColor" red="0.29169837984429914" green="0.29028920892717691" blue="0.29310755076142136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -838,6 +842,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.99998801946640015" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="grD-yC-fIq" kind="show" identifier="addGames" id="fmm-dI-RS1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1158,7 +1165,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JT3-1K-AwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="1262"/>
+            <point key="canvasLocation" x="1472.8" y="1261.169415292354"/>
         </scene>
         <!--About-->
         <scene sceneID="zhT-uh-wuS">
@@ -1195,7 +1202,128 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="si9-NG-ObP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2268" y="1262"/>
+            <point key="canvasLocation" x="2615" y="981"/>
+        </scene>
+        <!--Input ScheduleVC-->
+        <scene sceneID="2oO-7V-Lb1">
+            <objects>
+                <viewController id="grD-yC-fIq" customClass="InputScheduleVC" customModule="CTSports" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VOP-xw-cq8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Is a game missing? Is your sport's schedule not there?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yY4-oh-v2r">
+                                <rect key="frame" x="10" y="72" width="355" height="64"/>
+                                <color key="backgroundColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Vtt-lO-rGz"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C3A-qI-MTN">
+                                <rect key="frame" x="10" y="144" width="355" height="317"/>
+                                <color key="backgroundColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <string key="text">CTSports pulls all it's game and practice information from the CIAC schedules inputed by your coach and school's athletics director. Please contact them with the following link to update your practice schedules: http://www.casciac.org/scripts/editprac.cgi</string>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56K-cZ-7tf">
+                                <rect key="frame" x="50" y="469" width="275" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tc-fZ-HkD">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="70"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="23"/>
+                                        <state key="normal" title="Copy Link">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="CopyLinkButton:" destination="grD-yC-fIq" eventType="touchUpInside" id="Y7z-wZ-voA"/>
+                                            <action selector="buttonClicked:" destination="kYB-Dj-Zxb" eventType="touchUpInside" id="fEk-rM-haA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.64275789260000005" green="0.22011232380000001" blue="0.21957769990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="1Tc-fZ-HkD" firstAttribute="leading" secondItem="56K-cZ-7tf" secondAttribute="leading" id="3Cn-Vp-gc2"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Tc-fZ-HkD" secondAttribute="trailing" id="CCH-ty-1QE"/>
+                                    <constraint firstItem="1Tc-fZ-HkD" firstAttribute="top" secondItem="56K-cZ-7tf" secondAttribute="top" id="VyE-5K-xBU"/>
+                                    <constraint firstAttribute="height" constant="70" id="foK-gv-xg8"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Tc-fZ-HkD" secondAttribute="bottom" id="r1p-Ip-UGa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="wy8-vF-GPb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99X-mb-XEW">
+                                <rect key="frame" x="50" y="547" width="275" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbu-FR-AH9">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="70"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="23"/>
+                                        <state key="normal" title="Email Coach">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonClicked:" destination="kYB-Dj-Zxb" eventType="touchUpInside" id="fxD-FF-UE0"/>
+                                            <action selector="emailCoach:" destination="grD-yC-fIq" eventType="touchUpInside" id="axN-VO-igr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.043388359248638153" green="0.14612722396850586" blue="0.43141764402389526" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cbu-FR-AH9" secondAttribute="bottom" id="7V4-0Q-RgB"/>
+                                    <constraint firstAttribute="trailing" secondItem="cbu-FR-AH9" secondAttribute="trailing" id="Eq6-Kz-ObD"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="FzA-Va-kdN"/>
+                                    <constraint firstAttribute="bottom" secondItem="cbu-FR-AH9" secondAttribute="bottom" id="NyP-ee-r86"/>
+                                    <constraint firstItem="cbu-FR-AH9" firstAttribute="leading" secondItem="99X-mb-XEW" secondAttribute="leading" id="OZg-DK-T4f"/>
+                                    <constraint firstItem="cbu-FR-AH9" firstAttribute="top" secondItem="99X-mb-XEW" secondAttribute="top" id="kOz-ht-sWl"/>
+                                    <constraint firstAttribute="height" constant="70" id="qao-iC-Vaa"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="C3A-qI-MTN" firstAttribute="leading" secondItem="qOf-uE-xFB" secondAttribute="leading" constant="10" id="6gg-fW-fqW"/>
+                            <constraint firstItem="qOf-uE-xFB" firstAttribute="trailing" secondItem="yY4-oh-v2r" secondAttribute="trailing" constant="10" id="Cqo-dK-wea"/>
+                            <constraint firstItem="qOf-uE-xFB" firstAttribute="trailing" secondItem="C3A-qI-MTN" secondAttribute="trailing" constant="10" id="GaU-Kh-b7L"/>
+                            <constraint firstItem="C3A-qI-MTN" firstAttribute="top" secondItem="yY4-oh-v2r" secondAttribute="bottom" constant="8" id="JoV-Ri-igR"/>
+                            <constraint firstItem="yY4-oh-v2r" firstAttribute="top" secondItem="qOf-uE-xFB" secondAttribute="top" constant="8" id="OiC-Br-x6u"/>
+                            <constraint firstItem="56K-cZ-7tf" firstAttribute="top" secondItem="C3A-qI-MTN" secondAttribute="bottom" constant="8" id="Rfb-aa-Jz2"/>
+                            <constraint firstItem="yY4-oh-v2r" firstAttribute="leading" secondItem="qOf-uE-xFB" secondAttribute="leading" constant="10" id="VCw-wB-2Ag"/>
+                            <constraint firstItem="56K-cZ-7tf" firstAttribute="leading" secondItem="qOf-uE-xFB" secondAttribute="leading" constant="50" id="W10-PR-ZNH"/>
+                            <constraint firstItem="qOf-uE-xFB" firstAttribute="bottom" secondItem="99X-mb-XEW" secondAttribute="bottom" constant="50" id="WCu-FA-H9H"/>
+                            <constraint firstItem="99X-mb-XEW" firstAttribute="top" secondItem="56K-cZ-7tf" secondAttribute="bottom" constant="8" id="XOh-kv-eeW"/>
+                            <constraint firstItem="99X-mb-XEW" firstAttribute="leading" secondItem="qOf-uE-xFB" secondAttribute="leading" constant="50" id="g9i-fk-aIM"/>
+                            <constraint firstItem="qOf-uE-xFB" firstAttribute="trailing" secondItem="99X-mb-XEW" secondAttribute="trailing" constant="50" id="j5o-nW-Du8"/>
+                            <constraint firstItem="qOf-uE-xFB" firstAttribute="trailing" secondItem="56K-cZ-7tf" secondAttribute="trailing" constant="50" id="yeb-EI-YTm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qOf-uE-xFB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XyY-N5-Kdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2605.5999999999999" y="1663.7181409295354"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b5O-dq-Heu">
@@ -1239,7 +1367,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySf-Dy-E3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="2053"/>
+            <point key="canvasLocation" x="2268" y="2542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cK6-QR-jYD">
@@ -1261,7 +1389,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEm-L3-PAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="2736"/>
+            <point key="canvasLocation" x="782" y="2857"/>
         </scene>
         <!--Info-->
         <scene sceneID="rGI-ju-1va">
@@ -1328,7 +1456,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6j1-Uv-8Xx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472.8" y="2735.9820089955024"/>
+            <point key="canvasLocation" x="1473" y="2857"/>
         </scene>
         <!--Initial-->
         <scene sceneID="TJ9-Nr-QmY">
@@ -1339,7 +1467,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to CTSports! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpg-qO-w5R">
-                                <rect key="frame" x="85" y="104" width="204.5" height="31.5"/>
+                                <rect key="frame" x="85" y="89" width="204.5" height="31.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1352,24 +1480,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With CTSports, you can see your own up-to-date sports schedule by preselecting your school and your sports." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30n-eX-hjQ">
-                                <rect key="frame" x="10" y="334" width="355" height="44"/>
+                                <rect key="frame" x="10" y="321.5" width="355" height="44"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-PN-IlE">
-                                <rect key="frame" x="87.5" y="143.5" width="200" height="200"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="9YC-8x-MmY"/>
-                                    <constraint firstAttribute="height" constant="200" id="wq8-r5-xzF"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zY-Jk-dUT">
-                                <rect key="frame" x="87" y="440" width="202" height="70"/>
+                                <rect key="frame" x="87" y="380.5" width="202" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffe-qO-6uc">
-                                        <rect key="frame" x="0.0" y="0.0" width="202" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="202" height="44"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="23"/>
                                         <state key="normal" title="Get Started">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1386,15 +1506,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.64275789260864258" green="0.22011232376098633" blue="0.21957769989967346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="ffe-qO-6uc" secondAttribute="bottom" id="34e-5L-xfd"/>
-                                    <constraint firstItem="ffe-qO-6uc" firstAttribute="top" secondItem="1zY-Jk-dUT" secondAttribute="top" id="8wj-Up-SkT"/>
-                                    <constraint firstAttribute="height" constant="70" id="EF0-Jh-i7F"/>
-                                    <constraint firstItem="ffe-qO-6uc" firstAttribute="centerY" secondItem="1zY-Jk-dUT" secondAttribute="centerY" id="LtI-3u-g88"/>
-                                    <constraint firstItem="ffe-qO-6uc" firstAttribute="leading" secondItem="1zY-Jk-dUT" secondAttribute="leading" id="PnR-NT-LfH"/>
-                                    <constraint firstAttribute="trailing" secondItem="ffe-qO-6uc" secondAttribute="trailing" id="RU8-cr-IXZ"/>
-                                    <constraint firstItem="ffe-qO-6uc" firstAttribute="centerX" secondItem="1zY-Jk-dUT" secondAttribute="centerX" id="V0b-nt-6zW"/>
-                                    <constraint firstAttribute="width" constant="202" id="iQP-yg-pAG"/>
-                                    <constraint firstItem="ffe-qO-6uc" firstAttribute="centerX" secondItem="1zY-Jk-dUT" secondAttribute="centerX" id="wYJ-Q7-e04"/>
+                                    <constraint firstItem="ffe-qO-6uc" firstAttribute="top" secondItem="1zY-Jk-dUT" secondAttribute="top" id="074-M7-uUm"/>
+                                    <constraint firstAttribute="width" constant="202" id="2VD-fu-w7k"/>
+                                    <constraint firstAttribute="bottom" secondItem="ffe-qO-6uc" secondAttribute="bottom" id="Vb5-3K-jpZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ffe-qO-6uc" secondAttribute="trailing" id="X96-cV-pdn"/>
+                                    <constraint firstItem="ffe-qO-6uc" firstAttribute="leading" secondItem="1zY-Jk-dUT" secondAttribute="leading" id="beP-o0-Nt8"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1402,19 +1518,31 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CTSportsLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-PN-IlE">
+                                <rect key="frame" x="98" y="130.5" width="180" height="180"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="OKR-rs-Zrc"/>
+                                    <constraint firstAttribute="width" constant="180" id="wZP-Kh-NjN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.13248822093009949" green="0.22592398524284363" blue="0.39669448137283325" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="vpg-qO-w5R" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="0sA-fy-K2v"/>
-                            <constraint firstItem="30n-eX-hjQ" firstAttribute="top" secondItem="vpg-qO-w5R" secondAttribute="bottom" constant="198.5" id="2sk-02-wAw"/>
-                            <constraint firstItem="30n-eX-hjQ" firstAttribute="leading" secondItem="ycR-u2-CJ6" secondAttribute="leading" constant="10" id="2xn-DG-VHa"/>
-                            <constraint firstItem="1zY-Jk-dUT" firstAttribute="top" secondItem="30n-eX-hjQ" secondAttribute="bottom" constant="62" id="4dH-LQ-fbA"/>
-                            <constraint firstItem="1zY-Jk-dUT" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="CtO-HI-y4j"/>
-                            <constraint firstItem="30n-eX-hjQ" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="g4k-Wh-Zrw"/>
-                            <constraint firstAttribute="trailing" secondItem="30n-eX-hjQ" secondAttribute="trailing" constant="10" id="hPu-eW-tuh"/>
-                            <constraint firstItem="vpg-qO-w5R" firstAttribute="top" secondItem="utH-o0-ekc" secondAttribute="top" constant="40" id="ot9-P9-p7s"/>
-                            <constraint firstItem="k1g-PN-IlE" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="r1G-eE-uWl"/>
-                            <constraint firstItem="k1g-PN-IlE" firstAttribute="top" secondItem="vpg-qO-w5R" secondAttribute="bottom" constant="8" id="zKL-6W-h7t"/>
+                            <constraint firstItem="vpg-qO-w5R" firstAttribute="top" secondItem="utH-o0-ekc" secondAttribute="top" constant="25" id="2Gf-Oh-K9R"/>
+                            <constraint firstItem="30n-eX-hjQ" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="OA8-DA-C2m"/>
+                            <constraint firstItem="1zY-Jk-dUT" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="VMp-Fr-NTR"/>
+                            <constraint firstItem="k1g-PN-IlE" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="XHZ-Lh-kwc"/>
+                            <constraint firstItem="1zY-Jk-dUT" firstAttribute="top" secondItem="30n-eX-hjQ" secondAttribute="bottom" constant="15" id="a0G-Ul-iAf"/>
+                            <constraint firstItem="k1g-PN-IlE" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="agr-j8-gl0"/>
+                            <constraint firstItem="30n-eX-hjQ" firstAttribute="leading" secondItem="ycR-u2-CJ6" secondAttribute="leading" constant="10" id="cxM-YH-XjT"/>
+                            <constraint firstAttribute="trailing" secondItem="30n-eX-hjQ" secondAttribute="trailing" constant="10" id="fHf-6w-WXe"/>
+                            <constraint firstItem="30n-eX-hjQ" firstAttribute="top" secondItem="k1g-PN-IlE" secondAttribute="bottom" constant="11" id="fIj-7Q-qw3"/>
+                            <constraint firstItem="vpg-qO-w5R" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="hrv-KC-euF"/>
+                            <constraint firstItem="k1g-PN-IlE" firstAttribute="top" secondItem="vpg-qO-w5R" secondAttribute="bottom" constant="10" id="jWs-wo-8C4"/>
+                            <constraint firstItem="30n-eX-hjQ" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="qHm-Bd-Dha"/>
+                            <constraint firstItem="1zY-Jk-dUT" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="qNg-RU-Enr"/>
+                            <constraint firstItem="vpg-qO-w5R" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="zbX-V1-c2F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="utH-o0-ekc"/>
                     </view>
@@ -1422,7 +1550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2h-fT-J4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1506.4000000000001" y="3436.7316341829087"/>
+            <point key="canvasLocation" x="-802.39999999999998" y="-0.44977511244377816"/>
         </scene>
         <!--All Games SchduleVC-->
         <scene sceneID="HbY-kx-Wj0">
@@ -1661,7 +1789,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyi-3X-iJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2267.1999999999998" y="-709.7451274362819"/>
+            <point key="canvasLocation" x="782" y="2158"/>
         </scene>
         <!--Default SportsVC-->
         <scene sceneID="iYc-0X-anq">
@@ -1731,7 +1859,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdz-oG-46n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3024.8000000000002" y="-710.19490254872574"/>
+            <point key="canvasLocation" x="1473" y="2158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FlZ-pH-jlG">
@@ -1749,12 +1877,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdY-sU-4Td" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="3437"/>
+            <point key="canvasLocation" x="-1527" y="0.0"/>
         </scene>
     </scenes>
     <resources>
         <image name="CIAC.png" width="3300" height="2550"/>
-        <image name="Logo.png" width="1024" height="1024"/>
+        <image name="CTSportsLogo.png" width="1416" height="1384"/>
         <image name="Settings-50.png" width="25" height="25"/>
         <image name="compare.png" width="64" height="64"/>
         <image name="email.png" width="42" height="42"/>
@@ -1762,9 +1890,11 @@
         <image name="footballFilled.png" width="25" height="25"/>
         <image name="info.png" width="42" height="42"/>
         <image name="setting.png" width="25" height="25"/>
+        <image name="upload.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pMM-Hf-x1J"/>
+        <segue reference="5Em-Uk-EWj"/>
+        <segue reference="DHt-jB-zcW"/>
         <segue reference="CJq-5F-UPE"/>
     </inferredMetricsTieBreakers>
 </document>

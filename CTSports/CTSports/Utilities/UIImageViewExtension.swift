@@ -13,7 +13,6 @@ import Foundation
 extension UIImage {
     func imageWithColor(_ tintColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
-        
         let context = UIGraphicsGetCurrentContext()
         context!.translateBy(x: 0, y: self.size.height)
         context!.scaleBy(x: 1.0, y: -1.0);

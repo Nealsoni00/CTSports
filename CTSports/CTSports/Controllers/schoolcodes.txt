@@ -68,7 +68,7 @@ Hamden:Hamden
 Harding:WarrenHarding
 Hartford Public:HartfordPublic
 Hillhouse:JamesHillhouse
-HolyCross:HolyCross
+Holy Cross:HolyCross
 Housatonic Regional:HousatonicValleyReg
 Hyde Leadership:HydeLeadership
 Immaculate:Immaculate
@@ -120,7 +120,7 @@ Platt:OHPlatt
 Platt Tech:PlattRVT
 Pomperaug:Pomperaug
 Portland:Portland
-PrinceTech:AIPrinceRVT
+Prince Tech:AIPrinceRVT
 Putnam:Putnam
 RHAM:RHAM
 Ridgefield:Ridgefield
@@ -131,7 +131,7 @@ Sacred Heart Academy:SacredHeartAcademy
 Seymour:Seymour
 Sheehan:Sheehan
 Shelton:Shelton
-ShepaugValley:ShepaugValley
+Shepaug Valley:ShepaugValley
 Simsbury:Simsbury
 SMSA:SportsSciencesAcademy
 Somers:Somers
@@ -143,7 +143,7 @@ St Joseph:StJoseph
 St Paul Catholic:StPaulCatholic
 Stafford:Stafford
 Stamford:Stamford
-StamfordAcademy:StamfordAcademy
+Stamford Academy:StamfordAcademy
 Staples:Staples
 Stonington:Stonington
 Stratford:Stratford
@@ -168,7 +168,7 @@ Weston:Weston
 Wethersfield:Wethersfield
 Wheeler:Wheeler
 WhitneyTech:EliWhitneyRVT
-WilburCross:WilburCross
+Wilbur Cross:WilburCross
 Wilby:Wilby
 WilcoxTech:HCWilcoxRVT
 Wilton:Wilton

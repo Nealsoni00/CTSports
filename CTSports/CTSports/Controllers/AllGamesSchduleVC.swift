@@ -167,7 +167,14 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
 
             parseAllGamesIntoDictionaries()
         }
-        self.title = String(schoolKey.split(separator: " ")[0])
+        
+//        if schoolKey.count > 25 {
+//            self.title = String(schoolKey.split(separator: " ")[0])
+//        }else{
+//            self.title = schoolKey
+//        }
+//
+        
         if (schoolKey != ""){
             let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "St ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
 

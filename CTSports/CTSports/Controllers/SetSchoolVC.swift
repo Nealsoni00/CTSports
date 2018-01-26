@@ -156,10 +156,22 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         }else{
             currentSchool = letterDict[sectionTitleArray![indexPath.section]]![indexPath.row]
         }
+        
+        
         cell.infoText?.text = currentSchool
         cell.schoolView.backgroundColor = schoolColors[currentSchool] ?? sweetBlue
+        
+        print("School: \(currentSchool) isbright:\(schoolColors[currentSchool]?.isLight())")
+        
         cell.schoolView.layer.cornerRadius = cell.schoolView.layer.frame.size.width / 2
         cell.SchoolInitial.text = currentSchool.getInitals()
+        
+        if((schoolColors[currentSchool] ?? sweetBlue).isLight()){
+            cell.SchoolInitial.textColor = UIColor.black
+        }else{
+            cell.SchoolInitial.textColor = UIColor.white
+        }
+        
         if (currentSchool.getInitals().count >= 2){
             cell.SchoolInitial.font = UIFont (name: "SFCollegiateSolid-Bold", size: 35)
         }
