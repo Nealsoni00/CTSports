@@ -31,7 +31,7 @@ extension String {
         return self.range(of: find, options: .caseInsensitive) != nil
     }
     func getInitals() -> String{
-        let school = self.replacingOccurrences(of: "of", with: "").replacingOccurrences(of: "the", with: "").replacingOccurrences(of: " @ ", with: "").replacingOccurrences(of: " & ", with: "")
+        let school = self.replacingOccurrences(of: "of", with: "").replacingOccurrences(of: "the", with: "").replacingOccurrences(of: " @ ", with: "").replacingOccurrences(of: " & ", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "")
         var initials = ""
         for word in school.split(separator: " "){
             if (initials.characters.count < 2){

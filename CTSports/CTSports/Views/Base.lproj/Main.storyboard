@@ -1563,6 +1563,19 @@
                                             <color key="textColor" red="0.18156249820000001" green="0.42604514960000001" blue="0.53734987970000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0w-V2-r77">
+                                            <rect key="frame" x="2" y="0.0" width="56" height="56"/>
+                                            <color key="backgroundColor" red="0.016017200634020498" green="0.27643815014131401" blue="0.8189244923857868" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="WWs-jk-KbT"/>
+                                                <constraint firstAttribute="width" constant="49" id="X10-2z-WiS"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oHd-v0-0PE" firstAttribute="leading" secondItem="uNq-Zx-iDh" secondAttribute="trailing" id="36K-6c-Fey"/>
@@ -1752,6 +1765,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pMM-Hf-x1J"/>
-        <segue reference="9Mi-m1-UwP"/>
+        <segue reference="CJq-5F-UPE"/>
     </inferredMetricsTieBreakers>
 </document>

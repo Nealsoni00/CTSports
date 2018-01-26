@@ -107,9 +107,9 @@ Northwestern:NorthwesternReg
 Norwalk:Norwalk
 Norwich Free Academy:NorwichFreeAcademy
 Norwich Tech:NorwichRVT
-NotreDame-Fairfield:NotreDameCatholic
-NotreDame-WestHaven:NotreDame
-O'BrienTech:EmmettOBrienRVT
+Notre Dame-Fairfield:NotreDameCatholic
+Notre Dame-WestHaven:NotreDame
+O'Brien Tech:EmmettOBrienRVT
 Old Lyme:LymeOldLyme
 Old Saybrook:OldSaybrook
 Oxford:Oxford
@@ -137,10 +137,10 @@ SMSA:SportsSciencesAcademy
 Somers:Somers
 South Windsor:SouthWindsor
 Southington:Southington
-St. Bernard:StBernard
-St. Lukes:StLukes
-St. Joseph:StJoseph
-St. PaulCatholic:StPaulCatholic
+St Bernard:StBernard
+St Lukes:StLukes
+St Joseph:StJoseph
+St Paul Catholic:StPaulCatholic
 Stafford:Stafford
 Stamford:Stamford
 StamfordAcademy:StamfordAcademy

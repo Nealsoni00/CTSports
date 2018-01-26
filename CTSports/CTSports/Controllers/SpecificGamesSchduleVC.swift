@@ -187,15 +187,15 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     }
     override func viewDidAppear(_ animated: Bool) {
         if (defaultSports.count == 1){
-             self.navigationItem.title = "\(defaultSports[0]) Schedule"
+            self.navigationItem.title = "\(defaultSports[0]) Schedule"
             self.title = "\(defaultSports[0])"
 
         }else{
-            self.navigationItem.title = "YOUR SPORTS"
+            self.navigationItem.title = "Your Sports"
             self.title = "Your Sports"
         }
         if (schoolKey != ""){
-            let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "St. ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
+            let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "St ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
             self.tabBarController?.tabBar.items![1].image = UIImage(named: "\(initial).png")?.imageWithColor(UIColor.gray)
             self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(sweetBlue)
         }

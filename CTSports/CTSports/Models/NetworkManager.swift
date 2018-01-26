@@ -51,12 +51,14 @@ class NetworkManager: NSObject {
                     
                     let gameType = elem["gametype"].element?.text   ?? "N/A"
                     let season = elem["season"].element?.text       ?? "N/A"
-                    let opponent = elem["opponent"].element?.text   ?? "N/A"
+                    var opponent = elem["opponent"].element?.text   ?? "N/A"
                     let directionsURL = elem["directionsurl"].element?.text  ?? "N/A"
                     let id_num = elem["id_num"].element?.text       ?? "N/A"
                     let bus = elem["bus"].element?.text             ?? "N/A"
                     let busTime = elem["bustime"].element?.text     ?? "N/A"
-                
+                    
+                    opponent = opponent.replacingOccurrences(of: "St.", with: "St")
+
                     var dateArray : [String] = gameDate1.components(separatedBy: "-")
                     time = time.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil).replacingOccurrences(of: "pm", with: "PM", options: .literal, range: nil).replacingOccurrences(of: "p.m.", with: "PM", options: .literal, range: nil) //fix
                     let index = gameDate1.index(gameDate1.startIndex, offsetBy: 8)
@@ -149,7 +151,7 @@ class NetworkManager: NSObject {
                             
                             let gameType = elem["gametype"].element?.text   ?? "N/A"
                             let season = elem["season"].element?.text       ?? "N/A"
-                            let opponent = elem["opponent"].element?.text   ?? "N/A"
+                            var opponent = elem["opponent"].element?.text   ?? "N/A"
                             let directionsURL = elem["directionsurl"].element?.text  ?? "N/A"
                             let id_num = elem["id_num"].element?.text       ?? "N/A"
                             let bus = elem["bus"].element?.text             ?? "N/A"
@@ -157,7 +159,7 @@ class NetworkManager: NSObject {
                             time = time.replacingOccurrences(of: " p.m.", with: "PM", options: .literal, range: nil).replacingOccurrences(of: " a.m.", with: "AM", options: .literal, range: nil).replacingOccurrences(of: "pm", with: "PM", options: .literal, range: nil).replacingOccurrences(of: "p.m.", with: "PM", options: .literal, range: nil) //fix
 
                             var dateArray : [String] = gameDate1.components(separatedBy: "-")
-                            
+                            opponent = opponent.replacingOccurrences(of: "St.", with: "St")
                             
                             let index = gameDate1.index(gameDate1.startIndex, offsetBy: 8)
                             var day = gameDate1.substring(from: index)
