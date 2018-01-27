@@ -255,7 +255,8 @@ class SportingEventVC: UITableViewController {
         
         // This button will not the dismiss the dialog
         let buttonTwo = DefaultButton(title: "Add", dismissOnTap: false) {
-            addEventToCalendar(title: "\(String(describing: self.currentEvent?.sport)) @\(String(describing: self.currentEvent?.time))", description: "\(self.currentEvent?.school)", startDate: self.currentEvent?.exactDate as! Date, endDate: self.currentEvent?.exactDate as! Date)
+            addEventToCalendar(title: "\(String(describing: self.currentEvent!.sport)) @\(String(describing: self.currentEvent!.time))", description: "Against \(self.currentEvent!.opponent) at \(self.currentEvent!.school)", startDate: self.currentEvent?.exactDate as! Date, endDate: self.currentEvent?.exactDate as! Date)
+            self.dismiss(animated: true, completion: nil)
         }
         
         // Add buttons to dialog
