@@ -3,44 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Calender Permission</string>
+	<string>Please allow CTSports permission to access your calender in order to add events.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIcons</key>
-	<dict>
-<!--        <key>CFBundleAlternateIcons</key>-->
-<!--        <dict>-->
-<!--            <key>AppIcon-2</key>-->
-<!--            <dict>-->
-<!--                <key>CFBundleIconFiles</key>-->
-<!--                <array>-->
-<!--                    <string>Icon-2</string>-->
-<!--                </array>-->
-<!--                <key>UIPrerenderedIcon</key>-->
-<!--                <false/>-->
-<!--            </dict>-->
-<!--            <key>AppIcon-3</key>-->
-<!--            <dict>-->
-<!--                <key>CFBundleIconFiles</key>-->
-<!--                <array>-->
-<!--                    <string>Icon-3</string>-->
-<!--                </array>-->
-<!--                <key>UIPrerenderedIcon</key>-->
-<!--                <false/>-->
-<!--            </dict>-->
-<!--        </dict>-->
-<!--        <key>CFBundlePrimaryIcon</key>-->
-<!--        <dict>-->
-<!--            <key>CFBundleIconFiles</key>-->
-<!--            <array>-->
-<!--                <string>Icon-1</string>-->
-<!--            </array>-->
-<!--            <key>UIPrerenderedIcon</key>-->
-<!--            <false/>-->
-<!--        </dict>-->
-	</dict>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
