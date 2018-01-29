@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0644388B57B33995EA23483A /* Pods_CTSportsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E285C430659210FCFFFB9B5 /* Pods_CTSportsTests.framework */; };
+		364208A9201F7D8700350C13 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364208A8201F7D8700350C13 /* UIColorExtension.swift */; };
+		364C3C62201B7E420058C43E /* InputScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364C3C61201B7E420058C43E /* InputScheduleVC.swift */; };
+		364C3C64201B803E0058C43E /* upload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 364C3C63201B803C0058C43E /* upload@2x.png */; };
+		364C3C66201BA8700058C43E /* CTSportsLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 364C3C65201BA86D0058C43E /* CTSportsLogo.png */; };
+		364C3C6A201BCF1D0058C43E /* IceHockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 364C3C69201BCF1B0058C43E /* IceHockey.png */; };
 		3653CD9F1FE5FE2F00F396CD /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 3653CD9D1FE5FE2E00F396CD /* email.png */; };
 		3653CDA01FE5FE2F00F396CD /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 3653CD9E1FE5FE2E00F396CD /* info.png */; };
 		3653CDA21FE5FE4000F396CD /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 3653CDA11FE5FE4000F396CD /* lock.png */; };
@@ -221,6 +226,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		364208A8201F7D8700350C13 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		364C3C61201B7E420058C43E /* InputScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputScheduleVC.swift; sourceTree = "<group>"; };
+		364C3C63201B803C0058C43E /* upload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upload@2x.png"; sourceTree = "<group>"; };
+		364C3C65201BA86D0058C43E /* CTSportsLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CTSportsLogo.png; sourceTree = "<group>"; };
+		364C3C69201BCF1B0058C43E /* IceHockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IceHockey.png; sourceTree = "<group>"; };
 		3653CD9D1FE5FE2E00F396CD /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		3653CD9E1FE5FE2E00F396CD /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		3653CDA11FE5FE4000F396CD /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
@@ -523,6 +533,7 @@
 				366A8DD61FE1A57A0082A64D /* SetSchoolVC.swift */,
 				36ACF2C11FE8A98C007BE150 /* SetSportVC.swift */,
 				368D7E8E1FE7809C000BE5D4 /* AboutVC.swift */,
+				364C3C61201B7E420058C43E /* InputScheduleVC.swift */,
 				366A8DD81FE2DE530082A64D /* InfoVC.swift */,
 				366A8D931FE17D110082A64D /* SpecificGamesSchduleVC.swift */,
 				366A8DC81FE17F8C0082A64D /* SportingEventVC.swift */,
@@ -558,6 +569,8 @@
 		366A8DCA1FE180470082A64D /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				364C3C65201BA86D0058C43E /* CTSportsLogo.png */,
+				364C3C63201B803C0058C43E /* upload@2x.png */,
 				499CA84B1FF8A46F006FC328 /* Settings-50.png */,
 				3653CDA31FE5FE9600F396CD /* compare.png */,
 				368D7E861FE6E8DA000BE5D4 /* setting@2x.png */,
@@ -581,6 +594,7 @@
 			children = (
 				366A8DD41FE19EB30082A64D /* NSDateExtension.swift */,
 				36F8C3032010498E00B136EA /* colorsDict.swift */,
+				364208A8201F7D8700350C13 /* UIColorExtension.swift */,
 				366A8DDA1FE40F8C0082A64D /* UIImageViewExtension.swift */,
 				49CDAADA1FE84890005475FB /* SequenceExtension.swift */,
 				49CDAADE1FE8B604005475FB /* ArrayExtension.swift */,
@@ -607,6 +621,7 @@
 				367B383F20053DB500560F2C /* GirlsSoccer.png */,
 				367B384020053DB500560F2C /* GirlsSailing.png */,
 				367B384120053DB500560F2C /* GirlsTennis.png */,
+				364C3C69201BCF1B0058C43E /* IceHockey.png */,
 				367B384220053DB500560F2C /* GirlsGymnastics.png */,
 				367B38CB200721A700560F2C /* Co-edSquash.png */,
 				367B38C92007219B00560F2C /* BoysSquash.png */,
@@ -911,6 +926,7 @@
 				367B389420053DB500560F2C /* BoysSailing.png in Resources */,
 				367B389920053DB500560F2C /* UnifiedSportsTrack.png in Resources */,
 				367B38AF20053DB500560F2C /* SchoolHolidaysandClosings.png in Resources */,
+				364C3C66201BA8700058C43E /* CTSportsLogo.png in Resources */,
 				366A8DD21FE180570082A64D /* footballFilled@2x.png in Resources */,
 				36F8C3672011066D00B136EA /* bracketright@2x.png in Resources */,
 				367B387B20053DB500560F2C /* FieldHockey.png in Resources */,
@@ -989,12 +1005,14 @@
 				496F4F5E1FE7FC9C00799E40 /* sports.txt in Resources */,
 				367B38A720053DB500560F2C /* MiscellaneousEvents.png in Resources */,
 				36F8C3742011066D00B136EA /* comma@2x.png in Resources */,
+				364C3C6A201BCF1D0058C43E /* IceHockey.png in Resources */,
 				366A8D991FE17D110082A64D /* Assets.xcassets in Resources */,
 				36F8C38A2011066D00B136EA /* N@2x.png in Resources */,
 				367B38B020053DB500560F2C /* Co-edSailing.png in Resources */,
 				36F8C3722011066D00B136EA /* questiondown@2x.png in Resources */,
 				367B38A320053DB500560F2C /* PowderpuffFootball.png in Resources */,
 				36F8C3832011066D00B136EA /* quotesingle@2x.png in Resources */,
+				364C3C64201B803E0058C43E /* upload@2x.png in Resources */,
 				499CA84C1FF8A46F006FC328 /* Settings-50.png in Resources */,
 				36F8C36E2011066D00B136EA /* quotedbl@2x.png in Resources */,
 				36F8C3632011066D00B136EA /* colon@2x.png in Resources */,
@@ -1254,6 +1272,7 @@
 				499CA8501FF8A939006FC328 /* DefaultSportingEvent.swift in Sources */,
 				499CA84E1FF8A812006FC328 /* DefaultSportCell.swift in Sources */,
 				366A8DD71FE1A57A0082A64D /* SetSchoolVC.swift in Sources */,
+				364C3C62201B7E420058C43E /* InputScheduleVC.swift in Sources */,
 				366A8D941FE17D110082A64D /* SpecificGamesSchduleVC.swift in Sources */,
 				366A8D901FE17D110082A64D /* AppDelegate.swift in Sources */,
 				368D7E8F1FE7809C000BE5D4 /* AboutVC.swift in Sources */,
@@ -1265,6 +1284,7 @@
 				49B502D220047F1100EAF53E /* PreviousVCExtension.swift in Sources */,
 				366A8DD51FE19EB30082A64D /* NSDateExtension.swift in Sources */,
 				49CDAADF1FE8B604005475FB /* ArrayExtension.swift in Sources */,
+				364208A9201F7D8700350C13 /* UIColorExtension.swift in Sources */,
 				366A8DC21FE17DA50082A64D /* SportingEvent.swift in Sources */,
 				36ACF2C41FE98E59007BE150 /* StringExtension.swift in Sources */,
 				49CDAADD1FE8A58D005475FB /* NetworkManager.swift in Sources */,

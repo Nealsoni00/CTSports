@@ -634,6 +634,9 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         }
 
         if (event.sport != ""){
+            
+            
+            
             cell.homeView.backgroundColor = schoolColors[schoolKey] ?? sweetBlue
             cell.homeView.layer.cornerRadius = cell.homeView.layer.frame.size.width / 2
             cell.homeLetters.text = schoolKey.getInitals()
@@ -654,6 +657,20 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             }
             cell.awayView.backgroundColor = schoolColors[event.opponent] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             cell.awayView.layer.cornerRadius = cell.awayView.layer.frame.size.width / 2
+            
+           
+            
+//            if event.home == "Home"{
+//                cell.awayView.layer.borderWidth = 0
+//                cell.awayView.layer.borderColor = schoolColors[schoolKey]?.cgColor ?? sweetBlue.cgColor
+//                cell.homeView.layer.borderWidth = 3
+//                cell.homeView.layer.borderColor =  schoolColors[event.opponent]?.cgColor ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0).cgColor
+//            }else{
+//                cell.homeView.layer.borderWidth = 0
+//                cell.homeView.layer.borderColor =  schoolColors[event.opponent]?.cgColor ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0).cgColor
+//                cell.awayView.layer.borderWidth = 3
+//                cell.awayView.layer.borderColor = schoolColors[schoolKey]?.cgColor ?? sweetBlue.cgColor
+//            }
             
 
         }

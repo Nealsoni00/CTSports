@@ -1612,6 +1612,19 @@
                                             <color key="textColor" red="0.15674439070000001" green="0.3738166094" blue="0.73343563079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0w-V2-r77">
+                                            <rect key="frame" x="2" y="0.0" width="56" height="56"/>
+                                            <color key="backgroundColor" red="0.016017200634020498" green="0.27643815014131401" blue="0.8189244923857868" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="56" id="WWs-jk-KbT"/>
+                                                <constraint firstAttribute="width" constant="56" id="X10-2z-WiS"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Address" textAlignment="right" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LD8-j1-g8J">
                                             <rect key="frame" x="233" y="0.0" width="126" height="23"/>
                                             <constraints>
@@ -1691,29 +1704,18 @@
                                             <color key="textColor" red="0.18156249820000001" green="0.42604514960000001" blue="0.53734987970000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0w-V2-r77">
-                                            <rect key="frame" x="2" y="0.0" width="56" height="56"/>
-                                            <color key="backgroundColor" red="0.016017200634020498" green="0.27643815014131401" blue="0.8189244923857868" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="WWs-jk-KbT"/>
-                                                <constraint firstAttribute="width" constant="49" id="X10-2z-WiS"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <integer key="value" value="25"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oHd-v0-0PE" firstAttribute="leading" secondItem="uNq-Zx-iDh" secondAttribute="trailing" id="36K-6c-Fey"/>
                                         <constraint firstItem="LD8-j1-g8J" firstAttribute="trailing" secondItem="wH6-AP-1ge" secondAttribute="trailingMargin" id="5tb-Cw-riT"/>
                                         <constraint firstItem="zYW-5C-KTV" firstAttribute="top" secondItem="LD8-j1-g8J" secondAttribute="bottom" id="6yA-dQ-5xg"/>
                                         <constraint firstItem="yAL-ho-t4j" firstAttribute="leading" secondItem="oHd-v0-0PE" secondAttribute="trailing" id="8pX-yV-vbp"/>
+                                        <constraint firstItem="F0w-V2-r77" firstAttribute="centerX" secondItem="uNq-Zx-iDh" secondAttribute="centerX" id="9WQ-Fi-ci3"/>
                                         <constraint firstItem="uNq-Zx-iDh" firstAttribute="leading" secondItem="wH6-AP-1ge" secondAttribute="leading" constant="5" id="Bh9-gX-2ap"/>
                                         <constraint firstItem="WhV-tv-Jyk" firstAttribute="top" secondItem="wH6-AP-1ge" secondAttribute="top" id="G0Z-Dw-cVD"/>
                                         <constraint firstItem="yAL-ho-t4j" firstAttribute="centerY" secondItem="wH6-AP-1ge" secondAttribute="centerY" id="Lw8-qj-rMH"/>
                                         <constraint firstItem="zYW-5C-KTV" firstAttribute="leading" secondItem="WhV-tv-Jyk" secondAttribute="trailing" id="Rs0-Kw-6Tb"/>
+                                        <constraint firstItem="F0w-V2-r77" firstAttribute="centerY" secondItem="uNq-Zx-iDh" secondAttribute="centerY" id="UCM-gX-LjR"/>
                                         <constraint firstAttribute="trailing" secondItem="zYW-5C-KTV" secondAttribute="trailing" constant="16" id="Uqz-Wt-Htf"/>
                                         <constraint firstItem="Rwg-Cv-h2m" firstAttribute="centerY" secondItem="wH6-AP-1ge" secondAttribute="centerY" constant="2.25" id="VqN-7F-6ZJ"/>
                                         <constraint firstItem="LD8-j1-g8J" firstAttribute="top" secondItem="wH6-AP-1ge" secondAttribute="top" id="ZTV-TM-rpP"/>
