@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import UserNotifications
+
 
 let defaults = UserDefaults.standard
 var defaultSports = defaults.array(forKey: "allSports") as? Array ?? [String]()
 var school: String = defaults.object(forKey: "defaultSchool") as? String ?? ""
 var schoolKey: String = defaults.object(forKey: "defaultSchoolKey") as? String ?? ""
+let center = UNUserNotificationCenter.current()
 
 var schoolsDict = [String: String]()
 var schoolChanged = false
@@ -53,7 +56,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
 //         NetworkManager.sharedInstance.createCustomSportsArray()
 
 //        NetworkManager.sharedInstance.delegate = self
-        
+        let options: UNAuthorizationOptions = [.alert];
+        center.requestAuthorization(options: options) {
+            (granted, error) in
+            if !granted {
+                print("Something went wrong")
+            }
+        }
         
         return true
 

@@ -382,7 +382,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         // Dispose of any resources that can be recreated.
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if (defaultSports.count > 0){
+        if (defaultSports.count > 0 && allGames.count > 0){
             self.tableView.backgroundView = .none
             self.navigationItem.rightBarButtonItem?.isEnabled = true
 
@@ -406,7 +406,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             }
             //print("There are \(uniqueNSGameDates.count) Section")
             return uniqueNSGameDates.count
-        }else{
+        }else if defaultSports.count == 0 {
             // Display a message when the table is empty
             let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
             
@@ -440,6 +440,31 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             self.navigationItem.rightBarButtonItem?.isEnabled = false
             self.activitySpinner.stopAnimating()
             
+        } else {
+            let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+            
+            let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 100, height: 100))
+            sportsIcon.image = UIImage(named: "CIAC.png")
+            sportsIcon.center.x = newView.center.x
+            
+            let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
+            messageLabel.text = "There are no games listed on the CIAC website for your chosen sport(s)."
+            messageLabel.textColor = UIColor.black
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = .center
+            messageLabel.center.x = newView.center.x
+            messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+            
+        
+            
+            
+            newView.addSubview(sportsIcon)
+            newView.addSubview(messageLabel)
+            
+            self.tableView.backgroundView = newView
+            self.tableView.separatorStyle = .none
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            self.activitySpinner.stopAnimating()
         }
         return 0
     
