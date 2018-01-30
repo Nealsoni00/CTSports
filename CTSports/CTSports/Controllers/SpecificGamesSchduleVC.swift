@@ -463,7 +463,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             
             self.tableView.backgroundView = newView
             self.tableView.separatorStyle = .none
-            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
             self.activitySpinner.stopAnimating()
         }
         return 0
