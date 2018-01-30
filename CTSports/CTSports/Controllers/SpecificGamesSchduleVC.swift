@@ -328,7 +328,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     
     @objc func refresh(sender:AnyObject) {
         self.removeAll()
-        NetworkManager.sharedInstance.performRequestSports()
+        NetworkManager.sharedInstance.createCustomSportsArray()
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "MMM d, h:mm a"

@@ -122,7 +122,7 @@ class DefaultSportsVC: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func dismiss(_ sender: Any) {
-        NetworkManager.sharedInstance.performRequestSports()
+        NetworkManager.sharedInstance.createCustomSportsArray()
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func add(_ sender: Any) {

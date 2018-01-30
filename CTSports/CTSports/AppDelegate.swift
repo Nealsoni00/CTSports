@@ -48,7 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
         
         NetworkManager.sharedInstance.performRequestSchool()
         NetworkManager.sharedInstance.getSports()
-        NetworkManager.sharedInstance.performRequestSports()
+//        NetworkManager.sharedInstance.performRequestSports()
+        
+//         NetworkManager.sharedInstance.createCustomSportsArray()
+
 //        NetworkManager.sharedInstance.delegate = self
         
         

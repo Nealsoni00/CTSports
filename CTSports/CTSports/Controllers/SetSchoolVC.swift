@@ -202,14 +202,14 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "DefaultSportsVC") as! DefaultSportsVC
             NetworkManager.sharedInstance.performRequestSchool()
-            NetworkManager.sharedInstance.performRequestSports()
+            NetworkManager.sharedInstance.createCustomSportsArray()
 
             if (previousVC?.title == "Initial") {
                 navigationController?.pushViewController(vc,
                                                          animated: true)
             } else {
                 NetworkManager.sharedInstance.performRequestSchool()
-                NetworkManager.sharedInstance.performRequestSports()
+                NetworkManager.sharedInstance.createCustomSportsArray()
 
                 self.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true, completion: nil)
@@ -224,7 +224,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "DefaultSportsVC") as! DefaultSportsVC
             NetworkManager.sharedInstance.performRequestSchool()
-            NetworkManager.sharedInstance.performRequestSports()
+            NetworkManager.sharedInstance.createCustomSportsArray()
 
             if (previousVC?.title == "Initial") {
                 navigationController?.pushViewController(vc,
@@ -242,7 +242,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     
     @IBAction func donePressed(_ sender: AnyObject) {
         NetworkManager.sharedInstance.performRequestSchool()
-        NetworkManager.sharedInstance.performRequestSports()
+        NetworkManager.sharedInstance.createCustomSportsArray()
         self.dismiss(animated: true, completion: nil)
     }
     

@@ -201,7 +201,7 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
     
                 defaultSports.append(sportKey);
                 defaults.set(defaultSports, forKey: "allSports")
-                NetworkManager.sharedInstance.performRequestSports()
+                NetworkManager.sharedInstance.createCustomSportsArray()
 //                NotificationCenter.default.post(name: NSNotification.Name.init("changedSport"), object: nil)
                 self.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true, completion: nil)
