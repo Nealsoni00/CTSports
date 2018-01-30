@@ -29,6 +29,7 @@ class SportsCell: UITableViewCell {
     @IBOutlet weak var awayView: UIView!
     @IBOutlet weak var awayLetters: UILabel!
     
+    @IBOutlet weak var vsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

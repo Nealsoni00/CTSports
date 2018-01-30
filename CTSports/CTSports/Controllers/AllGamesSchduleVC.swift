@@ -658,9 +658,11 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             cell.awayView.backgroundColor = schoolColors[event.opponent] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             cell.awayView.layer.cornerRadius = cell.awayView.layer.frame.size.width / 2
             
-           
-            
-//            if event.home == "Home"{
+            if event.home == "Home"{
+                cell.vsLabel.text = "v."
+            }else{
+                cell.vsLabel.text = "@."
+            }
 //                cell.awayView.layer.borderWidth = 0
 //                cell.awayView.layer.borderColor = schoolColors[schoolKey]?.cgColor ?? sweetBlue.cgColor
 //                cell.homeView.layer.borderWidth = 3
