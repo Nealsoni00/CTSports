@@ -1787,6 +1787,7 @@
                                     <outlet property="school" destination="LD8-j1-g8J" id="MQL-AY-jSk"/>
                                     <outlet property="sport" destination="WhV-tv-Jyk" id="4fQ-mM-WK8"/>
                                     <outlet property="time" destination="zYW-5C-KTV" id="ypP-ea-tuO"/>
+                                    <outlet property="vsLabel" destination="oHd-v0-0PE" id="8f6-sM-WT1"/>
                                     <segue destination="SjN-0n-faM" kind="show" identifier="showEvent" id="CJq-5F-UPE"/>
                                 </connections>
                             </tableViewCell>
