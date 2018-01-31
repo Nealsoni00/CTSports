@@ -57,13 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
 //         NetworkManager.sharedInstance.createCustomSportsArray()
 
 //        NetworkManager.sharedInstance.delegate = self
-        let options: UNAuthorizationOptions = [.alert];
-        center.requestAuthorization(options: options) {
-            (granted, error) in
-            if !granted {
-                print("Something went wrong")
-            }
-        }
+    
         FIRApp.configure()
 
         return true

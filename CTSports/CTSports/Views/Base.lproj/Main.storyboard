@@ -736,7 +736,7 @@
                                                         <constraint firstAttribute="height" constant="32" id="tht-B7-bjR"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWW-UN-Sch">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWW-UN-Sch">
                                                     <rect key="frame" x="305" y="9" width="70" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="gPf-kP-dha"/>
@@ -1949,7 +1949,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5Em-Uk-EWj"/>
-        <segue reference="DHt-jB-zcW"/>
+        <segue reference="7fO-2u-qDc"/>
         <segue reference="CJq-5F-UPE"/>
     </inferredMetricsTieBreakers>
 </document>

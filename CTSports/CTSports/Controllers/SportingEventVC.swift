@@ -275,6 +275,8 @@ class SportingEventVC: UITableViewController {
     
     
     @IBAction func createNotification(_ sender: Any) {
+        
+        
         let title = "Are you sure?"
         let message = "Do you want to create a reminder 24 hours in advance for this event?"
         
@@ -287,8 +289,13 @@ class SportingEventVC: UITableViewController {
             self.dismiss(animated: true, completion: nil)
         }
         let buttonTwo = DefaultButton(title: "Yes") {
-            print("You canceled the car dialog.")
-        
+//            let options: UNAuthorizationOptions = [.alert];
+//            center.requestAuthorization(options: options) {
+//                (granted, error) in
+//                if !granted {
+//                    print("Something went wrong")
+//                }
+//            }
         
         
         // Present dialog
