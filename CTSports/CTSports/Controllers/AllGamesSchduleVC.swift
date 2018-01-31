@@ -282,6 +282,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             if (self.gamesDictionaryAll[gameNSDate]?.append(event)) == nil {
                 self.gamesDictionaryAll[gameNSDate] = [event]
             }
+            self.allGames.append(event)
             self.gameNSDatesAll.append(gameNSDate)
         }
         self.gameNSDatesV   = self.gameNSDatesV.removeDuplicates()
@@ -386,7 +387,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
 
             if searchController.isActive && searchController.searchBar.text != "" {
                 uniqueNSGameDates = filteredUniqueDates
-                print("number of sections: \(filteredUniqueDates)")
+//                print("number of sections: \(filteredUniqueDates)")
             }else{
                 switch gameLevel {
                 case "V":
@@ -491,18 +492,19 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         label.textColor = UIColor.black
         label.textAlignment = .center
         headerView.addSubview(label)
-
-
+        print("CREATED HEADER FOR SECTION: \(section): \(titleForSectionHeader(section: section)!)")
+        
         return headerView
     }
 
     func titleForSectionHeader(section: Int) -> String? {
         var gameDate1 = ""
-
-        if (uniqueNSGameDates.count != 0 && gamesDictionary[uniqueNSGameDates[0]]?[0] != nil){
-
+        print("IS ACTIVE? \(searchController.isActive))")
+        if (uniqueNSGameDates.count != 0){ //&& gamesDictionary[uniqueNSGameDates[0]]?[0] != nil){
+            print("MADE IT IN HERE!!!!")
             if searchController.isActive && searchController.searchBar.text != "" {
                 uniqueNSGameDates = filteredUniqueDates
+                print("INSIDE IS ACTIVE! \(filteredUniqueDates.count)")
             }else{
                 switch gameLevel {
                 case "V":
@@ -661,7 +663,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             if event.home == "Home"{
                 cell.vsLabel.text = "v."
             }else{
-                cell.vsLabel.text = "@."
+                cell.vsLabel.text = "@"
             }
 //                cell.awayView.layer.borderWidth = 0
 //                cell.awayView.layer.borderColor = schoolColors[schoolKey]?.cgColor ?? sweetBlue.cgColor
@@ -739,6 +741,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 return game.searchCriteria.lowercased().contains(searchText.lowercased())
             }
         case "All":
+            print("THERE ARE: \(allGames.count) GAMES TOTAL")
             filteredGames = allGames.filter { game in
                 return game.searchCriteria.lowercased().contains(searchText.lowercased())
             }
@@ -904,5 +907,9 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
 extension AllGamesSchduleVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
+        print(filteredGames.count)
+//        if (!searchController.isActive){
+//            searchController.isActive = true
+//        }
     }
 }
