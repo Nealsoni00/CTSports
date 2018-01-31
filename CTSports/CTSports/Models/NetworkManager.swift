@@ -127,6 +127,7 @@ class NetworkManager: NSObject {
                         
                     }
                 }
+                
                 self.done = true;
                 self.allGames = Array(Set(self.allGames))
                 self.allGamesWithPractices = Array(Set(self.allGamesWithPractices))
@@ -167,7 +168,7 @@ class NetworkManager: NSObject {
             var arr = allGamesWithPractices.filter {
                 $0.sport.contains(sport)
             }
-            //            print(allGames)
+            //print(allGames)
             specificGames += arr
         }
         NotificationCenter.default.post(name: NSNotification.Name.init("loadedSpecificGames"), object: nil)

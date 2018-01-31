@@ -17,6 +17,7 @@ import Foundation
 import UIKit
 import PopupDialog
 import EventKit
+import UserNotifications
 
 class SportingEventVC: UITableViewController {
     @IBOutlet var loadingSpinner: UIActivityIndicatorView!
@@ -265,9 +266,115 @@ class SportingEventVC: UITableViewController {
         popup.addButtons([buttonOne, buttonTwo])
         
         // Present dialog
+        
         self.present(popup, animated: true, completion: nil)
         
     }
+    
+    
+    @IBAction func createNotification(_ sender: Any) {
+        let content = UNMutableNotificationContent()
+        content.title = "Sporting event alert!"
+        content.body = "There is a \(self.currentEvent!.sport) game tomorrow at \(self.currentEvent!.time)."
+        content.sound = UNNotificationSound.default()
+//        let formatter = DateFormatter()
+        
+//        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+//        let someDateTime = formatter.date(from:)
+//        print("DATE IS: \(someDateTime)")
+        let currentDate = self.currentEvent!.exactDate as! Date
+        let tempCalendar = Calendar.current
+        let alteredDate = tempCalendar.date(byAdding: .hour, value: -24, to: currentDate)
+        print(alteredDate)
+
+        
+        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: alteredDate!)
+        print(triggerDate)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,  repeats: false)
+
+        let identifier = "UYLLocalNotification"
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger)
+        UNUserNotificationCenter.current().getNotificationSettings { (notificationSettings) in
+            switch notificationSettings.authorizationStatus {
+            case .notDetermined:
+                self.requestAuthorization(completionHandler: { (success) in
+                    guard success else { return }
+                    
+                    // Schedule Local Notification
+                    if(self.currentEvent!.time != "TBA") {
+                        center.add(request, withCompletionHandler: { (error) in
+                            if let error = error {
+                                print(error)
+                                //                // Something went wrong
+                            } else {
+                                
+                                let title = "Notification created."
+                                let message = "You will be reminded 24 hours before the event."
+                                
+                                // Create the dialog
+                                let popup = PopupDialog(title: title, message: message)
+                                self.present(popup, animated: true, completion: nil)
+                            }
+                        })
+                    } else {
+                        let title = "Error."
+                        let message = "Notification could not be created because time has not been annouced yet."
+                        
+                        // Create the dialog
+                        let popup = PopupDialog(title: title, message: message)
+                        self.present(popup, animated: true, completion: nil)
+                    }
+                    
+                })
+            case .authorized:
+                // Schedule Local Notification
+                if(self.currentEvent!.time != "TBA") {
+                    center.add(request, withCompletionHandler: { (error) in
+                        if let error = error {
+                            print(error)
+                            //                // Something went wrong
+                        } else {
+                            
+                            let title = "Notification created."
+                            let message = "You will be reminded 24 hours before the event."
+                            
+                            // Create the dialog
+                            let popup = PopupDialog(title: title, message: message)
+                            self.present(popup, animated: true, completion: nil)
+                        }
+                    })
+                } else {
+                    let title = "Error."
+                    let message = "Notification could not be created because time has not been annouced yet."
+                    
+                    // Create the dialog
+                    let popup = PopupDialog(title: title, message: message)
+                    self.present(popup, animated: true, completion: nil)
+                }
+            case .denied:
+                let title = "Error."
+                let message = "CTSports does not have permission to display notifications. This can be changed in Settings->Notifications->CTSports."
+                
+                // Create the dialog
+                let popup = PopupDialog(title: title, message: message)
+                self.present(popup, animated: true, completion: nil)            }
+        }
+     
+        
+    }
+    
+    private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
+        // Request Authorization
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (success, error) in
+            if let error = error {
+                print("Request Authorization Failed (\(error), \(error.localizedDescription))")
+            }
+            
+            completionHandler(success)
+        }
+    }
+    
     
 }
 

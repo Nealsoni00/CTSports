@@ -417,7 +417,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="addToCalender:" destination="SjN-0n-faM" eventType="touchUpInside" id="4mh-SZ-p5K"/>
+                                                <action selector="createNotification:" destination="SjN-0n-faM" eventType="touchUpInside" id="Owa-N9-fwr"/>
                                             </connections>
                                         </button>
                                     </subviews>
