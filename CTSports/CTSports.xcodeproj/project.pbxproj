@@ -194,6 +194,9 @@
 		36F8C3922011066D00B136EA /* parenright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F8C34B2011066C00B136EA /* parenright@2x.png */; };
 		36F8C3932011066D00B136EA /* parenleft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F8C34C2011066C00B136EA /* parenleft@2x.png */; };
 		496F4F5E1FE7FC9C00799E40 /* sports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 496F4F5D1FE7FC9C00799E40 /* sports.txt */; };
+		4971482B202205AC001433A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4971482A202205AC001433A4 /* GoogleService-Info.plist */; };
+		4971482C202205AC001433A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4971482A202205AC001433A4 /* GoogleService-Info.plist */; };
+		4971482D202205AC001433A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4971482A202205AC001433A4 /* GoogleService-Info.plist */; };
 		499CA84C1FF8A46F006FC328 /* Settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 499CA84B1FF8A46F006FC328 /* Settings-50.png */; };
 		499CA84E1FF8A812006FC328 /* DefaultSportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA84D1FF8A812006FC328 /* DefaultSportCell.swift */; };
 		499CA8501FF8A939006FC328 /* DefaultSportingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA84F1FF8A939006FC328 /* DefaultSportingEvent.swift */; };
@@ -419,6 +422,7 @@
 		36F8C34C2011066C00B136EA /* parenleft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parenleft@2x.png"; sourceTree = "<group>"; };
 		3EA21579716148E53016E177 /* Pods-CTSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTSports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTSports/Pods-CTSports.debug.xcconfig"; sourceTree = "<group>"; };
 		496F4F5D1FE7FC9C00799E40 /* sports.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sports.txt; sourceTree = "<group>"; };
+		4971482A202205AC001433A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		499CA84B1FF8A46F006FC328 /* Settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings-50.png"; path = "../../../../KnowSnow/KnowSnow/Graphics/Settings-50.png"; sourceTree = "<group>"; };
 		499CA84D1FF8A812006FC328 /* DefaultSportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSportCell.swift; sourceTree = "<group>"; };
 		499CA84F1FF8A939006FC328 /* DefaultSportingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSportingEvent.swift; sourceTree = "<group>"; };
@@ -493,6 +497,7 @@
 		366A8D8E1FE17D110082A64D /* CTSports */ = {
 			isa = PBXGroup;
 			children = (
+				4971482A202205AC001433A4 /* GoogleService-Info.plist */,
 				366A8D8F1FE17D110082A64D /* AppDelegate.swift */,
 				367B38BA2007174200560F2C /* Resources */,
 				366A8DD31FE19E8E0082A64D /* Utilities */,
@@ -1004,6 +1009,7 @@
 				367B389620053DB500560F2C /* Co-edCrew.png in Resources */,
 				496F4F5E1FE7FC9C00799E40 /* sports.txt in Resources */,
 				367B38A720053DB500560F2C /* MiscellaneousEvents.png in Resources */,
+				4971482B202205AC001433A4 /* GoogleService-Info.plist in Resources */,
 				36F8C3742011066D00B136EA /* comma@2x.png in Resources */,
 				364C3C6A201BCF1D0058C43E /* IceHockey.png in Resources */,
 				366A8D991FE17D110082A64D /* Assets.xcassets in Resources */,
@@ -1088,6 +1094,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4971482C202205AC001433A4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1095,6 +1102,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4971482D202205AC001433A4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1239,7 +1247,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CTSports/Pods-CTSports-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/HTMLEntities/HTMLEntities.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
@@ -1248,7 +1255,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTMLEntities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
