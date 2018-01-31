@@ -30,6 +30,7 @@
         </array>
         <array key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Light</string>
+            <string>HelveticaNeue-Thin</string>
         </array>
         <array key="SF Collegiate Solid Bold.ttf">
             <string>SFCollegiateSolid-Bold</string>
@@ -267,11 +268,12 @@
                     <connections>
                         <outlet property="activitySpinner" destination="zI3-D0-Tk3" id="0Bu-y0-7gb"/>
                         <outlet property="levelSelector" destination="efY-8z-C3U" id="wsv-8O-Rpw"/>
+                        <segue destination="grD-yC-fIq" kind="show" identifier="addGames" id="6lI-7j-1VV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5co-2A-xeh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472.8" y="375.56221889055473"/>
+            <point key="canvasLocation" x="1473" y="362"/>
         </scene>
         <!--Specific Games-->
         <scene sceneID="D86-gv-mOT">
@@ -1275,7 +1277,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C3A-qI-MTN">
-                                <rect key="frame" x="10" y="144" width="355" height="317"/>
+                                <rect key="frame" x="10" y="144" width="355" height="268"/>
                                 <color key="backgroundColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <string key="text">CTSports pulls all it's game and practice information from the CIAC schedules inputed by your coach and school's athletics director. Please contact them with the following link to update your practice schedules: http://www.casciac.org/scripts/editprac.cgi</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1283,7 +1285,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56K-cZ-7tf">
-                                <rect key="frame" x="50" y="469" width="275" height="70"/>
+                                <rect key="frame" x="50" y="420" width="275" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tc-fZ-HkD">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="70"/>
@@ -1318,7 +1320,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99X-mb-XEW">
-                                <rect key="frame" x="50" y="547" width="275" height="70"/>
+                                <rect key="frame" x="50" y="498" width="275" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbu-FR-AH9">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="70"/>
@@ -1508,7 +1510,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6j1-Uv-8Xx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="2857"/>
+            <point key="canvasLocation" x="1472.8" y="2856.521739130435"/>
         </scene>
         <!--Initial-->
         <scene sceneID="TJ9-Nr-QmY">
@@ -1875,13 +1877,30 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ijr-xM-zzp">
+                                            <rect key="frame" x="230" y="21" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="XfB-tS-IlC"/>
+                                                <constraint firstAttribute="width" constant="30" id="nGt-3Z-fom"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe to delete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ae9-j7-9Vp">
+                                            <rect key="frame" x="260" y="26" width="107" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.66788848458904104" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Ae9-j7-9Vp" secondAttribute="trailing" constant="8" id="5GB-iB-CBn"/>
+                                        <constraint firstItem="Ijr-xM-zzp" firstAttribute="trailing" secondItem="hHy-is-ooN" secondAttribute="trailingMargin" constant="-99" id="7WS-uP-bfS"/>
+                                        <constraint firstItem="Ijr-xM-zzp" firstAttribute="centerY" secondItem="hHy-is-ooN" secondAttribute="centerY" id="GVo-oL-Z80"/>
                                         <constraint firstItem="MRT-wb-xDD" firstAttribute="centerY" secondItem="hHy-is-ooN" secondAttribute="centerY" id="IXq-La-EZ7"/>
                                         <constraint firstItem="MRT-wb-xDD" firstAttribute="leading" secondItem="YXv-4T-xpH" secondAttribute="trailing" constant="8" id="K5P-5g-LvR"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="MRT-wb-xDD" secondAttribute="trailing" constant="10" id="KcY-iz-pMA"/>
                                         <constraint firstItem="YXv-4T-xpH" firstAttribute="leading" secondItem="hHy-is-ooN" secondAttribute="leading" constant="10" id="SVV-Xb-a0G"/>
                                         <constraint firstAttribute="bottom" secondItem="YXv-4T-xpH" secondAttribute="bottom" constant="5" id="hjs-Ub-6ql"/>
+                                        <constraint firstItem="Ae9-j7-9Vp" firstAttribute="centerY" secondItem="hHy-is-ooN" secondAttribute="centerY" constant="0.25" id="mpx-su-vsj"/>
                                         <constraint firstItem="YXv-4T-xpH" firstAttribute="top" secondItem="hHy-is-ooN" secondAttribute="top" constant="5" id="nVI-GX-fcD"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -1914,7 +1933,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdz-oG-46n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="2158"/>
+            <point key="canvasLocation" x="1472.8" y="2157.5712143928035"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FlZ-pH-jlG">
@@ -1944,12 +1963,14 @@
         <image name="football.png" width="25" height="25"/>
         <image name="footballFilled.png" width="25" height="25"/>
         <image name="info.png" width="42" height="42"/>
+        <image name="leftArrow.png" width="100" height="100"/>
         <image name="setting.png" width="25" height="25"/>
         <image name="upload.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Em-Uk-EWj"/>
-        <segue reference="7fO-2u-qDc"/>
-        <segue reference="CJq-5F-UPE"/>
+        <segue reference="pMM-Hf-x1J"/>
+        <segue reference="DHt-jB-zcW"/>
+        <segue reference="6lI-7j-1VV"/>
+        <segue reference="9Mi-m1-UwP"/>
     </inferredMetricsTieBreakers>
 </document>

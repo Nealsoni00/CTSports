@@ -410,7 +410,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             // Display a message when the table is empty
             let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
             
-            let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 100, height: 100))
+            let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
             sportsIcon.image = UIImage(named: "CIAC.png")
             sportsIcon.center.x = newView.center.x
             
@@ -443,7 +443,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         } else {
             let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
             
-            let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 100, height: 100))
+            let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
             sportsIcon.image = UIImage(named: "CIAC.png")
             sportsIcon.center.x = newView.center.x
             
@@ -455,11 +455,20 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             messageLabel.center.x = newView.center.x
             messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
             
-        
+            let newScheduleButton: UIButton = UIButton(frame: CGRect(x: 0, y: newView.center.y + 50, width: 200, height: 50))
+            newScheduleButton.backgroundColor = UIColor.purple
+            newScheduleButton.center.x = newView.center.x
+            newScheduleButton.setTitle("Missing Schedule?", for: UIControlState())
+            newScheduleButton.titleLabel?.textAlignment = .center
+            newScheduleButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+            newScheduleButton.addTarget(self, action: #selector(SpecificGamesSchduleVC.addSchedule), for: .touchUpInside)
+            
             
             
             newView.addSubview(sportsIcon)
             newView.addSubview(messageLabel)
+            newView.addSubview(newScheduleButton)
+
             
             self.tableView.backgroundView = newView
             self.tableView.separatorStyle = .none
@@ -473,9 +482,15 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         let addSportPage = self.storyboard?.instantiateViewController(withIdentifier: "SetSportViewController")
 //        self.present(addSportPage!, animated: true, completion: nil)
         self.performSegue(withIdentifier: "SetDefaultSports", sender: nil)
+    }
+    @objc func addSchedule(){
+//        let addSportPage = self.storyboard?.instantiateViewController(withIdentifier: "InputScheduleVC")
+        self.performSegue(withIdentifier: "addGames", sender: nil)
 
     }
-    
+
+        
+        
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if searchController.isActive && searchController.searchBar.text != "" {
