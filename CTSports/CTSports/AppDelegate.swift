@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import Firebase
 
 
 let defaults = UserDefaults.standard
@@ -63,7 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
                 print("Something went wrong")
             }
         }
-        
+        FIRApp.configure()
+
         return true
 
     }

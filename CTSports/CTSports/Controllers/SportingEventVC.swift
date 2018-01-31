@@ -263,6 +263,8 @@ class SportingEventVC: UITableViewController {
         // Add buttons to dialog
         // Alternatively, you can use popup.addButton(buttonOne)
         // to add a single button
+        
+        
         popup.addButtons([buttonOne, buttonTwo])
         
         // Present dialog
@@ -273,6 +275,24 @@ class SportingEventVC: UITableViewController {
     
     
     @IBAction func createNotification(_ sender: Any) {
+        let title = "Are you sure?"
+        let message = "Do you want to create a reminder 24 hours in advance for this event?"
+        
+        // Create the dialog
+        let popup1 = PopupDialog(title: title, message: message)
+        
+        // Create buttons
+        let buttonOne = CancelButton(title: "Cancel") {
+            print("You canceled the car dialog.")
+            self.dismiss(animated: true, completion: nil)
+        }
+        let buttonTwo = DefaultButton(title: "Yes") {
+            print("You canceled the car dialog.")
+        
+        
+        
+        // Present dialog
+        
         let content = UNMutableNotificationContent()
         content.title = "Sporting event alert!"
         content.body = "There is a \(self.currentEvent!.sport) game tomorrow at \(self.currentEvent!.time)."
@@ -361,7 +381,10 @@ class SportingEventVC: UITableViewController {
                 self.present(popup, animated: true, completion: nil)            }
         }
      
-        
+        }
+        popup1.addButtons([buttonOne, buttonTwo])
+        self.present(popup1, animated: true, completion: nil)
+
     }
     
     private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
