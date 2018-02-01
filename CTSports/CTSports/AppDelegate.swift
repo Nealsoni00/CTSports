@@ -10,6 +10,7 @@ import UIKit
 import UserNotifications
 import Firebase
 
+let adID = "ca-app-pub-6421137549100021/4156411631"
 
 let defaults = UserDefaults.standard
 var defaultSports = defaults.array(forKey: "allSports") as? Array ?? [String]()
