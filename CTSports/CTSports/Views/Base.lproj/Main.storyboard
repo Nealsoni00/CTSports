@@ -1374,6 +1374,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qOf-uE-xFB"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="C3A-qI-MTN" id="YyF-mz-DX8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XyY-N5-Kdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

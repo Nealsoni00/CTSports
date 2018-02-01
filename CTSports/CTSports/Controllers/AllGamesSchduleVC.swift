@@ -824,7 +824,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         bannerView =  GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
 
         addBannerViewToView(bannerView)
-        bannerView.adUnitID = "ca-app-pub-6421137549100021/7517677074" // real one
+        bannerView.adUnitID = adID // real one
         //bannerView.adUnitID = adID // Test one
         //request.testDevices = @[ kGADSimulatorID ]
         let request = GADRequest()

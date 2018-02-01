@@ -891,8 +891,8 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     func functionsToAddBannerViewToView(){
         bannerView =  GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         
-        addBannerViewToView(bannerView)
-        bannerView.adUnitID = "ca-app-pub-6421137549100021/7517677074" // real one
+        addBannerViewToView(bannerView) //ca-app-pub-6421137549100021~6410028127
+        bannerView.adUnitID = adID // real one
         //bannerView.adUnitID = adID // Test one
         //request.testDevices = @[ kGADSimulatorID ]
         let request = GADRequest()

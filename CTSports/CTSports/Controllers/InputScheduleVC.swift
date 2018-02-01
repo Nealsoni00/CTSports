@@ -15,10 +15,13 @@ class InputScheduleVC: UIViewController, MFMailComposeViewControllerDelegate {
    
     var navTitle: String?
     
+    @IBOutlet weak var textView: UITextView!
     var text: String?
     
     override func viewDidLoad() {
         self.navigationController!.title = self.navTitle ?? ""
+        textView.scrollRangeToVisible(NSRange(location:0, length:0))
+
     }
 
     override func didReceiveMemoryWarning() {
