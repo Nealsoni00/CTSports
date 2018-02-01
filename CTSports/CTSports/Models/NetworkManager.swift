@@ -136,8 +136,8 @@ class NetworkManager: NSObject {
                 self.allGamesWithPractices = self.allGamesWithPractices.sorted(by: { $0.gameNSDate.compare($1.gameNSDate as Date) == .orderedAscending})
                 
                 NotificationCenter.default.post(name: NSNotification.Name.init("loadedAllGames"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name.init("loadedSpecificGames"), object: nil)
                 self.createCustomSportsArray()
-                
                 self.performingSchoolRequest = false
                 //            self.delegate?.dataRecieved(allGames: self.allGames)
             }
@@ -145,6 +145,7 @@ class NetworkManager: NSObject {
     }
     
     func getSports(){
+        
         let fileURLProject = Bundle.main.path(forResource: "sports", ofType: "txt")
         // Read from the file
         var readStringProject = ""
@@ -175,6 +176,13 @@ class NetworkManager: NSObject {
         
         
     }
+//    func refreshSpecificSports(){
+//        performRequestSchool(){
+//            (result: Void) in
+//            createCustomSportsArray()
+//        }
+//
+//    }
     
     func convertDateToDay(date: String) -> (NSDate, String){
         let dateFormatter = DateFormatter()

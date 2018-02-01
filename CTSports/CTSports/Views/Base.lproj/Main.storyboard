@@ -1855,7 +1855,7 @@
         <scene sceneID="iYc-0X-anq">
             <objects>
                 <tableViewController storyboardIdentifier="DefaultSportsVC" id="Isz-yD-Bkb" customClass="DefaultSportsVC" customModule="CTSports" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2fM-I4-Idv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2fM-I4-Idv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1875,32 +1875,31 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRT-wb-xDD">
-                                            <rect key="frame" x="81" y="26.5" width="268" height="20"/>
+                                            <rect key="frame" x="81" y="27" width="42" height="20"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ijr-xM-zzp">
-                                            <rect key="frame" x="230" y="21" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="XfB-tS-IlC"/>
-                                                <constraint firstAttribute="width" constant="30" id="nGt-3Z-fom"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe to delete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ae9-j7-9Vp">
-                                            <rect key="frame" x="260" y="26" width="107" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="delete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ae9-j7-9Vp">
+                                            <rect key="frame" x="324" y="26" width="43" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.66788848458904104" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ijr-xM-zzp">
+                                            <rect key="frame" x="286" y="21" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="3OJ-nT-DQ9"/>
+                                                <constraint firstAttribute="width" constant="30" id="zhP-Ig-cvN"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Ae9-j7-9Vp" secondAttribute="trailing" constant="8" id="5GB-iB-CBn"/>
-                                        <constraint firstItem="Ijr-xM-zzp" firstAttribute="trailing" secondItem="hHy-is-ooN" secondAttribute="trailingMargin" constant="-99" id="7WS-uP-bfS"/>
-                                        <constraint firstItem="Ijr-xM-zzp" firstAttribute="centerY" secondItem="hHy-is-ooN" secondAttribute="centerY" id="GVo-oL-Z80"/>
                                         <constraint firstItem="MRT-wb-xDD" firstAttribute="centerY" secondItem="hHy-is-ooN" secondAttribute="centerY" id="IXq-La-EZ7"/>
                                         <constraint firstItem="MRT-wb-xDD" firstAttribute="leading" secondItem="YXv-4T-xpH" secondAttribute="trailing" constant="8" id="K5P-5g-LvR"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="MRT-wb-xDD" secondAttribute="trailing" constant="10" id="KcY-iz-pMA"/>
+                                        <constraint firstItem="Ae9-j7-9Vp" firstAttribute="centerY" secondItem="Ijr-xM-zzp" secondAttribute="centerY" id="K5j-eR-iol"/>
+                                        <constraint firstItem="Ae9-j7-9Vp" firstAttribute="leading" secondItem="Ijr-xM-zzp" secondAttribute="trailing" constant="8" id="SQ7-z1-wUh"/>
                                         <constraint firstItem="YXv-4T-xpH" firstAttribute="leading" secondItem="hHy-is-ooN" secondAttribute="leading" constant="10" id="SVV-Xb-a0G"/>
                                         <constraint firstAttribute="bottom" secondItem="YXv-4T-xpH" secondAttribute="bottom" constant="5" id="hjs-Ub-6ql"/>
                                         <constraint firstItem="Ae9-j7-9Vp" firstAttribute="centerY" secondItem="hHy-is-ooN" secondAttribute="centerY" constant="0.25" id="mpx-su-vsj"/>
@@ -1936,7 +1935,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdz-oG-46n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472.8" y="2157.5712143928035"/>
+            <point key="canvasLocation" x="1472.8" y="2156.6716641679163"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FlZ-pH-jlG">

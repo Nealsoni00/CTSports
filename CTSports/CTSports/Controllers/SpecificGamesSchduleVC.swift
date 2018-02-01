@@ -328,7 +328,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     
     @objc func refresh(sender:AnyObject) {
         self.removeAll()
-        NetworkManager.sharedInstance.createCustomSportsArray()
+        NetworkManager.sharedInstance.performRequestSchool()
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "MMM d, h:mm a"
@@ -439,14 +439,14 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             self.tableView.separatorStyle = .none
             self.navigationItem.rightBarButtonItem?.isEnabled = false
             self.activitySpinner.stopAnimating()
-            
-        } else {
+        
+        } else if (!activitySpinner.isAnimating){
             let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
-            
+
             let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
             sportsIcon.image = UIImage(named: "CIAC.png")
             sportsIcon.center.x = newView.center.x
-            
+
             let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
             messageLabel.text = "There are no games listed on the CIAC website for your chosen sport(s)."
             messageLabel.textColor = UIColor.black
@@ -454,7 +454,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             messageLabel.textAlignment = .center
             messageLabel.center.x = newView.center.x
             messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
-            
+
             let newScheduleButton: UIButton = UIButton(frame: CGRect(x: 0, y: newView.center.y + 50, width: 200, height: 50))
             newScheduleButton.backgroundColor = UIColor.purple
             newScheduleButton.center.x = newView.center.x
@@ -462,14 +462,14 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             newScheduleButton.titleLabel?.textAlignment = .center
             newScheduleButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
             newScheduleButton.addTarget(self, action: #selector(SpecificGamesSchduleVC.addSchedule), for: .touchUpInside)
-            
-            
-            
+
+
+
             newView.addSubview(sportsIcon)
             newView.addSubview(messageLabel)
             newView.addSubview(newScheduleButton)
 
-            
+
             self.tableView.backgroundView = newView
             self.tableView.separatorStyle = .none
             self.navigationItem.rightBarButtonItem?.isEnabled = true
