@@ -405,7 +405,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                     }
                 }
                 return uniqueNSGameDates.count
-            } else if (activitySpinner.isHidden) {
+            } else if (!activitySpinner.isAnimating) {
                 //if no games for the school
                 let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
                 
@@ -433,7 +433,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 self.tableView.separatorStyle = .none
                 self.navigationItem.rightBarButtonItem?.isEnabled = true
                 self.activitySpinner.stopAnimating()
-                self.activitySpinner.isHidden = false;
+//                self.activitySpinner.isHidden = false;
 
                 
                 

@@ -241,8 +241,9 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     }
     
     @IBAction func donePressed(_ sender: AnyObject) {
-        NetworkManager.sharedInstance.performRequestSchool()
-        NetworkManager.sharedInstance.createCustomSportsArray()
+        
+//        NetworkManager.sharedInstance.performRequestSchool()
+//        NetworkManager.sharedInstance.createCustomSportsArray()
         self.dismiss(animated: true, completion: nil)
     }
     
