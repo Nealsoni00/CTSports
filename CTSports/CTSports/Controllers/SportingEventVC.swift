@@ -258,12 +258,16 @@ class SportingEventVC: UITableViewController {
         let buttonTwo = DefaultButton(title: "Add", dismissOnTap: false) {
             addEventToCalendar(title: "\(String(describing: self.currentEvent!.sport)) @\(String(describing: self.currentEvent!.time))", description: "Against \(self.currentEvent!.opponent) at \(self.currentEvent!.school)", startDate: self.currentEvent?.exactDate as! Date, endDate: self.currentEvent?.exactDate as! Date)
             self.dismiss(animated: true, completion: nil)
+            let title = "Success."
+            let message = "This sporting event has been added to your calender."
+            
+            // Create the dialog
+            let popup = PopupDialog(title: title, message: message)
+            self.present(popup, animated: true, completion: nil)
+            
         }
         
-        // Add buttons to dialog
-        // Alternatively, you can use popup.addButton(buttonOne)
-        // to add a single button
-        
+    
         
         popup.addButtons([buttonOne, buttonTwo])
         
@@ -275,8 +279,7 @@ class SportingEventVC: UITableViewController {
     
     
     @IBAction func createNotification(_ sender: Any) {
-        
-        
+
         let title = "Are you sure?"
         let message = "Do you want to create a reminder 24 hours in advance for this event?"
         
