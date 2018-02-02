@@ -58,7 +58,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
     var bannerView: GADBannerView! //Ads
 
     var removeAds = false
-    
+
     var newColor = UIColor.black
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         }else{
             newColor = sweetBlue
         }
-        
+
         //Info bar button
         let infoButton = UIButton(type: .infoLight)
         infoButton.addTarget(self, action: #selector(AllGamesSchduleVC.infoPressed), for: .touchUpInside)
@@ -163,8 +163,8 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         }
 
         //detect if init install
-      
-       
+
+
 
 
     }
@@ -174,18 +174,18 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         }else{
             newColor = sweetBlue
         }
-        
-        if (NetworkManager.sharedInstance.done){
+
+        if (NetworkManager.sharedInstance.done && gamesDictionary.count == 0){
 
             parseAllGamesIntoDictionaries()
         }
-        
+
         if schoolKey.count > 25 {
             self.title = String(schoolKey.split(separator: " ")[0])
         }else{
             self.title = schoolKey
         }
-        
+
 
         if (schoolKey != ""){
             let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "St ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
@@ -204,34 +204,21 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 item.selectedImage = item.selectedImage!.imageWithColor(newColor).withRenderingMode(.alwaysOriginal)
             }
         }
-        
-       
+
+
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: newColor], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.gray], for: .normal)
         levelSelector.tintColor = newColor
         self.navigationItem.title = "\(schoolKey) Sports Schedule"
-        
+
         print("LOC")
-        getCoordinate(address: "Staples high school") { coordinate, error in
-            if error != nil {
-                //display error
-                return
-            } else {
-                //at this point `coordinate ` contains a valid coordinate.
-                //Put your code to do something with it here
-                print("resulting coordinate = (\(coordinate?.latitude),\(coordinate?.longitude))")
-            }
-        }
 
-        
+
+
     }
 
-    func getCoordinate(address: String, completion: @escaping(_ coordinate: CLLocationCoordinate2D?, _ error: Error?) -> () ) {
-        CLGeocoder().geocodeAddressString(address) { placemarks, error in
-            completion(placemarks?.first?.location?.coordinate, error)
-        }
-    }
-    
+
+
 //    func dataRecieved(allGames: [SportingEvent]) {
 //        print("ALL GAMES: \(allGames)")
 //
@@ -303,7 +290,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         self.gameNSDatesFR  = self.gameNSDatesFR.removeDuplicates()
         self.gameNSDatesAll = self.gameNSDatesAll.removeDuplicates()
 
-        
+
         self.activitySpinner.stopAnimating()
         self.activitySpinner.isHidden = true
         self.tableView.reloadData()
@@ -394,11 +381,11 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         // Dispose of any resources that can be recreated.
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
+
         if (school != ""){
             if (allGames.count > 0) {
                 self.tableView.backgroundView = .none
-                
+
                 if searchController.isActive && searchController.searchBar.text != "" {
                     uniqueNSGameDates = filteredUniqueDates
                     //                print("number of sections: \(filteredUniqueDates)")
@@ -412,7 +399,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                         uniqueNSGameDates = gameNSDatesJV
                     case "All":
                         uniqueNSGameDates = gameNSDatesAll
-                        
+
                     default:
                         uniqueNSGameDates = gameNSDatesV
                     }
@@ -420,44 +407,78 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 return uniqueNSGameDates.count
             } else if (!activitySpinner.isAnimating) {
                 //if no games for the school
-                let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
-                
-                let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
-                sportsIcon.image = UIImage(named: "CIAC.png")
-                sportsIcon.center.x = newView.center.x
-                
-                let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
-                messageLabel.text = "There are no games listed on the CIAC website for your chosen school."
-                messageLabel.textColor = UIColor.black
-                messageLabel.numberOfLines = 0
-                messageLabel.textAlignment = .center
-                messageLabel.center.x = newView.center.x
-                messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
-                
-                
-                
-                
-                
-                newView.addSubview(sportsIcon)
-                newView.addSubview(messageLabel)
-                
-                
-                self.tableView.backgroundView = newView
+                if Connectivity.isConnectedToInternet() {
+                    print("Yes! internet is available.")
+                    // do some tasks..
+                    let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+
+                    let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
+                    sportsIcon.image = UIImage(named: "CIAC.png")
+                    sportsIcon.center.x = newView.center.x
+
+                    let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
+                    messageLabel.text = "There are no games listed on the CIAC website for your chosen sport(s)."
+                    messageLabel.textColor = UIColor.black
+                    messageLabel.numberOfLines = 0
+                    messageLabel.textAlignment = .center
+                    messageLabel.center.x = newView.center.x
+                    messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+
+                    let newScheduleButton: UIButton = UIButton(frame: CGRect(x: 0, y: newView.center.y + 50, width: 200, height: 50))
+                    newScheduleButton.backgroundColor = UIColor.purple
+                    newScheduleButton.center.x = newView.center.x
+                    newScheduleButton.setTitle("Missing Schedule?", for: UIControlState())
+                    newScheduleButton.titleLabel?.textAlignment = .center
+                    newScheduleButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+                    newScheduleButton.addTarget(self, action: #selector(SpecificGamesSchduleVC.addSchedule), for: .touchUpInside)
+
+
+
+                    newView.addSubview(sportsIcon)
+                    newView.addSubview(messageLabel)
+                    newView.addSubview(newScheduleButton)
+
+                    self.tableView.backgroundView = newView
+
+
+                } else {
+                    let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+
+                    let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
+                    sportsIcon.image = UIImage(named: "CTSportsLogo.png")
+                    sportsIcon.center.x = newView.center.x
+
+                    let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
+                    messageLabel.text = "There is no internet connection."
+                    messageLabel.textColor = UIColor.black
+                    messageLabel.numberOfLines = 0
+                    messageLabel.textAlignment = .center
+                    messageLabel.center.x = newView.center.x
+                    messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+
+
+
+
+                    newView.addSubview(sportsIcon)
+                    newView.addSubview(messageLabel)
+                    self.tableView.backgroundView = newView
+
+                }
                 self.tableView.separatorStyle = .none
                 self.navigationItem.rightBarButtonItem?.isEnabled = true
                 self.activitySpinner.stopAnimating()
 //                self.activitySpinner.isHidden = false;
 
-                
-                
+
+
             }
         } else {
             let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
-            
+
             let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 100, height: 100))
-            sportsIcon.image = UIImage(named: "CIAC.png")
+            sportsIcon.image = UIImage(named: "CTSportsLogo.png")
             sportsIcon.center.x = newView.center.x
-            
+
             let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
             messageLabel.text = "You have no default School. To add a default school, please tap below and press \"add\""
             messageLabel.textColor = UIColor.black
@@ -465,7 +486,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             messageLabel.textAlignment = .center
             messageLabel.center.x = newView.center.x
             messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
-            
+
             let newClassButton: UIButton = UIButton(frame: CGRect(x: 0, y: newView.center.y + 50, width: 200, height: 50))
             newClassButton.backgroundColor = UIColor.purple
             newClassButton.center.x = newView.center.x
@@ -473,17 +494,17 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             newClassButton.titleLabel?.textAlignment = .center
             newClassButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 25)
             newClassButton.addTarget(self, action: #selector(AllGamesSchduleVC.addSchool), for: .touchUpInside)
-            
-            
+
+
             newView.addSubview(sportsIcon)
             newView.addSubview(messageLabel)
             newView.addSubview(newClassButton)
-            
+
             self.tableView.backgroundView = newView
             self.tableView.separatorStyle = .none
             self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
-        
+
         return 0
         //print("There are \(uniqueNSGameDates.count) Section")
     }
@@ -541,7 +562,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         label.textAlignment = .center
         headerView.addSubview(label)
         print("CREATED HEADER FOR SECTION: \(section): \(titleForSectionHeader(section: section)!)")
-        
+
         return headerView
     }
 
@@ -684,9 +705,9 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         }
 
         if (event.sport != ""){
-            
-            
-            
+
+
+
             cell.homeView.backgroundColor = schoolColors[schoolKey] ?? sweetBlue
             cell.homeView.layer.cornerRadius = cell.homeView.layer.frame.size.width / 2
             cell.homeLetters.text = schoolKey.getInitals()
@@ -701,10 +722,10 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             else{
                 cell.homeLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 42)
             }
-            
+
 
             cell.awayLetters.text = event.opponent.getInitals()
-            
+
             if (event.opponent.getInitals().count >= 2){
                 cell.awayLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 35)
             }
@@ -718,7 +739,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 cell.awayLetters.textColor = UIColor.white
             }
             cell.awayView.layer.cornerRadius = cell.awayView.layer.frame.size.width / 2
-            
+
             if event.home == "Home"{
                 cell.vsLabel.text = "v."
             }else{
@@ -734,7 +755,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
 //                cell.awayView.layer.borderWidth = 3
 //                cell.awayView.layer.borderColor = schoolColors[schoolKey]?.cgColor ?? sweetBlue.cgColor
 //            }
-            
+
 
         }
 

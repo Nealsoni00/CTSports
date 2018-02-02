@@ -90,19 +90,25 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
                 sendMail("sharkeyjack11@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
             case 2: //Alex
-                sendMail("sharkeyjack11@gmail.com")
+                sendMail("alexgold1100@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
             case 3: //Emily
-                sendMail("sharkeyjack11@gmail.com")
+                sendMail("bass.emily00@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
             case 4: //Ian
                 sendMail("sharkeyjack11@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
-            case 4: //Bidgood
+            case 5: //Bidgood
                 sendMail("sharkeyjack11@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
-            case 4: //CIAC
-                sendMail("sharkeyjack11@gmail.com")
+            case 6: //CIAC
+                if let url = URL(string: "https://ciacsports.com/site/") {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url, options: [:])
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }
                 tableView.deselectRow(at: indexPath, animated: true)
             default:
                 break
