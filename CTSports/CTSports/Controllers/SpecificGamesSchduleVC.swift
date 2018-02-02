@@ -411,7 +411,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
             
             let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
-            sportsIcon.image = UIImage(named: "CIAC.png")
+            sportsIcon.image = UIImage(named: "CTSportsLogo.png")
             sportsIcon.center.x = newView.center.x
             
             let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
@@ -441,6 +441,9 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             self.activitySpinner.stopAnimating()
         
         } else if (!activitySpinner.isAnimating){
+            if Connectivity.isConnectedToInternet() {
+                print("Yes! internet is available.")
+                // do some tasks..
             let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
 
             let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
@@ -469,8 +472,32 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             newView.addSubview(messageLabel)
             newView.addSubview(newScheduleButton)
 
+                self.tableView.backgroundView = newView
 
-            self.tableView.backgroundView = newView
+           
+            } else {
+                let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+                
+                let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
+                sportsIcon.image = UIImage(named: "CTSportsLogo.png")
+                sportsIcon.center.x = newView.center.x
+                
+                let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
+                messageLabel.text = "There is no internet connection."
+                messageLabel.textColor = UIColor.black
+                messageLabel.numberOfLines = 0
+                messageLabel.textAlignment = .center
+                messageLabel.center.x = newView.center.x
+                messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+            
+                
+                
+                
+                newView.addSubview(sportsIcon)
+                newView.addSubview(messageLabel)
+                self.tableView.backgroundView = newView
+
+            }
             self.tableView.separatorStyle = .none
             self.navigationItem.rightBarButtonItem?.isEnabled = true
             self.activitySpinner.stopAnimating()
@@ -974,6 +1001,11 @@ extension SpecificGamesSchduleVC: UISearchResultsUpdating {
     }
 }
 
+class Connectivity {
+    class func isConnectedToInternet() ->Bool {
+        return NetworkReachabilityManager()!.isReachable
+    }
+}
 
 
 

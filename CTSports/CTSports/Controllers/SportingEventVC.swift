@@ -256,14 +256,32 @@ class SportingEventVC: UITableViewController {
         
         // This button will not the dismiss the dialog
         let buttonTwo = DefaultButton(title: "Add", dismissOnTap: false) {
-            addEventToCalendar(title: "\(String(describing: self.currentEvent!.sport)) @\(String(describing: self.currentEvent!.time))", description: "Against \(self.currentEvent!.opponent) at \(self.currentEvent!.school)", startDate: self.currentEvent?.exactDate as! Date, endDate: self.currentEvent?.exactDate as! Date)
-            self.dismiss(animated: true, completion: nil)
-            let title = "Success."
-            let message = "This sporting event has been added to your calender."
             
-            // Create the dialog
-            let popup = PopupDialog(title: title, message: message)
-            self.present(popup, animated: true, completion: nil)
+            
+            let eventStore = EKEventStore()
+            
+            eventStore.requestAccess(to: .event, completion: { (granted, error) in
+                if (granted) && (error == nil) {
+                   addEventToCalendar(title: "\(String(describing: self.currentEvent!.sport)) @\(String(describing: self.currentEvent!.time))", description: "Against \(self.currentEvent!.opponent) at \(self.currentEvent!.school)", startDate: self.currentEvent?.exactDate as! Date, endDate: self.currentEvent?.exactDate as! Date)
+                let title = "Success."
+                let message = "This sporting event has been added to your calender."
+                    
+                   // Create the dialog
+                let popup = PopupDialog(title: title, message: message)
+                self.present(popup, animated: true, completion: nil)
+                    
+                } else {
+                    let title = "Error."
+                    let message = "CTSports does not have access to your calender. You can change this by going to Settings->Privacy->Calenders."
+                    
+                    // Create the dialog
+                    let popup = PopupDialog(title: title, message: message)
+                    self.present(popup, animated: true, completion: nil)
+                }
+            })
+            
+            self.dismiss(animated: true, completion: nil)
+           
             
         }
         
@@ -349,7 +367,7 @@ class SportingEventVC: UITableViewController {
                         })
                     } else {
                         let title = "Error."
-                        let message = "Notification could not be created because time has not been annouced yet."
+                        let message = "Notification could not be created because time has not been announced yet."
                         
                         // Create the dialog
                         let popup = PopupDialog(title: title, message: message)
@@ -463,6 +481,7 @@ func addEventToCalendar(title: String, description: String?, startDate: Date, en
                 return
             }
             completion?(true, nil)
+            
         } else {
             completion?(false, error as NSError?)
         }

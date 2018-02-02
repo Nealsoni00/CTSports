@@ -163,7 +163,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
 
     }
     override func viewDidAppear(_ animated: Bool) {
-        if (NetworkManager.sharedInstance.done){
+        if (NetworkManager.sharedInstance.done && gamesDictionary.count == 0){
 
             parseAllGamesIntoDictionaries()
         }
@@ -199,25 +199,12 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         self.navigationItem.title = "\(schoolKey) Sports Schedule"
         
         print("LOC")
-        getCoordinate(address: "Staples high school") { coordinate, error in
-            if error != nil {
-                //display error
-                return
-            } else {
-                //at this point `coordinate ` contains a valid coordinate.
-                //Put your code to do something with it here
-                print("resulting coordinate = (\(coordinate?.latitude),\(coordinate?.longitude))")
-            }
-        }
+  
 
         
     }
 
-    func getCoordinate(address: String, completion: @escaping(_ coordinate: CLLocationCoordinate2D?, _ error: Error?) -> () ) {
-        CLGeocoder().geocodeAddressString(address) { placemarks, error in
-            completion(placemarks?.first?.location?.coordinate, error)
-        }
-    }
+
     
 //    func dataRecieved(allGames: [SportingEvent]) {
 //        print("ALL GAMES: \(allGames)")
@@ -407,29 +394,63 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 return uniqueNSGameDates.count
             } else if (!activitySpinner.isAnimating) {
                 //if no games for the school
-                let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
-                
-                let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
-                sportsIcon.image = UIImage(named: "CIAC.png")
-                sportsIcon.center.x = newView.center.x
-                
-                let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
-                messageLabel.text = "There are no games listed on the CIAC website for your chosen school."
-                messageLabel.textColor = UIColor.black
-                messageLabel.numberOfLines = 0
-                messageLabel.textAlignment = .center
-                messageLabel.center.x = newView.center.x
-                messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
-                
-                
-                
-                
-                
-                newView.addSubview(sportsIcon)
-                newView.addSubview(messageLabel)
-                
-                
-                self.tableView.backgroundView = newView
+                if Connectivity.isConnectedToInternet() {
+                    print("Yes! internet is available.")
+                    // do some tasks..
+                    let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+                    
+                    let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
+                    sportsIcon.image = UIImage(named: "CIAC.png")
+                    sportsIcon.center.x = newView.center.x
+                    
+                    let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
+                    messageLabel.text = "There are no games listed on the CIAC website for your chosen sport(s)."
+                    messageLabel.textColor = UIColor.black
+                    messageLabel.numberOfLines = 0
+                    messageLabel.textAlignment = .center
+                    messageLabel.center.x = newView.center.x
+                    messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+                    
+                    let newScheduleButton: UIButton = UIButton(frame: CGRect(x: 0, y: newView.center.y + 50, width: 200, height: 50))
+                    newScheduleButton.backgroundColor = UIColor.purple
+                    newScheduleButton.center.x = newView.center.x
+                    newScheduleButton.setTitle("Missing Schedule?", for: UIControlState())
+                    newScheduleButton.titleLabel?.textAlignment = .center
+                    newScheduleButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+                    newScheduleButton.addTarget(self, action: #selector(SpecificGamesSchduleVC.addSchedule), for: .touchUpInside)
+                    
+                    
+                    
+                    newView.addSubview(sportsIcon)
+                    newView.addSubview(messageLabel)
+                    newView.addSubview(newScheduleButton)
+                    
+                    self.tableView.backgroundView = newView
+                    
+                    
+                } else {
+                    let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+                    
+                    let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 120, height: 120))
+                    sportsIcon.image = UIImage(named: "CTSportsLogo.png")
+                    sportsIcon.center.x = newView.center.x
+                    
+                    let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
+                    messageLabel.text = "There is no internet connection."
+                    messageLabel.textColor = UIColor.black
+                    messageLabel.numberOfLines = 0
+                    messageLabel.textAlignment = .center
+                    messageLabel.center.x = newView.center.x
+                    messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+                    
+                    
+                    
+                    
+                    newView.addSubview(sportsIcon)
+                    newView.addSubview(messageLabel)
+                    self.tableView.backgroundView = newView
+                    
+                }
                 self.tableView.separatorStyle = .none
                 self.navigationItem.rightBarButtonItem?.isEnabled = true
                 self.activitySpinner.stopAnimating()
@@ -442,7 +463,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
             
             let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 100, height: 100))
-            sportsIcon.image = UIImage(named: "CIAC.png")
+            sportsIcon.image = UIImage(named: "CTSportsLogo.png")
             sportsIcon.center.x = newView.center.x
             
             let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
