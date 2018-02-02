@@ -1539,7 +1539,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With CTSports, you can see your own up-to-date sports schedule by preselecting your school and your sports." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30n-eX-hjQ">
                                 <rect key="frame" x="10" y="321.5" width="355" height="44"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zY-Jk-dUT">
@@ -1584,7 +1584,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.13248822093009949" green="0.22592398524284363" blue="0.39669448137283325" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vpg-qO-w5R" firstAttribute="top" secondItem="utH-o0-ekc" secondAttribute="top" constant="25" id="2Gf-Oh-K9R"/>
                             <constraint firstItem="30n-eX-hjQ" firstAttribute="centerX" secondItem="ycR-u2-CJ6" secondAttribute="centerX" id="OA8-DA-C2m"/>

@@ -267,8 +267,8 @@
 		4989378F202407A100A5D32E /* GirlsAlpineSkiing.png in Resources */ = {isa = PBXBuildFile; fileRef = 4989378A202407A100A5D32E /* GirlsAlpineSkiing.png */; };
 		49893790202407A100A5D32E /* GirlsCrewSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4989378B202407A100A5D32E /* GirlsCrewSmall@2x.png */; };
 		49893794202407E400A5D32E /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 49893793202407E400A5D32E /* leftArrow.png */; };
-		4989379A202408C100A5D32E /* GirlsLacrosse.png in Resources */ = {isa = PBXBuildFile; fileRef = 49893799202408C000A5D32E /* GirlsLacrosse.png */; };
 		4989379C202408E800A5D32E /* BoysIndoorTrackSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4989379B202408E800A5D32E /* BoysIndoorTrackSmall@2x.png */; };
+		4989379E20240A0700A5D32E /* GirlsLacrosse.png in Resources */ = {isa = PBXBuildFile; fileRef = 4989379D20240A0700A5D32E /* GirlsLacrosse.png */; };
 		499CA84E1FF8A812006FC328 /* DefaultSportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA84D1FF8A812006FC328 /* DefaultSportCell.swift */; };
 		499CA8501FF8A939006FC328 /* DefaultSportingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA84F1FF8A939006FC328 /* DefaultSportingEvent.swift */; };
 		499CA8521FF8A9BF006FC328 /* DefaultSportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA8511FF8A9BF006FC328 /* DefaultSportsVC.swift */; };
@@ -564,8 +564,8 @@
 		4989378A202407A100A5D32E /* GirlsAlpineSkiing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsAlpineSkiing.png; sourceTree = "<group>"; };
 		4989378B202407A100A5D32E /* GirlsCrewSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsCrewSmall@2x.png"; sourceTree = "<group>"; };
 		49893793202407E400A5D32E /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
-		49893799202408C000A5D32E /* GirlsLacrosse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GirlsLacrosse.png; path = ../../../../../../../../Desktop/GirlsLacrosse.png; sourceTree = "<group>"; };
 		4989379B202408E800A5D32E /* BoysIndoorTrackSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysIndoorTrackSmall@2x.png"; sourceTree = "<group>"; };
+		4989379D20240A0700A5D32E /* GirlsLacrosse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsLacrosse.png; sourceTree = "<group>"; };
 		499CA84D1FF8A812006FC328 /* DefaultSportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSportCell.swift; sourceTree = "<group>"; };
 		499CA84F1FF8A939006FC328 /* DefaultSportingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSportingEvent.swift; sourceTree = "<group>"; };
 		499CA8511FF8A9BF006FC328 /* DefaultSportsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSportsVC.swift; sourceTree = "<group>"; };
@@ -754,8 +754,8 @@
 		367B383320053DB500560F2C /* CT SPORTS sport logos */ = {
 			isa = PBXGroup;
 			children = (
+				4989379D20240A0700A5D32E /* GirlsLacrosse.png */,
 				4989379B202408E800A5D32E /* BoysIndoorTrackSmall@2x.png */,
-				49893799202408C000A5D32E /* GirlsLacrosse.png */,
 				49893788202407A100A5D32E /* Football.png */,
 				49893787202407A000A5D32E /* FootballSmall@2x.png */,
 				4989378A202407A100A5D32E /* GirlsAlpineSkiing.png */,
@@ -1164,6 +1164,7 @@
 				492C99F22023D98100BD7271 /* GirlsSailing.png in Resources */,
 				366A8D9C1FE17D110082A64D /* LaunchScreen.storyboard in Resources */,
 				36F8C3822011066D00B136EA /* R@2x.png in Resources */,
+				4989379E20240A0700A5D32E /* GirlsLacrosse.png in Resources */,
 				492C99C92023D98100BD7271 /* GirlsBadminton.png in Resources */,
 				492C992C2023D32C00BD7271 /* GirlsCrossCountrySmall@2x.png in Resources */,
 				492C99CF2023D98100BD7271 /* Pom-Pom.png in Resources */,
@@ -1203,7 +1204,6 @@
 				492C99E62023D98100BD7271 /* Bowling.png in Resources */,
 				36F8C35A2011066D00B136EA /* braceleft@2x.png in Resources */,
 				36F8C3782011066D00B136EA /* P@2x.png in Resources */,
-				4989379A202408C100A5D32E /* GirlsLacrosse.png in Resources */,
 				3653CDA01FE5FE2F00F396CD /* info.png in Resources */,
 				367B38C12007177700560F2C /* SF Collegiate.ttf in Resources */,
 				36F8C37B2011066D00B136EA /* space@2x.png in Resources */,
