@@ -23,12 +23,19 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     var letterDict = [String: [String]]()
     var sectionTitleArray: [String]?
     
+    var newColor = UIColor.black
+    
     override func viewDidLoad() {
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
         super.viewDidLoad()
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         self.navigationController?.view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -98,10 +105,15 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
         if arrayOfSchools.count == 0{
             self.getSchools()
         }
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -159,14 +171,14 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         
         
         cell.infoText?.text = currentSchool
-        cell.schoolView.backgroundColor = schoolColors[currentSchool] ?? sweetBlue
+        cell.schoolView.backgroundColor = schoolColors[currentSchool] ?? newColor
         
         print("School: \(currentSchool) isbright:\(schoolColors[currentSchool]?.isLight())")
         
         cell.schoolView.layer.cornerRadius = cell.schoolView.layer.frame.size.width / 2
         cell.SchoolInitial.text = currentSchool.getInitals()
         
-        if((schoolColors[currentSchool] ?? sweetBlue).isLight()){
+        if((schoolColors[currentSchool] ?? newColor).isLight()){
             cell.SchoolInitial.textColor = UIColor.black
         }else{
             cell.SchoolInitial.textColor = UIColor.white

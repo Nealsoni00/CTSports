@@ -55,14 +55,18 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     
     var defaultLevel: Int = 0
     
-    
+    var newColor = UIColor.black
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
 //        NetworkManager.sharedInstance.delegate = self
-        
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
         
         //Info bar button
         let infoButton = UIButton(type: .infoLight)
@@ -90,7 +94,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             gameLevel = "V"
         }
         
-        levelSelector.tintColor = sweetBlue
+        levelSelector.tintColor = newColor
 
         
 //        var customTabBarItem:UITabBarItem = UITabBarItem(title: nil,
@@ -98,13 +102,13 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
 //                                                         selectedImage: UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.imageWithColor(UIColor.gray))
         if (defaultSports.count != 0){
             self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(UIColor.gray)
-            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(sweetBlue)
+            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(newColor)
         }
 
         
         //Nav controller bar
         self.navigationController?.view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -113,7 +117,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
             if let image = item.image {
                 item.image = image.imageWithColor(UIColor.gray).withRenderingMode(.alwaysOriginal)
-                item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.selectedImage = item.selectedImage!.imageWithColor(newColor).withRenderingMode(.alwaysOriginal)
             }
         }
 
@@ -186,6 +190,11 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         
     }
     override func viewDidAppear(_ animated: Bool) {
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
         if (defaultSports.count == 1){
             self.navigationItem.title = "\(defaultSports[0]) Schedule"
             self.title = "\(defaultSports[0])"
@@ -197,23 +206,23 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         if (schoolKey != ""){
             let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "St ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
             self.tabBarController?.tabBar.items![1].image = UIImage(named: "\(initial).png")?.imageWithColor(UIColor.gray)
-            self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(sweetBlue)
+            self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(newColor)
         }
         if (defaultSports.count != 0){
             self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(UIColor.gray)
-            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(sweetBlue)
+            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(newColor)
         }
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
         for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
             if let image = item.image {
                 item.image = image.imageWithColor(UIColor.gray).withRenderingMode(.alwaysOriginal)
-                item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.selectedImage = item.selectedImage!.imageWithColor(newColor).withRenderingMode(.alwaysOriginal)
             }
         }
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: sweetBlue], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: newColor], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.gray], for: .normal)
-        levelSelector.tintColor = sweetBlue
+        levelSelector.tintColor = newColor
 
         if (NetworkManager.sharedInstance.doneSpecific){
             parseSpecificGamesIntoDictionaries();
@@ -678,7 +687,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             var opponentName = event.opponent.components(separatedBy: " ")
             opponentName.append(school)
             cell.currentEvent = event
-            cell.homeLabel.textColor = sweetBlue
+            cell.homeLabel.textColor = newColor
             if schoolKey.split(separator: " ").count > 2 {
                 let schoolArray = schoolKey.split(separator: " ")
                 if ("\(String(schoolArray[0]))  \(String(schoolArray[1]))".characters.count < 35){
@@ -701,6 +710,11 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             cell.homeLetterView.backgroundColor = schoolColors[schoolKey] ?? sweetBlue
             cell.homeLetterView.layer.cornerRadius = cell.homeLetterView.layer.frame.size.width / 2
             
+            if cell.homeLetterView.backgroundColor!.isLight(){
+                cell.homeLetter.textColor = UIColor.black
+            }else{
+                cell.homeLetter.textColor = UIColor.white
+            }
         
             
             
@@ -715,7 +729,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
                 cell.OpponentLabel.text = event.opponent
             }
             cell.OpponentLabel.textColor = schoolColors[cell.OpponentLabel.text!] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
-
+            
            
             if (event.opponent.getInitals().characters.count == 2){
                 cell.awayLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 60)
@@ -727,14 +741,29 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             cell.opponentLetterView.backgroundColor = schoolColors[cell.OpponentLabel.text!]  ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             cell.opponentLetterView.layer.cornerRadius = cell.opponentLetterView.layer.frame.size.width / 2
             
+            if cell.opponentLetterView.backgroundColor! != UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0) && cell.opponentLetterView.backgroundColor!.isLight(){
+                cell.awayLetter.textColor = UIColor.black
+            }else{
+                cell.awayLetter.textColor = UIColor.white
+            }
+//
             
             cell.homeAwaySwitch.tintColor = schoolColors[schoolKey] ?? sweetBlue
             switch event.home {
             case "Home":
                 cell.homeAwaySwitch.selectedSegmentIndex = 0
-                cell.homeAwaySwitch.tintColor = schoolColors[schoolKey] ?? sweetBlue
+                if !( schoolColors[schoolKey] ?? sweetBlue).isLight(){
+                    cell.homeAwaySwitch.tintColor = schoolColors[schoolKey] ?? sweetBlue
+                }else{
+                     cell.homeAwaySwitch.tintColor = UIColor.black
+                }
             //                homeAwaySelector.setEnabled(false, forSegmentAt: 0)
             case "Away":
+                if !(schoolColors[cell.OpponentLabel.text!] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)).isLight(){
+                    cell.homeAwaySwitch.tintColor = schoolColors[schoolKey] ?? sweetBlue
+                }else{
+                    cell.homeAwaySwitch.tintColor = UIColor.black
+                }
                 cell.homeAwaySwitch.tintColor = schoolColors[cell.OpponentLabel.text!] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
                 cell.homeAwaySwitch.selectedSegmentIndex = 1
             //                homeAwaySelector.setEnabled(false, forSegmentAt: 1)

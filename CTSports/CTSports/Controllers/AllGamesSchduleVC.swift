@@ -58,23 +58,29 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
     var bannerView: GADBannerView! //Ads
 
     var removeAds = false
-
+    
+    var newColor = UIColor.black
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
 //        NetworkManager.sharedInstance.delegate = self
 
-
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
+        
         //Info bar button
         let infoButton = UIButton(type: .infoLight)
         infoButton.addTarget(self, action: #selector(AllGamesSchduleVC.infoPressed), for: .touchUpInside)
         let infoBarButtonItem = UIBarButtonItem(customView: infoButton)
         navigationItem.leftBarButtonItem = infoBarButtonItem
 
-        levelSelector.tintColor = sweetBlue
+        levelSelector.tintColor = newColor
         self.navigationController?.view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -83,7 +89,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
             if let image = item.image {
                 item.image = image.imageWithColor(UIColor.gray).withRenderingMode(.alwaysOriginal)
-                item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.selectedImage = item.selectedImage!.imageWithColor(newColor).withRenderingMode(.alwaysOriginal)
             }
         }
         self.navigationItem.title = "\(schoolKey.capitalized) Sports Schedule"
@@ -163,6 +169,12 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
 
     }
     override func viewDidAppear(_ animated: Bool) {
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
+        
         if (NetworkManager.sharedInstance.done){
 
             parseAllGamesIntoDictionaries()
@@ -173,29 +185,30 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         }else{
             self.title = schoolKey
         }
+        
 
         if (schoolKey != ""){
             let initial = schoolKey.replacingOccurrences(of: "East ", with: "").replacingOccurrences(of: "North ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "West ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "South ", with: "").replacingOccurrences(of: "St ", with: "")[schoolKey.characters.index(schoolKey.startIndex, offsetBy: 0)]
 
             self.tabBarController?.tabBar.items![1].image = UIImage(named: "\(initial).png")?.imageWithColor(UIColor.gray)
-            self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(sweetBlue)
+            self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(newColor)
         }
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
         if (defaultSports.count != 0){
             self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(UIColor.gray)
-            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(sweetBlue)
+            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(newColor)
         }
         for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
             if let image = item.image {
                 item.image = image.imageWithColor(UIColor.gray).withRenderingMode(.alwaysOriginal)
-                item.selectedImage = item.selectedImage!.imageWithColor(sweetBlue).withRenderingMode(.alwaysOriginal)
+                item.selectedImage = item.selectedImage!.imageWithColor(newColor).withRenderingMode(.alwaysOriginal)
             }
         }
         
        
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: sweetBlue], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: newColor], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.gray], for: .normal)
-        levelSelector.tintColor = sweetBlue
+        levelSelector.tintColor = newColor
         self.navigationItem.title = "\(schoolKey) Sports Schedule"
         
         print("LOC")
@@ -677,6 +690,11 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             cell.homeView.backgroundColor = schoolColors[schoolKey] ?? sweetBlue
             cell.homeView.layer.cornerRadius = cell.homeView.layer.frame.size.width / 2
             cell.homeLetters.text = schoolKey.getInitals()
+            if cell.homeView.backgroundColor!.isLight(){
+                cell.homeLetters.textColor = UIColor.black
+            }else{
+                cell.homeLetters.textColor = UIColor.white
+            }
             if (schoolKey.getInitals().count >= 2){
                 cell.homeLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 35)
             }
@@ -686,6 +704,7 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             
 
             cell.awayLetters.text = event.opponent.getInitals()
+            
             if (event.opponent.getInitals().count >= 2){
                 cell.awayLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 35)
             }
@@ -693,6 +712,11 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
                 cell.awayLetters.font = UIFont (name: "SFCollegiateSolid-Bold", size: 42)
             }
             cell.awayView.backgroundColor = schoolColors[event.opponent] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+            if cell.awayView.backgroundColor!.isLight(){
+                cell.awayLetters.textColor = UIColor.black
+            }else{
+                cell.awayLetters.textColor = UIColor.white
+            }
             cell.awayView.layer.cornerRadius = cell.awayView.layer.frame.size.width / 2
             
             if event.home == "Home"{

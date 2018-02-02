@@ -27,14 +27,19 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
     
     var letterDict = [String: [String]]()
     var sectionTitleArray: [String]?
-    
+    var newColor = UIColor.black
     
     override func viewDidLoad() {
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
         super.viewDidLoad()
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         self.navigationController?.view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -106,10 +111,15 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
         self.sectionTitleArray = Array(letterDict.keys).sorted(by: <)
     }
     override func viewDidAppear(_ animated: Bool) {
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
         if arrayOfSports.count == 0{
             self.getSports()
         }
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
      
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -168,7 +178,7 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
 
         let image: UIImage = UIImage(named: "\(currentSport.replacingOccurrences(of: " ", with: "")).png") ?? UIImage()
         print(currentSport)
-        cell.sportImage!.image = image.imageWithColor(sweetBlue)
+        cell.sportImage!.image = image.imageWithColor(newColor)
         
         
 

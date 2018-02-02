@@ -37,10 +37,16 @@ class SportingEventVC: UITableViewController {
     var headers = [String]()
     var information = [String]()
     var schoolName: [String] = [""]
+    var newColor = UIColor.black
     
     override func viewDidLoad(){
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-UltraLight", size: 15)!, NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -88,7 +94,7 @@ class SportingEventVC: UITableViewController {
                 break;
             }
 //            homeAwaySelector.isEnabled = false
-            homeAwaySelector.tintColor = sweetBlue
+            homeAwaySelector.tintColor = newColor
             switch self.currentEvent!.home {
             case "Home":
                 homeAwaySelector.selectedSegmentIndex = 0
@@ -116,7 +122,7 @@ class SportingEventVC: UITableViewController {
 //                nameLabel.attributedText = "\(school) \nvs \n \(opponentName[0])".color(opponentName)
 //            }
             
-            nameLabel.textColor = sweetBlue
+            nameLabel.textColor = newColor
             if schoolKey.split(separator: " ").count > 2 {
                 let schoolArray = schoolKey.split(separator: " ")
                 if ("\(String(schoolArray[0]))  \(String(schoolArray[1]))".characters.count < 35){
@@ -140,6 +146,12 @@ class SportingEventVC: UITableViewController {
                 homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
             }
             homeLetter.text = initials
+            
+            if !sweetBlue.isLight(){
+                homeLetter.textColor = UIColor.white
+            }else{
+                homeLetter.textColor = UIColor.black
+            }
             homeLetterView.backgroundColor = sweetBlue
             homeLetterView.layer.cornerRadius = homeLetterView.layer.frame.size.width / 2
             
@@ -157,6 +169,7 @@ class SportingEventVC: UITableViewController {
             }else{
                 opponentLabel.text = self.currentEvent!.opponent
             }
+            
             initials = ""
             for word in  self.currentEvent!.opponent.split(separator: " "){
                 if (initials.characters.count < 2){
@@ -180,7 +193,14 @@ class SportingEventVC: UITableViewController {
             opponentLetterView.backgroundColor = schoolColors[self.currentEvent!.opponent] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
             opponentLetterView.layer.cornerRadius = opponentLetterView.layer.frame.size.width / 2
             
-        
+            if opponentLetterView.backgroundColor! != UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0) && opponentLetterView.backgroundColor!.isLight(){
+                opponentLetter.textColor = UIColor.black
+                opponentLabel.textColor = UIColor.black
+            }else{
+                opponentLetter.textColor = UIColor.white
+                opponentLabel.textColor = schoolColors[self.currentEvent!.opponent] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
+            }
+            
 
             if (self.currentEvent!.bus == "yes"){
                 self.headers.append("Bus Time")

@@ -16,10 +16,17 @@ class DefaultSportsVC: UITableViewController {
     
     var swipeMode = false
 
+    var newColor = UIColor.black
+    
     override func viewDidLoad() {
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
         super.viewDidLoad();
         self.navigationController?.view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -114,7 +121,7 @@ class DefaultSportsVC: UITableViewController {
         cell.infoText.text = current;
         let image: UIImage = UIImage(named: "\(current.replacingOccurrences(of: " ", with: "")).png") ?? UIImage()
         print("SPORT NAME: \(current)")
-        cell.sportImage!.image = image.imageWithColor(sweetBlue)
+        cell.sportImage!.image = image.imageWithColor(newColor)
         return cell
     }
  
@@ -227,6 +234,11 @@ class DefaultSportsVC: UITableViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
         table.reloadData()
     
     }

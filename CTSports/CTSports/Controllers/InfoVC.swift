@@ -14,12 +14,19 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     @IBOutlet weak var defaultSchoolLabel: UILabel!
     @IBOutlet weak var defaultSportLabel: UILabel!
     
+    var newColor = UIColor.black
+    
     override func viewDidLoad() {
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
         super.viewDidLoad()
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         self.navigationController?.view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -33,9 +40,14 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if sweetBlue.isLight(){
+            newColor = UIColor.black
+        }else{
+            newColor = sweetBlue
+        }
 //        defaultSportLabel.text = "Change Default Sport From: \(sportKey)"
         defaultSchoolLabel.text = "School: \(schoolKey)"
-        self.navigationController?.navigationBar.barTintColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = newColor
 
     }
     
