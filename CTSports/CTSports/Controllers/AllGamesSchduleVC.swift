@@ -182,8 +182,8 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         }
         self.navigationController?.navigationBar.barTintColor = sweetBlue
         if (defaultSports.count != 0){
-            self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 30,height: 30)).imageWithColor(UIColor.gray)
-            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 30,height: 30)).imageWithColor(sweetBlue)
+            self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(UIColor.gray)
+            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(sweetBlue)
         }
         for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {
             if let image = item.image {

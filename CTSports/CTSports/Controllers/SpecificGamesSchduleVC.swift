@@ -97,8 +97,8 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
 //                                                         image: UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.imageWithColor(sweetBlue).withRenderingMode(UIImageRenderingMode.alwaysOriginal),
 //                                                         selectedImage: UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.imageWithColor(UIColor.gray))
         if (defaultSports.count != 0){
-            self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 25,height: 25)).imageWithColor(UIColor.gray)
-            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 25,height: 25)).imageWithColor(sweetBlue)
+            self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(UIColor.gray)
+            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(sweetBlue)
         }
 
         
@@ -200,8 +200,8 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             self.tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "\(initial).png")?.imageWithColor(sweetBlue)
         }
         if (defaultSports.count != 0){
-            self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 30,height: 30)).imageWithColor(UIColor.gray)
-            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: "")).png")?.resizeImage(CGSize(width: 30,height: 30)).imageWithColor(sweetBlue)
+            self.tabBarController?.tabBar.items![0].image = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(UIColor.gray)
+            self.tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "\(defaultSports[0].replacingOccurrences(of: " ", with: ""))Small.png")?.imageWithColor(sweetBlue)
         }
         self.navigationController?.navigationBar.barTintColor = sweetBlue
         for item in (self.tabBarController?.tabBar.items)! as [UITabBarItem] {

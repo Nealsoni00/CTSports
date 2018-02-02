@@ -12,7 +12,6 @@
 		364C3C62201B7E420058C43E /* InputScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364C3C61201B7E420058C43E /* InputScheduleVC.swift */; };
 		364C3C64201B803E0058C43E /* upload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 364C3C63201B803C0058C43E /* upload@2x.png */; };
 		364C3C66201BA8700058C43E /* CTSportsLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 364C3C65201BA86D0058C43E /* CTSportsLogo.png */; };
-		364C3C6A201BCF1D0058C43E /* IceHockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 364C3C69201BCF1B0058C43E /* IceHockey.png */; };
 		3653CD9F1FE5FE2F00F396CD /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 3653CD9D1FE5FE2E00F396CD /* email.png */; };
 		3653CDA01FE5FE2F00F396CD /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 3653CD9E1FE5FE2E00F396CD /* info.png */; };
 		3653CDA21FE5FE4000F396CD /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 3653CDA11FE5FE4000F396CD /* lock.png */; };
@@ -39,82 +38,12 @@
 		366A8DD71FE1A57A0082A64D /* SetSchoolVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8DD61FE1A57A0082A64D /* SetSchoolVC.swift */; };
 		366A8DD91FE2DE530082A64D /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8DD81FE2DE530082A64D /* InfoVC.swift */; };
 		366A8DDB1FE40F8C0082A64D /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8DDA1FE40F8C0082A64D /* UIImageViewExtension.swift */; };
-		367B387620053DB500560F2C /* UnifiedSportsBasketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383420053DB500560F2C /* UnifiedSportsBasketball.png */; };
-		367B387720053DB500560F2C /* GirlsIceHockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383520053DB500560F2C /* GirlsIceHockey.png */; };
-		367B387820053DB500560F2C /* Bowling.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383620053DB500560F2C /* Bowling.png */; };
-		367B387920053DB500560F2C /* Practice.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383720053DB500560F2C /* Practice.png */; };
-		367B387A20053DB500560F2C /* BoysWaterPolo.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383820053DB500560F2C /* BoysWaterPolo.png */; };
-		367B387B20053DB500560F2C /* FieldHockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383920053DB500560F2C /* FieldHockey.png */; };
-		367B387C20053DB500560F2C /* BoysBadminton.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383A20053DB500560F2C /* BoysBadminton.png */; };
-		367B387D20053DB500560F2C /* Band.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383B20053DB500560F2C /* Band.png */; };
-		367B387E20053DB500560F2C /* GirlsCrew@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383C20053DB500560F2C /* GirlsCrew@2x.png */; };
-		367B387F20053DB500560F2C /* DebateTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383D20053DB500560F2C /* DebateTeam.png */; };
-		367B388020053DB500560F2C /* GirlsAlpineSkiing.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383E20053DB500560F2C /* GirlsAlpineSkiing.png */; };
-		367B388120053DB500560F2C /* GirlsSoccer.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B383F20053DB500560F2C /* GirlsSoccer.png */; };
-		367B388220053DB500560F2C /* GirlsSailing.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384020053DB500560F2C /* GirlsSailing.png */; };
-		367B388320053DB500560F2C /* GirlsTennis.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384120053DB500560F2C /* GirlsTennis.png */; };
-		367B388420053DB500560F2C /* GirlsGymnastics.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384220053DB500560F2C /* GirlsGymnastics.png */; };
-		367B388520053DB500560F2C /* BoysBasketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384320053DB500560F2C /* BoysBasketball.png */; };
-		367B388620053DB500560F2C /* Co-edFencing.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384420053DB500560F2C /* Co-edFencing.png */; };
-		367B388720053DB500560F2C /* Crew.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384520053DB500560F2C /* Crew.png */; };
-		367B388820053DB500560F2C /* GirlsWaterPolo.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384620053DB500560F2C /* GirlsWaterPolo.png */; };
-		367B388920053DB500560F2C /* GirlsBadminton.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384720053DB500560F2C /* GirlsBadminton.png */; };
-		367B388A20053DB500560F2C /* Cheerleading.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384820053DB500560F2C /* Cheerleading.png */; };
-		367B388B20053DB500560F2C /* ColorGuard.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384920053DB500560F2C /* ColorGuard.png */; };
-		367B388C20053DB500560F2C /* BoysLacrosse.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384A20053DB500560F2C /* BoysLacrosse.png */; };
-		367B388D20053DB500560F2C /* GirlsCrossCountry.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384B20053DB500560F2C /* GirlsCrossCountry.png */; };
-		367B388E20053DB500560F2C /* GirlsSwimming.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384C20053DB500560F2C /* GirlsSwimming.png */; };
-		367B388F20053DB500560F2C /* BoysOutdoorTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384D20053DB500560F2C /* BoysOutdoorTrack.png */; };
-		367B389020053DB500560F2C /* BoysIceHockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384E20053DB500560F2C /* BoysIceHockey.png */; };
-		367B389120053DB500560F2C /* GirlsBasketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B384F20053DB500560F2C /* GirlsBasketball.png */; };
-		367B389220053DB500560F2C /* Co-edAlpineSkiing.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385020053DB500560F2C /* Co-edAlpineSkiing.png */; };
-		367B389320053DB500560F2C /* Chorus.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385120053DB500560F2C /* Chorus.png */; };
-		367B389420053DB500560F2C /* BoysSailing.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385220053DB500560F2C /* BoysSailing.png */; };
-		367B389520053DB500560F2C /* DanceTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385320053DB500560F2C /* DanceTeam.png */; };
-		367B389620053DB500560F2C /* Co-edCrew.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385420053DB500560F2C /* Co-edCrew.png */; };
-		367B389720053DB500560F2C /* MathTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385520053DB500560F2C /* MathTeam.png */; };
-		367B389820053DB500560F2C /* Co-edRifle.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385620053DB500560F2C /* Co-edRifle.png */; };
-		367B389920053DB500560F2C /* UnifiedSportsTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385720053DB500560F2C /* UnifiedSportsTrack.png */; };
-		367B389A20053DB500560F2C /* UnifiedSportsSoccer.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385820053DB500560F2C /* UnifiedSportsSoccer.png */; };
-		367B389B20053DB500560F2C /* ChessTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385920053DB500560F2C /* ChessTeam.png */; };
-		367B389C20053DB500560F2C /* BoysFencing.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385A20053DB500560F2C /* BoysFencing.png */; };
-		367B389D20053DB500560F2C /* BoysVolleyball.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385B20053DB500560F2C /* BoysVolleyball.png */; };
-		367B389E20053DB500560F2C /* BoysSwimming.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385C20053DB500560F2C /* BoysSwimming.png */; };
-		367B389F20053DB500560F2C /* Wrestling.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385D20053DB500560F2C /* Wrestling.png */; };
-		367B38A020053DB500560F2C /* GirlsLacrosse.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385E20053DB500560F2C /* GirlsLacrosse.png */; };
-		367B38A120053DB500560F2C /* Co-edCrossCountrySkiing.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B385F20053DB500560F2C /* Co-edCrossCountrySkiing.png */; };
-		367B38A220053DB500560F2C /* BoysRugby.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386020053DB500560F2C /* BoysRugby.png */; };
-		367B38A320053DB500560F2C /* PowderpuffFootball.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386120053DB500560F2C /* PowderpuffFootball.png */; };
-		367B38A420053DB500560F2C /* Baseball.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386220053DB500560F2C /* Baseball.png */; };
-		367B38A520053DB500560F2C /* UnifiedSportsVolleyball.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386320053DB500560F2C /* UnifiedSportsVolleyball.png */; };
-		367B38A620053DB500560F2C /* Football.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386420053DB500560F2C /* Football.png */; };
-		367B38A720053DB500560F2C /* MiscellaneousEvents.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386520053DB500560F2C /* MiscellaneousEvents.png */; };
-		367B38A820053DB500560F2C /* BoysAlpineSkiing.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386620053DB500560F2C /* BoysAlpineSkiing.png */; };
-		367B38A920053DB500560F2C /* BoysTennis.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386720053DB500560F2C /* BoysTennis.png */; };
-		367B38AA20053DB500560F2C /* BoysCrossCountry.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386820053DB500560F2C /* BoysCrossCountry.png */; };
-		367B38AB20053DB500560F2C /* GirlsOutdoorTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386920053DB500560F2C /* GirlsOutdoorTrack.png */; };
-		367B38AC20053DB500560F2C /* GirlsFencing.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386A20053DB500560F2C /* GirlsFencing.png */; };
-		367B38AD20053DB500560F2C /* BoysSoccer.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386B20053DB500560F2C /* BoysSoccer.png */; };
-		367B38AE20053DB500560F2C /* GirlsIndoorTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386C20053DB500560F2C /* GirlsIndoorTrack.png */; };
-		367B38AF20053DB500560F2C /* SchoolHolidaysandClosings.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386D20053DB500560F2C /* SchoolHolidaysandClosings.png */; };
-		367B38B020053DB500560F2C /* Co-edSailing.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386E20053DB500560F2C /* Co-edSailing.png */; };
-		367B38B120053DB500560F2C /* Softball.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B386F20053DB500560F2C /* Softball.png */; };
-		367B38B220053DB500560F2C /* GirlsVolleyball.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B387020053DB500560F2C /* GirlsVolleyball.png */; };
-		367B38B320053DB500560F2C /* BoysIndoorTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B387120053DB500560F2C /* BoysIndoorTrack.png */; };
-		367B38B420053DB500560F2C /* BoysGolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B387220053DB500560F2C /* BoysGolf.png */; };
-		367B38B520053DB500560F2C /* Pom-Pom.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B387320053DB500560F2C /* Pom-Pom.png */; };
-		367B38B620053DB500560F2C /* Drumline.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B387420053DB500560F2C /* Drumline.png */; };
-		367B38B720053DB500560F2C /* GirlsGolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B387520053DB500560F2C /* GirlsGolf.png */; };
-		367B38B920065E7200560F2C /* BoysCrew.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B38B820065E7000560F2C /* BoysCrew.png */; };
 		367B38C12007177700560F2C /* SF Collegiate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BD2007175A00560F2C /* SF Collegiate.ttf */; };
 		367B38C22007177A00560F2C /* SF Collegiate Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BB2007175300560F2C /* SF Collegiate Solid.ttf */; };
 		367B38C32007177E00560F2C /* SF Collegiate Solid Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38C02007176300560F2C /* SF Collegiate Solid Italic.ttf */; };
 		367B38C42007178000560F2C /* SF Collegiate Solid Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BC2007175600560F2C /* SF Collegiate Solid Bold.ttf */; };
 		367B38C52007178200560F2C /* SF Collegiate Solid Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BF2007176000560F2C /* SF Collegiate Solid Bold Italic.ttf */; };
 		367B38C62007178500560F2C /* SF Collegiate Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 367B38BE2007175D00560F2C /* SF Collegiate Italic.ttf */; };
-		367B38C82007218C00560F2C /* GirlsSquash.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B38C72007218900560F2C /* GirlsSquash.png */; };
-		367B38CA2007219C00560F2C /* BoysSquash.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B38C92007219B00560F2C /* BoysSquash.png */; };
-		367B38CC200721A800560F2C /* Co-edSquash.png in Resources */ = {isa = PBXBuildFile; fileRef = 367B38CB200721A700560F2C /* Co-edSquash.png */; };
 		368D7E871FE6E8DA000BE5D4 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 368D7E861FE6E8DA000BE5D4 /* setting@2x.png */; };
 		368D7E8B1FE6EA19000BE5D4 /* CIAC.png in Resources */ = {isa = PBXBuildFile; fileRef = 368D7E8A1FE6EA18000BE5D4 /* CIAC.png */; };
 		368D7E8D1FE6EA21000BE5D4 /* CIACsmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 368D7E8C1FE6EA1E000BE5D4 /* CIACsmall.png */; };
@@ -193,11 +122,153 @@
 		36F8C3912011066D00B136EA /* exclamdown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F8C34A2011066C00B136EA /* exclamdown@2x.png */; };
 		36F8C3922011066D00B136EA /* parenright@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F8C34B2011066C00B136EA /* parenright@2x.png */; };
 		36F8C3932011066D00B136EA /* parenleft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F8C34C2011066C00B136EA /* parenleft@2x.png */; };
+		492C99262023D32C00BD7271 /* BoysOutdoorTrackSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98E92023D32000BD7271 /* BoysOutdoorTrackSmall@2x.png */; };
+		492C99272023D32C00BD7271 /* Co-edCrewSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98EA2023D32000BD7271 /* Co-edCrewSmall@2x.png */; };
+		492C99282023D32C00BD7271 /* CrewSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98EB2023D32000BD7271 /* CrewSmall@2x.png */; };
+		492C99292023D32C00BD7271 /* FootballSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98EC2023D32000BD7271 /* FootballSmall@2x.png */; };
+		492C992A2023D32C00BD7271 /* GirlsOutdoorTrackSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98ED2023D32000BD7271 /* GirlsOutdoorTrackSmall@2x.png */; };
+		492C992B2023D32C00BD7271 /* CheerleadingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98EE2023D32000BD7271 /* CheerleadingSmall@2x.png */; };
+		492C992C2023D32C00BD7271 /* GirlsCrossCountrySmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98EF2023D32000BD7271 /* GirlsCrossCountrySmall@2x.png */; };
+		492C992D2023D32C00BD7271 /* ColorGuardSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98F02023D32100BD7271 /* ColorGuardSmall@2x.png */; };
+		492C992E2023D32C00BD7271 /* GirlsSoccerSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98F12023D32100BD7271 /* GirlsSoccerSmall@2x.png */; };
+		492C992F2023D32C00BD7271 /* MathTeamSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98F22023D32100BD7271 /* MathTeamSmall@2x.png */; };
+		492C99302023D32C00BD7271 /* BoysCrewSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98F32023D32100BD7271 /* BoysCrewSmall@2x.png */; };
+		492C99312023D32C00BD7271 /* BoysBasketballSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98F42023D32100BD7271 /* BoysBasketballSmall@2x.png */; };
+		492C99322023D32C00BD7271 /* BoysFencingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98F52023D32100BD7271 /* BoysFencingSmall@2x.png */; };
+		492C99332023D32C00BD7271 /* GirlsGymnasticsSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98F62023D32100BD7271 /* GirlsGymnasticsSmall@2x.png */; };
+		492C99342023D32C00BD7271 /* BaseballSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98F72023D32200BD7271 /* BaseballSmall@2x.png */; };
+		492C99352023D32C00BD7271 /* WrestlingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98F82023D32200BD7271 /* WrestlingSmall@2x.png */; };
+		492C99362023D32C00BD7271 /* DebateTeamSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98F92023D32200BD7271 /* DebateTeamSmall@2x.png */; };
+		492C99372023D32C00BD7271 /* GirlsSwimmingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98FA2023D32200BD7271 /* GirlsSwimmingSmall@2x.png */; };
+		492C99382023D32C00BD7271 /* BoysSoccerSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98FB2023D32300BD7271 /* BoysSoccerSmall@2x.png */; };
+		492C99392023D32C00BD7271 /* Co-edFencingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98FC2023D32300BD7271 /* Co-edFencingSmall@2x.png */; };
+		492C993A2023D32C00BD7271 /* BoysSwimmingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98FD2023D32300BD7271 /* BoysSwimmingSmall@2x.png */; };
+		492C993B2023D32C00BD7271 /* BowlingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98FE2023D32300BD7271 /* BowlingSmall@2x.png */; };
+		492C993C2023D32C00BD7271 /* GirlsLacrosseSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C98FF2023D32400BD7271 /* GirlsLacrosseSmall@2x.png */; };
+		492C993D2023D32C00BD7271 /* BoysRugbySmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99002023D32400BD7271 /* BoysRugbySmall@2x.png */; };
+		492C993E2023D32C00BD7271 /* GirlsFencingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99012023D32400BD7271 /* GirlsFencingSmall@2x.png */; };
+		492C993F2023D32C00BD7271 /* BoysBadmintonSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99022023D32400BD7271 /* BoysBadmintonSmall@2x.png */; };
+		492C99402023D32C00BD7271 /* Co-edRifleSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99032023D32500BD7271 /* Co-edRifleSmall@2x.png */; };
+		492C99412023D32C00BD7271 /* GirlsIceHockeySmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99042023D32500BD7271 /* GirlsIceHockeySmall@2x.png */; };
+		492C99422023D32C00BD7271 /* BoysSquashSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99052023D32500BD7271 /* BoysSquashSmall@2x.png */; };
+		492C99432023D32C00BD7271 /* GirlsBasketballSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99062023D32500BD7271 /* GirlsBasketballSmall@2x.png */; };
+		492C99442023D32C00BD7271 /* FieldHockeySmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99072023D32600BD7271 /* FieldHockeySmall@2x.png */; };
+		492C99452023D32C00BD7271 /* DanceTeamSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99082023D32600BD7271 /* DanceTeamSmall@2x.png */; };
+		492C99462023D32C00BD7271 /* BandSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99092023D32600BD7271 /* BandSmall@2x.png */; };
+		492C99472023D32C00BD7271 /* BoysTennisSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C990A2023D32700BD7271 /* BoysTennisSmall@2x.png */; };
+		492C99482023D32C00BD7271 /* PracticeSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C990B2023D32700BD7271 /* PracticeSmall@2x.png */; };
+		492C99492023D32C00BD7271 /* GirlsAlpineSkiingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C990C2023D32700BD7271 /* GirlsAlpineSkiingSmall@2x.png */; };
+		492C994A2023D32C00BD7271 /* GirlsBadmintonSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C990D2023D32800BD7271 /* GirlsBadmintonSmall@2x.png */; };
+		492C994B2023D32C00BD7271 /* MiscellaneousEventsSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C990E2023D32800BD7271 /* MiscellaneousEventsSmall@2x.png */; };
+		492C994C2023D32C00BD7271 /* UnifiedSportsSoccerSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C990F2023D32800BD7271 /* UnifiedSportsSoccerSmall@2x.png */; };
+		492C994D2023D32C00BD7271 /* UnifiedSportsTrackSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99102023D32800BD7271 /* UnifiedSportsTrackSmall@2x.png */; };
+		492C994E2023D32C00BD7271 /* Co-edCrossCountrySkiingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99112023D32800BD7271 /* Co-edCrossCountrySkiingSmall@2x.png */; };
+		492C994F2023D32C00BD7271 /* IceHockeySmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99122023D32900BD7271 /* IceHockeySmall@2x.png */; };
+		492C99502023D32C00BD7271 /* BoysIceHockeySmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99132023D32900BD7271 /* BoysIceHockeySmall@2x.png */; };
+		492C99512023D32C00BD7271 /* GirlsTennisSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99142023D32900BD7271 /* GirlsTennisSmall@2x.png */; };
+		492C99522023D32C00BD7271 /* ChessTeamSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99152023D32900BD7271 /* ChessTeamSmall@2x.png */; };
+		492C99532023D32C00BD7271 /* Co-edAlpineSkiingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99162023D32900BD7271 /* Co-edAlpineSkiingSmall@2x.png */; };
+		492C99542023D32C00BD7271 /* PowderpuffFootballSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99172023D32A00BD7271 /* PowderpuffFootballSmall@2x.png */; };
+		492C99552023D32C00BD7271 /* BoysWaterPoloSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99182023D32A00BD7271 /* BoysWaterPoloSmall@2x.png */; };
+		492C99562023D32C00BD7271 /* GirlsIndoorTrackSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99192023D32A00BD7271 /* GirlsIndoorTrackSmall@2x.png */; };
+		492C99572023D32C00BD7271 /* BoysCrossCountrySmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C991A2023D32A00BD7271 /* BoysCrossCountrySmall@2x.png */; };
+		492C99582023D32C00BD7271 /* BoysVolleyballSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C991B2023D32A00BD7271 /* BoysVolleyballSmall@2x.png */; };
+		492C99592023D32C00BD7271 /* ChorusSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C991C2023D32A00BD7271 /* ChorusSmall@2x.png */; };
+		492C995A2023D32C00BD7271 /* BoysLacrosseSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C991D2023D32B00BD7271 /* BoysLacrosseSmall@2x.png */; };
+		492C995B2023D32C00BD7271 /* GirlsSailingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C991E2023D32B00BD7271 /* GirlsSailingSmall@2x.png */; };
+		492C995C2023D32C00BD7271 /* Co-edSquashSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C991F2023D32B00BD7271 /* Co-edSquashSmall@2x.png */; };
+		492C995D2023D32C00BD7271 /* GirlsSquashSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99202023D32B00BD7271 /* GirlsSquashSmall@2x.png */; };
+		492C995E2023D32C00BD7271 /* BoysAlpineSkiingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99212023D32B00BD7271 /* BoysAlpineSkiingSmall@2x.png */; };
+		492C995F2023D32C00BD7271 /* UnifiedSportsBasketballSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99222023D32B00BD7271 /* UnifiedSportsBasketballSmall@2x.png */; };
+		492C99602023D32C00BD7271 /* BoysSailingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99232023D32C00BD7271 /* BoysSailingSmall@2x.png */; };
+		492C99612023D32C00BD7271 /* GirlsWaterPoloSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99242023D32C00BD7271 /* GirlsWaterPoloSmall@2x.png */; };
+		492C99622023D32C00BD7271 /* UnifiedSportsVolleyballSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99252023D32C00BD7271 /* UnifiedSportsVolleyballSmall@2x.png */; };
+		492C99642023D57100BD7271 /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99632023D57000BD7271 /* leftArrow.png */; };
+		492C99AC2023D98100BD7271 /* UnifiedSportsVolleyball.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99652023D97100BD7271 /* UnifiedSportsVolleyball.png */; };
+		492C99AD2023D98100BD7271 /* BoysWaterPolo.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99662023D97100BD7271 /* BoysWaterPolo.png */; };
+		492C99AE2023D98100BD7271 /* BoysSwimming.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99672023D97200BD7271 /* BoysSwimming.png */; };
+		492C99AF2023D98100BD7271 /* BoysFencing.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99682023D97200BD7271 /* BoysFencing.png */; };
+		492C99B02023D98100BD7271 /* GirlsSwimming.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99692023D97200BD7271 /* GirlsSwimming.png */; };
+		492C99B12023D98100BD7271 /* SchoolHolidaysandClosings.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C996A2023D97300BD7271 /* SchoolHolidaysandClosings.png */; };
+		492C99B22023D98100BD7271 /* UnifiedSportsTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C996B2023D97300BD7271 /* UnifiedSportsTrack.png */; };
+		492C99B42023D98100BD7271 /* Wrestling.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C996D2023D97300BD7271 /* Wrestling.png */; };
+		492C99B52023D98100BD7271 /* BoysOutdoorTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C996E2023D97400BD7271 /* BoysOutdoorTrack.png */; };
+		492C99B62023D98100BD7271 /* DanceTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C996F2023D97400BD7271 /* DanceTeam.png */; };
+		492C99B72023D98100BD7271 /* GirlsBasketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99702023D97400BD7271 /* GirlsBasketball.png */; };
+		492C99B82023D98100BD7271 /* GirlsSoccer.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99712023D97400BD7271 /* GirlsSoccer.png */; };
+		492C99B92023D98100BD7271 /* Chorus.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99722023D97500BD7271 /* Chorus.png */; };
+		492C99BA2023D98100BD7271 /* GirlsVolleyball.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99732023D97500BD7271 /* GirlsVolleyball.png */; };
+		492C99BB2023D98100BD7271 /* MathTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99742023D97500BD7271 /* MathTeam.png */; };
+		492C99BC2023D98100BD7271 /* ColorGuard.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99752023D97500BD7271 /* ColorGuard.png */; };
+		492C99BD2023D98100BD7271 /* Practice.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99762023D97500BD7271 /* Practice.png */; };
+		492C99BE2023D98100BD7271 /* UnifiedSportsSoccer.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99772023D97600BD7271 /* UnifiedSportsSoccer.png */; };
+		492C99BF2023D98100BD7271 /* ChessTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99782023D97600BD7271 /* ChessTeam.png */; };
+		492C99C02023D98100BD7271 /* Band.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99792023D97600BD7271 /* Band.png */; };
+		492C99C12023D98100BD7271 /* IceHockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C997A2023D97600BD7271 /* IceHockey.png */; };
+		492C99C22023D98100BD7271 /* GirlsAlpineSkiing.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C997B2023D97600BD7271 /* GirlsAlpineSkiing.png */; };
+		492C99C32023D98100BD7271 /* BoysGolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C997C2023D97700BD7271 /* BoysGolf.png */; };
+		492C99C42023D98100BD7271 /* GirlsGymnastics.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C997D2023D97700BD7271 /* GirlsGymnastics.png */; };
+		492C99C52023D98100BD7271 /* Co-edSquash.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C997E2023D97700BD7271 /* Co-edSquash.png */; };
+		492C99C62023D98100BD7271 /* Softball.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C997F2023D97800BD7271 /* Softball.png */; };
+		492C99C72023D98100BD7271 /* BoysSquash.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99802023D97800BD7271 /* BoysSquash.png */; };
+		492C99C82023D98100BD7271 /* Co-edSailing.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99812023D97800BD7271 /* Co-edSailing.png */; };
+		492C99C92023D98100BD7271 /* GirlsBadminton.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99822023D97800BD7271 /* GirlsBadminton.png */; };
+		492C99CA2023D98100BD7271 /* BoysBasketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99832023D97800BD7271 /* BoysBasketball.png */; };
+		492C99CB2023D98100BD7271 /* Baseball.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99842023D97900BD7271 /* Baseball.png */; };
+		492C99CC2023D98100BD7271 /* MiscellaneousEvents.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99852023D97900BD7271 /* MiscellaneousEvents.png */; };
+		492C99CD2023D98100BD7271 /* GirlsFencing.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99862023D97900BD7271 /* GirlsFencing.png */; };
+		492C99CE2023D98100BD7271 /* BoysIceHockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99872023D97A00BD7271 /* BoysIceHockey.png */; };
+		492C99CF2023D98100BD7271 /* Pom-Pom.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99882023D97A00BD7271 /* Pom-Pom.png */; };
+		492C99D02023D98100BD7271 /* BoysSoccer.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99892023D97A00BD7271 /* BoysSoccer.png */; };
+		492C99D12023D98100BD7271 /* BoysLacrosse.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C998A2023D97B00BD7271 /* BoysLacrosse.png */; };
+		492C99D22023D98100BD7271 /* Co-edFencing.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C998B2023D97B00BD7271 /* Co-edFencing.png */; };
+		492C99D32023D98100BD7271 /* GirlsIceHockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C998C2023D97B00BD7271 /* GirlsIceHockey.png */; };
+		492C99D42023D98100BD7271 /* PowderpuffFootball.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C998D2023D97B00BD7271 /* PowderpuffFootball.png */; };
+		492C99D52023D98100BD7271 /* BoysCrew.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C998E2023D97B00BD7271 /* BoysCrew.png */; };
+		492C99D62023D98100BD7271 /* BoysAlpineSkiing.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C998F2023D97C00BD7271 /* BoysAlpineSkiing.png */; };
+		492C99D72023D98100BD7271 /* BoysCrossCountry.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99902023D97C00BD7271 /* BoysCrossCountry.png */; };
+		492C99D82023D98100BD7271 /* GirlsGolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99912023D97C00BD7271 /* GirlsGolf.png */; };
+		492C99D92023D98100BD7271 /* DebateTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99922023D97C00BD7271 /* DebateTeam.png */; };
+		492C99DA2023D98100BD7271 /* GirlsSquash.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99932023D97C00BD7271 /* GirlsSquash.png */; };
+		492C99DB2023D98100BD7271 /* GirlsTennis.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99942023D97C00BD7271 /* GirlsTennis.png */; };
+		492C99DC2023D98100BD7271 /* BoysIndoorTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99952023D97C00BD7271 /* BoysIndoorTrack.png */; };
+		492C99DD2023D98100BD7271 /* Co-edCrossCountrySkiing.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99962023D97D00BD7271 /* Co-edCrossCountrySkiing.png */; };
+		492C99DE2023D98100BD7271 /* BoysTennis.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99972023D97D00BD7271 /* BoysTennis.png */; };
+		492C99DF2023D98100BD7271 /* Co-edAlpineSkiing.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99982023D97D00BD7271 /* Co-edAlpineSkiing.png */; };
+		492C99E02023D98100BD7271 /* BoysSailing.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99992023D97D00BD7271 /* BoysSailing.png */; };
+		492C99E12023D98100BD7271 /* Crew.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C999A2023D97D00BD7271 /* Crew.png */; };
+		492C99E22023D98100BD7271 /* GirlsCrossCountry.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C999B2023D97D00BD7271 /* GirlsCrossCountry.png */; };
+		492C99E32023D98100BD7271 /* Co-edRifle.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C999C2023D97D00BD7271 /* Co-edRifle.png */; };
+		492C99E42023D98100BD7271 /* Football.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C999D2023D97D00BD7271 /* Football.png */; };
+		492C99E52023D98100BD7271 /* BoysBadminton.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C999E2023D97E00BD7271 /* BoysBadminton.png */; };
+		492C99E62023D98100BD7271 /* Bowling.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C999F2023D97E00BD7271 /* Bowling.png */; };
+		492C99E72023D98100BD7271 /* Co-edCrew.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99A02023D97E00BD7271 /* Co-edCrew.png */; };
+		492C99E82023D98100BD7271 /* FieldHockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99A12023D97E00BD7271 /* FieldHockey.png */; };
+		492C99E92023D98100BD7271 /* UnifiedSportsBasketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99A22023D97E00BD7271 /* UnifiedSportsBasketball.png */; };
+		492C99EA2023D98100BD7271 /* GirlsOutdoorTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99A32023D97F00BD7271 /* GirlsOutdoorTrack.png */; };
+		492C99EB2023D98100BD7271 /* GirlsWaterPolo.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99A42023D97F00BD7271 /* GirlsWaterPolo.png */; };
+		492C99EC2023D98100BD7271 /* BoysRugby.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99A52023D97F00BD7271 /* BoysRugby.png */; };
+		492C99ED2023D98100BD7271 /* BoysVolleyball.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99A62023D97F00BD7271 /* BoysVolleyball.png */; };
+		492C99EE2023D98100BD7271 /* Cheerleading.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99A72023D97F00BD7271 /* Cheerleading.png */; };
+		492C99EF2023D98100BD7271 /* GirlsLacrosse.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99A82023D98000BD7271 /* GirlsLacrosse.png */; };
+		492C99F02023D98100BD7271 /* GirlsIndoorTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99A92023D98000BD7271 /* GirlsIndoorTrack.png */; };
+		492C99F12023D98100BD7271 /* Drumline.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99AA2023D98000BD7271 /* Drumline.png */; };
+		492C99F22023D98100BD7271 /* GirlsSailing.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C99AB2023D98100BD7271 /* GirlsSailing.png */; };
 		496F4F5E1FE7FC9C00799E40 /* sports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 496F4F5D1FE7FC9C00799E40 /* sports.txt */; };
 		4971482B202205AC001433A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4971482A202205AC001433A4 /* GoogleService-Info.plist */; };
 		4971482C202205AC001433A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4971482A202205AC001433A4 /* GoogleService-Info.plist */; };
 		4971482D202205AC001433A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4971482A202205AC001433A4 /* GoogleService-Info.plist */; };
-		499CA84C1FF8A46F006FC328 /* Settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 499CA84B1FF8A46F006FC328 /* Settings-50.png */; };
+		497B645E2023DD4300E30871 /* GirlsCrew.png in Resources */ = {isa = PBXBuildFile; fileRef = 497B64552023DD3F00E30871 /* GirlsCrew.png */; };
+		497B64602023DD4300E30871 /* DrumlineSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497B64572023DD3F00E30871 /* DrumlineSmall@2x.png */; };
+		497B64612023DD4300E30871 /* GirlsGolfSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497B64582023DD4000E30871 /* GirlsGolfSmall@2x.png */; };
+		497B64632023DD4300E30871 /* GirlsVolleyballSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497B645A2023DD4000E30871 /* GirlsVolleyballSmall@2x.png */; };
+		497B64652023DD4300E30871 /* BoysGolfSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497B645C2023DD4100E30871 /* BoysGolfSmall@2x.png */; };
+		497B64672023DD5E00E30871 /* BoysIndoorTrackSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497B64662023DD5E00E30871 /* BoysIndoorTrackSmall@2x.png */; };
+		497B64692023DDA600E30871 /* SoftballSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497B64682023DDA600E30871 /* SoftballSmall@2x.png */; };
+		497B646B2023DDB300E30871 /* SchoolHolidaysandClosingsSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497B646A2023DDB300E30871 /* SchoolHolidaysandClosingsSmall@2x.png */; };
+		497B646D2023DDC100E30871 /* Pom-PomSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497B646C2023DDC100E30871 /* Pom-PomSmall@2x.png */; };
+		497B646F2023DE3B00E30871 /* Co-edSailingSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497B646E2023DE3A00E30871 /* Co-edSailingSmall@2x.png */; };
+		497B64732023DF0000E30871 /* GirlsCrewSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497B64722023DF0000E30871 /* GirlsCrewSmall@2x.png */; };
 		499CA84E1FF8A812006FC328 /* DefaultSportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA84D1FF8A812006FC328 /* DefaultSportCell.swift */; };
 		499CA8501FF8A939006FC328 /* DefaultSportingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA84F1FF8A939006FC328 /* DefaultSportingEvent.swift */; };
 		499CA8521FF8A9BF006FC328 /* DefaultSportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA8511FF8A9BF006FC328 /* DefaultSportsVC.swift */; };
@@ -233,7 +304,6 @@
 		364C3C61201B7E420058C43E /* InputScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputScheduleVC.swift; sourceTree = "<group>"; };
 		364C3C63201B803C0058C43E /* upload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upload@2x.png"; sourceTree = "<group>"; };
 		364C3C65201BA86D0058C43E /* CTSportsLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CTSportsLogo.png; sourceTree = "<group>"; };
-		364C3C69201BCF1B0058C43E /* IceHockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IceHockey.png; sourceTree = "<group>"; };
 		3653CD9D1FE5FE2E00F396CD /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		3653CD9E1FE5FE2E00F396CD /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		3653CDA11FE5FE4000F396CD /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
@@ -266,82 +336,12 @@
 		366A8DD61FE1A57A0082A64D /* SetSchoolVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSchoolVC.swift; sourceTree = "<group>"; };
 		366A8DD81FE2DE530082A64D /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		366A8DDA1FE40F8C0082A64D /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		367B383420053DB500560F2C /* UnifiedSportsBasketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnifiedSportsBasketball.png; sourceTree = "<group>"; };
-		367B383520053DB500560F2C /* GirlsIceHockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsIceHockey.png; sourceTree = "<group>"; };
-		367B383620053DB500560F2C /* Bowling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bowling.png; sourceTree = "<group>"; };
-		367B383720053DB500560F2C /* Practice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Practice.png; sourceTree = "<group>"; };
-		367B383820053DB500560F2C /* BoysWaterPolo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysWaterPolo.png; sourceTree = "<group>"; };
-		367B383920053DB500560F2C /* FieldHockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FieldHockey.png; sourceTree = "<group>"; };
-		367B383A20053DB500560F2C /* BoysBadminton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysBadminton.png; sourceTree = "<group>"; };
-		367B383B20053DB500560F2C /* Band.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Band.png; sourceTree = "<group>"; };
-		367B383C20053DB500560F2C /* GirlsCrew@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsCrew@2x.png"; sourceTree = "<group>"; };
-		367B383D20053DB500560F2C /* DebateTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DebateTeam.png; sourceTree = "<group>"; };
-		367B383E20053DB500560F2C /* GirlsAlpineSkiing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsAlpineSkiing.png; sourceTree = "<group>"; };
-		367B383F20053DB500560F2C /* GirlsSoccer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsSoccer.png; sourceTree = "<group>"; };
-		367B384020053DB500560F2C /* GirlsSailing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsSailing.png; sourceTree = "<group>"; };
-		367B384120053DB500560F2C /* GirlsTennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsTennis.png; sourceTree = "<group>"; };
-		367B384220053DB500560F2C /* GirlsGymnastics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsGymnastics.png; sourceTree = "<group>"; };
-		367B384320053DB500560F2C /* BoysBasketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysBasketball.png; sourceTree = "<group>"; };
-		367B384420053DB500560F2C /* Co-edFencing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edFencing.png"; sourceTree = "<group>"; };
-		367B384520053DB500560F2C /* Crew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crew.png; sourceTree = "<group>"; };
-		367B384620053DB500560F2C /* GirlsWaterPolo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsWaterPolo.png; sourceTree = "<group>"; };
-		367B384720053DB500560F2C /* GirlsBadminton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsBadminton.png; sourceTree = "<group>"; };
-		367B384820053DB500560F2C /* Cheerleading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cheerleading.png; sourceTree = "<group>"; };
-		367B384920053DB500560F2C /* ColorGuard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColorGuard.png; sourceTree = "<group>"; };
-		367B384A20053DB500560F2C /* BoysLacrosse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysLacrosse.png; sourceTree = "<group>"; };
-		367B384B20053DB500560F2C /* GirlsCrossCountry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsCrossCountry.png; sourceTree = "<group>"; };
-		367B384C20053DB500560F2C /* GirlsSwimming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsSwimming.png; sourceTree = "<group>"; };
-		367B384D20053DB500560F2C /* BoysOutdoorTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysOutdoorTrack.png; sourceTree = "<group>"; };
-		367B384E20053DB500560F2C /* BoysIceHockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysIceHockey.png; sourceTree = "<group>"; };
-		367B384F20053DB500560F2C /* GirlsBasketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsBasketball.png; sourceTree = "<group>"; };
-		367B385020053DB500560F2C /* Co-edAlpineSkiing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edAlpineSkiing.png"; sourceTree = "<group>"; };
-		367B385120053DB500560F2C /* Chorus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chorus.png; sourceTree = "<group>"; };
-		367B385220053DB500560F2C /* BoysSailing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysSailing.png; sourceTree = "<group>"; };
-		367B385320053DB500560F2C /* DanceTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DanceTeam.png; sourceTree = "<group>"; };
-		367B385420053DB500560F2C /* Co-edCrew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edCrew.png"; sourceTree = "<group>"; };
-		367B385520053DB500560F2C /* MathTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MathTeam.png; sourceTree = "<group>"; };
-		367B385620053DB500560F2C /* Co-edRifle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edRifle.png"; sourceTree = "<group>"; };
-		367B385720053DB500560F2C /* UnifiedSportsTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnifiedSportsTrack.png; sourceTree = "<group>"; };
-		367B385820053DB500560F2C /* UnifiedSportsSoccer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnifiedSportsSoccer.png; sourceTree = "<group>"; };
-		367B385920053DB500560F2C /* ChessTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChessTeam.png; sourceTree = "<group>"; };
-		367B385A20053DB500560F2C /* BoysFencing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysFencing.png; sourceTree = "<group>"; };
-		367B385B20053DB500560F2C /* BoysVolleyball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysVolleyball.png; sourceTree = "<group>"; };
-		367B385C20053DB500560F2C /* BoysSwimming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysSwimming.png; sourceTree = "<group>"; };
-		367B385D20053DB500560F2C /* Wrestling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wrestling.png; sourceTree = "<group>"; };
-		367B385E20053DB500560F2C /* GirlsLacrosse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsLacrosse.png; sourceTree = "<group>"; };
-		367B385F20053DB500560F2C /* Co-edCrossCountrySkiing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edCrossCountrySkiing.png"; sourceTree = "<group>"; };
-		367B386020053DB500560F2C /* BoysRugby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysRugby.png; sourceTree = "<group>"; };
-		367B386120053DB500560F2C /* PowderpuffFootball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PowderpuffFootball.png; sourceTree = "<group>"; };
-		367B386220053DB500560F2C /* Baseball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Baseball.png; sourceTree = "<group>"; };
-		367B386320053DB500560F2C /* UnifiedSportsVolleyball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnifiedSportsVolleyball.png; sourceTree = "<group>"; };
-		367B386420053DB500560F2C /* Football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Football.png; sourceTree = "<group>"; };
-		367B386520053DB500560F2C /* MiscellaneousEvents.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiscellaneousEvents.png; sourceTree = "<group>"; };
-		367B386620053DB500560F2C /* BoysAlpineSkiing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysAlpineSkiing.png; sourceTree = "<group>"; };
-		367B386720053DB500560F2C /* BoysTennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysTennis.png; sourceTree = "<group>"; };
-		367B386820053DB500560F2C /* BoysCrossCountry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysCrossCountry.png; sourceTree = "<group>"; };
-		367B386920053DB500560F2C /* GirlsOutdoorTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsOutdoorTrack.png; sourceTree = "<group>"; };
-		367B386A20053DB500560F2C /* GirlsFencing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsFencing.png; sourceTree = "<group>"; };
-		367B386B20053DB500560F2C /* BoysSoccer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysSoccer.png; sourceTree = "<group>"; };
-		367B386C20053DB500560F2C /* GirlsIndoorTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsIndoorTrack.png; sourceTree = "<group>"; };
-		367B386D20053DB500560F2C /* SchoolHolidaysandClosings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SchoolHolidaysandClosings.png; sourceTree = "<group>"; };
-		367B386E20053DB500560F2C /* Co-edSailing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edSailing.png"; sourceTree = "<group>"; };
-		367B386F20053DB500560F2C /* Softball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Softball.png; sourceTree = "<group>"; };
-		367B387020053DB500560F2C /* GirlsVolleyball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsVolleyball.png; sourceTree = "<group>"; };
-		367B387120053DB500560F2C /* BoysIndoorTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysIndoorTrack.png; sourceTree = "<group>"; };
-		367B387220053DB500560F2C /* BoysGolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysGolf.png; sourceTree = "<group>"; };
-		367B387320053DB500560F2C /* Pom-Pom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pom-Pom.png"; sourceTree = "<group>"; };
-		367B387420053DB500560F2C /* Drumline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drumline.png; sourceTree = "<group>"; };
-		367B387520053DB500560F2C /* GirlsGolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsGolf.png; sourceTree = "<group>"; };
-		367B38B820065E7000560F2C /* BoysCrew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysCrew.png; sourceTree = "<group>"; };
 		367B38BB2007175300560F2C /* SF Collegiate Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Solid.ttf"; sourceTree = "<group>"; };
 		367B38BC2007175600560F2C /* SF Collegiate Solid Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Solid Bold.ttf"; sourceTree = "<group>"; };
 		367B38BD2007175A00560F2C /* SF Collegiate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate.ttf"; sourceTree = "<group>"; };
 		367B38BE2007175D00560F2C /* SF Collegiate Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Italic.ttf"; sourceTree = "<group>"; };
 		367B38BF2007176000560F2C /* SF Collegiate Solid Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Solid Bold Italic.ttf"; sourceTree = "<group>"; };
 		367B38C02007176300560F2C /* SF Collegiate Solid Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Collegiate Solid Italic.ttf"; sourceTree = "<group>"; };
-		367B38C72007218900560F2C /* GirlsSquash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsSquash.png; sourceTree = "<group>"; };
-		367B38C92007219B00560F2C /* BoysSquash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysSquash.png; sourceTree = "<group>"; };
-		367B38CB200721A700560F2C /* Co-edSquash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edSquash.png"; sourceTree = "<group>"; };
 		368D7E861FE6E8DA000BE5D4 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
 		368D7E8A1FE6EA18000BE5D4 /* CIAC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CIAC.png; sourceTree = "<group>"; };
 		368D7E8C1FE6EA1E000BE5D4 /* CIACsmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CIACsmall.png; sourceTree = "<group>"; };
@@ -421,9 +421,151 @@
 		36F8C34B2011066C00B136EA /* parenright@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parenright@2x.png"; sourceTree = "<group>"; };
 		36F8C34C2011066C00B136EA /* parenleft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parenleft@2x.png"; sourceTree = "<group>"; };
 		3EA21579716148E53016E177 /* Pods-CTSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTSports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTSports/Pods-CTSports.debug.xcconfig"; sourceTree = "<group>"; };
+		492C98E92023D32000BD7271 /* BoysOutdoorTrackSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysOutdoorTrackSmall@2x.png"; sourceTree = "<group>"; };
+		492C98EA2023D32000BD7271 /* Co-edCrewSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edCrewSmall@2x.png"; sourceTree = "<group>"; };
+		492C98EB2023D32000BD7271 /* CrewSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CrewSmall@2x.png"; sourceTree = "<group>"; };
+		492C98EC2023D32000BD7271 /* FootballSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FootballSmall@2x.png"; sourceTree = "<group>"; };
+		492C98ED2023D32000BD7271 /* GirlsOutdoorTrackSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsOutdoorTrackSmall@2x.png"; sourceTree = "<group>"; };
+		492C98EE2023D32000BD7271 /* CheerleadingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheerleadingSmall@2x.png"; sourceTree = "<group>"; };
+		492C98EF2023D32000BD7271 /* GirlsCrossCountrySmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsCrossCountrySmall@2x.png"; sourceTree = "<group>"; };
+		492C98F02023D32100BD7271 /* ColorGuardSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ColorGuardSmall@2x.png"; sourceTree = "<group>"; };
+		492C98F12023D32100BD7271 /* GirlsSoccerSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsSoccerSmall@2x.png"; sourceTree = "<group>"; };
+		492C98F22023D32100BD7271 /* MathTeamSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MathTeamSmall@2x.png"; sourceTree = "<group>"; };
+		492C98F32023D32100BD7271 /* BoysCrewSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysCrewSmall@2x.png"; sourceTree = "<group>"; };
+		492C98F42023D32100BD7271 /* BoysBasketballSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysBasketballSmall@2x.png"; sourceTree = "<group>"; };
+		492C98F52023D32100BD7271 /* BoysFencingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysFencingSmall@2x.png"; sourceTree = "<group>"; };
+		492C98F62023D32100BD7271 /* GirlsGymnasticsSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsGymnasticsSmall@2x.png"; sourceTree = "<group>"; };
+		492C98F72023D32200BD7271 /* BaseballSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BaseballSmall@2x.png"; sourceTree = "<group>"; };
+		492C98F82023D32200BD7271 /* WrestlingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WrestlingSmall@2x.png"; sourceTree = "<group>"; };
+		492C98F92023D32200BD7271 /* DebateTeamSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DebateTeamSmall@2x.png"; sourceTree = "<group>"; };
+		492C98FA2023D32200BD7271 /* GirlsSwimmingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsSwimmingSmall@2x.png"; sourceTree = "<group>"; };
+		492C98FB2023D32300BD7271 /* BoysSoccerSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysSoccerSmall@2x.png"; sourceTree = "<group>"; };
+		492C98FC2023D32300BD7271 /* Co-edFencingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edFencingSmall@2x.png"; sourceTree = "<group>"; };
+		492C98FD2023D32300BD7271 /* BoysSwimmingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysSwimmingSmall@2x.png"; sourceTree = "<group>"; };
+		492C98FE2023D32300BD7271 /* BowlingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BowlingSmall@2x.png"; sourceTree = "<group>"; };
+		492C98FF2023D32400BD7271 /* GirlsLacrosseSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsLacrosseSmall@2x.png"; sourceTree = "<group>"; };
+		492C99002023D32400BD7271 /* BoysRugbySmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysRugbySmall@2x.png"; sourceTree = "<group>"; };
+		492C99012023D32400BD7271 /* GirlsFencingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsFencingSmall@2x.png"; sourceTree = "<group>"; };
+		492C99022023D32400BD7271 /* BoysBadmintonSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysBadmintonSmall@2x.png"; sourceTree = "<group>"; };
+		492C99032023D32500BD7271 /* Co-edRifleSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edRifleSmall@2x.png"; sourceTree = "<group>"; };
+		492C99042023D32500BD7271 /* GirlsIceHockeySmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsIceHockeySmall@2x.png"; sourceTree = "<group>"; };
+		492C99052023D32500BD7271 /* BoysSquashSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysSquashSmall@2x.png"; sourceTree = "<group>"; };
+		492C99062023D32500BD7271 /* GirlsBasketballSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsBasketballSmall@2x.png"; sourceTree = "<group>"; };
+		492C99072023D32600BD7271 /* FieldHockeySmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FieldHockeySmall@2x.png"; sourceTree = "<group>"; };
+		492C99082023D32600BD7271 /* DanceTeamSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DanceTeamSmall@2x.png"; sourceTree = "<group>"; };
+		492C99092023D32600BD7271 /* BandSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BandSmall@2x.png"; sourceTree = "<group>"; };
+		492C990A2023D32700BD7271 /* BoysTennisSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysTennisSmall@2x.png"; sourceTree = "<group>"; };
+		492C990B2023D32700BD7271 /* PracticeSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PracticeSmall@2x.png"; sourceTree = "<group>"; };
+		492C990C2023D32700BD7271 /* GirlsAlpineSkiingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsAlpineSkiingSmall@2x.png"; sourceTree = "<group>"; };
+		492C990D2023D32800BD7271 /* GirlsBadmintonSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsBadmintonSmall@2x.png"; sourceTree = "<group>"; };
+		492C990E2023D32800BD7271 /* MiscellaneousEventsSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiscellaneousEventsSmall@2x.png"; sourceTree = "<group>"; };
+		492C990F2023D32800BD7271 /* UnifiedSportsSoccerSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UnifiedSportsSoccerSmall@2x.png"; sourceTree = "<group>"; };
+		492C99102023D32800BD7271 /* UnifiedSportsTrackSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UnifiedSportsTrackSmall@2x.png"; sourceTree = "<group>"; };
+		492C99112023D32800BD7271 /* Co-edCrossCountrySkiingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edCrossCountrySkiingSmall@2x.png"; sourceTree = "<group>"; };
+		492C99122023D32900BD7271 /* IceHockeySmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IceHockeySmall@2x.png"; sourceTree = "<group>"; };
+		492C99132023D32900BD7271 /* BoysIceHockeySmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysIceHockeySmall@2x.png"; sourceTree = "<group>"; };
+		492C99142023D32900BD7271 /* GirlsTennisSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsTennisSmall@2x.png"; sourceTree = "<group>"; };
+		492C99152023D32900BD7271 /* ChessTeamSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ChessTeamSmall@2x.png"; sourceTree = "<group>"; };
+		492C99162023D32900BD7271 /* Co-edAlpineSkiingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edAlpineSkiingSmall@2x.png"; sourceTree = "<group>"; };
+		492C99172023D32A00BD7271 /* PowderpuffFootballSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PowderpuffFootballSmall@2x.png"; sourceTree = "<group>"; };
+		492C99182023D32A00BD7271 /* BoysWaterPoloSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysWaterPoloSmall@2x.png"; sourceTree = "<group>"; };
+		492C99192023D32A00BD7271 /* GirlsIndoorTrackSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsIndoorTrackSmall@2x.png"; sourceTree = "<group>"; };
+		492C991A2023D32A00BD7271 /* BoysCrossCountrySmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysCrossCountrySmall@2x.png"; sourceTree = "<group>"; };
+		492C991B2023D32A00BD7271 /* BoysVolleyballSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysVolleyballSmall@2x.png"; sourceTree = "<group>"; };
+		492C991C2023D32A00BD7271 /* ChorusSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ChorusSmall@2x.png"; sourceTree = "<group>"; };
+		492C991D2023D32B00BD7271 /* BoysLacrosseSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysLacrosseSmall@2x.png"; sourceTree = "<group>"; };
+		492C991E2023D32B00BD7271 /* GirlsSailingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsSailingSmall@2x.png"; sourceTree = "<group>"; };
+		492C991F2023D32B00BD7271 /* Co-edSquashSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edSquashSmall@2x.png"; sourceTree = "<group>"; };
+		492C99202023D32B00BD7271 /* GirlsSquashSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsSquashSmall@2x.png"; sourceTree = "<group>"; };
+		492C99212023D32B00BD7271 /* BoysAlpineSkiingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysAlpineSkiingSmall@2x.png"; sourceTree = "<group>"; };
+		492C99222023D32B00BD7271 /* UnifiedSportsBasketballSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UnifiedSportsBasketballSmall@2x.png"; sourceTree = "<group>"; };
+		492C99232023D32C00BD7271 /* BoysSailingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysSailingSmall@2x.png"; sourceTree = "<group>"; };
+		492C99242023D32C00BD7271 /* GirlsWaterPoloSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsWaterPoloSmall@2x.png"; sourceTree = "<group>"; };
+		492C99252023D32C00BD7271 /* UnifiedSportsVolleyballSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UnifiedSportsVolleyballSmall@2x.png"; sourceTree = "<group>"; };
+		492C99632023D57000BD7271 /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leftArrow.png; path = ../../../../../../../Desktop/leftArrow.png; sourceTree = "<group>"; };
+		492C99652023D97100BD7271 /* UnifiedSportsVolleyball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnifiedSportsVolleyball.png; sourceTree = "<group>"; };
+		492C99662023D97100BD7271 /* BoysWaterPolo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysWaterPolo.png; sourceTree = "<group>"; };
+		492C99672023D97200BD7271 /* BoysSwimming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysSwimming.png; sourceTree = "<group>"; };
+		492C99682023D97200BD7271 /* BoysFencing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysFencing.png; sourceTree = "<group>"; };
+		492C99692023D97200BD7271 /* GirlsSwimming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsSwimming.png; sourceTree = "<group>"; };
+		492C996A2023D97300BD7271 /* SchoolHolidaysandClosings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SchoolHolidaysandClosings.png; sourceTree = "<group>"; };
+		492C996B2023D97300BD7271 /* UnifiedSportsTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnifiedSportsTrack.png; sourceTree = "<group>"; };
+		492C996D2023D97300BD7271 /* Wrestling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wrestling.png; sourceTree = "<group>"; };
+		492C996E2023D97400BD7271 /* BoysOutdoorTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysOutdoorTrack.png; sourceTree = "<group>"; };
+		492C996F2023D97400BD7271 /* DanceTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DanceTeam.png; sourceTree = "<group>"; };
+		492C99702023D97400BD7271 /* GirlsBasketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsBasketball.png; sourceTree = "<group>"; };
+		492C99712023D97400BD7271 /* GirlsSoccer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsSoccer.png; sourceTree = "<group>"; };
+		492C99722023D97500BD7271 /* Chorus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chorus.png; sourceTree = "<group>"; };
+		492C99732023D97500BD7271 /* GirlsVolleyball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsVolleyball.png; sourceTree = "<group>"; };
+		492C99742023D97500BD7271 /* MathTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MathTeam.png; sourceTree = "<group>"; };
+		492C99752023D97500BD7271 /* ColorGuard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColorGuard.png; sourceTree = "<group>"; };
+		492C99762023D97500BD7271 /* Practice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Practice.png; sourceTree = "<group>"; };
+		492C99772023D97600BD7271 /* UnifiedSportsSoccer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnifiedSportsSoccer.png; sourceTree = "<group>"; };
+		492C99782023D97600BD7271 /* ChessTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChessTeam.png; sourceTree = "<group>"; };
+		492C99792023D97600BD7271 /* Band.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Band.png; sourceTree = "<group>"; };
+		492C997A2023D97600BD7271 /* IceHockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IceHockey.png; sourceTree = "<group>"; };
+		492C997B2023D97600BD7271 /* GirlsAlpineSkiing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsAlpineSkiing.png; sourceTree = "<group>"; };
+		492C997C2023D97700BD7271 /* BoysGolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysGolf.png; sourceTree = "<group>"; };
+		492C997D2023D97700BD7271 /* GirlsGymnastics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsGymnastics.png; sourceTree = "<group>"; };
+		492C997E2023D97700BD7271 /* Co-edSquash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edSquash.png"; sourceTree = "<group>"; };
+		492C997F2023D97800BD7271 /* Softball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Softball.png; sourceTree = "<group>"; };
+		492C99802023D97800BD7271 /* BoysSquash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysSquash.png; sourceTree = "<group>"; };
+		492C99812023D97800BD7271 /* Co-edSailing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edSailing.png"; sourceTree = "<group>"; };
+		492C99822023D97800BD7271 /* GirlsBadminton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsBadminton.png; sourceTree = "<group>"; };
+		492C99832023D97800BD7271 /* BoysBasketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysBasketball.png; sourceTree = "<group>"; };
+		492C99842023D97900BD7271 /* Baseball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Baseball.png; sourceTree = "<group>"; };
+		492C99852023D97900BD7271 /* MiscellaneousEvents.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiscellaneousEvents.png; sourceTree = "<group>"; };
+		492C99862023D97900BD7271 /* GirlsFencing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsFencing.png; sourceTree = "<group>"; };
+		492C99872023D97A00BD7271 /* BoysIceHockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysIceHockey.png; sourceTree = "<group>"; };
+		492C99882023D97A00BD7271 /* Pom-Pom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pom-Pom.png"; sourceTree = "<group>"; };
+		492C99892023D97A00BD7271 /* BoysSoccer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysSoccer.png; sourceTree = "<group>"; };
+		492C998A2023D97B00BD7271 /* BoysLacrosse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysLacrosse.png; sourceTree = "<group>"; };
+		492C998B2023D97B00BD7271 /* Co-edFencing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edFencing.png"; sourceTree = "<group>"; };
+		492C998C2023D97B00BD7271 /* GirlsIceHockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsIceHockey.png; sourceTree = "<group>"; };
+		492C998D2023D97B00BD7271 /* PowderpuffFootball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PowderpuffFootball.png; sourceTree = "<group>"; };
+		492C998E2023D97B00BD7271 /* BoysCrew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysCrew.png; sourceTree = "<group>"; };
+		492C998F2023D97C00BD7271 /* BoysAlpineSkiing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysAlpineSkiing.png; sourceTree = "<group>"; };
+		492C99902023D97C00BD7271 /* BoysCrossCountry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysCrossCountry.png; sourceTree = "<group>"; };
+		492C99912023D97C00BD7271 /* GirlsGolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsGolf.png; sourceTree = "<group>"; };
+		492C99922023D97C00BD7271 /* DebateTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DebateTeam.png; sourceTree = "<group>"; };
+		492C99932023D97C00BD7271 /* GirlsSquash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsSquash.png; sourceTree = "<group>"; };
+		492C99942023D97C00BD7271 /* GirlsTennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsTennis.png; sourceTree = "<group>"; };
+		492C99952023D97C00BD7271 /* BoysIndoorTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysIndoorTrack.png; sourceTree = "<group>"; };
+		492C99962023D97D00BD7271 /* Co-edCrossCountrySkiing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edCrossCountrySkiing.png"; sourceTree = "<group>"; };
+		492C99972023D97D00BD7271 /* BoysTennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysTennis.png; sourceTree = "<group>"; };
+		492C99982023D97D00BD7271 /* Co-edAlpineSkiing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edAlpineSkiing.png"; sourceTree = "<group>"; };
+		492C99992023D97D00BD7271 /* BoysSailing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysSailing.png; sourceTree = "<group>"; };
+		492C999A2023D97D00BD7271 /* Crew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crew.png; sourceTree = "<group>"; };
+		492C999B2023D97D00BD7271 /* GirlsCrossCountry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsCrossCountry.png; sourceTree = "<group>"; };
+		492C999C2023D97D00BD7271 /* Co-edRifle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edRifle.png"; sourceTree = "<group>"; };
+		492C999D2023D97D00BD7271 /* Football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Football.png; sourceTree = "<group>"; };
+		492C999E2023D97E00BD7271 /* BoysBadminton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysBadminton.png; sourceTree = "<group>"; };
+		492C999F2023D97E00BD7271 /* Bowling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bowling.png; sourceTree = "<group>"; };
+		492C99A02023D97E00BD7271 /* Co-edCrew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edCrew.png"; sourceTree = "<group>"; };
+		492C99A12023D97E00BD7271 /* FieldHockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FieldHockey.png; sourceTree = "<group>"; };
+		492C99A22023D97E00BD7271 /* UnifiedSportsBasketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UnifiedSportsBasketball.png; sourceTree = "<group>"; };
+		492C99A32023D97F00BD7271 /* GirlsOutdoorTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsOutdoorTrack.png; sourceTree = "<group>"; };
+		492C99A42023D97F00BD7271 /* GirlsWaterPolo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsWaterPolo.png; sourceTree = "<group>"; };
+		492C99A52023D97F00BD7271 /* BoysRugby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysRugby.png; sourceTree = "<group>"; };
+		492C99A62023D97F00BD7271 /* BoysVolleyball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BoysVolleyball.png; sourceTree = "<group>"; };
+		492C99A72023D97F00BD7271 /* Cheerleading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cheerleading.png; sourceTree = "<group>"; };
+		492C99A82023D98000BD7271 /* GirlsLacrosse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsLacrosse.png; sourceTree = "<group>"; };
+		492C99A92023D98000BD7271 /* GirlsIndoorTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsIndoorTrack.png; sourceTree = "<group>"; };
+		492C99AA2023D98000BD7271 /* Drumline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drumline.png; sourceTree = "<group>"; };
+		492C99AB2023D98100BD7271 /* GirlsSailing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsSailing.png; sourceTree = "<group>"; };
 		496F4F5D1FE7FC9C00799E40 /* sports.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sports.txt; sourceTree = "<group>"; };
 		4971482A202205AC001433A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		499CA84B1FF8A46F006FC328 /* Settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings-50.png"; path = "../../../../KnowSnow/KnowSnow/Graphics/Settings-50.png"; sourceTree = "<group>"; };
+		497B64552023DD3F00E30871 /* GirlsCrew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GirlsCrew.png; sourceTree = "<group>"; };
+		497B64572023DD3F00E30871 /* DrumlineSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DrumlineSmall@2x.png"; sourceTree = "<group>"; };
+		497B64582023DD4000E30871 /* GirlsGolfSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsGolfSmall@2x.png"; sourceTree = "<group>"; };
+		497B645A2023DD4000E30871 /* GirlsVolleyballSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GirlsVolleyballSmall@2x.png"; sourceTree = "<group>"; };
+		497B645C2023DD4100E30871 /* BoysGolfSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoysGolfSmall@2x.png"; sourceTree = "<group>"; };
+		497B64662023DD5E00E30871 /* BoysIndoorTrackSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BoysIndoorTrackSmall@2x.png"; path = "../../../../../../../../Desktop/untitled folder/BoysIndoorTrackSmall@2x.png"; sourceTree = "<group>"; };
+		497B64682023DDA600E30871 /* SoftballSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SoftballSmall@2x.png"; sourceTree = "<group>"; };
+		497B646A2023DDB300E30871 /* SchoolHolidaysandClosingsSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SchoolHolidaysandClosingsSmall@2x.png"; sourceTree = "<group>"; };
+		497B646C2023DDC100E30871 /* Pom-PomSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pom-PomSmall@2x.png"; sourceTree = "<group>"; };
+		497B646E2023DE3A00E30871 /* Co-edSailingSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Co-edSailingSmall@2x.png"; sourceTree = "<group>"; };
+		497B64722023DF0000E30871 /* GirlsCrewSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GirlsCrewSmall@2x.png"; path = "../../../../../../../../Desktop/untitled folder/GirlsCrewSmall@2x.png"; sourceTree = "<group>"; };
 		499CA84D1FF8A812006FC328 /* DefaultSportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSportCell.swift; sourceTree = "<group>"; };
 		499CA84F1FF8A939006FC328 /* DefaultSportingEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSportingEvent.swift; sourceTree = "<group>"; };
 		499CA8511FF8A9BF006FC328 /* DefaultSportsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSportsVC.swift; sourceTree = "<group>"; };
@@ -576,12 +718,12 @@
 			children = (
 				364C3C65201BA86D0058C43E /* CTSportsLogo.png */,
 				364C3C63201B803C0058C43E /* upload@2x.png */,
-				499CA84B1FF8A46F006FC328 /* Settings-50.png */,
 				3653CDA31FE5FE9600F396CD /* compare.png */,
 				368D7E861FE6E8DA000BE5D4 /* setting@2x.png */,
 				3653CD9D1FE5FE2E00F396CD /* email.png */,
 				3653CDA51FE61D2000F396CD /* safari.png */,
 				3653CD9E1FE5FE2E00F396CD /* info.png */,
+				492C99632023D57000BD7271 /* leftArrow.png */,
 				3653CDA11FE5FE4000F396CD /* lock.png */,
 				368D7E8C1FE6EA1E000BE5D4 /* CIACsmall.png */,
 				368D7E8A1FE6EA18000BE5D4 /* CIAC.png */,
@@ -612,77 +754,148 @@
 		367B383320053DB500560F2C /* CT SPORTS sport logos */ = {
 			isa = PBXGroup;
 			children = (
-				367B383420053DB500560F2C /* UnifiedSportsBasketball.png */,
-				367B383520053DB500560F2C /* GirlsIceHockey.png */,
-				367B383620053DB500560F2C /* Bowling.png */,
-				367B383720053DB500560F2C /* Practice.png */,
-				367B383820053DB500560F2C /* BoysWaterPolo.png */,
-				367B383920053DB500560F2C /* FieldHockey.png */,
-				367B383A20053DB500560F2C /* BoysBadminton.png */,
-				367B383B20053DB500560F2C /* Band.png */,
-				367B383C20053DB500560F2C /* GirlsCrew@2x.png */,
-				367B383D20053DB500560F2C /* DebateTeam.png */,
-				367B383E20053DB500560F2C /* GirlsAlpineSkiing.png */,
-				367B383F20053DB500560F2C /* GirlsSoccer.png */,
-				367B384020053DB500560F2C /* GirlsSailing.png */,
-				367B384120053DB500560F2C /* GirlsTennis.png */,
-				364C3C69201BCF1B0058C43E /* IceHockey.png */,
-				367B384220053DB500560F2C /* GirlsGymnastics.png */,
-				367B38CB200721A700560F2C /* Co-edSquash.png */,
-				367B38C92007219B00560F2C /* BoysSquash.png */,
-				367B38C72007218900560F2C /* GirlsSquash.png */,
-				367B384320053DB500560F2C /* BoysBasketball.png */,
-				367B384420053DB500560F2C /* Co-edFencing.png */,
-				367B384520053DB500560F2C /* Crew.png */,
-				367B384620053DB500560F2C /* GirlsWaterPolo.png */,
-				367B384720053DB500560F2C /* GirlsBadminton.png */,
-				367B384820053DB500560F2C /* Cheerleading.png */,
-				367B384920053DB500560F2C /* ColorGuard.png */,
-				367B384A20053DB500560F2C /* BoysLacrosse.png */,
-				367B384B20053DB500560F2C /* GirlsCrossCountry.png */,
-				367B384C20053DB500560F2C /* GirlsSwimming.png */,
-				367B384D20053DB500560F2C /* BoysOutdoorTrack.png */,
-				367B384E20053DB500560F2C /* BoysIceHockey.png */,
-				367B384F20053DB500560F2C /* GirlsBasketball.png */,
-				367B385020053DB500560F2C /* Co-edAlpineSkiing.png */,
-				367B385120053DB500560F2C /* Chorus.png */,
-				367B385220053DB500560F2C /* BoysSailing.png */,
-				367B385320053DB500560F2C /* DanceTeam.png */,
-				367B385420053DB500560F2C /* Co-edCrew.png */,
-				367B385520053DB500560F2C /* MathTeam.png */,
-				367B385620053DB500560F2C /* Co-edRifle.png */,
-				367B385720053DB500560F2C /* UnifiedSportsTrack.png */,
-				367B385820053DB500560F2C /* UnifiedSportsSoccer.png */,
-				367B385920053DB500560F2C /* ChessTeam.png */,
-				367B385A20053DB500560F2C /* BoysFencing.png */,
-				367B385B20053DB500560F2C /* BoysVolleyball.png */,
-				367B385C20053DB500560F2C /* BoysSwimming.png */,
-				367B385D20053DB500560F2C /* Wrestling.png */,
-				367B385E20053DB500560F2C /* GirlsLacrosse.png */,
-				367B385F20053DB500560F2C /* Co-edCrossCountrySkiing.png */,
-				367B386020053DB500560F2C /* BoysRugby.png */,
-				367B386120053DB500560F2C /* PowderpuffFootball.png */,
-				367B386220053DB500560F2C /* Baseball.png */,
-				367B386320053DB500560F2C /* UnifiedSportsVolleyball.png */,
-				367B38B820065E7000560F2C /* BoysCrew.png */,
-				367B386420053DB500560F2C /* Football.png */,
-				367B386520053DB500560F2C /* MiscellaneousEvents.png */,
-				367B386620053DB500560F2C /* BoysAlpineSkiing.png */,
-				367B386720053DB500560F2C /* BoysTennis.png */,
-				367B386820053DB500560F2C /* BoysCrossCountry.png */,
-				367B386920053DB500560F2C /* GirlsOutdoorTrack.png */,
-				367B386A20053DB500560F2C /* GirlsFencing.png */,
-				367B386B20053DB500560F2C /* BoysSoccer.png */,
-				367B386C20053DB500560F2C /* GirlsIndoorTrack.png */,
-				367B386D20053DB500560F2C /* SchoolHolidaysandClosings.png */,
-				367B386E20053DB500560F2C /* Co-edSailing.png */,
-				367B386F20053DB500560F2C /* Softball.png */,
-				367B387020053DB500560F2C /* GirlsVolleyball.png */,
-				367B387120053DB500560F2C /* BoysIndoorTrack.png */,
-				367B387220053DB500560F2C /* BoysGolf.png */,
-				367B387320053DB500560F2C /* Pom-Pom.png */,
-				367B387420053DB500560F2C /* Drumline.png */,
-				367B387520053DB500560F2C /* GirlsGolf.png */,
+				492C99792023D97600BD7271 /* Band.png */,
+				492C99092023D32600BD7271 /* BandSmall@2x.png */,
+				492C99842023D97900BD7271 /* Baseball.png */,
+				492C98F72023D32200BD7271 /* BaseballSmall@2x.png */,
+				492C999F2023D97E00BD7271 /* Bowling.png */,
+				492C98FE2023D32300BD7271 /* BowlingSmall@2x.png */,
+				492C998F2023D97C00BD7271 /* BoysAlpineSkiing.png */,
+				492C99212023D32B00BD7271 /* BoysAlpineSkiingSmall@2x.png */,
+				492C999E2023D97E00BD7271 /* BoysBadminton.png */,
+				492C99022023D32400BD7271 /* BoysBadmintonSmall@2x.png */,
+				492C99832023D97800BD7271 /* BoysBasketball.png */,
+				492C98F42023D32100BD7271 /* BoysBasketballSmall@2x.png */,
+				492C998E2023D97B00BD7271 /* BoysCrew.png */,
+				492C98F32023D32100BD7271 /* BoysCrewSmall@2x.png */,
+				492C99902023D97C00BD7271 /* BoysCrossCountry.png */,
+				492C991A2023D32A00BD7271 /* BoysCrossCountrySmall@2x.png */,
+				492C99682023D97200BD7271 /* BoysFencing.png */,
+				492C98F52023D32100BD7271 /* BoysFencingSmall@2x.png */,
+				492C997C2023D97700BD7271 /* BoysGolf.png */,
+				497B645C2023DD4100E30871 /* BoysGolfSmall@2x.png */,
+				492C99872023D97A00BD7271 /* BoysIceHockey.png */,
+				492C99132023D32900BD7271 /* BoysIceHockeySmall@2x.png */,
+				492C99952023D97C00BD7271 /* BoysIndoorTrack.png */,
+				497B64662023DD5E00E30871 /* BoysIndoorTrackSmall@2x.png */,
+				492C998A2023D97B00BD7271 /* BoysLacrosse.png */,
+				492C991D2023D32B00BD7271 /* BoysLacrosseSmall@2x.png */,
+				492C996E2023D97400BD7271 /* BoysOutdoorTrack.png */,
+				492C98E92023D32000BD7271 /* BoysOutdoorTrackSmall@2x.png */,
+				492C99A52023D97F00BD7271 /* BoysRugby.png */,
+				492C99002023D32400BD7271 /* BoysRugbySmall@2x.png */,
+				492C99992023D97D00BD7271 /* BoysSailing.png */,
+				492C99232023D32C00BD7271 /* BoysSailingSmall@2x.png */,
+				492C99892023D97A00BD7271 /* BoysSoccer.png */,
+				492C98FB2023D32300BD7271 /* BoysSoccerSmall@2x.png */,
+				492C99802023D97800BD7271 /* BoysSquash.png */,
+				492C99052023D32500BD7271 /* BoysSquashSmall@2x.png */,
+				492C99672023D97200BD7271 /* BoysSwimming.png */,
+				492C98FD2023D32300BD7271 /* BoysSwimmingSmall@2x.png */,
+				492C99972023D97D00BD7271 /* BoysTennis.png */,
+				492C990A2023D32700BD7271 /* BoysTennisSmall@2x.png */,
+				492C99A62023D97F00BD7271 /* BoysVolleyball.png */,
+				492C991B2023D32A00BD7271 /* BoysVolleyballSmall@2x.png */,
+				492C99662023D97100BD7271 /* BoysWaterPolo.png */,
+				492C99182023D32A00BD7271 /* BoysWaterPoloSmall@2x.png */,
+				492C99A72023D97F00BD7271 /* Cheerleading.png */,
+				492C98EE2023D32000BD7271 /* CheerleadingSmall@2x.png */,
+				492C99782023D97600BD7271 /* ChessTeam.png */,
+				492C99152023D32900BD7271 /* ChessTeamSmall@2x.png */,
+				492C99722023D97500BD7271 /* Chorus.png */,
+				492C991C2023D32A00BD7271 /* ChorusSmall@2x.png */,
+				492C99982023D97D00BD7271 /* Co-edAlpineSkiing.png */,
+				492C99162023D32900BD7271 /* Co-edAlpineSkiingSmall@2x.png */,
+				492C99A02023D97E00BD7271 /* Co-edCrew.png */,
+				492C98EA2023D32000BD7271 /* Co-edCrewSmall@2x.png */,
+				492C99962023D97D00BD7271 /* Co-edCrossCountrySkiing.png */,
+				492C99112023D32800BD7271 /* Co-edCrossCountrySkiingSmall@2x.png */,
+				492C998B2023D97B00BD7271 /* Co-edFencing.png */,
+				492C98FC2023D32300BD7271 /* Co-edFencingSmall@2x.png */,
+				492C999C2023D97D00BD7271 /* Co-edRifle.png */,
+				492C99032023D32500BD7271 /* Co-edRifleSmall@2x.png */,
+				492C99812023D97800BD7271 /* Co-edSailing.png */,
+				497B646E2023DE3A00E30871 /* Co-edSailingSmall@2x.png */,
+				492C997E2023D97700BD7271 /* Co-edSquash.png */,
+				492C991F2023D32B00BD7271 /* Co-edSquashSmall@2x.png */,
+				492C99752023D97500BD7271 /* ColorGuard.png */,
+				492C98F02023D32100BD7271 /* ColorGuardSmall@2x.png */,
+				492C999A2023D97D00BD7271 /* Crew.png */,
+				492C98EB2023D32000BD7271 /* CrewSmall@2x.png */,
+				492C996F2023D97400BD7271 /* DanceTeam.png */,
+				492C99082023D32600BD7271 /* DanceTeamSmall@2x.png */,
+				492C99922023D97C00BD7271 /* DebateTeam.png */,
+				492C98F92023D32200BD7271 /* DebateTeamSmall@2x.png */,
+				492C99AA2023D98000BD7271 /* Drumline.png */,
+				497B64572023DD3F00E30871 /* DrumlineSmall@2x.png */,
+				492C99A12023D97E00BD7271 /* FieldHockey.png */,
+				492C99072023D32600BD7271 /* FieldHockeySmall@2x.png */,
+				492C999D2023D97D00BD7271 /* Football.png */,
+				492C98EC2023D32000BD7271 /* FootballSmall@2x.png */,
+				492C997B2023D97600BD7271 /* GirlsAlpineSkiing.png */,
+				492C990C2023D32700BD7271 /* GirlsAlpineSkiingSmall@2x.png */,
+				492C99822023D97800BD7271 /* GirlsBadminton.png */,
+				492C990D2023D32800BD7271 /* GirlsBadmintonSmall@2x.png */,
+				492C99702023D97400BD7271 /* GirlsBasketball.png */,
+				492C99062023D32500BD7271 /* GirlsBasketballSmall@2x.png */,
+				497B64552023DD3F00E30871 /* GirlsCrew.png */,
+				497B64722023DF0000E30871 /* GirlsCrewSmall@2x.png */,
+				492C999B2023D97D00BD7271 /* GirlsCrossCountry.png */,
+				492C98EF2023D32000BD7271 /* GirlsCrossCountrySmall@2x.png */,
+				492C99862023D97900BD7271 /* GirlsFencing.png */,
+				492C99012023D32400BD7271 /* GirlsFencingSmall@2x.png */,
+				492C99912023D97C00BD7271 /* GirlsGolf.png */,
+				497B64582023DD4000E30871 /* GirlsGolfSmall@2x.png */,
+				492C997D2023D97700BD7271 /* GirlsGymnastics.png */,
+				492C98F62023D32100BD7271 /* GirlsGymnasticsSmall@2x.png */,
+				492C998C2023D97B00BD7271 /* GirlsIceHockey.png */,
+				492C99042023D32500BD7271 /* GirlsIceHockeySmall@2x.png */,
+				492C99A92023D98000BD7271 /* GirlsIndoorTrack.png */,
+				492C99192023D32A00BD7271 /* GirlsIndoorTrackSmall@2x.png */,
+				492C99A82023D98000BD7271 /* GirlsLacrosse.png */,
+				492C98FF2023D32400BD7271 /* GirlsLacrosseSmall@2x.png */,
+				492C99A32023D97F00BD7271 /* GirlsOutdoorTrack.png */,
+				492C98ED2023D32000BD7271 /* GirlsOutdoorTrackSmall@2x.png */,
+				492C99AB2023D98100BD7271 /* GirlsSailing.png */,
+				492C991E2023D32B00BD7271 /* GirlsSailingSmall@2x.png */,
+				492C99712023D97400BD7271 /* GirlsSoccer.png */,
+				492C98F12023D32100BD7271 /* GirlsSoccerSmall@2x.png */,
+				492C99932023D97C00BD7271 /* GirlsSquash.png */,
+				492C99202023D32B00BD7271 /* GirlsSquashSmall@2x.png */,
+				492C99692023D97200BD7271 /* GirlsSwimming.png */,
+				492C98FA2023D32200BD7271 /* GirlsSwimmingSmall@2x.png */,
+				492C99942023D97C00BD7271 /* GirlsTennis.png */,
+				492C99142023D32900BD7271 /* GirlsTennisSmall@2x.png */,
+				492C99732023D97500BD7271 /* GirlsVolleyball.png */,
+				497B645A2023DD4000E30871 /* GirlsVolleyballSmall@2x.png */,
+				492C99A42023D97F00BD7271 /* GirlsWaterPolo.png */,
+				492C99242023D32C00BD7271 /* GirlsWaterPoloSmall@2x.png */,
+				492C997A2023D97600BD7271 /* IceHockey.png */,
+				492C99122023D32900BD7271 /* IceHockeySmall@2x.png */,
+				492C99742023D97500BD7271 /* MathTeam.png */,
+				492C98F22023D32100BD7271 /* MathTeamSmall@2x.png */,
+				492C99852023D97900BD7271 /* MiscellaneousEvents.png */,
+				492C990E2023D32800BD7271 /* MiscellaneousEventsSmall@2x.png */,
+				492C99882023D97A00BD7271 /* Pom-Pom.png */,
+				497B646C2023DDC100E30871 /* Pom-PomSmall@2x.png */,
+				492C998D2023D97B00BD7271 /* PowderpuffFootball.png */,
+				492C99172023D32A00BD7271 /* PowderpuffFootballSmall@2x.png */,
+				492C99762023D97500BD7271 /* Practice.png */,
+				492C990B2023D32700BD7271 /* PracticeSmall@2x.png */,
+				492C996A2023D97300BD7271 /* SchoolHolidaysandClosings.png */,
+				497B646A2023DDB300E30871 /* SchoolHolidaysandClosingsSmall@2x.png */,
+				492C997F2023D97800BD7271 /* Softball.png */,
+				497B64682023DDA600E30871 /* SoftballSmall@2x.png */,
+				492C99A22023D97E00BD7271 /* UnifiedSportsBasketball.png */,
+				492C99222023D32B00BD7271 /* UnifiedSportsBasketballSmall@2x.png */,
+				492C99772023D97600BD7271 /* UnifiedSportsSoccer.png */,
+				492C990F2023D32800BD7271 /* UnifiedSportsSoccerSmall@2x.png */,
+				492C996B2023D97300BD7271 /* UnifiedSportsTrack.png */,
+				492C99102023D32800BD7271 /* UnifiedSportsTrackSmall@2x.png */,
+				492C99652023D97100BD7271 /* UnifiedSportsVolleyball.png */,
+				492C99252023D32C00BD7271 /* UnifiedSportsVolleyballSmall@2x.png */,
+				492C996D2023D97300BD7271 /* Wrestling.png */,
+				492C98F82023D32200BD7271 /* WrestlingSmall@2x.png */,
 			);
 			path = "CT SPORTS sport logos";
 			sourceTree = "<group>";
@@ -918,174 +1131,245 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				367B389720053DB500560F2C /* MathTeam.png in Resources */,
-				367B38AD20053DB500560F2C /* BoysSoccer.png in Resources */,
 				36F8C3652011066D00B136EA /* question@2x.png in Resources */,
+				492C99E72023D98100BD7271 /* Co-edCrew.png in Resources */,
+				492C99B42023D98100BD7271 /* Wrestling.png in Resources */,
+				492C99CA2023D98100BD7271 /* BoysBasketball.png in Resources */,
 				367B38C62007178500560F2C /* SF Collegiate Italic.ttf in Resources */,
+				492C992E2023D32C00BD7271 /* GirlsSoccerSmall@2x.png in Resources */,
+				492C99C42023D98100BD7271 /* GirlsGymnastics.png in Resources */,
+				497B64632023DD4300E30871 /* GirlsVolleyballSmall@2x.png in Resources */,
 				36F8C3592011066D00B136EA /* K@2x.png in Resources */,
-				367B38AA20053DB500560F2C /* BoysCrossCountry.png in Resources */,
+				497B646D2023DDC100E30871 /* Pom-PomSmall@2x.png in Resources */,
 				36F8C3772011066D00B136EA /* ampersand@2x.png in Resources */,
-				367B388720053DB500560F2C /* Crew.png in Resources */,
+				492C99EE2023D98100BD7271 /* Cheerleading.png in Resources */,
 				36F8C35C2011066D00B136EA /* bracketleft@2x.png in Resources */,
+				492C995B2023D32C00BD7271 /* GirlsSailingSmall@2x.png in Resources */,
+				492C99DF2023D98100BD7271 /* Co-edAlpineSkiing.png in Resources */,
+				492C99B72023D98100BD7271 /* GirlsBasketball.png in Resources */,
 				36F8C3512011066D00B136EA /* three@2x.png in Resources */,
-				367B389420053DB500560F2C /* BoysSailing.png in Resources */,
-				367B389920053DB500560F2C /* UnifiedSportsTrack.png in Resources */,
-				367B38AF20053DB500560F2C /* SchoolHolidaysandClosings.png in Resources */,
 				364C3C66201BA8700058C43E /* CTSportsLogo.png in Resources */,
+				492C99392023D32C00BD7271 /* Co-edFencingSmall@2x.png in Resources */,
 				366A8DD21FE180570082A64D /* footballFilled@2x.png in Resources */,
+				492C99C62023D98100BD7271 /* Softball.png in Resources */,
+				492C99472023D32C00BD7271 /* BoysTennisSmall@2x.png in Resources */,
 				36F8C3672011066D00B136EA /* bracketright@2x.png in Resources */,
-				367B387B20053DB500560F2C /* FieldHockey.png in Resources */,
+				492C994D2023D32C00BD7271 /* UnifiedSportsTrackSmall@2x.png in Resources */,
+				492C99B02023D98100BD7271 /* GirlsSwimming.png in Resources */,
+				492C99DB2023D98100BD7271 /* GirlsTennis.png in Resources */,
 				368D7E8D1FE6EA21000BE5D4 /* CIACsmall.png in Resources */,
+				492C99502023D32C00BD7271 /* BoysIceHockeySmall@2x.png in Resources */,
+				492C99372023D32C00BD7271 /* GirlsSwimmingSmall@2x.png in Resources */,
+				492C99F22023D98100BD7271 /* GirlsSailing.png in Resources */,
 				366A8D9C1FE17D110082A64D /* LaunchScreen.storyboard in Resources */,
-				367B38B220053DB500560F2C /* GirlsVolleyball.png in Resources */,
 				36F8C3822011066D00B136EA /* R@2x.png in Resources */,
-				367B387620053DB500560F2C /* UnifiedSportsBasketball.png in Resources */,
+				492C99C92023D98100BD7271 /* GirlsBadminton.png in Resources */,
+				492C992C2023D32C00BD7271 /* GirlsCrossCountrySmall@2x.png in Resources */,
+				492C99CF2023D98100BD7271 /* Pom-Pom.png in Resources */,
 				36F8C3612011066D00B136EA /* W@2x.png in Resources */,
-				367B38B720053DB500560F2C /* GirlsGolf.png in Resources */,
 				367B38C22007177A00560F2C /* SF Collegiate Solid.ttf in Resources */,
-				367B38B120053DB500560F2C /* Softball.png in Resources */,
+				492C99642023D57100BD7271 /* leftArrow.png in Resources */,
+				492C99442023D32C00BD7271 /* FieldHockeySmall@2x.png in Resources */,
+				497B64732023DF0000E30871 /* GirlsCrewSmall@2x.png in Resources */,
 				49A321D21FE7F07700074A36 /* schoolcodes.txt in Resources */,
 				36F8C3502011066D00B136EA /* Q@2x.png in Resources */,
-				367B389020053DB500560F2C /* BoysIceHockey.png in Resources */,
 				36F8C3622011066D00B136EA /* slash@2x.png in Resources */,
+				492C992F2023D32C00BD7271 /* MathTeamSmall@2x.png in Resources */,
+				492C99DD2023D98100BD7271 /* Co-edCrossCountrySkiing.png in Resources */,
+				492C99352023D32C00BD7271 /* WrestlingSmall@2x.png in Resources */,
+				492C995C2023D32C00BD7271 /* Co-edSquashSmall@2x.png in Resources */,
+				492C99CE2023D98100BD7271 /* BoysIceHockey.png in Resources */,
 				36F8C3752011066D00B136EA /* D@2x.png in Resources */,
-				367B388020053DB500560F2C /* GirlsAlpineSkiing.png in Resources */,
-				367B38B920065E7200560F2C /* BoysCrew.png in Resources */,
-				367B389A20053DB500560F2C /* UnifiedSportsSoccer.png in Resources */,
-				367B388820053DB500560F2C /* GirlsWaterPolo.png in Resources */,
+				492C99542023D32C00BD7271 /* PowderpuffFootballSmall@2x.png in Resources */,
 				36F8C3922011066D00B136EA /* parenright@2x.png in Resources */,
 				36F8C3582011066D00B136EA /* quotedblleft@2x.png in Resources */,
 				36F8C3702011066D00B136EA /* Y@2x.png in Resources */,
 				36F8C38B2011066D00B136EA /* X@2x.png in Resources */,
-				367B388D20053DB500560F2C /* GirlsCrossCountry.png in Resources */,
+				492C995A2023D32C00BD7271 /* BoysLacrosseSmall@2x.png in Resources */,
 				36F8C38F2011066D00B136EA /* L@2x.png in Resources */,
-				367B38AE20053DB500560F2C /* GirlsIndoorTrack.png in Resources */,
-				367B38CA2007219C00560F2C /* BoysSquash.png in Resources */,
 				36F8C3762011066D00B136EA /* H@2x.png in Resources */,
+				492C99E22023D98100BD7271 /* GirlsCrossCountry.png in Resources */,
+				492C99282023D32C00BD7271 /* CrewSmall@2x.png in Resources */,
 				367B38C42007178000560F2C /* SF Collegiate Solid Bold.ttf in Resources */,
 				36F8C37E2011066D00B136EA /* dollar@2x.png in Resources */,
-				367B38A420053DB500560F2C /* Baseball.png in Resources */,
-				367B389F20053DB500560F2C /* Wrestling.png in Resources */,
+				492C99DE2023D98100BD7271 /* BoysTennis.png in Resources */,
 				36F8C3692011066D00B136EA /* bar@2x.png in Resources */,
+				492C99D02023D98100BD7271 /* BoysSoccer.png in Resources */,
+				492C99D62023D98100BD7271 /* BoysAlpineSkiing.png in Resources */,
 				36F8C37C2011066D00B136EA /* quotedblright@2x.png in Resources */,
 				36F8C3842011066D00B136EA /* exclam@2x.png in Resources */,
+				492C993E2023D32C00BD7271 /* GirlsFencingSmall@2x.png in Resources */,
+				492C99382023D32C00BD7271 /* BoysSoccerSmall@2x.png in Resources */,
+				492C99E62023D98100BD7271 /* Bowling.png in Resources */,
 				36F8C35A2011066D00B136EA /* braceleft@2x.png in Resources */,
-				367B38A520053DB500560F2C /* UnifiedSportsVolleyball.png in Resources */,
 				36F8C3782011066D00B136EA /* P@2x.png in Resources */,
-				367B38AC20053DB500560F2C /* GirlsFencing.png in Resources */,
 				3653CDA01FE5FE2F00F396CD /* info.png in Resources */,
-				367B388620053DB500560F2C /* Co-edFencing.png in Resources */,
 				367B38C12007177700560F2C /* SF Collegiate.ttf in Resources */,
-				367B38B520053DB500560F2C /* Pom-Pom.png in Resources */,
 				36F8C37B2011066D00B136EA /* space@2x.png in Resources */,
-				367B389820053DB500560F2C /* Co-edRifle.png in Resources */,
-				367B38B620053DB500560F2C /* Drumline.png in Resources */,
 				36F8C3912011066D00B136EA /* exclamdown@2x.png in Resources */,
-				367B389D20053DB500560F2C /* BoysVolleyball.png in Resources */,
+				492C994B2023D32C00BD7271 /* MiscellaneousEventsSmall@2x.png in Resources */,
 				36F8C34D2011066D00B136EA /* one@2x.png in Resources */,
-				367B389520053DB500560F2C /* DanceTeam.png in Resources */,
+				492C99272023D32C00BD7271 /* Co-edCrewSmall@2x.png in Resources */,
 				36F8C3812011066D00B136EA /* four@2x.png in Resources */,
 				36F8C3802011066D00B136EA /* F@2x.png in Resources */,
+				492C99E02023D98100BD7271 /* BoysSailing.png in Resources */,
 				36F8C3712011066D00B136EA /* zero@2x.png in Resources */,
+				492C99D82023D98100BD7271 /* GirlsGolf.png in Resources */,
+				492C99B52023D98100BD7271 /* BoysOutdoorTrack.png in Resources */,
 				36F8C3662011066D00B136EA /* two@2x.png in Resources */,
-				367B388B20053DB500560F2C /* ColorGuard.png in Resources */,
 				367B38C32007177E00560F2C /* SF Collegiate Solid Italic.ttf in Resources */,
+				492C99BF2023D98100BD7271 /* ChessTeam.png in Resources */,
+				492C99B12023D98100BD7271 /* SchoolHolidaysandClosings.png in Resources */,
+				492C99412023D32C00BD7271 /* GirlsIceHockeySmall@2x.png in Resources */,
+				492C99E32023D98100BD7271 /* Co-edRifle.png in Resources */,
+				497B64612023DD4300E30871 /* GirlsGolfSmall@2x.png in Resources */,
+				492C99532023D32C00BD7271 /* Co-edAlpineSkiingSmall@2x.png in Resources */,
 				36F8C3602011066D00B136EA /* O@2x.png in Resources */,
-				367B38B420053DB500560F2C /* BoysGolf.png in Resources */,
+				492C993F2023D32C00BD7271 /* BoysBadmintonSmall@2x.png in Resources */,
+				492C99E52023D98100BD7271 /* BoysBadminton.png in Resources */,
 				36F8C38C2011066D00B136EA /* quoteleft@2x.png in Resources */,
-				367B388F20053DB500560F2C /* BoysOutdoorTrack.png in Resources */,
+				492C99562023D32C00BD7271 /* GirlsIndoorTrackSmall@2x.png in Resources */,
+				492C99C02023D98100BD7271 /* Band.png in Resources */,
+				492C99292023D32C00BD7271 /* FootballSmall@2x.png in Resources */,
 				36F8C36D2011066D00B136EA /* A@2x.png in Resources */,
-				367B38AB20053DB500560F2C /* GirlsOutdoorTrack.png in Resources */,
-				367B387720053DB500560F2C /* GirlsIceHockey.png in Resources */,
+				497B64652023DD4300E30871 /* BoysGolfSmall@2x.png in Resources */,
 				36F8C3682011066D00B136EA /* plus@2x.png in Resources */,
+				492C99DC2023D98100BD7271 /* BoysIndoorTrack.png in Resources */,
+				492C99C12023D98100BD7271 /* IceHockey.png in Resources */,
+				492C99492023D32C00BD7271 /* GirlsAlpineSkiingSmall@2x.png in Resources */,
+				492C994F2023D32C00BD7271 /* IceHockeySmall@2x.png in Resources */,
 				36F8C36B2011066D00B136EA /* seven@2x.png in Resources */,
+				492C99602023D32C00BD7271 /* BoysSailingSmall@2x.png in Resources */,
+				492C99B82023D98100BD7271 /* GirlsSoccer.png in Resources */,
+				492C99E42023D98100BD7271 /* Football.png in Resources */,
 				367B38C52007178200560F2C /* SF Collegiate Solid Bold Italic.ttf in Resources */,
-				367B389C20053DB500560F2C /* BoysFencing.png in Resources */,
-				367B38C82007218C00560F2C /* GirlsSquash.png in Resources */,
 				36F8C35F2011066D00B136EA /* equal@2x.png in Resources */,
-				367B387D20053DB500560F2C /* Band.png in Resources */,
 				36F8C34E2011066D00B136EA /* nine@2x.png in Resources */,
-				367B387F20053DB500560F2C /* DebateTeam.png in Resources */,
-				367B389620053DB500560F2C /* Co-edCrew.png in Resources */,
 				496F4F5E1FE7FC9C00799E40 /* sports.txt in Resources */,
-				367B38A720053DB500560F2C /* MiscellaneousEvents.png in Resources */,
+				492C99462023D32C00BD7271 /* BandSmall@2x.png in Resources */,
+				492C99622023D32C00BD7271 /* UnifiedSportsVolleyballSmall@2x.png in Resources */,
 				4971482B202205AC001433A4 /* GoogleService-Info.plist in Resources */,
+				492C992A2023D32C00BD7271 /* GirlsOutdoorTrackSmall@2x.png in Resources */,
 				36F8C3742011066D00B136EA /* comma@2x.png in Resources */,
-				364C3C6A201BCF1D0058C43E /* IceHockey.png in Resources */,
+				492C99F12023D98100BD7271 /* Drumline.png in Resources */,
+				492C99C22023D98100BD7271 /* GirlsAlpineSkiing.png in Resources */,
+				492C99BE2023D98100BD7271 /* UnifiedSportsSoccer.png in Resources */,
+				492C99EF2023D98100BD7271 /* GirlsLacrosse.png in Resources */,
 				366A8D991FE17D110082A64D /* Assets.xcassets in Resources */,
 				36F8C38A2011066D00B136EA /* N@2x.png in Resources */,
-				367B38B020053DB500560F2C /* Co-edSailing.png in Resources */,
+				492C99CC2023D98100BD7271 /* MiscellaneousEvents.png in Resources */,
+				492C99422023D32C00BD7271 /* BoysSquashSmall@2x.png in Resources */,
 				36F8C3722011066D00B136EA /* questiondown@2x.png in Resources */,
-				367B38A320053DB500560F2C /* PowderpuffFootball.png in Resources */,
 				36F8C3832011066D00B136EA /* quotesingle@2x.png in Resources */,
 				364C3C64201B803E0058C43E /* upload@2x.png in Resources */,
-				499CA84C1FF8A46F006FC328 /* Settings-50.png in Resources */,
+				497B646B2023DDB300E30871 /* SchoolHolidaysandClosingsSmall@2x.png in Resources */,
+				492C99D72023D98100BD7271 /* BoysCrossCountry.png in Resources */,
+				492C99E92023D98100BD7271 /* UnifiedSportsBasketball.png in Resources */,
+				492C99C52023D98100BD7271 /* Co-edSquash.png in Resources */,
 				36F8C36E2011066D00B136EA /* quotedbl@2x.png in Resources */,
 				36F8C3632011066D00B136EA /* colon@2x.png in Resources */,
-				367B387920053DB500560F2C /* Practice.png in Resources */,
 				36F8C36F2011066D00B136EA /* percent@2x.png in Resources */,
+				492C99AF2023D98100BD7271 /* BoysFencing.png in Resources */,
+				492C99332023D32C00BD7271 /* GirlsGymnasticsSmall@2x.png in Resources */,
+				492C99EA2023D98100BD7271 /* GirlsOutdoorTrack.png in Resources */,
+				492C99512023D32C00BD7271 /* GirlsTennisSmall@2x.png in Resources */,
 				36F8C38D2011066D00B136EA /* T@2x.png in Resources */,
 				36F8C3532011066D00B136EA /* braceright@2x.png in Resources */,
+				492C99E12023D98100BD7271 /* Crew.png in Resources */,
+				492C99BC2023D98100BD7271 /* ColorGuard.png in Resources */,
 				36F8C3522011066D00B136EA /* E@2x.png in Resources */,
+				492C993C2023D32C00BD7271 /* GirlsLacrosseSmall@2x.png in Resources */,
+				492C99D92023D98100BD7271 /* DebateTeam.png in Resources */,
+				492C99F02023D98100BD7271 /* GirlsIndoorTrack.png in Resources */,
+				492C99582023D32C00BD7271 /* BoysVolleyballSmall@2x.png in Resources */,
+				492C99AD2023D98100BD7271 /* BoysWaterPolo.png in Resources */,
 				36F8C36A2011066D00B136EA /* hyphen@2x.png in Resources */,
 				36F8C3732011066D00B136EA /* U@2x.png in Resources */,
-				367B388220053DB500560F2C /* GirlsSailing.png in Resources */,
-				367B38A920053DB500560F2C /* BoysTennis.png in Resources */,
-				367B387C20053DB500560F2C /* BoysBadminton.png in Resources */,
 				36F8C3932011066D00B136EA /* parenleft@2x.png in Resources */,
-				367B388C20053DB500560F2C /* BoysLacrosse.png in Resources */,
+				492C99BB2023D98100BD7271 /* MathTeam.png in Resources */,
+				492C99EC2023D98100BD7271 /* BoysRugby.png in Resources */,
+				492C994E2023D32C00BD7271 /* Co-edCrossCountrySkiingSmall@2x.png in Resources */,
+				497B645E2023DD4300E30871 /* GirlsCrew.png in Resources */,
+				492C99402023D32C00BD7271 /* Co-edRifleSmall@2x.png in Resources */,
+				492C99D12023D98100BD7271 /* BoysLacrosse.png in Resources */,
 				366A8DCF1FE180570082A64D /* football.png in Resources */,
 				368D7E8B1FE6EA19000BE5D4 /* CIAC.png in Resources */,
+				497B64602023DD4300E30871 /* DrumlineSmall@2x.png in Resources */,
+				492C995E2023D32C00BD7271 /* BoysAlpineSkiingSmall@2x.png in Resources */,
+				492C99C32023D98100BD7271 /* BoysGolf.png in Resources */,
+				492C99522023D32C00BD7271 /* ChessTeamSmall@2x.png in Resources */,
 				36F8C3572011066D00B136EA /* five@2x.png in Resources */,
-				367B387820053DB500560F2C /* Bowling.png in Resources */,
-				367B388320053DB500560F2C /* GirlsTennis.png in Resources */,
+				492C99E82023D98100BD7271 /* FieldHockey.png in Resources */,
+				492C99302023D32C00BD7271 /* BoysCrewSmall@2x.png in Resources */,
+				492C99CD2023D98100BD7271 /* GirlsFencing.png in Resources */,
+				492C99592023D32C00BD7271 /* ChorusSmall@2x.png in Resources */,
+				492C99B22023D98100BD7271 /* UnifiedSportsTrack.png in Resources */,
 				36F8C3902011066D00B136EA /* numbersign@2x.png in Resources */,
-				367B38A220053DB500560F2C /* BoysRugby.png in Resources */,
+				497B64672023DD5E00E30871 /* BoysIndoorTrackSmall@2x.png in Resources */,
+				492C99DA2023D98100BD7271 /* GirlsSquash.png in Resources */,
+				492C99BA2023D98100BD7271 /* GirlsVolleyball.png in Resources */,
+				492C99B62023D98100BD7271 /* DanceTeam.png in Resources */,
 				36F8C36C2011066D00B136EA /* M@2x.png in Resources */,
-				367B388920053DB500560F2C /* GirlsBadminton.png in Resources */,
-				367B38A020053DB500560F2C /* GirlsLacrosse.png in Resources */,
 				36F8C34F2011066D00B136EA /* eight@2x.png in Resources */,
-				367B389B20053DB500560F2C /* ChessTeam.png in Resources */,
-				367B38A620053DB500560F2C /* Football.png in Resources */,
-				367B38A820053DB500560F2C /* BoysAlpineSkiing.png in Resources */,
+				492C99D32023D98100BD7271 /* GirlsIceHockey.png in Resources */,
+				492C99D22023D98100BD7271 /* Co-edFencing.png in Resources */,
+				492C99342023D32C00BD7271 /* BaseballSmall@2x.png in Resources */,
+				492C99BD2023D98100BD7271 /* Practice.png in Resources */,
+				492C99322023D32C00BD7271 /* BoysFencingSmall@2x.png in Resources */,
+				492C99452023D32C00BD7271 /* DanceTeamSmall@2x.png in Resources */,
+				492C99B92023D98100BD7271 /* Chorus.png in Resources */,
 				36F8C3642011066D00B136EA /* period@2x.png in Resources */,
-				367B389120053DB500560F2C /* GirlsBasketball.png in Resources */,
+				492C99ED2023D98100BD7271 /* BoysVolleyball.png in Resources */,
 				36F8C38E2011066D00B136EA /* six@2x.png in Resources */,
 				3653CD9F1FE5FE2F00F396CD /* email.png in Resources */,
 				368D7E871FE6E8DA000BE5D4 /* setting@2x.png in Resources */,
+				492C99CB2023D98100BD7271 /* Baseball.png in Resources */,
+				492C992B2023D32C00BD7271 /* CheerleadingSmall@2x.png in Resources */,
+				497B646F2023DE3B00E30871 /* Co-edSailingSmall@2x.png in Resources */,
+				492C99362023D32C00BD7271 /* DebateTeamSmall@2x.png in Resources */,
+				492C99D42023D98100BD7271 /* PowderpuffFootball.png in Resources */,
+				492C99482023D32C00BD7271 /* PracticeSmall@2x.png in Resources */,
 				36F8C35B2011066D00B136EA /* G@2x.png in Resources */,
+				492C99D52023D98100BD7271 /* BoysCrew.png in Resources */,
 				36F8C35E2011066D00B136EA /* C@2x.png in Resources */,
-				367B389320053DB500560F2C /* Chorus.png in Resources */,
 				36F8C3552011066D00B136EA /* quotesinglbase@2x.png in Resources */,
+				492C99612023D32C00BD7271 /* GirlsWaterPoloSmall@2x.png in Resources */,
+				492C99432023D32C00BD7271 /* GirlsBasketballSmall@2x.png in Resources */,
+				492C993A2023D32C00BD7271 /* BoysSwimmingSmall@2x.png in Resources */,
 				3653CDA21FE5FE4000F396CD /* lock.png in Resources */,
 				366A8DD01FE180570082A64D /* footballFilled.png in Resources */,
 				36F8C37F2011066D00B136EA /* J@2x.png in Resources */,
 				366A8D971FE17D110082A64D /* Main.storyboard in Resources */,
 				366A8DD11FE180570082A64D /* football@2x.png in Resources */,
+				497B64692023DDA600E30871 /* SoftballSmall@2x.png in Resources */,
+				492C99EB2023D98100BD7271 /* GirlsWaterPolo.png in Resources */,
 				36F8C3852011066D00B136EA /* V@2x.png in Resources */,
 				36F8C3562011066D00B136EA /* S@2x.png in Resources */,
-				367B38B320053DB500560F2C /* BoysIndoorTrack.png in Resources */,
-				367B389E20053DB500560F2C /* BoysSwimming.png in Resources */,
 				36F8C3792011066D00B136EA /* asterisk@2x.png in Resources */,
 				36F8C3892011066D00B136EA /* quotedblbase@2x.png in Resources */,
-				367B38CC200721A800560F2C /* Co-edSquash.png in Resources */,
 				36F8C3882011066D00B136EA /* semicolon@2x.png in Resources */,
+				492C994C2023D32C00BD7271 /* UnifiedSportsSoccerSmall@2x.png in Resources */,
+				492C995D2023D32C00BD7271 /* GirlsSquashSmall@2x.png in Resources */,
+				492C99552023D32C00BD7271 /* BoysWaterPoloSmall@2x.png in Resources */,
 				36F8C3542011066D00B136EA /* I@2x.png in Resources */,
-				367B388520053DB500560F2C /* BoysBasketball.png in Resources */,
 				36F8C37D2011066D00B136EA /* quoteright@2x.png in Resources */,
+				492C993D2023D32C00BD7271 /* BoysRugbySmall@2x.png in Resources */,
+				492C99C82023D98100BD7271 /* Co-edSailing.png in Resources */,
 				3653CDA41FE5FE9700F396CD /* compare.png in Resources */,
-				367B387E20053DB500560F2C /* GirlsCrew@2x.png in Resources */,
-				367B387A20053DB500560F2C /* BoysWaterPolo.png in Resources */,
-				367B388120053DB500560F2C /* GirlsSoccer.png in Resources */,
+				492C99312023D32C00BD7271 /* BoysBasketballSmall@2x.png in Resources */,
 				36F8C3862011066D00B136EA /* Z@2x.png in Resources */,
+				492C99C72023D98100BD7271 /* BoysSquash.png in Resources */,
+				492C99AE2023D98100BD7271 /* BoysSwimming.png in Resources */,
+				492C994A2023D32C00BD7271 /* GirlsBadmintonSmall@2x.png in Resources */,
 				36F8C3872011066D00B136EA /* B@2x.png in Resources */,
-				367B389220053DB500560F2C /* Co-edAlpineSkiing.png in Resources */,
 				3653CDA61FE61D2000F396CD /* safari.png in Resources */,
-				367B388E20053DB500560F2C /* GirlsSwimming.png in Resources */,
-				367B388A20053DB500560F2C /* Cheerleading.png in Resources */,
-				367B388420053DB500560F2C /* GirlsGymnastics.png in Resources */,
-				367B38A120053DB500560F2C /* Co-edCrossCountrySkiing.png in Resources */,
+				492C995F2023D32C00BD7271 /* UnifiedSportsBasketballSmall@2x.png in Resources */,
+				492C993B2023D32C00BD7271 /* BowlingSmall@2x.png in Resources */,
+				492C992D2023D32C00BD7271 /* ColorGuardSmall@2x.png in Resources */,
 				36F8C37A2011066D00B136EA /* cent@2x.png in Resources */,
+				492C99572023D32C00BD7271 /* BoysCrossCountrySmall@2x.png in Resources */,
+				492C99AC2023D98100BD7271 /* UnifiedSportsVolleyball.png in Resources */,
+				492C99262023D32C00BD7271 /* BoysOutdoorTrackSmall@2x.png in Resources */,
 				36F8C35D2011066D00B136EA /* backslash@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
