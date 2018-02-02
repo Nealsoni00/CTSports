@@ -167,7 +167,10 @@ class SetSportVC : UITableViewController, UISearchBarDelegate, UISearchControlle
         cell.infoText.text = currentSport
 
         let image: UIImage = UIImage(named: "\(currentSport.replacingOccurrences(of: " ", with: "")).png") ?? UIImage()
+        print(currentSport)
         cell.sportImage!.image = image.imageWithColor(sweetBlue)
+        
+        
 
         
         return cell
