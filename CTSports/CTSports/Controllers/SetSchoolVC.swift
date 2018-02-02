@@ -79,7 +79,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
         
     }
     func getSchools(){
-        var fileURLProject = Bundle.main.path(forResource: "schoolcodes", ofType: "txt")
+        let fileURLProject = Bundle.main.path(forResource: "schoolcodes", ofType: "txt")
         // Read from the file
         var readStringProject = ""
         do {
