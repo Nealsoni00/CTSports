@@ -96,10 +96,10 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
                 sendMail("bass.emily00@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
             case 4: //Ian
-                sendMail("sharkeyjack11@gmail.com")
+                sendMail("iankramerimk@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
             case 5: //Bidgood
-                sendMail("sharkeyjack11@gmail.com")
+                sendMail("bidgoodm10@gmail.com")
                 tableView.deselectRow(at: indexPath, animated: true)
             case 6: //CIAC
                 if let url = URL(string: "https://ciacsports.com/site/") {

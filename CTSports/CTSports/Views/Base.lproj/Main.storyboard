@@ -279,7 +279,7 @@
         <scene sceneID="D86-gv-mOT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p0e-AP-MVu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Specific Games" image="footballFilled.png" selectedImage="football.png" id="FPr-1F-WHx"/>
+                    <tabBarItem key="tabBarItem" title="Specific Games" image="defaultFilled.png" selectedImage="default.png" id="FPr-1F-WHx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vkb-E4-LYR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1818,7 +1818,7 @@
         <scene sceneID="kmJ-qj-ZW5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ri7-F4-1wo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All Games" image="footballFilled.png" selectedImage="football.png" id="Rdl-q3-AJe"/>
+                    <tabBarItem key="tabBarItem" title="All Games" image="defaultFilled.png" selectedImage="default.png" id="Rdl-q3-AJe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oX1-82-54e">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1960,9 +1960,9 @@
         <image name="CIAC.png" width="3300" height="2550"/>
         <image name="CTSportsLogo.png" width="1416" height="1384"/>
         <image name="compare.png" width="64" height="64"/>
+        <image name="default.png" width="25" height="25"/>
+        <image name="defaultFilled.png" width="25" height="25"/>
         <image name="email.png" width="42" height="42"/>
-        <image name="football.png" width="25" height="25"/>
-        <image name="footballFilled.png" width="25" height="25"/>
         <image name="info.png" width="42" height="42"/>
         <image name="leftArrow.png" width="100" height="100"/>
         <image name="setting.png" width="25" height="25"/>
