@@ -21,8 +21,8 @@ class InputScheduleVC: UIViewController, MFMailComposeViewControllerDelegate {
     override func viewDidLoad() {
         self.navigationController!.title = self.navTitle ?? ""
         textView.scrollRangeToVisible(NSRange(location:0, length:0))
-        self.navigationController?.view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.view.backgroundColor = sweetBlue
+        self.navigationController?.navigationBar.barTintColor = sweetBlue
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 17)!, NSAttributedStringKey.foregroundColor: UIColor.white]
