@@ -23,7 +23,7 @@ var schoolChanged = false
 
 var sweetBlue = UIColor(red:0.00, green:0.34, blue:0.60, alpha:1.0)
 let sweetGreen = UIColor(red:0.3, green:0.8, blue:0.13, alpha:1.0)
-
+var empty = false; 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
 
@@ -53,6 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
         
         NetworkManager.sharedInstance.performRequestSchool()
         NetworkManager.sharedInstance.getSports()
+        
+        if (defaultSports.isEmpty) {
+            empty = true;
+        }
 //        NetworkManager.sharedInstance.performRequestSports()
         
 //         NetworkManager.sharedInstance.createCustomSportsArray()

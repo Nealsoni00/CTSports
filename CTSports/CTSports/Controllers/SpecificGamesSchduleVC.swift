@@ -233,7 +233,11 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
             self.present(vc1, animated:true, completion: nil)
             
         }
-
+        
+        if (empty) {
+            tabBarController?.selectedIndex = 1;
+            empty = false;
+        }
 
     }
 
