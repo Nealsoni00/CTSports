@@ -7,7 +7,7 @@ boys-crosscountry:Boys Cross Country
 boys-fencing:Boys Fencing
 boys-football:Football
 boys-golf:Boys Golf
-boys-icehockey:Ice Hockey
+boys-icehockey:Boys Ice Hockey
 boys-indoortrack:Boys Indoor Track
 boys-lacrosse:Boys Lacrosse
 boys-outdoortrack:Boys Outdoor Track
