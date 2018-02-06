@@ -133,19 +133,16 @@ class SportingEventVC: UITableViewController {
             }else{
                 nameLabel.text = schoolKey
             }
-            var initials = ""
-            for word in schoolKey.split(separator: " "){
-                if (initials.characters.count < 2){
-                    initials = initials + String(word)[0]
-                }
-            }
-            if (initials.characters.count == 2){
+            
+            homeLetter.text = schoolKey.getInitals()
+
+          
+            if (homeLetter.text?.characters.count == 2){
                 homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 60)
             }
             else{
                 homeLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
             }
-            homeLetter.text = initials
             
             if !sweetBlue.isLight(){
                 homeLetter.textColor = UIColor.white
@@ -154,7 +151,6 @@ class SportingEventVC: UITableViewController {
             }
             homeLetterView.backgroundColor = sweetBlue
             homeLetterView.layer.cornerRadius = homeLetterView.layer.frame.size.width / 2
-            
             
             
             opponentLabel.textColor = schoolColors[self.currentEvent!.opponent] ?? UIColor(red:0.83, green:0.18, blue:0.18, alpha:1.0)
@@ -169,20 +165,21 @@ class SportingEventVC: UITableViewController {
             }else{
                 opponentLabel.text = self.currentEvent!.opponent
             }
-            
-            initials = ""
-            for word in  self.currentEvent!.opponent.split(separator: " "){
-                if (initials.characters.count < 2){
-                    initials = initials + String(word)[0]
-                }
-            }
-            if (initials.characters.count == 2){
+//              opponentLabel.text = self.currentEvent!.opponent
+
+//            initials = ""
+//            for word in self.currentEvent!.opponent.split(separator: " "){
+//                if (initials.characters.count < 2){
+//                    initials = initials + String(word)[0]
+//                }
+//            }
+            opponentLetter.text = self.currentEvent!.opponent.getInitals()
+            if (opponentLetter.text?.characters.count == 2){
                 opponentLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 60)
             }
             else{
                 opponentLetter.font = UIFont (name: "SFCollegiateSolid-Bold", size: 69)
             }
-            opponentLetter.text = initials
             
 //            opponentLabel.text = String(self.currentEvent!.opponent.split(separator: " ")[0])
 //            var initialsOpponent = ""
