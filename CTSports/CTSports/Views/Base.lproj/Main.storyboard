@@ -738,7 +738,7 @@
                                                         <constraint firstAttribute="height" constant="32" id="tht-B7-bjR"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWW-UN-Sch">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWW-UN-Sch">
                                                     <rect key="frame" x="305" y="9" width="70" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="gPf-kP-dha"/>
@@ -871,8 +871,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CIAC.png" translatesAutoresizingMaskIntoConstraints="NO" id="MVo-Xo-EgD">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baseball.png" translatesAutoresizingMaskIntoConstraints="NO" id="MVo-Xo-EgD">
                                                     <rect key="frame" x="12" y="6.5" width="32" height="32"/>
+                                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="GLp-sg-wZ7"/>
                                                         <constraint firstAttribute="width" constant="32" id="TwV-36-2pM"/>
@@ -1161,39 +1163,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" id="W8K-A5-Zgo">
-                                        <rect key="frame" x="0.0" y="913.5" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W8K-A5-Zgo" id="sRp-X0-QGQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by CIAC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CiB-hL-KXK">
-                                                    <rect key="frame" x="59" y="7.5" width="283" height="29"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
-                                                    <color key="textColor" red="0.29169837984429914" green="0.29028920892717691" blue="0.29310755076142136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CIAC.png" translatesAutoresizingMaskIntoConstraints="NO" id="hzm-bf-oCZ">
-                                                    <rect key="frame" x="12" y="6.5" width="32" height="32"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="32" id="6xJ-fe-vzS"/>
-                                                        <constraint firstAttribute="width" constant="32" id="syS-WX-MzD"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="CiB-hL-KXK" firstAttribute="leading" secondItem="hzm-bf-oCZ" secondAttribute="trailing" constant="15" id="1fZ-CT-JKt"/>
-                                                <constraint firstItem="hzm-bf-oCZ" firstAttribute="leading" secondItem="sRp-X0-QGQ" secondAttribute="leading" constant="12" id="8tD-bl-zvu"/>
-                                                <constraint firstItem="CiB-hL-KXK" firstAttribute="centerY" secondItem="sRp-X0-QGQ" secondAttribute="centerY" id="9kB-fH-AnT"/>
-                                                <constraint firstItem="hzm-bf-oCZ" firstAttribute="centerY" secondItem="sRp-X0-QGQ" secondAttribute="centerY" id="c65-IV-oZy"/>
-                                                <constraint firstAttribute="trailing" secondItem="CiB-hL-KXK" secondAttribute="trailing" id="ccu-DM-OCB"/>
-                                                <constraint firstItem="CiB-hL-KXK" firstAttribute="leading" secondItem="hzm-bf-oCZ" secondAttribute="trailing" constant="15" id="i6P-2b-7Fc"/>
-                                                <constraint firstItem="hzm-bf-oCZ" firstAttribute="centerY" secondItem="sRp-X0-QGQ" secondAttribute="centerY" id="x0T-os-ODu"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.99998801946640015" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1957,7 +1926,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CIAC.png" width="3300" height="2550"/>
+        <image name="Baseball.png" width="100" height="100"/>
         <image name="CTSportsLogo.png" width="1416" height="1384"/>
         <image name="compare.png" width="64" height="64"/>
         <image name="default.png" width="25" height="25"/>

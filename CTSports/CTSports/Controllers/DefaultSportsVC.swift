@@ -51,7 +51,7 @@ class DefaultSportsVC: UITableViewController {
             let newView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
             
             let sportsIcon: UIImageView = UIImageView(frame: CGRect(x: 0, y: newView.center.y - 150, width: 100, height: 100))
-            sportsIcon.image = UIImage(named: "CIAC.png")
+            sportsIcon.image = UIImage(named: "CTSportsLogo.png")
             sportsIcon.center.x = newView.center.x
             
             let messageLabel: UILabel = UILabel(frame: CGRect(x: 0, y: newView.center.y - 20, width: newView.frame.width - 20, height: 50))
