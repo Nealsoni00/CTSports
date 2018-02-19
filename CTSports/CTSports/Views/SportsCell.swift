@@ -22,6 +22,7 @@ class SportsCell: UITableViewCell {
     @IBOutlet weak var homeAwaySwitch: UISegmentedControl!
     @IBOutlet weak var awayLetter: UILabel!
     @IBOutlet weak var homeLabel: UILabel!
+    @IBOutlet weak var versus: UILabel!
     @IBOutlet weak var homeLetter: UILabel!
     
     @IBOutlet weak var homeView: UIView!

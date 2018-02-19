@@ -45,6 +45,7 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
     var uniqueNSGameDatesFR = [NSDate]()
     var uniqueNSGameDatesAll = [NSDate]()
     
+    
     var updatedLast = Date()
     
     var gameLevel = "V"
@@ -710,6 +711,11 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
 //            cell.home.font = UIFont(name: "HelveticaNeue", size: 35)
             cell.time.font = UIFont(name: "HelveticaNeue", size: 20)
             
+            if event.home == "Home"{
+                cell.versus.text = "vs"
+            }else{
+                cell.versus.text = "@"
+            }
 
         }
         
