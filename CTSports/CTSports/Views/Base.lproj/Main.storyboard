@@ -780,8 +780,8 @@
                                                         <constraint firstAttribute="height" constant="32" id="HLa-Tm-qjz"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Defaut School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Axk-JE-wEP">
-                                                    <rect key="frame" x="60" y="8" width="281" height="27.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Default School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Axk-JE-wEP">
+                                                    <rect key="frame" x="60" y="8" width="281" height="28"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                     <color key="textColor" red="0.29169837984429914" green="0.29028920892717691" blue="0.29310755076142136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -1247,7 +1247,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C3A-qI-MTN">
-                                <rect key="frame" x="10" y="144" width="355" height="268"/>
+                                <rect key="frame" x="10" y="144" width="355" height="317"/>
                                 <color key="backgroundColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <string key="text">CTSports pulls all its game and practice information from the CIAC schedules inputed by your coach and school's athletics director. Please contact them with the following link to update your practice schedules: http://www.casciac.org/scripts/editprac.cgi</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1255,7 +1255,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56K-cZ-7tf">
-                                <rect key="frame" x="50" y="420" width="275" height="70"/>
+                                <rect key="frame" x="50" y="469" width="275" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tc-fZ-HkD">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="70"/>
@@ -1290,7 +1290,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99X-mb-XEW">
-                                <rect key="frame" x="50" y="498" width="275" height="70"/>
+                                <rect key="frame" x="50" y="547" width="275" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbu-FR-AH9">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="70"/>
@@ -1939,9 +1939,9 @@
         <image name="upload.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pMM-Hf-x1J"/>
+        <segue reference="5Em-Uk-EWj"/>
         <segue reference="7fO-2u-qDc"/>
-        <segue reference="6lI-7j-1VV"/>
+        <segue reference="fmm-dI-RS1"/>
         <segue reference="9Mi-m1-UwP"/>
     </inferredMetricsTieBreakers>
 </document>
