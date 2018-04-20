@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 import Firebase
+import FirebaseDatabase
 
 let adID = "ca-app-pub-6421137549100021/4156411631"
 
@@ -16,7 +17,9 @@ let defaults = UserDefaults.standard
 var defaultSports = defaults.array(forKey: "allSports") as? Array ?? [String]()
 var school: String = defaults.object(forKey: "defaultSchool") as? String ?? ""
 var schoolKey: String = defaults.object(forKey: "defaultSchoolKey") as? String ?? ""
+var dataCollected = defaults.bool(forKey: "dataCollected") as? Bool ?? false
 let center = UNUserNotificationCenter.current()
+var ref: DatabaseReference!
 
 var schoolsDict = [String: String]()
 var schoolChanged = false
@@ -45,6 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
         schoolKey = (defaults.object(forKey: "defaultSchoolKey") as? String) ?? ""
         sport = defaults.object(forKey: "defaultSport") as? String ?? ""
         sportKey = defaults.object(forKey: "defaultSportKey") as? String ?? ""
+        dataCollected = defaults.bool(forKey: "dataCollected") as? Bool ?? false
+        print(school)
+        print(dataCollected)
+        print("hello")
         
         sweetBlue = schoolColors[schoolKey] ?? UIColor(red:0.00, green:0.34, blue:0.60, alpha:1.0)
         
@@ -63,7 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
 
 //        NetworkManager.sharedInstance.delegate = self
     
-        FIRApp.configure()
+        FirebaseApp.configure()
+        ref = Database.database().reference()
 
         return true
 

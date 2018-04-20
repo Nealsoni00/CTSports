@@ -568,12 +568,9 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
 
     func titleForSectionHeader(section: Int) -> String? {
         var gameDate1 = ""
-        print("IS ACTIVE? \(searchController.isActive))")
         if (uniqueNSGameDates.count != 0){ //&& gamesDictionary[uniqueNSGameDates[0]]?[0] != nil){
-            print("MADE IT IN HERE!!!!")
             if searchController.isActive && searchController.searchBar.text != "" {
                 uniqueNSGameDates = filteredUniqueDates
-                print("INSIDE IS ACTIVE! \(filteredUniqueDates.count)")
             }else{
                 switch gameLevel {
                 case "V":
