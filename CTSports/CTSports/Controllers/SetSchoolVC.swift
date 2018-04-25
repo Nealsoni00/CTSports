@@ -225,7 +225,6 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
                     let totalData = snapshot.value as? NSDictionary
                     //iterate through array and set each one
                     
-                    
                     var schoolName : String
                     if (schoolKey == "Acad. of the Holy Family") {
                         schoolName = "Acad. of the Holy Family"
@@ -235,11 +234,12 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
                         schoolName = schoolKey
                     }
                     
-                    var schoolData: Int = totalData![schoolKey] as! Int
+                    var schoolData: Int = totalData![schoolName] as! Int
                     schoolData += 1;
                     
                     ref.child(school).setValue(schoolData)
-                    print("\(school) has been changed to \(schoolData) users.")
+                    print("\(school) has been changed to \(schoolName) users.")
+                    defaults.set(true, forKey: "dataCollected")
                     
                 })
                 navigationController?.pushViewController(vc,
@@ -283,12 +283,12 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
                         schoolName = schoolKey
                     }
                     
-                    var schoolData: Int = totalData![schoolKey] as! Int
+                    var schoolData: Int = totalData![schoolName] as! Int
                     schoolData += 1;
                     
                     ref.child(school).setValue(schoolData)
-                    print("\(school) has been changed to \(schoolData) users.")
-                    
+                    print("\(school) has been changed to \(schoolName) users.")
+                    defaults.set(true, forKey: "dataCollected")
                 })
                 navigationController?.pushViewController(vc,
                                                         animated: true)
