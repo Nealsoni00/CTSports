@@ -73,13 +73,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
         FirebaseApp.configure()
         ref = Database.database().reference()
         
-        if(school == "" && dataCollected == false) {
+        if(school != "" && dataCollected == false ) {
             //record analytics
             ref.observeSingleEvent(of: .value, with: { (snapshot)  in
                 // Get all percentages
                 let totalData = snapshot.value as? NSDictionary
                 //iterate through array and set each one
                 
+                print(schoolKey)
+                print(school)
             var schoolName : String
             if (schoolKey == "Acad. of the Holy Family") {
                 schoolName = "Acad. of the Holy Family"
@@ -89,11 +91,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate  { //DataReturnedDelegate
                 schoolName = schoolKey
             }
             
+                print(schoolName)
             var schoolData: Int = totalData![schoolName] as! Int
             schoolData += 1;
             
             ref.child(school).setValue(schoolData)
-            print("\(school) has been changed to \(schoolName) users.")
+            print("\(school) has been changed to \(schoolData) users.")
             defaults.set(true, forKey: "dataCollected")
         })
         }

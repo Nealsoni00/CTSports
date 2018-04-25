@@ -218,7 +218,6 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             NetworkManager.sharedInstance.createCustomSportsArray()
 
             if (previousVC?.title == "Initial") {
-                print("HELLO!!!!!!!!!!!!!!!!!")
                 //record analytics
                 ref.observeSingleEvent(of: .value, with: { (snapshot)  in
                     // Get all percentages
@@ -238,7 +237,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
                     schoolData += 1;
                     
                     ref.child(school).setValue(schoolData)
-                    print("\(school) has been changed to \(schoolName) users.")
+                    print("\(school) has been changed to \(schoolData) users.")
                     defaults.set(true, forKey: "dataCollected")
                     
                 })
@@ -287,7 +286,7 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
                     schoolData += 1;
                     
                     ref.child(school).setValue(schoolData)
-                    print("\(school) has been changed to \(schoolName) users.")
+                    print("\(school) has been changed to \(schoolData) users.")
                     defaults.set(true, forKey: "dataCollected")
                 })
                 navigationController?.pushViewController(vc,
