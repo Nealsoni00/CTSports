@@ -9,7 +9,8 @@
 import UIKit
 import SwiftSpinner
 import Alamofire
-
+import FirebaseDatabase
+import Firebase
 
 
 class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControllerDelegate {
@@ -217,6 +218,29 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             NetworkManager.sharedInstance.createCustomSportsArray()
 
             if (previousVC?.title == "Initial") {
+                //record analytics
+                ref.observeSingleEvent(of: .value, with: { (snapshot)  in
+                    // Get all percentages
+                    let totalData = snapshot.value as? NSDictionary
+                    //iterate through array and set each one
+                    
+                    var schoolName : String
+                    if (schoolKey == "Acad. of the Holy Family") {
+                        schoolName = "Acad. of the Holy Family"
+                    } else if (schoolKey == "E.O.Smith") {
+                        schoolName = "EO Smith"
+                    } else {
+                        schoolName = schoolKey
+                    }
+                    
+                    var schoolData: Int = totalData![schoolName] as! Int
+                    schoolData += 1;
+                    
+                    ref.child(school).setValue(schoolData)
+                    print("\(school) has been changed to \(schoolData) users.")
+                    defaults.set(true, forKey: "dataCollected")
+                    
+                })
                 navigationController?.pushViewController(vc,
                                                          animated: true)
             } else {
@@ -238,7 +262,33 @@ class SetSchoolVC : UITableViewController, UISearchBarDelegate, UISearchControll
             NetworkManager.sharedInstance.performRequestSchool()
             NetworkManager.sharedInstance.createCustomSportsArray()
 
+            
+            
+            
             if (previousVC?.title == "Initial") {
+                //record analytics
+                ref.observeSingleEvent(of: .value, with: { (snapshot)  in
+                    // Get all percentages
+                    let totalData = snapshot.value as? NSDictionary
+                    //iterate through array and set each one
+                    
+                    
+                    var schoolName : String
+                    if (schoolKey == "Acad. of the Holy Family") {
+                        schoolName = "Acad. of the Holy Family"
+                    } else if (schoolKey == "E.O.Smith") {
+                        schoolName = "EO Smith"
+                    } else {
+                        schoolName = schoolKey
+                    }
+                    
+                    var schoolData: Int = totalData![schoolName] as! Int
+                    schoolData += 1;
+                    
+                    ref.child(school).setValue(schoolData)
+                    print("\(school) has been changed to \(schoolData) users.")
+                    defaults.set(true, forKey: "dataCollected")
+                })
                 navigationController?.pushViewController(vc,
                                                         animated: true)
             } else {
