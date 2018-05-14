@@ -234,7 +234,10 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
     @objc func parseAllGamesIntoDictionaries() {
         self.removeAll()
         print("parsing")
-        for event in NetworkManager.sharedInstance.allGames {
+        self.allGames = NetworkManager.sharedInstance.allGames
+        self.allGames = self.allGames.sorted(by: { $0.exactDate.compare($1.exactDate as Date) == .orderedAscending})
+        
+        for event in self.allGames {
             let level = event.gameLevel
             let gameNSDate = event.gameNSDate
             if level == "V" {
@@ -282,7 +285,6 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
             if (self.gamesDictionaryAll[gameNSDate]?.append(event)) == nil {
                 self.gamesDictionaryAll[gameNSDate] = [event]
             }
-            self.allGames.append(event)
             self.gameNSDatesAll.append(gameNSDate)
         }
         self.gameNSDatesV   = self.gameNSDatesV.removeDuplicates()
@@ -290,6 +292,9 @@ class AllGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISearchCon
         self.gameNSDatesFR  = self.gameNSDatesFR.removeDuplicates()
         self.gameNSDatesAll = self.gameNSDatesAll.removeDuplicates()
 
+        self.allGamesV = self.allGamesV.sorted(by: { $0.gameNSDate.compare($1.gameNSDate as Date) == .orderedAscending})
+        self.allGamesJV = self.allGamesV.sorted(by: { $0.gameNSDate.compare($1.gameNSDate as Date) == .orderedAscending})
+        self.allGamesFR = self.allGamesV.sorted(by: { $0.gameNSDate.compare($1.gameNSDate as Date) == .orderedAscending})
 
         self.activitySpinner.stopAnimating()
         self.activitySpinner.isHidden = true

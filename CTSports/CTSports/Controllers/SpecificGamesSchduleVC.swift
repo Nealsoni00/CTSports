@@ -246,7 +246,10 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
         self.removeAll()
         print("parsing SPECIFIC GAMES")
         print(NetworkManager.sharedInstance.specificGames)
-        for event in NetworkManager.sharedInstance.specificGames {
+        self.allGames = NetworkManager.sharedInstance.specificGames
+        self.allGames = self.allGames.sorted(by: { $0.exactDate.compare($1.exactDate as Date) == .orderedAscending})
+        
+        for event in self.allGames {
             print("school: \(event.school)")
             print("sportKey: \(sport), Sport: \(event.sport), Bool: \(event.sport == sportKey)")
             let level = event.gameLevel
@@ -297,7 +300,6 @@ class SpecificGamesSchduleVC: UITableViewController, UISearchBarDelegate, UISear
                 self.gamesDictionaryAll[gameNSDate] = [event]
             }
             self.gameNSDatesAll.append(gameNSDate)
-            self.allGames.append(event)
         }
         self.gameNSDatesV   = self.gameNSDatesV.removeDuplicates().sorted(by: { $0.compare($1 as Date) == .orderedAscending })
         self.gameNSDatesJV  = self.gameNSDatesJV.removeDuplicates().sorted(by: { $0.compare($1 as Date) == .orderedAscending })
