@@ -68,10 +68,14 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         
         if indexPath.section == 0{
             switch indexPath.row {
-//            case 2:
+            case 2:
+                if let url = URL(string: "https://ctsports.herokuapp.com/") {
+                    UIApplication.shared.open(url, options: [:])
+                }
+                tableView.deselectRow(at: indexPath, animated: true)
 //                let VC1 = self.storyboard?.instantiateViewController(withIdentifier: "SetSchoolViewController") as! UINavigationController
 //                self.present(VC1, animated:true, completion: nil)
-            case 4:
+            case 5:
                 if let url = URL(string: "http://www.casciac.org/scripts/editprac.cgi") {
                     UIApplication.shared.open(url, options: [:])
                 }
